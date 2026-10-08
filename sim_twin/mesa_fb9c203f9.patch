@@ -1,0 +1,668 @@
+diff --git a/mesa/sim/envs/bddl_base_domain.py b/mesa/sim/envs/bddl_base_domain.py
+index 522f1c18d..f549b1477 100644
+--- a/mesa/sim/envs/bddl_base_domain.py
++++ b/mesa/sim/envs/bddl_base_domain.py
+@@ -840,7 +840,7 @@ class BDDLBaseDomain(ManipulationEnv):
+                     break
+                 except RandomizationError:
+                     continue
+-            if not object_placements:
++            if object_placements is None:  # an empty dict is a valid result for a task without objects
+                 raise RandomizationError("Cannot place all objects ):")
+ 
+             for obj_pos, obj_quat, obj in object_placements.values():
+diff --git a/mesa/sim/envs/objects/__init__.py b/mesa/sim/envs/objects/__init__.py
+index e5d1c5673..fc8a653b4 100644
+--- a/mesa/sim/envs/objects/__init__.py
++++ b/mesa/sim/envs/objects/__init__.py
+@@ -1,6 +1,7 @@
+ from .articulated_objects import *
+ from .base_object import *
+ from .google_scanned_objects import *
++from .raiden_bimanual_objects import *
+ from .raiden_objects import *
+ 
+ from .robocasa_objects import *
+diff --git a/mesa/sim/envs/predicates/__init__.py b/mesa/sim/envs/predicates/__init__.py
+index 3da7b115c..df9d24564 100644
+--- a/mesa/sim/envs/predicates/__init__.py
++++ b/mesa/sim/envs/predicates/__init__.py
+@@ -7,6 +7,7 @@ VALIDATE_PREDICATE_FN_DICT = {
+     "on": On(),
+     "up": Up(),
+     "stack": Stack(),
++    "screwed_on": ScrewedOn(),
+     "printjointstate": PrintJointState(),
+     "open": Open(),
+     "close": Close(),
+diff --git a/mesa/sim/envs/predicates/predicates.py b/mesa/sim/envs/predicates/predicates.py
+index 4cbe671cf..96d80518d 100644
+--- a/mesa/sim/envs/predicates/predicates.py
++++ b/mesa/sim/envs/predicates/predicates.py
+@@ -141,4 +141,15 @@ class Stack(BinaryAtomic):
+             z_threshold = 0.07
+         xy_close = (abs(pos1[0] - pos2[0]) < xy_threshold) and (abs(pos1[1] - pos2[1]) < xy_threshold)
+         z_close = abs(pos1[2] - pos2[2]) < z_threshold
+-        return xy_close and z_close
+\ No newline at end of file
++        return xy_close and z_close
++
++
++class ScrewedOn(BinaryAtomic):
++    """``screwed_on(cap, vial)``: the cap sits coaxially on the vial's neck, turned to tight (``RaidenVialCap``).
++
++    The vial comes last, as in ``stack``: mimicgen takes the last entity as the reference object.
++    """
++
++    def __call__(self, arg1, arg2):
++        env = arg1.env
++        return env.get_object(arg1.object_name).is_screwed_on(env.sim, env.get_object(arg2.object_name))
+diff --git a/mesa/sim/envs/problems/__init__.py b/mesa/sim/envs/problems/__init__.py
+index d69c720dd..764de87ac 100644
+--- a/mesa/sim/envs/problems/__init__.py
++++ b/mesa/sim/envs/problems/__init__.py
+@@ -1,4 +1,5 @@
+ from .mimiclabs_tabletop_manipulation import *
++from .raiden_bimanual import *
+ from .raiden_lab import *
+ 
+ __all__ = [name for name in globals() if not name.startswith("_")]
+\ No newline at end of file
+diff --git a/mesa/sim/envs/regions/__init__.py b/mesa/sim/envs/regions/__init__.py
+index 89bbf31b1..4da4737f3 100644
+--- a/mesa/sim/envs/regions/__init__.py
++++ b/mesa/sim/envs/regions/__init__.py
+@@ -12,6 +12,7 @@ REGION_SAMPLERS = {
+     "mimiclabs_lab7_tabletop_manipulation": {"table": TableRegionSampler},
+     "mimiclabs_lab8_tabletop_manipulation": {"table": TableRegionSampler},
+     "raiden_lab_tabletop_manipulation": {"table": TableRegionSampler},
++    "raiden_bimanual_tabletop_manipulation": {"table": TableRegionSampler},
+ }
+ 
+ 
+diff --git a/mesa/sim/envs/robots/__init__.py b/mesa/sim/envs/robots/__init__.py
+index 26212693f..e81ff6691 100644
+--- a/mesa/sim/envs/robots/__init__.py
++++ b/mesa/sim/envs/robots/__init__.py
+@@ -6,6 +6,7 @@ from .menagerie_robotiq_2f85 import MenagerieRobotiq85Gripper
+ from .mounted_panda import MountedPanda
+ from .mounted_yam import Yam
+ from .raiden_yam import RaidenYam
++from .raiden_yam_bimanual import RaidenYamBimanualLeft, RaidenYamBimanualRight, RaidenYamUmiFtGripper, RaidenYamUmiFtGripperLeft
+ from .reverse_mounted_panda import ReverseMountedPanda
+ from .reverse_mounted_ur5e import ReverseMountedUR5e
+ from .reverse_mounted_yam import ReverseMountedYam
+@@ -17,15 +18,23 @@ ROBOT_CLASS_MAPPING.update({"ReverseMountedUR5e": RobosuiteRobot})
+ ROBOT_CLASS_MAPPING.update({"Yam": RobosuiteRobot})
+ ROBOT_CLASS_MAPPING.update({"ReverseMountedYam": RobosuiteRobot})
+ ROBOT_CLASS_MAPPING.update({"RaidenYam": RobosuiteRobot})
++ROBOT_CLASS_MAPPING.update({"RaidenYamBimanualLeft": RobosuiteRobot})
++ROBOT_CLASS_MAPPING.update({"RaidenYamBimanualRight": RobosuiteRobot})
+ GRIPPER_MAPPING.update({"MenagerieRobotiq85Gripper": MenagerieRobotiq85Gripper})
+ GRIPPER_MAPPING.update({"YamGripper": YamGripper})
+ GRIPPER_MAPPING.update({"RaidenYamGripper": RaidenYamGripper})
++GRIPPER_MAPPING.update({"RaidenYamUmiFtGripper": RaidenYamUmiFtGripper})
++GRIPPER_MAPPING.update({"RaidenYamUmiFtGripperLeft": RaidenYamUmiFtGripperLeft})
+ 
+ __all__ = [
+     "MenagerieRobotiq85Gripper",
+     "MountedPanda",
+     "RaidenYam",
++    "RaidenYamBimanualLeft",
++    "RaidenYamBimanualRight",
+     "RaidenYamGripper",
++    "RaidenYamUmiFtGripper",
++    "RaidenYamUmiFtGripperLeft",
+     "ReverseMountedPanda",
+     "ReverseMountedUR5e",
+     "ReverseMountedYam",
+diff --git a/mesa/sim/envs/robots/raiden_yam.py b/mesa/sim/envs/robots/raiden_yam.py
+index 267e8836f..3309b2ac2 100644
+--- a/mesa/sim/envs/robots/raiden_yam.py
++++ b/mesa/sim/envs/robots/raiden_yam.py
+@@ -52,15 +52,40 @@ I2RT_INERTIALS = {
+                0.553219, (0.000409686, 0.000369758, 0.000324415)),
+ }
+ 
++# With rig.json robot.geoms = "i2rt": the shift (m, link frame) of all geoms of a link (visual and collision) that puts
++# the Menagerie meshes on i2rt's yam.xml meshes. I2RT_BODY_POS moves the link frames but not their geoms: without the
++# shift the base foot reaches 10 mm below the base origin (into the rail) and link_2-4 are drawn 3 cm along their joint
++# axes. The mesh files differ from i2rt's; the shifts are a translation-only fit onto them (median residual 0.4-1 mm).
++I2RT_GEOM_SHIFT = {
++    "arm": (0.0001, 0.0, 0.0098),
++    "link_1": (-0.0001, 0.0, 0.0044),
++    "link_2": (0.0, 0.0001, -0.0322),
++    "link_3": (-0.0001, -0.0006, -0.0344),
++    "link_4": (-0.0003, 0.0009, -0.0323),
++    "link_5": (0.0, 0.0062, 0.0011),
++}
++
+ 
+-def _write_rig_robot_xml(rig_name: str) -> str:
++def _write_rig_robot_xml(rig_name: str, wrist_camera: str = "left_wrist_camera", suffix: str = "",
++                         joint_zero_offsets=None) -> str:
++    """The rig's YAM model. ``joint_zero_offsets`` (rad, joints 1-6) go in as joint ``ref = -offset``, so q = 0
++    shows the arm rotated by the offsets while the joint ranges stay in the real arm's joint readings."""
+     rig = load_rig(rig_name)
+-    wrist = rig["cameras"]["left_wrist_camera"]
+-    out = os.path.join(_ASSETS, f"yam_robot_{rig_name}.xml")
++    wrist = rig["cameras"][wrist_camera]
++    out = os.path.join(_ASSETS, f"yam_robot_{rig_name}{suffix}.xml")
+     tree = ET.parse(os.path.join(_ASSETS, "yam_robot.xml"))
+     root = tree.getroot()
+     for body_name, pos in I2RT_BODY_POS.items():
+         root.find(f".//body[@name='{body_name}']").set("pos", " ".join(f"{v:.7g}" for v in pos))
++    if rig["robot"].get("geoms") == "i2rt":
++        for body_name, shift in I2RT_GEOM_SHIFT.items():
++            for geom in root.find(f".//body[@name='{body_name}']").findall("geom"):
++                pos = geom.get("pos", "0 0 0").split()
++                geom.set("pos", " ".join(f"{float(v) + s:.7g}" for v, s in zip(pos, shift)))
++    if joint_zero_offsets is not None:
++        for i, off in enumerate(joint_zero_offsets):
++            if off:
++                root.find(f".//joint[@name='joint{i + 1}']").set("ref", f"{-off:.9g}")
+     dyn = rig["robot"]["dynamics"]
+     scale = dyn["link_mass_scale"]
+     for i, (body_name, (ipos, iquat, mass, inertia)) in enumerate(I2RT_INERTIALS.items()):
+@@ -71,6 +96,9 @@ def _write_rig_robot_xml(rig_name: str) -> str:
+         joint = body.find("joint")
+         joint.set("frictionloss", f"{dyn['frictionloss'][i]:g}")
+         joint.set("armature", f"{dyn['armature'][i]:g}")
++        for key, attr in (("friction_solref", "solreffriction"), ("friction_solimp", "solimpfriction")):
++            if key in dyn:
++                joint.set(attr, " ".join(f"{v:g}" for v in dyn[key]))
+     for name, attrs in rig["robot"].get("materials", {}).items():
+         mat = root.find(f".//material[@name='{name}']")
+         for k, v in attrs.items():
+diff --git a/scripts/raiden_sim_server.py b/scripts/raiden_sim_server.py
+index 1df735bb0..31a03fa2b 100644
+--- a/scripts/raiden_sim_server.py
++++ b/scripts/raiden_sim_server.py
+@@ -1,17 +1,23 @@
+ #!/usr/bin/env python3
+ """Serve the raiden digital twin to the raiden teleop/recording stack.
+ 
+-Runs the MESA ``raiden_lab`` environment in real time with the same control contract as the
+-real i2rt follower (absolute 7-d joint targets at 100 Hz, latched between commands, per-axis
+-motor PD with the real gains) and renders the two calibrated cameras on request. The raiden
+-repo talks to it through :mod:`raiden.sim` (``multiprocessing.connection``), so the unchanged
+-Quest teleop, recorder, converter and LeRobot export run against the sim.
++Runs a MESA raiden rig environment in real time with the same control contract as the real
++i2rt followers (absolute 7-d joint targets per arm at 100 Hz, latched between commands,
++per-axis motor PD with the real gains) and renders the rig's calibrated cameras on request.
++The raiden repo talks to it through :mod:`raiden.sim` (``multiprocessing.connection``), so the
++unchanged Quest teleop, recorder, converter and LeRobot export run against the sim.
+ 
+     DISPLAY=:0 MUJOCO_GL=glfw uv run python scripts/raiden_sim_server.py \\
+         --task-json mesa/task_suites/bddl_files/raiden_lab/stack_white_cubes/source/000.json
+ 
++The bimanual rig drives its two followers, robot0 = left and robot1 = right:
++
++    ... scripts/raiden_sim_server.py --robots RaidenYamBimanualLeft RaidenYamBimanualRight \\
++        --task-json mesa/task_suites/bddl_files/raiden_bimanual/empty_rig/source/000.json
++
+ Protocol: each request is ``(method: str, kwargs: dict)``, each reply ``("ok", value)`` or
+-``("err", message)``. One server thread per client connection.
++``("err", message)``. One server thread per client connection. Per-arm calls take
++``arm="left"`` or ``arm="right"``.
+ """
+ 
+ from __future__ import annotations
+@@ -32,11 +38,11 @@ import numpy as np  # noqa: E402
+ 
+ import mesa  # noqa: E402
+ import mesa.sim.controllers  # noqa: E402,F401  (registers YAM_MOTOR_PD)
+-from mesa.sim.envs.rigs import base_to_world_offset, load_rig  # noqa: E402
++from mesa.sim.envs.rigs import load_rig  # noqa: E402
+ 
+ AUTHKEY = b"raiden-sim"
+-# raiden camera name -> MuJoCo camera name; the rig cameras, calibrated to the real D435s.
+-CAMERAS = {"scene_camera": "scene_camera", "left_wrist_camera": "robot0_eye_in_hand"}
++# raiden arm names in robot order: robot0 is the left follower.
++ARMS = ("left", "right")
+ # Operator-only views: renderable on request, absent from rig.json so they cannot enter a recording.
+ VIEWER_CAMERAS = (
+     "agentview", "behindview", "frontview", "birdview", "sideview",
+@@ -46,15 +52,65 @@ FREE_VIEWER_CAMERAS = {
+     "operator": {"lookat": (0.30, -0.10, 0.05), "azimuth": 45.0, "elevation": -27.0, "distance": 1.35},
+     "topdown": {"lookat": (0.27, -0.01, 0.0), "azimuth": 0.0, "elevation": -70.0, "distance": 1.45},
+ }
+-ALL_CAMERAS = {**CAMERAS, **{n: n for n in VIEWER_CAMERAS}, **{n: None for n in FREE_VIEWER_CAMERAS}}
+ # i2rt widens the model joint limits by this much before clipping commands.
+ JOINT_LIMIT_MARGIN = 0.15
+ 
+ 
++class Arm:
++    """One follower: its robosuite robot, motor PD gains and gripper normalisation."""
++
++    def __init__(self, env, robot):
++        self.env = env
++        self.robot = robot
++        self.ctrl = robot.composite_controller.part_controllers["right"]
++        sim = env.sim
++        self.act_idx = list(robot._ref_arm_joint_actuator_indexes)
++        self.grip_qpos_idx = list(robot._ref_gripper_joint_pos_indexes["right"])
++        self.grip_qvel_idx = list(robot._ref_gripper_joint_vel_indexes["right"])
++        self.grip_act_idx = list(robot._ref_joint_gripper_actuator_indexes["right"])
++        joints = robot.robot_model.joints
++        jnt_ids = [sim.model.get_joint_qpos_addr(j) for j in joints]
++        assert jnt_ids == list(robot._ref_arm_joint_pos_indexes)
++        ranges = np.array([sim.model.jnt_range[sim.model.joint_name2id(j)] for j in joints])
++        self.joint_limits = ranges + np.array([-JOINT_LIMIT_MARGIN, JOINT_LIMIT_MARGIN])
++        self.kp = np.array(self.ctrl.kp, dtype=np.float64)
++        self.kd = np.array(self.ctrl.kd, dtype=np.float64)
++        self.grip_range = (0.0, 1.0)  # (closed, open) finger slide; measured by SimRig._calibrate_grippers
++
++    def qpos(self) -> np.ndarray:
++        return np.array(self.robot._joint_positions, dtype=np.float64)
++
++    def qvel(self) -> np.ndarray:
++        return np.array(self.robot._joint_velocities, dtype=np.float64)
++
++    def grip_qpos(self) -> float:
++        return float(self.env.sim.data.qpos[self.grip_qpos_idx[0]])
++
++    def gripper_norm(self) -> float:
++        lo, hi = self.grip_range
++        return float(np.clip((self.grip_qpos() - lo) / (hi - lo), 0.0, 1.0))
++
++    def joint_pos(self) -> np.ndarray:
++        return np.concatenate([self.qpos(), [self.gripper_norm()]])
++
++    def observations(self) -> dict:
++        sim = self.env.sim
++        lo, hi = self.grip_range
++        return {
++            "joint_pos": self.qpos(),
++            "joint_vel": self.qvel(),
++            "joint_eff": np.array(sim.data.actuator_force[self.act_idx], dtype=np.float64),
++            "gripper_pos": np.array([self.gripper_norm()]),
++            "gripper_vel": np.array([float(sim.data.qvel[self.grip_qvel_idx[0]]) / (hi - lo)]),
++            "gripper_eff": np.array(sim.data.actuator_force[self.grip_act_idx], dtype=np.float64),
++        }
++
++
+ class SimRig:
+-    """Owns the env, the 100 Hz physics thread and the latched command."""
++    """Owns the env, the 100 Hz physics thread and the latched command (7 per arm)."""
+ 
+-    def __init__(self, task_json: str, hz: float, realtime: bool, viewer_scale: int = 2):
++    def __init__(self, task_json: str, hz: float, realtime: bool, viewer_scale: int = 2,
++                 robots=("RaidenYam",)):
+         self.hz = hz
+         self.dt = 1.0 / hz
+         self.realtime = realtime
+@@ -62,7 +118,7 @@ class SimRig:
+             json_file=task_json,
+             controller_type="yam_motor_pd",
+             control_delta=False,
+-            robots=["RaidenYam"],
++            robots=list(robots),
+             control_freq=hz,
+             use_camera_obs=False,
+             has_offscreen_renderer=False,
+@@ -74,26 +130,28 @@ class SimRig:
+             hard_reset=False,
+         )
+         self.env.reset()
+-        self.robot = self.env.robots[0]
+-        self.arm_ctrl = self.robot.composite_controller.part_controllers["right"]
+-        self.rig = load_rig(self.robot.robot_model.rig_name)
+-        self._base_in_world = base_to_world_offset(self.rig)  # world = base + this (base yaw 0)
++        self._arms = {name: Arm(self.env, robot) for name, robot in zip(ARMS, self.env.robots)}
++        robot0 = self.env.robots[0].robot_model
++        self.rig = load_rig(robot0.rig_name)
++        # The left arm's base frame, in which object poses are reported and operator views placed.
+         sim = self.env.sim
+-        self._arm_act_idx = list(self.robot._ref_arm_joint_actuator_indexes)
+-        self._grip_qpos_idx = list(self.robot._ref_gripper_joint_pos_indexes["right"])
+-        self._grip_qvel_idx = list(self.robot._ref_gripper_joint_vel_indexes["right"])
+-        self._grip_act_idx = list(self.robot._ref_joint_gripper_actuator_indexes["right"])
+-        joints = self.robot.robot_model.joints
+-        jnt_ids = [sim.model.get_joint_qpos_addr(j) for j in joints]
+-        assert jnt_ids == list(self.robot._ref_arm_joint_pos_indexes)
+-        ranges = np.array([sim.model.jnt_range[sim.model.joint_name2id(j)] for j in joints])
+-        self.joint_limits = ranges + np.array([-JOINT_LIMIT_MARGIN, JOINT_LIMIT_MARGIN])
++        base = sim.model.body_name2id(robot0.root_body)
++        self._world_from_base = np.eye(4)
++        self._world_from_base[:3, :3] = np.asarray(sim.data.body_xmat[base]).reshape(3, 3)
++        self._world_from_base[:3, 3] = sim.data.body_xpos[base]
++        # raiden camera name -> MuJoCo camera name: the rig's static cameras and each arm's wrist camera.
++        self._cameras = {n: n for n, cam in self.rig["cameras"].items() if "T_tool_cam" not in cam}
++        self._cameras.update({f"{name}_wrist_camera": f"{arm.robot.robot_model.naming_prefix}eye_in_hand"
++                              for name, arm in self._arms.items()})
++        self._all_cameras = {**self._cameras, **{n: n for n in VIEWER_CAMERAS},
++                             **{n: None for n in FREE_VIEWER_CAMERAS}}
++        self._contact_prefixes = [f"{kind}{i}" for i in range(len(self._arms)) for kind in ("robot", "gripper")]
+ 
+         self.lock = threading.RLock()
+         self.render_jobs: queue.Queue = queue.Queue()
+         self._model = self.env.sim.model._model
+         self._render_data = mujoco.MjData(self._model)
+-        res = {tuple(self.rig["cameras"][n]["resolution"]) for n in CAMERAS}
++        res = {tuple(self.rig["cameras"][n]["resolution"]) for n in self._cameras}
+         assert len(res) == 1, f"one renderer per resolution not implemented: {res}"
+         (w, h), = res
+         vw, vh = w * viewer_scale, h * viewer_scale
+@@ -117,11 +175,13 @@ class SimRig:
+         # Operator views keep sites on for the grasp indicator; `_scene_option` leaves them off.
+         self._viewer_scene_option = mujoco.MjvOption()
+         self._viewer_scene_option.geomgroup[:] = self._scene_option.geomgroup
+-        self.robot._visualize_grippers(True)
+-        self.kp = np.array(self.arm_ctrl.kp, dtype=np.float64)
+-        self.kd = np.array(self.arm_ctrl.kd, dtype=np.float64)
+-        self._grip_range = self._calibrate_gripper()
+-        self.cmd = np.concatenate([self.arm_qpos(), [1.0]])  # hold current pose, gripper open
++        for arm in self._arms.values():
++            arm.robot._visualize_grippers(True)
++        self._calibrate_grippers()
++        # Commands and reads do not wait for a physics tick: commands latch under their own
++        # lock, reads return the arm readings published after the last completed tick.
++        self._cmd_lock = threading.Lock()
++        self._hold()
+         self.n_steps = 0
+         self.n_late = 0
+         self._t0 = time.perf_counter()
+@@ -134,35 +194,34 @@ class SimRig:
+         self._thread.start()
+ 
+     # ------------------------------------------------------------------ state
+-    def arm_qpos(self) -> np.ndarray:
+-        return np.array(self.robot._joint_positions, dtype=np.float64)
+-
+-    def arm_qvel(self) -> np.ndarray:
+-        return np.array(self.robot._joint_velocities, dtype=np.float64)
++    def _arm(self, arm: str) -> Arm:
++        if arm not in self._arms:
++            raise KeyError(f"no {arm!r} arm; this rig has {list(self._arms)}")
++        return self._arms[arm]
+ 
+-    def _grip_qpos(self) -> float:
+-        return float(self.env.sim.data.qpos[self._grip_qpos_idx[0]])
++    def _hold_cmd(self) -> np.ndarray:
++        """Every arm held where it is, gripper open."""
++        return np.concatenate([np.append(a.qpos(), 1.0) for a in self._arms.values()])
+ 
+-    def _calibrate_gripper(self) -> tuple[float, float]:
+-        """Push the fingers to both stops like the i2rt startup calibration; returns (closed, open)."""
++    def _calibrate_grippers(self) -> None:
++        """Push the fingers to both stops like the i2rt startup calibration."""
+         stops = []
+         for g in (0.0, 1.0):
+-            cmd = np.concatenate([self.arm_qpos(), [g]])
++            cmd = np.concatenate([np.append(a.qpos(), g) for a in self._arms.values()])
+             for _ in range(int(1.0 * self.hz)):
+                 self.env.step(self._to_env_action(cmd))
+-            stops.append(self._grip_qpos())
+-        closed, opened = stops
+-        print(f"gripper stops: closed={closed:.4f} open={opened:.4f} (left_finger slide, m)")
+-        return closed, opened
+-
+-    def gripper_norm(self) -> float:
+-        lo, hi = self._grip_range
+-        return float(np.clip((self._grip_qpos() - lo) / (hi - lo), 0.0, 1.0))
+-
+-    def _to_env_action(self, cmd7: np.ndarray) -> np.ndarray:
+-        g = float(np.clip(cmd7[6], 0.0, 1.0))
+-        # robosuite GRIP convention: -1 = open, +1 = closed
+-        return np.concatenate([cmd7[:6], [1.0 - 2.0 * g]])
++            stops.append([a.grip_qpos() for a in self._arms.values()])
++        for (name, arm), closed, opened in zip(self._arms.items(), *stops):
++            arm.grip_range = (closed, opened)
++            print(f"{name} gripper stops: closed={closed:.4f} open={opened:.4f} (left_finger slide, m)")
++
++    def _to_env_action(self, cmd: np.ndarray) -> np.ndarray:
++        out = []
++        for c in cmd.reshape(-1, 7):
++            g = float(np.clip(c[6], 0.0, 1.0))
++            # robosuite GRIP convention: -1 = open, +1 = closed
++            out.append(np.concatenate([c[:6], [1.0 - 2.0 * g]]))
++        return np.concatenate(out)
+ 
+     # -------------------------------------------------------------- physics
+     def _loop(self) -> None:
+@@ -180,8 +239,10 @@ class SimRig:
+                 if delay > 0:
+                     time.sleep(delay)
+                 else:
+-                    # Fell behind; do not try to catch up.
++                    # Fell behind; do not try to catch up. Still pause briefly: the lock is not
++                    # fair, and back-to-back ticks would keep waiting requests (snapshots) out.
+                     self.n_late += 1
++                    time.sleep(0.0005)
+                     next_t = time.perf_counter()
+ 
+     def _tick(self) -> None:
+@@ -191,6 +252,11 @@ class SimRig:
+         self.n_steps += 1
+         if self._action_log is not None:
+             self._action_log.append((time.time_ns(), float(self.env.sim.data.time), cmd.copy()))
++        self._publish()
++
++    def _publish(self) -> None:
++        """Publish every arm's readings of the current state; the caller holds the lock."""
++        self._readings = {name: a.observations() for name, a in self._arms.items()}
+ 
+     def close(self) -> None:
+         self._stop.set()
+@@ -202,40 +268,42 @@ class SimRig:
+     def ping(self) -> str:
+         return "raiden-sim"
+ 
+-    def get_observations(self) -> dict:
+-        with self.lock:
+-            sim = self.env.sim
+-            lo, hi = self._grip_range
+-            return {
+-                "joint_pos": self.arm_qpos(),
+-                "joint_vel": self.arm_qvel(),
+-                "joint_eff": np.array(sim.data.actuator_force[self._arm_act_idx], dtype=np.float64),
+-                "gripper_pos": np.array([self.gripper_norm()]),
+-                "gripper_vel": np.array([float(sim.data.qvel[self._grip_qvel_idx[0]]) / (hi - lo)]),
+-                "gripper_eff": np.array(sim.data.actuator_force[self._grip_act_idx], dtype=np.float64),
+-            }
++    def get_arms(self) -> list:
++        """The followers, in robot order."""
++        return list(self._arms)
+ 
+-    def get_joint_pos(self) -> np.ndarray:
+-        with self.lock:
+-            return np.concatenate([self.arm_qpos(), [self.gripper_norm()]])
++    def get_observations(self, arm: str = "left") -> dict:
++        self._arm(arm)
++        return self._readings[arm]
+ 
+-    def command_joint_pos(self, joint_pos) -> None:
++    def get_joint_pos(self, arm: str = "left") -> np.ndarray:
++        self._arm(arm)
++        r = self._readings[arm]
++        return np.concatenate([r["joint_pos"], r["gripper_pos"]])
++
++    def command_joint_pos(self, joint_pos, arm: str = "left") -> None:
++        a = self._arm(arm)
+         pos = np.array(joint_pos, dtype=np.float64).reshape(-1)
+         assert pos.shape == (7,), pos.shape
+-        pos[:6] = np.clip(pos[:6], self.joint_limits[:, 0], self.joint_limits[:, 1])
+-        with self.lock:
+-            self.cmd = pos
+-
+-    def update_kp_kd(self, kp, kd) -> None:
++        pos[:6] = np.clip(pos[:6], a.joint_limits[:, 0], a.joint_limits[:, 1])
++        i = 7 * list(self._arms).index(arm)
++        with self._cmd_lock:
++            cmd = self.cmd.copy()
++            cmd[i:i + 7] = pos
++            self.cmd = cmd
++
++    def update_kp_kd(self, kp, kd, arm: str = "left") -> None:
++        a = self._arm(arm)
+         kp = np.array(kp, dtype=np.float64).reshape(-1)
+         kd = np.array(kd, dtype=np.float64).reshape(-1)
+         with self.lock:
+-            self.arm_ctrl.kp = kp[:6].copy()
+-            self.arm_ctrl.kd = kd[:6].copy()
+-            self.kp, self.kd = kp, kd
++            a.ctrl.kp = kp[:6].copy()
++            a.ctrl.kd = kd[:6].copy()
++            a.kp, a.kd = kp, kd
+ 
+-    def get_kp_kd(self) -> tuple:
+-        return self.kp.copy(), self.kd.copy()
++    def get_kp_kd(self, arm: str = "left") -> tuple:
++        a = self._arm(arm)
++        return a.kp.copy(), a.kd.copy()
+ 
+     def render(self, cameras=None, depth: bool = True, with_state: bool = False, hires: bool = False) -> dict:
+         """Render on the main thread (the GLFW context is thread-bound); callers block.
+@@ -267,10 +335,10 @@ class SimRig:
+     def _render(self, cameras=None, depth: bool = True, with_state: bool = False, hires: bool = False) -> dict:
+         if hires and (depth or with_state):
+             raise ValueError("hires renders are display-only: pass depth=False, with_state=False")
+-        names = list(cameras) if cameras else list(CAMERAS)
+-        unknown = [n for n in names if n not in ALL_CAMERAS]
++        names = list(cameras) if cameras else list(self._cameras)
++        unknown = [n for n in names if n not in self._all_cameras]
+         if unknown:
+-            raise KeyError(f"unknown camera(s) {unknown}; have {sorted(ALL_CAMERAS)}")
++            raise KeyError(f"unknown camera(s) {unknown}; have {sorted(self._all_cameras)}")
+         src = self.env.sim.data._data
+         with self.lock:
+             t_ns = time.time_ns()
+@@ -284,8 +352,8 @@ class SimRig:
+         mujoco.mj_forward(self._model, rd)
+         out = {}
+         for name in names:
+-            cam = self._free_camera(name) if name in FREE_VIEWER_CAMERAS else ALL_CAMERAS[name]
+-            rig = name in CAMERAS
++            cam = self._free_camera(name) if name in FREE_VIEWER_CAMERAS else self._all_cameras[name]
++            rig = name in self._cameras
+             opt = self._scene_option if rig else self._viewer_scene_option
+             renderer = (self._hires_renderer if hires else self._renderer) if rig else self._viewer_renderer
+             renderer.update_scene(rd, camera=cam, scene_option=opt)
+@@ -301,16 +369,23 @@ class SimRig:
+         p = FREE_VIEWER_CAMERAS[name]
+         cam = mujoco.MjvCamera()
+         cam.type = mujoco.mjtCamera.mjCAMERA_FREE
+-        cam.lookat[:] = np.asarray(p["lookat"], dtype=np.float64) + self._base_in_world
++        T = self._world_from_base
++        cam.lookat[:] = T[:3, :3] @ np.asarray(p["lookat"], dtype=np.float64) + T[:3, 3]
+         cam.azimuth, cam.elevation, cam.distance = p["azimuth"], p["elevation"], p["distance"]
+         return cam
+ 
++    def get_snapshot(self) -> dict:
++        """A recorded frame without its pixels: ``t_ns`` and ``sim`` as ``render(with_state=True)`` gives
++        them. A recording renders its frames again from these states, so it needs no pixels here."""
++        with self.lock:
++            return {"t_ns": time.time_ns(), "sim": self._snapshot()}
++
+     def get_camera_info(self, name: str) -> dict:
+         cam = self.rig["cameras"][name]
+         K = np.array(cam["K"], dtype=np.float64)
+         w, h = cam["resolution"]
+         return {"K": K, "width": int(w), "height": int(h), "serial": f"sim-{cam.get('serial', name)}",
+-                "mujoco_camera": CAMERAS[name]}
++                "mujoco_camera": self._cameras[name], "sim_render": cam.get("sim_render")}
+ 
+     def get_rig(self) -> dict:
+         return self.rig
+@@ -318,9 +393,16 @@ class SimRig:
+     def reset(self) -> dict:
+         with self.lock:
+             self.env.reset()
+-            self.cmd = np.concatenate([self.arm_qpos(), [1.0]])
++            self._hold()
+         return self.get_object_poses()
+ 
++    def _hold(self) -> None:
++        """Latch the hold command and publish the readings of a new state; the caller holds the lock."""
++        hold = self._hold_cmd()
++        with self._cmd_lock:
++            self.cmd = hold
++        self._publish()
++
+     # ------------------------------------------------------------ replay
+     def set_paused(self, paused: bool) -> bool:
+         """Stop or restart the free-running physics thread; returns the new paused flag.
+@@ -354,21 +436,22 @@ class SimRig:
+             if warmstart is not None:
+                 # After reset_to: its own forward() would otherwise overwrite this.
+                 self.env.sim.data._data.qacc_warmstart[:] = np.asarray(warmstart, dtype=np.float64)
+-            self.cmd = np.concatenate([self.arm_qpos(), [1.0]])
++            self._hold()
+             return self._snapshot()
+ 
+     def step(self, cmd=None, n: int = 1, with_state: bool = False) -> dict:
+-        """Latch ``cmd`` and advance exactly ``n`` ticks.  Requires the server paused."""
++        """Latch ``cmd`` (7 per arm, in robot order) and advance exactly ``n`` ticks.  Requires the server paused."""
+         if self._run.is_set():
+             raise RuntimeError("call set_paused(True) before step()")
+         if cmd is not None:
+-            self.command_joint_pos(cmd)
++            for arm, c in zip(self._arms, np.asarray(cmd, dtype=np.float64).reshape(-1, 7)):
++                self.command_joint_pos(c, arm)
+         with self.lock:
+             for _ in range(int(n)):
+                 self._tick()
+             done, success = self._task_flags()
+             out = {
+-                "joint_pos": np.concatenate([self.arm_qpos(), [self.gripper_norm()]]),
++                "joint_pos": np.concatenate([a.joint_pos() for a in self._arms.values()]),
+                 "subtasks_done": done,
+                 "success": success,
+             }
+@@ -392,7 +475,7 @@ class SimRig:
+         return {
+             "t_ns": np.array([r[0] for r in log], dtype=np.int64),
+             "sim_time": np.array([r[1] for r in log], dtype=np.float64),
+-            "cmd": (np.stack([r[2] for r in log]) if log else np.zeros((0, 7))),
++            "cmd": (np.stack([r[2] for r in log]) if log else np.zeros((0, 7 * len(self._arms)))),
+         }
+ 
+     def get_object_poses(self) -> dict:
+@@ -400,14 +483,15 @@ class SimRig:
+             return self._object_poses()
+ 
+     def _object_poses(self) -> dict:
+-        """Task object poses, 4x4 in the robot base frame."""
++        """Task object poses, 4x4 in the (left) robot base frame."""
+         sim = self.env.sim
++        R, t = self._world_from_base[:3, :3], self._world_from_base[:3, 3]
+         poses = {}
+         for obj in getattr(self.env, "objects", []):
+             bid = sim.model.body_name2id(obj.root_body)
+             T = np.eye(4)
+-            T[:3, :3] = np.asarray(sim.data.body_xmat[bid]).reshape(3, 3)
+-            T[:3, 3] = np.asarray(sim.data.body_xpos[bid]) - self._base_in_world
++            T[:3, :3] = R.T @ np.asarray(sim.data.body_xmat[bid]).reshape(3, 3)
++            T[:3, 3] = R.T @ (np.asarray(sim.data.body_xpos[bid]) - t)
+             poses[obj.name] = T
+         return poses
+ 
+@@ -441,7 +525,7 @@ class SimRig:
+                 c = d.contact[i]
+                 n1 = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, c.geom1) or str(c.geom1)
+                 n2 = mujoco.mj_id2name(m, mujoco.mjtObj.mjOBJ_GEOM, c.geom2) or str(c.geom2)
+-                if robot_only and not any(p in n for n in (n1, n2) for p in ("robot0", "gripper0")):
++                if robot_only and not any(p in n for n in (n1, n2) for p in self._contact_prefixes):
+                     continue
+                 mujoco.mj_contactForce(m, d, i, f)
+                 out.append((n1, n2, float(c.dist), float(f[0])))
+@@ -505,6 +589,8 @@ def main() -> None:
+     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+     ap.add_argument("--task-json",
+                     default="mesa/task_suites/bddl_files/raiden_lab/stack_white_cubes/source/000.json")
++    ap.add_argument("--robots", nargs="+", default=["RaidenYam"],
++                    help="one robot per follower, left first (bimanual: RaidenYamBimanualLeft RaidenYamBimanualRight)")
+     ap.add_argument("--host", default="127.0.0.1")
+     # Not 5555: adb scans localhost 5554-5585 and its handshake blocks Listener.accept().
+     ap.add_argument("--port", type=int, default=5599)
+@@ -516,7 +602,8 @@ def main() -> None:
+     ap.add_argument("--no-realtime", action="store_true", help="step as fast as possible (offline replay)")
+     args = ap.parse_args()
+ 
+-    rig = SimRig(args.task_json, args.hz, realtime=not args.no_realtime, viewer_scale=args.viewer_scale)
++    rig = SimRig(args.task_json, args.hz, realtime=not args.no_realtime, viewer_scale=args.viewer_scale,
++                 robots=args.robots)
+     listener = Listener((args.host, args.port), authkey=AUTHKEY)
+     print(f"raiden sim server on {args.host}:{args.port}  ({args.hz:.0f} Hz, realtime={not args.no_realtime})")
+ 

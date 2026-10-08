@@ -1,0 +1,579 @@
+{
+ "frame": "MuJoCo world = rig frame: x toward the back wall (metric +Y), y to the robot's left (metric -X), z up; origin at the rail centre on the desk-top plane, desk top at z 0.90. Poses are parent_from_child with OpenCV camera axes; *_metric values are in the AHa-3D metric frame and mapped by world_from_metric",
+ "world_from_metric": {
+  "matrix": [
+   [
+    0.0,
+    1.0,
+    0.0,
+    -1.374
+   ],
+   [
+    -1.0,
+    0.0,
+    0.0,
+    -2.2647
+   ],
+   [
+    0.0,
+    0.0,
+    1.0,
+    0.18
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "rotation_z_deg": -90.0,
+  "metric_origin": [
+   -2.2647,
+   1.374,
+   0.72
+  ],
+  "world_origin": [
+   0.0,
+   0.0,
+   0.9
+  ],
+  "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/metric_frame.json (desk top z 0.72; rail recommended x centre -2.2647 = arm-base midpoint, y extent 1.314..1.434)"
+ },
+ "robot": {
+  "model": "i2rt YAM + linear_4310 gripper (stock claws), two followers",
+  "home_joints": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "gripper": "RaidenYamGripper",
+  "geoms": "i2rt",
+  "materials": {
+   "yam_white": {
+    "rgba": [
+     0.534,
+     0.534,
+     0.534,
+     1
+    ],
+    "emission": 0.4,
+    "source": "fitted on the 12 09-22 calibration captures: grey p50/p90 114/195, real 114/188. The emission stands in for the room's bounce light on vertical faces."
+   }
+  },
+  "dynamics": {
+   "link_mass_scale": 1.024,
+   "wrist_camera_mass": 0.287,
+   "frictionloss": [
+    0.94,
+    1.7,
+    1.5,
+    0.27,
+    0.15,
+    0.14
+   ],
+   "armature": [
+    0.23,
+    0.23,
+    0.23,
+    0.05,
+    0.05,
+    0.05
+   ],
+   "friction_solref": [
+    0.004,
+    1
+   ],
+   "friction_solimp": [
+    0.999,
+    0.9999,
+    0.001,
+    0.5,
+    2
+   ],
+   "source": "copied from rigs/raiden_lab/rig.json robot.dynamics (single-arm fit, 09-25, D435 wrist mass): not fitted on the bimanual arms. Known gaps: ZED X One + bracket mass, gravity factor 1.3 (raiden default for both followers). friction_solref/solimp: stiff joint friction, so the arm holds against the 1.3 feed-forward like the real arms (09-30, bimanual_bringup/dynamics)"
+  },
+  "home_joint_offsets": {
+   "apply": true,
+   "as": "MuJoCo joint ref = -offset: q = 0 (raiden home, encoder zero) shows the fitted pose; joint ranges unchanged; the controller's gravity model still sees q",
+   "note": "zero-offset hypothesis: at one pose a zero offset and sag look the same"
+  }
+ },
+ "arms": {
+  "left": {
+   "wrist_camera": "left_wrist_camera",
+   "can": "can_follower_l",
+   "metric_from_base": [
+    [
+     0.0221485,
+     -0.9997547,
+     0.0,
+     -2.5999539
+    ],
+    [
+     0.9997547,
+     0.0221485,
+     0.0,
+     1.367046
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "home_joint_offsets_rad": [
+    0.0,
+    0.077701895,
+    -0.005901792,
+    0.0,
+    0.0,
+    0.06009176
+   ],
+   "home_joint_offsets_deg": {
+    "joint2": 4.452,
+    "joint3": -0.338,
+    "joint6": 3.443
+   },
+   "link6_metric_at_home": [
+    [
+     -0.0618835,
+     0.9978393,
+     -0.022073,
+     -2.6009308
+    ],
+    [
+     -0.0820039,
+     -0.0271238,
+     -0.9962628,
+     1.4849711
+    ],
+    [
+     -0.9947089,
+     -0.0598422,
+     0.0835053,
+     0.9053083
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "source": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20261001t000731z-stock-wrist-refit-14dfcd77/analysis/home_s2ws0.3_left.json (10-01 refit with the stock grippers: link_6 home pose refitted in rail form from the wrist background and the scene camera gripper silhouette, wrist camera held at the finger fit; correction vs the 09-30 rail form: base yaw -0.86 deg, base xy (-5.2, +1.4) mm, j2/j3/j6 -0.81/-1.18/+3.85 deg): flat on the rail at the metric height; the joint offsets make q = 0 show the fitted link_6 pose"
+  },
+  "right": {
+   "wrist_camera": "right_wrist_camera",
+   "can": "can_follower_r",
+   "metric_from_base": [
+    [
+     0.0014699,
+     -0.9999989,
+     0.0,
+     -1.9542729
+    ],
+    [
+     0.9999989,
+     0.0014699,
+     0.0,
+     1.366526
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "home_joint_offsets_rad": [
+    0.0,
+    0.076942672,
+    -0.019930663,
+    0.0,
+    0.0,
+    0.016034656
+   ],
+   "home_joint_offsets_deg": {
+    "joint2": 4.408,
+    "joint3": -1.142,
+    "joint6": 0.919
+   },
+   "link6_metric_at_home": [
+    [
+     -0.0161726,
+     0.9998681,
+     -0.0014649,
+     -1.9576877
+    ],
+    [
+     -0.0966847,
+     -0.0030221,
+     -0.9953105,
+     1.4847532
+    ],
+    [
+     -0.9951837,
+     -0.0159551,
+     0.0967208,
+     0.9003146
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "source": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20261001t000731z-stock-wrist-refit-14dfcd77/analysis/home_s2ws0.3_right.json (10-01 refit with the stock grippers: link_6 home pose refitted in rail form from the wrist background and the scene camera gripper silhouette, wrist camera held at the finger fit; correction vs the 09-30 rail form: base yaw -0.16 deg, base xy (+5.4, -2.4) mm, j2/j3/j6 +4.24/+1.10/-2.02 deg): flat on the rail at the metric height; the joint offsets make q = 0 show the fitted link_6 pose"
+  }
+ },
+ "table": {
+  "desk_box_metric": {
+   "x": [
+    -3.0487500000000027,
+    -1.5287500000000025
+   ],
+   "y": [
+    1.3239221477508545,
+    2.0839221477508545
+   ],
+   "top_z": 0.72,
+   "thickness": 0.025
+  },
+  "friction": [
+   0.6,
+   0.005,
+   0.0001
+  ],
+  "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/metric_frame.json desk (tape 09-29: 1.52 x 0.76, top 0.72); 25 mm top as in the Blender build"
+ },
+ "rail": {
+  "box_metric": {
+   "x": [
+    -2.7646989777364888,
+    -1.7646989777364888
+   ],
+   "y": [
+    1.314,
+    1.434
+   ],
+   "z": [
+    0.72,
+    0.7383
+   ]
+  },
+  "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/metric_frame.json rail (tape 1.00 m, top 18.3 mm above the desk)"
+ },
+ "cameras": {
+  "scene_camera": {
+   "serial": "41925345",
+   "device": "ZED X (stereo), serial 41925345, left eye, rectified, 960x600",
+   "resolution": [
+    960,
+    600
+   ],
+   "K": [
+    [
+     366.021667,
+     0.0,
+     492.929108
+    ],
+    [
+     0.0,
+     366.021667,
+     300.872009
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "T_metric_cam": [
+    [
+     0.999312151,
+     -0.025404757,
+     -0.027015237,
+     -2.284837314
+    ],
+    [
+     -0.000302861,
+     -0.734053903,
+     0.679091139,
+     1.496943084
+    ],
+    [
+     -0.037082785,
+     -0.678615845,
+     -0.733556679,
+     1.605732771
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/metric_frame.json scene_camera (K from the raiden converter; pose from the ZED's own depth and desk edges, 09-29)",
+   "sim_render": {
+    "vignette": [
+     -0.500397,
+     0.100571
+    ],
+    "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/build/configs/delivery_v3.json camera_model.scene (Blender v3 post-render model): vignette 1 + k1 r^2 + k2 r^4, r^2 = ((u - cx) / fx)^2 + ((v - cy) / fy)^2; no gain: the room lightmaps carry this camera's 1.5944. Applied in linear light by raiden.sim.camera.SimRender (SimCamera frames, converter)"
+   }
+  },
+  "left_wrist_camera": {
+   "serial": "301058360",
+   "device": "ZED X One (mono), 960x600",
+   "resolution": [
+    960,
+    600
+   ],
+   "K": [
+    [
+     338.105103,
+     0.0,
+     466.152649
+    ],
+    [
+     0.0,
+     361.29068,
+     302.181976
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "tool_frame": "i2rt tcp_site (joint-6 origin, +z along gripper)",
+   "T_tool_cam": [
+    [
+     -0.020339275,
+     0.883621455,
+     0.467759713,
+     -0.084603033
+    ],
+    [
+     -0.999780676,
+     -0.015660808,
+     -0.013888859,
+     0.003169714
+    ],
+    [
+     -0.004946992,
+     -0.467939673,
+     0.883746352,
+     0.061282348
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "T_link6_cam": [
+    [
+     -0.020339275,
+     0.883621455,
+     0.467759713,
+     -0.084603033
+    ],
+    [
+     0.999780676,
+     0.015660808,
+     0.013888859,
+     -0.003169714
+    ],
+    [
+     0.004946992,
+     0.467939673,
+     -0.883746352,
+     -0.061282348
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "T_metric_cam_at_home": [
+    [
+     0.998769894,
+     -0.049383448,
+     0.004419182,
+     -2.597505477
+    ],
+    [
+     -0.030378468,
+     -0.53907613,
+     0.841708795,
+     1.553048217
+    ],
+    [
+     -0.039184269,
+     -0.84080787,
+     -0.539913363,
+     0.984535966
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "source": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20261001t000731z-stock-wrist-refit-14dfcd77/analysis/fit_qfix_bg0.15_left.json arms.left (10-01 refit from the stock linear_4310 finger silhouettes in the live 960x600 frames, weak background term; finger stroke 47.6 mm from the scene camera; K = ZED factory HD1200 / 2, fx != fy). T_tool_cam = Rx(180) T_link6_cam; T_metric_cam_at_home holds with the rail-form base and home offsets of home_s2ws0.3_left.json",
+   "sim_render": {
+    "vignette": [
+     -0.387988,
+     0.056275
+    ],
+    "gain": [
+     1.054002,
+     1.111264,
+     1.311528
+    ],
+    "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/build/configs/delivery_v3.json camera_model.left_wrist (Blender v3 post-render model): vignette 1 + k1 r^2 + k2 r^4, r^2 = ((u - cx) / fx)^2 + ((v - cy) / fy)^2; gain = this camera's [1.6805, 1.7718, 2.0911] / the scene camera's 1.5944, which the room lightmaps carry. Applied in linear light by raiden.sim.camera.SimRender (SimCamera frames, converter)"
+   }
+  },
+  "right_wrist_camera": {
+   "serial": "306353224",
+   "device": "ZED X One (mono), 960x600",
+   "resolution": [
+    960,
+    600
+   ],
+   "K": [
+    [
+     335.137207,
+     0.0,
+     466.431793
+    ],
+    [
+     0.0,
+     359.527985,
+     289.081696
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "tool_frame": "i2rt tcp_site (joint-6 origin, +z along gripper)",
+   "T_tool_cam": [
+    [
+     -0.00779032,
+     0.874546039,
+     0.48487958,
+     -0.08825898
+    ],
+    [
+     -0.999854055,
+     0.000552678,
+     -0.017061139,
+     0.000699088
+    ],
+    [
+     -0.015188732,
+     -0.484941613,
+     0.874414235,
+     0.058315783
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "T_link6_cam": [
+    [
+     -0.00779032,
+     0.874546039,
+     0.48487958,
+     -0.08825898
+    ],
+    [
+     0.999854055,
+     -0.000552678,
+     0.017061139,
+     -0.000699088
+    ],
+    [
+     0.015188732,
+     0.484941613,
+     -0.874414235,
+     -0.058315783
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "T_metric_cam_at_home": [
+    [
+     0.999825955,
+     -0.015406702,
+     0.010498054,
+     -1.956873889
+    ],
+    [
+     -0.017385942,
+     -0.567221019,
+     0.823381646,
+     1.551330884
+    ],
+    [
+     -0.00673095,
+     -0.823421153,
+     -0.567390517,
+     0.982519296
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "source": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20261001t000731z-stock-wrist-refit-14dfcd77/analysis/fit_qfix_bg0.15_right.json arms.right (10-01 refit from the stock linear_4310 finger silhouettes in the live 960x600 frames, weak background term; finger stroke 49.7 mm from the scene camera; K = ZED factory HD1200 / 2, fx != fy). T_tool_cam = Rx(180) T_link6_cam; T_metric_cam_at_home holds with the rail-form base and home offsets of home_s2ws0.3_right.json",
+   "sim_render": {
+    "vignette": [
+     -0.405269,
+     0.066519
+    ],
+    "gain": [
+     1.123244,
+     1.263547,
+     1.748683
+    ],
+    "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/build/configs/delivery_v3.json camera_model.right_wrist (Blender v3 post-render model): vignette 1 + k1 r^2 + k2 r^4, r^2 = ((u - cx) / fx)^2 + ((v - cy) / fy)^2; gain = this camera's [1.7909, 2.0146, 2.7881] / the scene camera's 1.5944, which the room lightmaps carry. Applied in linear light by raiden.sim.camera.SimRender (SimCamera frames, converter)"
+   }
+  }
+ }
+}

@@ -1,0 +1,98 @@
+<mujoco model="yam_gripper">
+  <!-- I2RT linear_4310 gripper, from github.com/i2rt-robotics/i2rt v1.3.4
+       (i2rt/robot_models/gripper/linear_4310, MIT: meshes/linear_4310/LICENSE). -->
+  <compiler angle="radian" meshdir="meshes"/>
+
+  <asset>
+    <material name="linear_4310_black" rgba="0.25 0.25 0.25 1"/>
+    <mesh name="linear_4310_housing" file="meshes/linear_4310/gripper.stl"/>
+    <mesh name="linear_4310_tip_left" file="meshes/linear_4310/tip_left.stl"/>
+    <mesh name="linear_4310_tip_right" file="meshes/linear_4310/tip_right.stl"/>
+    <!-- Collision hulls of the tapered fingers, in the finger body frames -->
+    <mesh name="lf_finger_hull" vertex="-0.01804 -0.01001 -0.04791 -0.01804 -0.01001 -0.06829 -0.01804 0.05799 -0.04791 -0.01804 0.05799 -0.06828 -0.06544 0.00737 -0.04504 -0.06544 0.00737 -0.05242 -0.06544 0.04062 -0.04504 -0.06544 0.04062 -0.05242 -0.09014 0.01846 -0.04479 -0.09014 0.01846 -0.0469 -0.09014 0.02956 -0.04479 -0.09014 0.02956 -0.0469"/>
+    <mesh name="rf_finger_hull" vertex="-0.05799 -0.01804 -0.06828 -0.05799 -0.01804 -0.04791 0.01001 -0.01804 -0.06828 0.01001 -0.01804 -0.04791 -0.04062 -0.06544 -0.05242 -0.04062 -0.06544 -0.04504 -0.00737 -0.06544 -0.05242 -0.00737 -0.06544 -0.04504 -0.0296 -0.09014 -0.04691 -0.0296 -0.09014 -0.04479 -0.01843 -0.09014 -0.04691 -0.01843 -0.09014 -0.04479"/>
+  </asset>
+
+  <default>
+    <default class="yam_finger">
+      <!-- damping sets the free jaw speed under the 50 N cap: 50 / (2 x 160) = 0.16 m/s per finger,
+           the real 3.3 stroke/s -->
+      <joint type="slide" armature="0.1" frictionloss="0.1" damping="160"/>
+      <!-- friction 0.6, the table's: the real fingers slide along the table. A pair takes the larger
+           value, so the croissant and the oven keep theirs. -->
+      <geom group="0" friction="0.6 0.5 0.1"/>
+    </default>
+    <default class="linear_4310_visual">
+      <geom type="mesh" material="linear_4310_black" contype="0" conaffinity="0" group="1"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="gripper_base" pos="0 0 0">
+      <site name="ft_frame" pos="0 0 0" size="0.01" group="1" rgba="1 0 0 0"/>
+
+      <!-- EEF reference frame at the i2rt grasp_site, with the robosuite hand orientation -->
+      <body name="eef" pos="0.0041 0.008 0.0771">
+        <site name="grip_site" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1"/>
+        <site name="ee_x" pos="0.1 0 0" size="0.005 0.1" quat="0.707105 0 0.707108 0" rgba="1 0 0 0" type="cylinder" group="1"/>
+        <site name="ee_y" pos="0 0.1 0" size="0.005 0.1" quat="0.707105 0.707108 0 0" rgba="0 1 0 0" type="cylinder" group="1"/>
+        <site name="ee_z" pos="0 0 0.1" size="0.005 0.1" quat="1 0 0 0" rgba="0 0 1 0" type="cylinder" group="1"/>
+        <site name="grip_site_cylinder" pos="0 0 0" size="0.005 10" rgba="0 1 0 0.3" type="cylinder" group="1"/>
+      </body>
+
+      <!-- The i2rt link_6 frame in the robosuite right_hand frame: T_HAND_TCP (raiden_yam.py)
+           times the tcp_site -> link_6 flip. -->
+      <body name="linear_4310" pos="0.0041 0.008 -0.0576" quat="0 -0.7071068 0.7071068 0">
+        <!-- Massless: the housing's mass is on the arm's link_6, as in i2rt (raiden_yam.py) -->
+        <inertial pos="0 0 0" mass="1e-6" diaginertia="1e-9 1e-9 1e-9"/>
+        <geom class="linear_4310_visual" mesh="linear_4310_housing" pos="-0.014 -0.0463995 0.0731"/>
+        <!-- Housing collision: the rail plate only; the arm's link6_collision capsule already
+             covers the motor column. -->
+        <geom type="box" size="0.0325 0.051 0.0065" pos="0 0 -0.052" group="0" name="rail_col"/>
+
+        <body name="tip_left" pos="-0.0238981 0.0450619 -0.0545599" quat="0.499998 -0.5 -0.5 -0.500002">
+          <inertial pos="-0.0224716 0.0143408 -0.0426253" quat="0.498899 0.455348 -0.0576406 0.735143"
+                    mass="0.0710042" diaginertia="6.24193e-05 6.01079e-05 2.83591e-05"/>
+          <joint class="yam_finger" name="left_finger" axis="0 0 -1" range="0 0.0475"/>
+          <geom class="linear_4310_visual" mesh="linear_4310_tip_left" pos="0.129783 0.00999321 -0.0914614"
+                quat="0.499998 0.5 0.500002 0.5"/>
+          <geom class="yam_finger" type="mesh" mesh="lf_finger_hull" name="lf_finger"/>
+          <geom class="yam_finger" type="box" size="0.0111 0.0069 0.00175" pos="-0.07904 0.02399 -0.04629" name="lf_tip"/>
+          <geom class="yam_finger" type="box" size="0.0045 0.034 0.03579" pos="-0.01344 0.02399 -0.0325" name="lf_carriage"/>
+        </body>
+
+        <body name="tip_right" pos="0.0238981 -0.0450619 -0.0545599" quat="0.707105 0.707108 0 0">
+          <inertial pos="-0.0143408 -0.0224716 -0.0426253" quat="0.281222 0.8726 0.16705 -0.362738"
+                    mass="0.0710042" diaginertia="6.24193e-05 6.01079e-05 2.83591e-05"/>
+          <joint class="yam_finger" name="right_finger" axis="0 0 -1" range="0 0.0475"/>
+          <geom class="linear_4310_visual" mesh="linear_4310_tip_right" pos="-0.0379932 0.129783 0.00133753"
+                quat="0.707105 -0.707108 0 0"/>
+          <geom class="yam_finger" type="mesh" mesh="rf_finger_hull" name="rf_finger"/>
+          <geom class="yam_finger" type="box" size="0.00689 0.0111 0.00175" pos="-0.02399 -0.07904 -0.04617" name="rf_tip"/>
+          <geom class="yam_finger" type="box" size="0.034 0.0045 0.03579" pos="-0.02399 -0.01344 -0.0325" name="rf_carriage"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="tip_left" body2="tip_right"/>
+  </contact>
+
+  <equality>
+    <!-- solref 0.004 (2 x timestep, the stiffest allowed): the real jaws are one mechanism -->
+    <joint joint1="left_finger" joint2="right_finger" polycoef="0 1 0 0 0" solref="0.004 1"/>
+  </equality>
+
+  <actuator>
+    <!-- ctrlrange is the per-finger stroke, 0 (closed) to 0.0475 (open); forcerange is i2rt's
+         limit_gripper_force. kp reaches the 50 N from 5 mm of error, so the jaw closes at the
+         damping-limited speed and grips at 50 N -->
+    <position name="gripper" joint="left_finger" ctrlrange="0 0.0475" kp="10000" kv="35" forcerange="-50 50"/>
+  </actuator>
+
+  <sensor>
+    <force name="force_ee" site="ft_frame"/>
+    <torque name="torque_ee" site="ft_frame"/>
+  </sensor>
+</mujoco>

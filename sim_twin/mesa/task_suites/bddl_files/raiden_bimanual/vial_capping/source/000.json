@@ -1,0 +1,111 @@
+{
+    "problem_name": "raiden_bimanual_tabletop_manipulation",
+    "fixtures": {
+        "table": [
+            "table"
+        ]
+    },
+    "regions": {
+        "table_vial_init_region": {
+            "target": "table",
+            "ranges": [
+                [
+                    -0.14,
+                    -0.134,
+                    -0.12,
+                    -0.114
+                ]
+            ],
+            "extra": [],
+            "yaw_rotation": [
+                0.0,
+                6.283185307179586
+            ],
+            "rgba": [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+            ]
+        },
+        "table_cap_init_region": {
+            "target": "table",
+            "ranges": [
+                [
+                    -0.135,
+                    -0.279,
+                    -0.105,
+                    -0.249
+                ]
+            ],
+            "extra": [],
+            "yaw_rotation": [
+                0.0,
+                6.283185307179586
+            ],
+            "rgba": [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+            ]
+        }
+    },
+    "objects": {
+        "raiden_vial": [
+            "vial_0"
+        ],
+        "raiden_vial_cap": [
+            "cap_0"
+        ]
+    },
+    "textures": {},
+    "lighting": {},
+    "styles": {},
+    "scene_properties": {},
+    "camera": {},
+    "initial_state": [
+        [
+            "on",
+            "vial_0",
+            "table_vial_init_region"
+        ],
+        [
+            "on",
+            "cap_0",
+            "table_cap_init_region"
+        ]
+    ],
+    "goal_state": [
+        "and",
+        [
+            "screwed_on",
+            "cap_0",
+            "vial_0"
+        ]
+    ],
+    "distractor_goal_specs": [],
+    "demonstration_states": [
+        [
+            "grasp_left",
+            "vial_0"
+        ],
+        [
+            "grasp_right",
+            "cap_0"
+        ],
+        [
+            "screwed_on",
+            "cap_0",
+            "vial_0"
+        ]
+    ],
+    "language_instruction": [
+        "screw",
+        "the",
+        "cap",
+        "onto",
+        "the",
+        "vial"
+    ]
+}

@@ -1,0 +1,1639 @@
+{
+ "schema": 1,
+ "source_blend": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/blender/yam_rig_twin_v3.blend",
+ "frame": "metric (scenes/yam_bimanual_rig/metric/metric_frame.json)",
+ "colour": "textures are sRGB PNG bakes of the camera-seen radiance (Cycles: emission + direct + indirect diffuse, glossy on metals; arms hidden; exposure +0.673 stops, Standard view): show them unlit (emission 1); glass stays a flat transparent rgba",
+ "lit": true,
+ "exposure_stops": 0.673,
+ "samples": 256,
+ "geoms": [
+  {
+   "name": "back_wall_end_return",
+   "object": "Back wall | end return",
+   "mesh": "meshes/back_wall_end_return.obj",
+   "nverts": 36,
+   "texture": "textures/back_wall_end_return.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Back wall | beige matte paint"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "back_wall_painted",
+   "object": "Back wall | painted",
+   "mesh": "meshes/back_wall_painted.obj",
+   "nverts": 36,
+   "texture": "textures/back_wall_painted.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Back wall | beige matte paint"
+   ],
+   "collections": [
+    "Room"
+   ]
+  },
+  {
+   "name": "camera_pole_aluminium_extrusion",
+   "object": "Camera pole | aluminium extrusion",
+   "mesh": "meshes/camera_pole_aluminium_extrusion.obj",
+   "nverts": 324,
+   "texture": "textures/camera_pole_aluminium_extrusion.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Rail and pole | aluminium extrusion (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "camera_pole_base_gusset",
+   "object": "Camera pole | base gusset",
+   "mesh": "meshes/camera_pole_base_gusset.obj",
+   "nverts": 24,
+   "texture": "textures/camera_pole_base_gusset.png",
+   "texture_size": 64,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Rail and pole | aluminium extrusion (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "ceiling_led_panel_0",
+   "object": "Ceiling | LED panel 0",
+   "mesh": "meshes/ceiling_led_panel_0.obj",
+   "nverts": 36,
+   "texture": "textures/ceiling_led_panel_0.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Ceiling fixture | LED panel diffuser"
+   ],
+   "collections": [
+    "Room"
+   ]
+  },
+  {
+   "name": "ceiling_led_panel_1",
+   "object": "Ceiling | LED panel 1",
+   "mesh": "meshes/ceiling_led_panel_1.obj",
+   "nverts": 36,
+   "texture": "textures/ceiling_led_panel_1.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Ceiling fixture | LED panel diffuser"
+   ],
+   "collections": [
+    "Room"
+   ]
+  },
+  {
+   "name": "ceiling_led_panel_2",
+   "object": "Ceiling | LED panel 2",
+   "mesh": "meshes/ceiling_led_panel_2.obj",
+   "nverts": 36,
+   "texture": "textures/ceiling_led_panel_2.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Ceiling fixture | LED panel diffuser"
+   ],
+   "collections": [
+    "Room"
+   ]
+  },
+  {
+   "name": "ceiling_tiles",
+   "object": "Ceiling | tiles",
+   "mesh": "meshes/ceiling_tiles.obj",
+   "nverts": 36,
+   "texture": "textures/ceiling_tiles.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Ceiling | white acoustic tile"
+   ],
+   "collections": [
+    "Room"
+   ]
+  },
+  {
+   "name": "door_card_reader_lock_body",
+   "object": "Door | card reader lock body",
+   "mesh": "meshes/door_card_reader_lock_body.obj",
+   "nverts": 324,
+   "texture": "textures/door_card_reader_lock_body.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Door | lever handle and card reader (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "door_latch_side_jamb",
+   "object": "Door | latch-side jamb",
+   "mesh": "meshes/door_latch_side_jamb.obj",
+   "nverts": 36,
+   "texture": "textures/door_latch_side_jamb.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Side wall | white paint"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "door_lever_handle",
+   "object": "Door | lever handle",
+   "mesh": "meshes/door_lever_handle.obj",
+   "nverts": 324,
+   "texture": "textures/door_lever_handle.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Door | lever handle and card reader (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "door_lever_handle_neck",
+   "object": "Door | lever handle neck",
+   "mesh": "meshes/door_lever_handle_neck.obj",
+   "nverts": 36,
+   "texture": "textures/door_lever_handle_neck.png",
+   "texture_size": 64,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Door | lever handle and card reader (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "door_white_jamb_at_the_glass_end",
+   "object": "Door | white jamb at the glass end",
+   "mesh": "meshes/door_white_jamb_at_the_glass_end.obj",
+   "nverts": 36,
+   "texture": "textures/door_white_jamb_at_the_glass_end.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Side wall | white paint"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "door_wood_leaf",
+   "object": "Door | wood leaf",
+   "mesh": "meshes/door_wood_leaf.obj",
+   "nverts": 324,
+   "texture": "textures/door_wood_leaf.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Door | pale wood leaf (RoomKit Pale cut firewood)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "floor_carpet",
+   "object": "Floor | carpet",
+   "mesh": "meshes/floor_carpet.obj",
+   "nverts": 36,
+   "texture": "textures/floor_carpet.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Floor | dark navy office carpet"
+   ],
+   "collections": [
+    "Room"
+   ]
+  },
+  {
+   "name": "glass_a_clear_lower",
+   "object": "Glass A | clear lower",
+   "mesh": "meshes/glass_a_clear_lower.obj",
+   "nverts": 36,
+   "material": "Glass partition | clear glass",
+   "kind": "glass",
+   "rgba": [
+    0.0,
+    0.0,
+    0.0,
+    0.12
+   ],
+   "base_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_strength": 0.0,
+   "emission": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.1,
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_a_clear_upper",
+   "object": "Glass A | clear upper",
+   "mesh": "meshes/glass_a_clear_upper.obj",
+   "nverts": 36,
+   "material": "Glass partition | clear glass",
+   "kind": "glass",
+   "rgba": [
+    0.0,
+    0.0,
+    0.0,
+    0.12
+   ],
+   "base_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_strength": 0.0,
+   "emission": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.1,
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_a_frosted_band",
+   "object": "Glass A | frosted band",
+   "mesh": "meshes/glass_a_frosted_band.obj",
+   "nverts": 36,
+   "texture": "textures/glass_a_frosted_band.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Glass partition | frosted blue backlit band"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_b_clear_lower",
+   "object": "Glass B | clear lower",
+   "mesh": "meshes/glass_b_clear_lower.obj",
+   "nverts": 36,
+   "material": "Glass partition | clear glass",
+   "kind": "glass",
+   "rgba": [
+    0.0,
+    0.0,
+    0.0,
+    0.12
+   ],
+   "base_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_strength": 0.0,
+   "emission": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.1,
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_b_clear_middle_no_frosted_band",
+   "object": "Glass B | clear middle (no frosted band)",
+   "mesh": "meshes/glass_b_clear_middle_no_frosted_band.obj",
+   "nverts": 36,
+   "material": "Glass partition | clear glass B band (passes the band light)",
+   "kind": "glass",
+   "rgba": [
+    0.0,
+    0.0,
+    0.0,
+    0.12
+   ],
+   "base_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_linear": [
+    0.0129,
+    0.1823,
+    0.5052
+   ],
+   "emission_strength": 0.35,
+   "emission": 0.1768,
+   "metallic": 0.0,
+   "roughness": 0.1,
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_b_clear_upper",
+   "object": "Glass B | clear upper",
+   "mesh": "meshes/glass_b_clear_upper.obj",
+   "nverts": 36,
+   "material": "Glass partition | clear glass",
+   "kind": "glass",
+   "rgba": [
+    0.0,
+    0.0,
+    0.0,
+    0.12
+   ],
+   "base_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_linear": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "emission_strength": 0.0,
+   "emission": 0.0,
+   "metallic": 0.0,
+   "roughness": 0.1,
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_frame_ceiling_channel",
+   "object": "Glass frame | ceiling channel",
+   "mesh": "meshes/glass_frame_ceiling_channel.obj",
+   "nverts": 36,
+   "texture": "textures/glass_frame_ceiling_channel.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Glass partition | anodised aluminium frame"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_frame_floor_channel",
+   "object": "Glass frame | floor channel",
+   "mesh": "meshes/glass_frame_floor_channel.obj",
+   "nverts": 36,
+   "texture": "textures/glass_frame_floor_channel.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Glass partition | anodised aluminium frame"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_frame_mullion_post",
+   "object": "Glass frame | mullion post",
+   "mesh": "meshes/glass_frame_mullion_post.obj",
+   "nverts": 324,
+   "texture": "textures/glass_frame_mullion_post.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Glass partition | anodised aluminium frame"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "glass_frame_wall_end_jamb",
+   "object": "Glass frame | wall-end jamb",
+   "mesh": "meshes/glass_frame_wall_end_jamb.obj",
+   "nverts": 36,
+   "texture": "textures/glass_frame_wall_end_jamb.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Glass partition | anodised aluminium frame"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_items_black_cable_bundle",
+   "object": "Monitor desk items | black cable bundle",
+   "mesh": "meshes/monitor_desk_items_black_cable_bundle.obj",
+   "nverts": 324,
+   "texture": "textures/monitor_desk_items_black_cable_bundle.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Camera body | black plastic"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_items_black_device",
+   "object": "Monitor desk items | black device",
+   "mesh": "meshes/monitor_desk_items_black_device.obj",
+   "nverts": 324,
+   "texture": "textures/monitor_desk_items_black_device.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Camera body | black plastic"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_items_grey_small_item",
+   "object": "Monitor desk items | grey small item",
+   "mesh": "meshes/monitor_desk_items_grey_small_item.obj",
+   "nverts": 324,
+   "texture": "textures/monitor_desk_items_grey_small_item.png",
+   "texture_size": 64,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Brackets | dark grey powder coat"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_items_white_small_item",
+   "object": "Monitor desk items | white small item",
+   "mesh": "meshes/monitor_desk_items_white_small_item.obj",
+   "nverts": 324,
+   "texture": "textures/monitor_desk_items_white_small_item.png",
+   "texture_size": 64,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Power unit | white plastic"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_foot_0",
+   "object": "Monitor desk | foot 0",
+   "mesh": "meshes/monitor_desk_foot_0.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_foot_0.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_foot_1",
+   "object": "Monitor desk | foot 1",
+   "mesh": "meshes/monitor_desk_foot_1.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_foot_1.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_leg_column_0",
+   "object": "Monitor desk | leg column 0",
+   "mesh": "meshes/monitor_desk_leg_column_0.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_leg_column_0.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_leg_column_1",
+   "object": "Monitor desk | leg column 1",
+   "mesh": "meshes/monitor_desk_leg_column_1.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_leg_column_1.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_side_rail_0",
+   "object": "Monitor desk | side rail 0",
+   "mesh": "meshes/monitor_desk_side_rail_0.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_side_rail_0.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame | grey powder coat"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_side_rail_1",
+   "object": "Monitor desk | side rail 1",
+   "mesh": "meshes/monitor_desk_side_rail_1.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_side_rail_1.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame | grey powder coat"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitor_desk_top",
+   "object": "Monitor desk | top",
+   "mesh": "meshes/monitor_desk_top.obj",
+   "nverts": 36,
+   "texture": "textures/monitor_desk_top.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Monitor desk | laminate top",
+    "Rig desk | laminate edge band"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitors_monitor_arm_segment_0",
+   "object": "Monitors | monitor arm segment 0",
+   "mesh": "meshes/monitors_monitor_arm_segment_0.obj",
+   "nverts": 324,
+   "texture": "textures/monitors_monitor_arm_segment_0.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Brackets | dark grey powder coat"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitors_monitor_foot",
+   "object": "Monitors | monitor foot",
+   "mesh": "meshes/monitors_monitor_foot.obj",
+   "nverts": 36,
+   "texture": "textures/monitors_monitor_foot.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitors_monitor_screen",
+   "object": "Monitors | monitor screen",
+   "mesh": "meshes/monitors_monitor_screen.obj",
+   "nverts": 324,
+   "texture": "textures/monitors_monitor_screen.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Monitor | dark screen (RoomKit dark television glass)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitors_monitor_stand",
+   "object": "Monitors | monitor stand",
+   "mesh": "meshes/monitors_monitor_stand.obj",
+   "nverts": 36,
+   "texture": "textures/monitors_monitor_stand.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "monitors_privacy_panel",
+   "object": "Monitors | privacy panel",
+   "mesh": "meshes/monitors_privacy_panel.obj",
+   "nverts": 228,
+   "texture": "textures/monitors_privacy_panel.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Privacy panel | charcoal fabric (RoomKit charcoal woven upholstery)"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "power_unit_desk_outlet_box",
+   "object": "Power unit | desk outlet box",
+   "mesh": "meshes/power_unit_desk_outlet_box.obj",
+   "nverts": 324,
+   "texture": "textures/power_unit_desk_outlet_box.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Power unit | white plastic"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_0_bottom_jaw",
+   "object": "Rail | C-clamp 0 bottom jaw",
+   "mesh": "meshes/rail_c_clamp_0_bottom_jaw.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_0_bottom_jaw.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_0_screw",
+   "object": "Rail | C-clamp 0 screw",
+   "mesh": "meshes/rail_c_clamp_0_screw.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_0_screw.png",
+   "texture_size": 32,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_0_spine",
+   "object": "Rail | C-clamp 0 spine",
+   "mesh": "meshes/rail_c_clamp_0_spine.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_0_spine.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_0_top_jaw",
+   "object": "Rail | C-clamp 0 top jaw",
+   "mesh": "meshes/rail_c_clamp_0_top_jaw.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_0_top_jaw.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_1_bottom_jaw",
+   "object": "Rail | C-clamp 1 bottom jaw",
+   "mesh": "meshes/rail_c_clamp_1_bottom_jaw.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_1_bottom_jaw.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_1_screw",
+   "object": "Rail | C-clamp 1 screw",
+   "mesh": "meshes/rail_c_clamp_1_screw.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_1_screw.png",
+   "texture_size": 32,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_1_spine",
+   "object": "Rail | C-clamp 1 spine",
+   "mesh": "meshes/rail_c_clamp_1_spine.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_1_spine.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_c_clamp_1_top_jaw",
+   "object": "Rail | C-clamp 1 top jaw",
+   "mesh": "meshes/rail_c_clamp_1_top_jaw.obj",
+   "nverts": 36,
+   "texture": "textures/rail_c_clamp_1_top_jaw.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_t_slot_extrusion",
+   "object": "Rail | T-slot extrusion",
+   "mesh": "meshes/rail_t_slot_extrusion.obj",
+   "nverts": 276,
+   "texture": "textures/rail_t_slot_extrusion.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Rail and pole | aluminium extrusion (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_left_arm_adapter_plate",
+   "object": "Rail | left_arm adapter plate",
+   "mesh": "meshes/rail_left_arm_adapter_plate.obj",
+   "nverts": 36,
+   "texture": "textures/rail_left_arm_adapter_plate.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rail_right_arm_adapter_plate",
+   "object": "Rail | right_arm adapter plate",
+   "mesh": "meshes/rail_right_arm_adapter_plate.obj",
+   "nverts": 36,
+   "texture": "textures/rail_right_arm_adapter_plate.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_cross_beam",
+   "object": "Rig desk | cross beam",
+   "mesh": "meshes/rig_desk_cross_beam.obj",
+   "nverts": 36,
+   "texture": "textures/rig_desk_cross_beam.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_foot_0",
+   "object": "Rig desk | foot 0",
+   "mesh": "meshes/rig_desk_foot_0.obj",
+   "nverts": 324,
+   "texture": "textures/rig_desk_foot_0.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_foot_1",
+   "object": "Rig desk | foot 1",
+   "mesh": "meshes/rig_desk_foot_1.obj",
+   "nverts": 324,
+   "texture": "textures/rig_desk_foot_1.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_leg_column_0",
+   "object": "Rig desk | leg column 0",
+   "mesh": "meshes/rig_desk_leg_column_0.obj",
+   "nverts": 324,
+   "texture": "textures/rig_desk_leg_column_0.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_leg_column_1",
+   "object": "Rig desk | leg column 1",
+   "mesh": "meshes/rig_desk_leg_column_1.obj",
+   "nverts": 324,
+   "texture": "textures/rig_desk_leg_column_1.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_panel_bracket_0",
+   "object": "Rig desk | panel bracket 0",
+   "mesh": "meshes/rig_desk_panel_bracket_0.obj",
+   "nverts": 36,
+   "texture": "textures/rig_desk_panel_bracket_0.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Brackets | dark grey powder coat"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_panel_bracket_1",
+   "object": "Rig desk | panel bracket 1",
+   "mesh": "meshes/rig_desk_panel_bracket_1.obj",
+   "nverts": 36,
+   "texture": "textures/rig_desk_panel_bracket_1.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Brackets | dark grey powder coat"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_top",
+   "object": "Rig desk | top",
+   "mesh": "meshes/rig_desk_top.obj",
+   "nverts": 36,
+   "texture": "textures/rig_desk_top.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Rig desk | pale oak laminate top",
+    "Rig desk | laminate edge band"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_top_bracket_0",
+   "object": "Rig desk | top bracket 0",
+   "mesh": "meshes/rig_desk_top_bracket_0.obj",
+   "nverts": 36,
+   "texture": "textures/rig_desk_top_bracket_0.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "rig_desk_top_bracket_1",
+   "object": "Rig desk | top bracket 1",
+   "mesh": "meshes/rig_desk_top_bracket_1.obj",
+   "nverts": 36,
+   "texture": "textures/rig_desk_top_bracket_1.png",
+   "texture_size": 512,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Desk frame and brackets | dark metal (RoomKit satin blackened iron)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "side_wall_beige_left_of_the_door",
+   "object": "Side wall | beige, left of the door",
+   "mesh": "meshes/side_wall_beige_left_of_the_door.obj",
+   "nverts": 36,
+   "texture": "textures/side_wall_beige_left_of_the_door.png",
+   "texture_size": 2048,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Side wall | beige matte paint"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "side_wall_header_above_the_door",
+   "object": "Side wall | header above the door",
+   "mesh": "meshes/side_wall_header_above_the_door.obj",
+   "nverts": 36,
+   "texture": "textures/side_wall_header_above_the_door.png",
+   "texture_size": 1024,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Side wall | beige matte paint"
+   ],
+   "collections": [
+    "Background"
+   ]
+  },
+  {
+   "name": "zed_x_scene_camera_body",
+   "object": "ZED X scene camera | body",
+   "mesh": "meshes/zed_x_scene_camera_body.obj",
+   "nverts": 324,
+   "texture": "textures/zed_x_scene_camera_body.png",
+   "texture_size": 256,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Camera body | black plastic"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  },
+  {
+   "name": "zed_x_scene_camera_mount_bracket",
+   "object": "ZED X scene camera | mount bracket",
+   "mesh": "meshes/zed_x_scene_camera_mount_bracket.obj",
+   "nverts": 36,
+   "texture": "textures/zed_x_scene_camera_mount_bracket.png",
+   "texture_size": 128,
+   "rgba": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "emission": 1.0,
+   "lit": true,
+   "materials": [
+    "Rail and pole | aluminium extrusion (RoomKit brushed steel)"
+   ],
+   "collections": [
+    "Rig"
+   ]
+  }
+ ],
+ "lights": [
+  {
+   "name": "Ceiling LED panel 0",
+   "kind": "AREA",
+   "energy_w": 19.226547241210938,
+   "color": [
+    1.0,
+    0.9599999785423279,
+    0.9200000166893005
+   ],
+   "pos": [
+    -1.2999999523162842,
+    0.30000001192092896,
+    2.73799991607666
+   ],
+   "dir": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "size": [
+    0.6000000238418579,
+    1.2000000476837158
+   ]
+  },
+  {
+   "name": "Ceiling LED panel 1",
+   "kind": "AREA",
+   "energy_w": 19.226547241210938,
+   "color": [
+    1.0,
+    0.9599999785423279,
+    0.9200000166893005
+   ],
+   "pos": [
+    0.4000000059604645,
+    0.30000001192092896,
+    2.73799991607666
+   ],
+   "dir": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "size": [
+    0.6000000238418579,
+    1.2000000476837158
+   ]
+  },
+  {
+   "name": "Ceiling LED panel 2",
+   "kind": "AREA",
+   "energy_w": 19.226547241210938,
+   "color": [
+    1.0,
+    0.9599999785423279,
+    0.9200000166893005
+   ],
+   "pos": [
+    -3.0,
+    0.30000001192092896,
+    2.73799991607666
+   ],
+   "dir": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "size": [
+    0.6000000238418579,
+    1.2000000476837158
+   ]
+  },
+  {
+   "name": "Daylight behind glass partition",
+   "kind": "AREA",
+   "energy_w": 66.12000274658203,
+   "color": [
+    0.14149999618530273,
+    0.6639000177383423,
+    1.0
+   ],
+   "pos": [
+    -4.0,
+    3.4000000953674316,
+    2.700000047683716
+   ],
+   "dir": [
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "size": [
+    3.0,
+    2.200000047683716
+   ]
+  }
+ ],
+ "skipped": [],
+ "world_background": {
+  "color": [
+   0.550000011920929,
+   0.6000000238418579,
+   0.6200000047683716
+  ],
+  "strength": 0.42500001192092896
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "problem_name": "raiden_bimanual_tabletop_manipulation",
+ "fixtures": {
+  "table": [
+   "table"
+  ]
+ },
+ "regions": {},
+ "objects": {},
+ "textures": {},
+ "camera": {},
+ "lighting": {},
+ "styles": {},
+ "scene_properties": {},
+ "initial_state": [],
+ "goal_state": [
+  "and"
+ ],
+ "distractor_goal_specs": [],
+ "demonstration_states": [],
+ "language_instruction": [
+  "hold",
+  "both",
+  "arms",
+  "at",
+  "home"
+ ]
+}

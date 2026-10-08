@@ -1,0 +1,125 @@
+<mujoco model="yam_gripper">
+  <compiler angle="radian" meshdir="meshes"/>
+
+  <asset>
+    <material name="yam_finger_black" rgba="0.25 0.25 0.25 1"/>
+    <mesh name="yam_finger_l1" file="meshes/model2__14.stl"/>
+    <mesh name="yam_finger_l2" file="meshes/model2__15.stl"/>
+    <mesh name="yam_finger_r1" file="meshes/model2__16.stl"/>
+    <mesh name="yam_finger_r2" file="meshes/model2__17.stl"/>
+  </asset>
+
+  <default>
+    <default class="yam_finger">
+      <joint type="slide" armature="0.1" frictionloss="0.1"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="gripper_base" pos="0 0 0">
+      <site name="ft_frame" pos="0 0 0" size="0.01" group="1" rgba="1 0 0 0"/>
+
+      <!-- EEF reference frame (midpoint between fingertips) -->
+      <body name="eef" pos="0 0 0.0747">
+        <site name="grip_site" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1"/>
+        <site name="ee_x" pos="0.1 0 0" size="0.005 0.1" quat="0.707105 0 0.707108 0" rgba="1 0 0 0" type="cylinder" group="1"/>
+        <site name="ee_y" pos="0 0.1 0" size="0.005 0.1" quat="0.707105 0.707108 0 0" rgba="0 1 0 0" type="cylinder" group="1"/>
+        <site name="ee_z" pos="0 0 0.1" size="0.005 0.1" quat="1 0 0 0" rgba="0 0 1 0" type="cylinder" group="1"/>
+        <site name="grip_site_cylinder" pos="0 0 0" size="0.005 10" rgba="0 1 0 0.3" type="cylinder" group="1"/>
+      </body>
+
+      <!-- Left finger -->
+      <body name="link_left_finger" pos="-0.037 0.0392 0.0005" quat="1 0 1 0">
+        <inertial pos="-0.0192995 -0.0365902 0.039774"
+                  quat="0.757351 0.568898 -0.3199 0.0" mass="0.118"
+                  diaginertia="0.000159084 0.000154909 4.63655e-05"/>
+        <joint class="yam_finger" name="left_finger" range="-0.00205 0.045"/>
+        <!-- Visual meshes -->
+        <geom type="mesh" pos="0.171097 -0.203301 0.037" quat="1 -1 -1 -1"
+              mesh="yam_finger_l1" material="yam_finger_black" contype="0" conaffinity="0" group="1"/>
+        <geom type="mesh" pos="0.171097 -0.203301 0.037" quat="1 -1 -1 -1"
+              mesh="yam_finger_l2" material="yam_finger_black" contype="0" conaffinity="0" group="1"/>
+        <body name="lf_rot" quat="1 -1 -1 1" pos="0.0 -0.0392 0.037">
+          <!-- Collision geometry for rotation link -->
+          <geom type="capsule" size="0.01 0.03" pos="0.0 -0.02 0.012" quat="1 0 1 0"
+                group="0" name="lf_rot_col1"/>
+          <geom type="capsule" size="0.01 0.02" pos="-0.02 -0.01 0.032" quat="1 0 2.5 0"
+                group="0" name="lf_rot_col2"/>
+          <body name="lf_down" quat="1 0 0 0" pos="-0.044 0.0 0.0">
+            <!-- Collision geometry for distal link -->
+            <geom type="capsule" size="0.01 0.01" pos="0.0 -0.020 0.012" quat="1 -0.1 0 0"
+                  group="0" name="lf_down_col1"/>
+            <geom type="capsule" size="0.003 0.022" pos="0.005 -0.014 0.04" quat="1 -0.2 0 0"
+                  group="0" name="lf_down_col2"/>
+            <geom type="capsule" size="0.003 0.022" pos="-0.005 -0.014 0.04" quat="1 -0.2 0 0"
+                  group="0" name="lf_down_col3"/>
+            <geom type="box" size="0.006 0.002 0.04" pos="0 -0.0024 0.046" quat="1 0 0 0"
+                  friction="5 0.5 0.1" group="0" name="lf_pad1"/>
+            <geom type="box" size="0.006 0.002 0.039" pos="0.027 -0.0024 0.053" quat="1 0 2.5 0"
+                  friction="5 0.5 0.1" group="0" name="lf_pad2"/>
+            <!-- Sphere contact points along fingertip -->
+            <geom type="sphere" size="0.003" pos="0.003 -0.0004 0.078" friction="5 0.5 0.1" group="0" name="lf_tip1"/>
+            <geom type="sphere" size="0.003" pos="-0.003 -0.0004 0.078" friction="5 0.5 0.1" group="0" name="lf_tip2"/>
+            <geom type="sphere" size="0.003" pos="0.003 -0.0004 0.07" friction="5 0.5 0.1" group="0" name="lf_tip3"/>
+            <geom type="sphere" size="0.003" pos="-0.003 -0.0004 0.07" friction="5 0.5 0.1" group="0" name="lf_tip4"/>
+            <geom type="sphere" size="0.003" pos="0.003 -0.0004 0.06" friction="5 0.5 0.1" group="0" name="lf_tip5"/>
+            <geom type="sphere" size="0.003" pos="-0.003 -0.0004 0.06" friction="5 0.5 0.1" group="0" name="lf_tip6"/>
+          </body>
+        </body>
+      </body>
+
+      <!-- Right finger -->
+      <body name="link_right_finger" pos="0.037 -0.0392 0.0005" quat="1 0 1 0">
+        <inertial pos="-0.0192995 0.0365902 -0.039774"
+                  quat="-0.757351 0.568898 -0.3199 0" mass="0.118"
+                  diaginertia="0.000159084 0.000154909 4.63655e-05"/>
+        <joint class="yam_finger" name="right_finger" range="-0.045 0.00205"/>
+        <!-- Visual meshes -->
+        <geom type="mesh" pos="0.171097 -0.124901 -0.037" quat="1 -1 -1 -1"
+              mesh="yam_finger_r1" material="yam_finger_black" contype="0" conaffinity="0" group="1"/>
+        <geom type="mesh" pos="0.171097 -0.124901 -0.037" quat="1 -1 -1 -1"
+              mesh="yam_finger_r2" material="yam_finger_black" contype="0" conaffinity="0" group="1"/>
+        <body name="rf_rot" quat="1 1 -1 -1" pos="0.0 0.0392 -0.037">
+          <!-- Collision geometry for rotation link -->
+          <geom type="capsule" size="0.01 0.03" pos="0.0 -0.02 0.012" quat="1 0 1 0"
+                group="0" name="rf_rot_col1"/>
+          <geom type="capsule" size="0.01 0.02" pos="0.02 -0.01 0.032" quat="1 0 -2.5 0"
+                group="0" name="rf_rot_col2"/>
+          <body name="rf_down" quat="1 0 0 0" pos="0.044 0.0 0.0">
+            <!-- Collision geometry for distal link -->
+            <geom type="capsule" size="0.01 0.01" pos="0.0 -0.020 0.012" quat="1 -0.1 0 0"
+                  group="0" name="rf_down_col1"/>
+            <geom type="capsule" size="0.003 0.022" pos="0.005 -0.014 0.04" quat="1 -0.2 0 0"
+                  group="0" name="rf_down_col2"/>
+            <geom type="capsule" size="0.003 0.022" pos="-0.005 -0.014 0.04" quat="1 -0.2 0 0"
+                  group="0" name="rf_down_col3"/>
+            <geom type="box" size="0.006 0.002 0.04" pos="0 -0.0024 0.046" quat="1 0 0 0"
+                  friction="5 0.5 0.1" group="0" name="rf_pad1"/>
+            <geom type="box" size="0.006 0.002 0.039" pos="-0.027 -0.0024 0.053" quat="1 0 -2.5 0"
+                  friction="5 0.5 0.1" group="0" name="rf_pad2"/>
+            <!-- Sphere contact points along fingertip -->
+            <geom type="sphere" size="0.003" pos="0.003 -0.0004 0.078" friction="5 0.5 0.1" group="0" name="rf_tip1"/>
+            <geom type="sphere" size="0.003" pos="-0.003 -0.0004 0.078" friction="5 0.5 0.1" group="0" name="rf_tip2"/>
+            <geom type="sphere" size="0.003" pos="0.003 -0.0004 0.07" friction="5 0.5 0.1" group="0" name="rf_tip3"/>
+            <geom type="sphere" size="0.003" pos="-0.003 -0.0004 0.07" friction="5 0.5 0.1" group="0" name="rf_tip4"/>
+            <geom type="sphere" size="0.003" pos="0.003 -0.0004 0.06" friction="5 0.5 0.1" group="0" name="rf_tip5"/>
+            <geom type="sphere" size="0.003" pos="-0.003 -0.0004 0.06" friction="5 0.5 0.1" group="0" name="rf_tip6"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <equality>
+    <joint joint1="left_finger" joint2="right_finger" polycoef="0 -1 0 0 0"/>
+  </equality>
+
+  <actuator>
+    <position name="gripper" joint="left_finger" ctrlrange="0.0 0.05" kp="100" kv="10"/>
+  </actuator>
+
+  <sensor>
+    <force name="force_ee" site="ft_frame"/>
+    <torque name="torque_ee" site="ft_frame"/>
+  </sensor>
+</mujoco>

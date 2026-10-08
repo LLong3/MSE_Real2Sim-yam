@@ -1,0 +1,81 @@
+<mujoco model="raiden_yam_gripper_umi_ft">
+  
+  <compiler angle="radian" meshdir="meshes" />
+
+  <asset>
+    <material name="linear_4310_black" rgba="0.25 0.25 0.25 1" />
+    <mesh name="linear_4310_housing" file="meshes/linear_4310/gripper.stl" />
+    <mesh name="linear_4310_tip_left" file="meshes/linear_4310/tip_left.stl" />
+    <mesh name="linear_4310_tip_right" file="meshes/linear_4310/tip_right.stl" />
+    
+    <mesh name="lf_finger_hull" vertex="-0.01804 -0.01001 -0.04791 -0.01804 -0.01001 -0.06829 -0.01804 0.05799 -0.04791 -0.01804 0.05799 -0.06828 -0.06544 0.00737 -0.04504 -0.06544 0.00737 -0.05242 -0.06544 0.04062 -0.04504 -0.06544 0.04062 -0.05242 -0.09014 0.01846 -0.04479 -0.09014 0.01846 -0.0469 -0.09014 0.02956 -0.04479 -0.09014 0.02956 -0.0469" />
+    <mesh name="rf_finger_hull" vertex="-0.05799 -0.01804 -0.06828 -0.05799 -0.01804 -0.04791 0.01001 -0.01804 -0.06828 0.01001 -0.01804 -0.04791 -0.04062 -0.06544 -0.05242 -0.04062 -0.06544 -0.04504 -0.00737 -0.06544 -0.05242 -0.00737 -0.06544 -0.04504 -0.0296 -0.09014 -0.04691 -0.0296 -0.09014 -0.04479 -0.01843 -0.09014 -0.04691 -0.01843 -0.09014 -0.04479" />
+  <mesh name="umi_tip_left_pad" file="meshes/umi_ft/tip_left_pad.stl" /><mesh name="umi_tip_left_face" file="meshes/umi_ft/tip_left_face.stl" /><mesh name="umi_tip_left_clamp" file="meshes/umi_ft/tip_left_clamp.stl" /><mesh name="umi_tip_left_white" file="meshes/umi_ft/tip_left_white.stl" /><mesh name="umi_tip_left_black" file="meshes/umi_ft/tip_left_black.stl" /><mesh name="umi_tip_left_carriage" file="meshes/umi_ft/tip_left_carriage.stl" /><mesh name="umi_tip_left_pad_collision" file="meshes/umi_ft/tip_left_pad_collision.stl" /><mesh name="umi_tip_right_pad" file="meshes/umi_ft/tip_right_pad.stl" /><mesh name="umi_tip_right_face" file="meshes/umi_ft/tip_right_face.stl" /><mesh name="umi_tip_right_clamp" file="meshes/umi_ft/tip_right_clamp.stl" /><mesh name="umi_tip_right_white" file="meshes/umi_ft/tip_right_white.stl" /><mesh name="umi_tip_right_black" file="meshes/umi_ft/tip_right_black.stl" /><mesh name="umi_tip_right_carriage" file="meshes/umi_ft/tip_right_carriage.stl" /><mesh name="umi_tip_right_pad_collision" file="meshes/umi_ft/tip_right_pad_collision.stl" /></asset>
+
+  <default>
+    <default class="yam_finger">
+      
+      <joint type="slide" armature="0.1" frictionloss="0.1" damping="160" />
+      
+      <geom group="0" friction="0.6 0.5 0.1" />
+    </default>
+    <default class="linear_4310_visual">
+      <geom type="mesh" material="linear_4310_black" contype="0" conaffinity="0" group="1" />
+    </default>
+  </default>
+
+  <worldbody>
+    <body name="gripper_base" pos="0 0 0">
+      <site name="ft_frame" pos="0 0 0" size="0.01" group="1" rgba="1 0 0 0" />
+
+      
+      <body name="eef" pos="0.0041 0.008 0.0771">
+        <site name="grip_site" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1" />
+        <site name="ee_x" pos="0.1 0 0" size="0.005 0.1" quat="0.707105 0 0.707108 0" rgba="1 0 0 0" type="cylinder" group="1" />
+        <site name="ee_y" pos="0 0.1 0" size="0.005 0.1" quat="0.707105 0.707108 0 0" rgba="0 1 0 0" type="cylinder" group="1" />
+        <site name="ee_z" pos="0 0 0.1" size="0.005 0.1" quat="1 0 0 0" rgba="0 0 1 0" type="cylinder" group="1" />
+        <site name="grip_site_cylinder" pos="0 0 0" size="0.005 10" rgba="0 1 0 0.3" type="cylinder" group="1" />
+      </body>
+
+      
+      <body name="linear_4310" pos="0.0041 0.008 -0.0576" quat="0 -0.7071068 0.7071068 0">
+        
+        <inertial pos="0 0 0" mass="1e-6" diaginertia="1e-9 1e-9 1e-9" />
+        <geom class="linear_4310_visual" mesh="linear_4310_housing" pos="-0.014 -0.0463995 0.0731" />
+        
+        <geom type="box" size="0.0325 0.051 0.0065" pos="0 0 -0.052" group="0" name="rail_col" />
+
+        <body name="tip_left" pos="-0.0238981 0.0450619 -0.0545599" quat="0.499998 -0.5 -0.5 -0.500002">
+          <inertial pos="-0.03652 0.01392 -0.05058" mass="0.1016" fullinertia="9.0189e-05 2.1182e-04 1.5839e-04 2.9657e-05 -6.0407e-05 2.4805e-05" />
+          <joint class="yam_finger" name="left_finger" axis="0 0 -1" range="0 0.0475" />
+          <geom class="yam_finger" type="box" size="0.0045 0.034 0.03579" pos="-0.01344 0.02399 -0.0325" name="lf_carriage" />
+        <geom name="lf_umi_pad_visual" type="mesh" mesh="umi_tip_left_pad" rgba="0.907 0.507 0.143 1" contype="0" conaffinity="0" group="1" /><geom name="lf_umi_face_visual" type="mesh" mesh="umi_tip_left_face" rgba="0.19 0.19 0.19 1" contype="0" conaffinity="0" group="1" /><geom name="lf_umi_clamp_visual" type="mesh" mesh="umi_tip_left_clamp" rgba="0.835 0.771 0.229 1" contype="0" conaffinity="0" group="1" /><geom name="lf_umi_white_visual" type="mesh" mesh="umi_tip_left_white" rgba="0.955 0.955 0.945 1" contype="0" conaffinity="0" group="1" /><geom name="lf_umi_black_visual" type="mesh" mesh="umi_tip_left_black" rgba="0.221 0.221 0.235 1" contype="0" conaffinity="0" group="1" /><geom name="lf_umi_carriage_visual" type="mesh" mesh="umi_tip_left_carriage" rgba="0.293 0.297 0.304 1" contype="0" conaffinity="0" group="1" /><geom class="yam_finger" type="mesh" mesh="umi_tip_left_pad_collision" name="lf_tip" /><geom class="yam_finger" type="box" pos="-0.06336 0.02390 -0.07721" size="0.04892 0.01450 0.01303" name="lf_body_outer" /><geom class="yam_finger" type="box" pos="-0.02674 0.02390 -0.05591" size="0.01230 0.01450 0.00828" name="lf_body_inner" /></body>
+
+        <body name="tip_right" pos="0.0238981 -0.0450619 -0.0545599" quat="0.707105 0.707108 0 0">
+          <inertial pos="-0.01410 -0.03652 -0.05058" mass="0.1016" fullinertia="2.1181e-04 9.0550e-05 1.5875e-04 -2.9544e-05 -2.5184e-05 -6.0406e-05" />
+          <joint class="yam_finger" name="right_finger" axis="0 0 -1" range="0 0.0475" />
+          <geom class="yam_finger" type="box" size="0.034 0.0045 0.03579" pos="-0.02399 -0.01344 -0.0325" name="rf_carriage" />
+        <geom name="rf_umi_pad_visual" type="mesh" mesh="umi_tip_right_pad" rgba="0.907 0.507 0.143 1" contype="0" conaffinity="0" group="1" /><geom name="rf_umi_face_visual" type="mesh" mesh="umi_tip_right_face" rgba="0.19 0.19 0.19 1" contype="0" conaffinity="0" group="1" /><geom name="rf_umi_clamp_visual" type="mesh" mesh="umi_tip_right_clamp" rgba="0.835 0.771 0.229 1" contype="0" conaffinity="0" group="1" /><geom name="rf_umi_white_visual" type="mesh" mesh="umi_tip_right_white" rgba="0.955 0.955 0.945 1" contype="0" conaffinity="0" group="1" /><geom name="rf_umi_black_visual" type="mesh" mesh="umi_tip_right_black" rgba="0.221 0.221 0.235 1" contype="0" conaffinity="0" group="1" /><geom name="rf_umi_carriage_visual" type="mesh" mesh="umi_tip_right_carriage" rgba="0.293 0.297 0.304 1" contype="0" conaffinity="0" group="1" /><geom class="yam_finger" type="mesh" mesh="umi_tip_right_pad_collision" name="rf_tip" /><geom class="yam_finger" type="box" pos="-0.02390 -0.06336 -0.07721" size="0.01450 0.04892 0.01303" name="rf_body_outer" /><geom class="yam_finger" type="box" pos="-0.02390 -0.02674 -0.05591" size="0.01450 0.01230 0.00828" name="rf_body_inner" /></body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="tip_left" body2="tip_right" />
+  </contact>
+
+  <equality>
+    
+    <joint joint1="left_finger" joint2="right_finger" polycoef="0 1 0 0 0" solref="0.004 1" />
+  </equality>
+
+  <actuator>
+    
+    <position name="gripper" joint="left_finger" ctrlrange="0 0.0475" kp="10000" kv="35" forcerange="-50 50" />
+  </actuator>
+
+  <sensor>
+    <force name="force_ee" site="ft_frame" />
+    <torque name="torque_ee" site="ft_frame" />
+  </sensor>
+</mujoco>

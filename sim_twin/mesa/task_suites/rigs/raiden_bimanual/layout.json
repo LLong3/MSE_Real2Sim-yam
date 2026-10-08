@@ -1,0 +1,163 @@
+{
+ "frame": "values named *_metric are in the AHa-3D metric frame (rig.json world_from_metric)",
+ "room": {
+  "manifest": "room/room.json",
+  "floor_z_metric": 0.0,
+  "source": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t145557z-mujoco-bridge-624bd10c/scripts/export_room.py on /home/frank/robot/aha-3d/scenes/yam_bimanual_rig/blender/yam_rig_twin_v3.blend (visual only; OBJ metric frame; textures are sRGB PNG bakes of the camera-seen radiance (Cycles: emission + direct + indirect diffuse, glossy on metals; arms hidden; exposure +0.673 stops, Standard view): show them unlit (emission 1); glass stays a flat transparent rgba)"
+ },
+ "lights": {
+  "headlight": {
+   "ambient": [
+    0.381,
+    0.381,
+    0.381
+   ],
+   "diffuse": [
+    0,
+    0,
+    0
+   ],
+   "specular": [
+    0,
+    0,
+    0
+   ]
+  },
+  "spot_diffuse": 0.229,
+  "spot_specular": 0.05,
+  "spot_cutoff_deg": 80,
+  "spot_exponent": 1,
+  "spots": [
+   {
+    "name": "ceiling_0",
+    "pos_metric": [
+     -1.3,
+     0.3,
+     2.738
+    ],
+    "dir_metric": [
+     0,
+     0,
+     -1
+    ],
+    "colour": [
+     1.0,
+     0.96,
+     0.92
+    ],
+    "castshadow": false
+   },
+   {
+    "name": "ceiling_1",
+    "pos_metric": [
+     0.4,
+     0.3,
+     2.738
+    ],
+    "dir_metric": [
+     0,
+     0,
+     -1
+    ],
+    "colour": [
+     1.0,
+     0.96,
+     0.92
+    ],
+    "castshadow": false
+   },
+   {
+    "name": "ceiling_2",
+    "pos_metric": [
+     -3.0,
+     0.3,
+     2.738
+    ],
+    "dir_metric": [
+     0,
+     0,
+     -1
+    ],
+    "colour": [
+     1.0,
+     0.96,
+     0.92
+    ],
+    "castshadow": false
+   }
+  ],
+  "source": "the room is baked (lightmaps, shown unlit), so these lights only light the arms, claws and later the task objects: the three Blender v3 ceiling LED panels (area lights) as MuJoCo spot lights, no shadows (MuJoCo's hard shadows of these distant lights throw the arms onto the wall); one scale for the ambient and the spots, set in phase 1 from the claw colours in the real scene image (the run's scripts/calib_claws.py)"
+ },
+ "background": {
+  "skybox_rgb": [
+   0.55,
+   0.6,
+   0.62
+  ]
+ },
+ "room_emission": {
+  "back_wall_end_return": 0.469,
+  "back_wall_painted": 0.482,
+  "camera_pole_aluminium_extrusion": 0.619,
+  "camera_pole_base_gusset": 0.619,
+  "ceiling_led_panel_0": 0.619,
+  "ceiling_led_panel_1": 0.619,
+  "ceiling_led_panel_2": 0.619,
+  "ceiling_tiles": 0.619,
+  "door_card_reader_lock_body": 0.619,
+  "door_latch_side_jamb": 0.619,
+  "door_lever_handle": 0.619,
+  "door_lever_handle_neck": 0.0,
+  "door_white_jamb_at_the_glass_end": 0.619,
+  "door_wood_leaf": 0.619,
+  "floor_carpet": 0.516,
+  "glass_a_frosted_band": 0.416,
+  "glass_frame_ceiling_channel": 0.619,
+  "glass_frame_floor_channel": 0.329,
+  "glass_frame_mullion_post": 0.439,
+  "glass_frame_wall_end_jamb": 0.619,
+  "monitor_desk_items_black_cable_bundle": 0.347,
+  "monitor_desk_items_black_device": 0.368,
+  "monitor_desk_items_grey_small_item": 0.0,
+  "monitor_desk_items_white_small_item": 0.312,
+  "monitor_desk_foot_0": 0.619,
+  "monitor_desk_foot_1": 0.619,
+  "monitor_desk_leg_column_0": 0.385,
+  "monitor_desk_leg_column_1": 0.619,
+  "monitor_desk_side_rail_0": 0.541,
+  "monitor_desk_side_rail_1": 0.619,
+  "monitor_desk_top": 0.305,
+  "monitors_monitor_arm_segment_0": 0.367,
+  "monitors_monitor_foot": 0.619,
+  "monitors_monitor_screen": 0.619,
+  "monitors_monitor_stand": 0.619,
+  "monitors_privacy_panel": 0.364,
+  "power_unit_desk_outlet_box": 0.358,
+  "rail_c_clamp_0_bottom_jaw": 0.619,
+  "rail_c_clamp_0_screw": 0.619,
+  "rail_c_clamp_0_spine": 0.155,
+  "rail_c_clamp_0_top_jaw": 0.619,
+  "rail_c_clamp_1_bottom_jaw": 0.619,
+  "rail_c_clamp_1_screw": 0.619,
+  "rail_c_clamp_1_spine": 0.619,
+  "rail_c_clamp_1_top_jaw": 0.619,
+  "rail_t_slot_extrusion": 0.619,
+  "rail_left_arm_adapter_plate": 0.619,
+  "rail_right_arm_adapter_plate": 0.619,
+  "rig_desk_cross_beam": 0.619,
+  "rig_desk_foot_0": 0.619,
+  "rig_desk_foot_1": 0.619,
+  "rig_desk_leg_column_0": 0.619,
+  "rig_desk_leg_column_1": 0.619,
+  "rig_desk_panel_bracket_0": 0.457,
+  "rig_desk_panel_bracket_1": 0.444,
+  "rig_desk_top": 0.3,
+  "rig_desk_top_bracket_0": 0.619,
+  "rig_desk_top_bracket_1": 0.619,
+  "side_wall_beige_left_of_the_door": 0.619,
+  "side_wall_header_above_the_door": 0.619,
+  "zed_x_scene_camera_body": 0.619,
+  "zed_x_scene_camera_mount_bracket": 0.619,
+  "source": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t145557z-mujoco-bridge-624bd10c/mujoco/room_emission.json: 1 - the mean MuJoCo light factor on each baked geom (three rig views; unseen geoms 1 - ambient), measured at ambient 0.381, spot 0.229: the lightmaps then render as baked while the lights still shade the arms and objects. Redo after changing the lights"
+ }
+}

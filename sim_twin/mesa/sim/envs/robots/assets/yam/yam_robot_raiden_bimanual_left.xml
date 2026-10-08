@@ -1,0 +1,115 @@
+<mujoco model="yam">
+  <compiler angle="radian" meshdir="meshes" />
+
+  <actuator>
+    
+    <motor ctrllimited="true" ctrlrange="-28.0 28.0" joint="joint1" name="torq_j1" />
+    <motor ctrllimited="true" ctrlrange="-28.0 28.0" joint="joint2" name="torq_j2" />
+    <motor ctrllimited="true" ctrlrange="-28.0 28.0" joint="joint3" name="torq_j3" />
+    <motor ctrllimited="true" ctrlrange="-10.0 10.0" joint="joint4" name="torq_j4" />
+    <motor ctrllimited="true" ctrlrange="-10.0 10.0" joint="joint5" name="torq_j5" />
+    <motor ctrllimited="true" ctrlrange="-10.0 10.0" joint="joint6" name="torq_j6" />
+  </actuator>
+
+  <asset>
+    <material name="yam_black" rgba="0.25 0.25 0.25 1" />
+    <material name="yam_white" rgba="0.534 0.534 0.534 1" emission="0.4" />
+
+    <mesh name="yam_base" file="meshes/model2.stl" />
+    <mesh name="yam_link1" file="meshes/model2__2.stl" />
+    <mesh name="yam_link2_a" file="meshes/model2__3.stl" />
+    <mesh name="yam_link2_b" file="meshes/model2__4.stl" />
+    <mesh name="yam_link2_c" file="meshes/model2__5.stl" />
+    <mesh name="yam_link3_a" file="meshes/model2__6.stl" />
+    <mesh name="yam_link3_b" file="meshes/model2__7.stl" />
+    <mesh name="yam_link3_c" file="meshes/model2__8.stl" />
+    <mesh name="yam_link3_d" file="meshes/model2__9.stl" />
+    <mesh name="yam_link4" file="meshes/model2__10.stl" />
+    <mesh name="yam_link5" file="meshes/model2__11.stl" />
+    <mesh name="yam_link6_a" file="meshes/model2__12.stl" />
+    <mesh name="yam_link6_b" file="meshes/model2__13.stl" />
+  </asset>
+
+  <worldbody>
+    <body name="base" pos="0 0 0">
+      
+      <camera mode="fixed" name="robotview" pos="1.0 0 0.4" quat="0.653 0.271 0.271 0.653" />
+      <inertial diaginertia="0 0 0" mass="0" pos="0 0 0" />
+      
+      <body name="arm" pos="0 0 0">
+        <site name="right_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2" />
+        <inertial pos="0 0 0.03" mass="1.0" diaginertia="0.01 0.01 0.01" />
+        
+        <geom type="mesh" mesh="yam_base" pos="0.0001 0 0.0092" quat="1 0 0 1" material="yam_black" contype="0" conaffinity="0" group="1" />
+        
+        <geom type="capsule" size="0.033 0.01" pos="0.0001 0 0.0358" group="0" />
+
+        <body name="link_1" pos="0 0 0.067" quat="1 0 0 1">
+          <inertial pos="0.00261779 -0.00744083 0.0237251" quat="0.300983 0.642522 -0.365838 -0.602277" mass="0.106654" diaginertia="0.00014236 0.000112259 4.96415e-05" />
+          <joint name="joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.61799 3.05433" armature="0.23" frictionloss="0.94" solreffriction="0.004 1" solimpfriction="0.999 0.9999 0.001 0.5 2" />
+          
+          <geom type="mesh" mesh="yam_link1" pos="-9.947384e-05 2.34355e-07 -0.0588" material="yam_black" contype="0" conaffinity="0" group="1" />
+          
+          <geom type="mesh" mesh="yam_link1" group="0" name="link1_collision" pos="-0.0001 0 0.0044" />
+
+          <body name="link_2" pos="0.0329 -0.02 0.0455" quat="1 1 1 1">
+            <inertial pos="0.129165 0.000134624 -0.0321243" quat="0.499977 0.500007 0.500102 0.499914" mass="1.50434" diaginertia="0.0150206 0.0149494 0.000819291" />
+            <joint name="joint2" pos="0 0 0" axis="0 0 1" limited="true" range="0 3.66519" armature="0.23" frictionloss="1.7" ref="-0.077701895" solreffriction="0.004 1" solimpfriction="0.999 0.9999 0.001 0.5 2" />
+            
+            <geom type="mesh" mesh="yam_link2_a" pos="0.0199992 -0.104 -0.03222447" quat="1 -1 -1 -1" material="yam_black" contype="0" conaffinity="0" group="1" />
+            <geom type="mesh" mesh="yam_link2_b" pos="0.0199992 -0.104 -0.03222447" quat="1 -1 -1 -1" material="yam_black" contype="0" conaffinity="0" group="1" />
+            <geom type="mesh" mesh="yam_link2_c" pos="0.0199992 -0.104 -0.03222447" quat="1 -1 -1 -1" material="yam_white" contype="0" conaffinity="0" group="1" />
+            
+            <geom type="capsule" size="0.032 0.11" pos="0.13 0.0001 -0.0322" quat="1 0 1 0" group="0" name="link2_collision_a" />
+            <geom type="capsule" size="0.033 0.02" pos="0 0.0001 -0.0322" group="0" name="link2_collision_b" />
+            <geom type="capsule" size="0.033 0.025" pos="0.265 0.0001 -0.0322" group="0" name="link2_collision_c" />
+
+            <body name="link_3" pos="0.264 0 -0.06375" quat="0 1 0 0">
+              <inertial pos="-0.135083 -0.0556042 -0.034053" quat="0.459162 0.579115 -0.406698 -0.537022" mass="1.00613" diaginertia="0.00783563 0.00781271 0.000897477" />
+              <joint name="joint3" pos="0 0 0" axis="0 0 1" limited="true" range="0 3.66519" armature="0.23" frictionloss="1.5" ref="0.005901792" solreffriction="0.004 1" solimpfriction="0.999 0.9999 0.001 0.5 2" />
+              
+              <geom type="mesh" mesh="yam_link3_a" pos="-0.244101 0.103501 -0.03437553" quat="1 1 1 -1" material="yam_black" contype="0" conaffinity="0" group="1" />
+              <geom type="mesh" mesh="yam_link3_b" pos="-0.244101 0.103501 -0.03437553" quat="1 1 1 -1" material="yam_black" contype="0" conaffinity="0" group="1" />
+              <geom type="mesh" mesh="yam_link3_c" pos="-0.244101 0.103501 -0.03437553" quat="1 1 1 -1" material="yam_white" contype="0" conaffinity="0" group="1" />
+              <geom type="mesh" mesh="yam_link3_d" pos="-0.244101 0.103501 -0.03437553" quat="1 1 1 -1" material="yam_black" contype="0" conaffinity="0" group="1" />
+              
+              <geom type="capsule" size="0.034 0.12" pos="-0.1401 -0.0606 -0.0344" quat="1 0 1 0" group="0" name="link3_collision_a" />
+              <geom type="capsule" size="0.034 0.015" pos="-0.2401 -0.0606 -0.0344" group="0" name="link3_collision_b" />
+
+              <body name="link_4" pos="-0.244999 -0.0600003 -0.00205" quat="1 0 0 0">
+                <inertial pos="-0.0570682 -0.0543523 -0.033224" quat="0.269577 0.181478 0.705361 0.629968" mass="0.477983" diaginertia="0.000837484 0.000810265 0.000302875" />
+                <joint name="joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" armature="0.05" frictionloss="0.27" solreffriction="0.004 1" solimpfriction="0.999 0.9999 0.001 0.5 2" />
+                
+                <geom type="mesh" mesh="yam_link4" pos="0.00070023 0.165001 -0.03227553" quat="1 1 1 -1" material="yam_black" contype="0" conaffinity="0" group="1" />
+                
+                <geom type="capsule" size="0.03 0.015" pos="-0.0733 -0.0591 -0.0323" quat="1 1 0 0" group="0" name="link4_collision" />
+
+                <body name="link_5" pos="-0.0703851 -0.0403003 -0.0323887" quat="1 -1 1 1">
+                  <inertial pos="3.58801e-05 0.00717414 0.0375853" mass="0.412986" diaginertia="0.000225069 0.000200382 0.000173719" quat="0.00303569 0.00301686 0.411243 0.911516" />
+                  <joint name="joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" armature="0.05" frictionloss="0.15" solreffriction="0.004 1" solimpfriction="0.999 0.9999 0.001 0.5 2" />
+                  
+                  <geom type="mesh" mesh="yam_link5" pos="0 -0.0687971 0.204701" quat="1.32679e-06 1 0 0" material="yam_black" contype="0" conaffinity="0" group="1" />
+                  
+                  <geom type="capsule" size="0.030 0.015" pos="0 0.0312 0.0406" quat="1 1 0 0" group="0" name="link5_collision" />
+
+                  <body name="link_6" pos="0 0.0419481 0.0404996" quat="1 -1 0 0">
+                    <inertial pos="-0.000249496 3.51579e-05 0.0293135" quat="0.529229 -0.466091 0.478577 -0.523107" mass="0.566496" diaginertia="0.000419518 0.000378632 0.000332201" />
+                    <joint name="joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.0944" armature="0.05" frictionloss="0.14" ref="-0.06009176" solreffriction="0.004 1" solimpfriction="0.999 0.9999 0.001 0.5 2" />
+                    
+                    <geom type="capsule" size="0.030 0.005" pos="0 0.0 0.03" quat="1 0 0 1" group="0" name="link6_collision" />
+
+                    
+                    <body name="right_hand" pos="-0.0041 -0.008 0.0576" quat="1 0 0 0">
+                      <inertial pos="0.007270 0.092603 0.003682" mass="0.287" diaginertia="1e-7 1e-7 1e-7" />
+                      <camera mode="fixed" name="eye_in_hand" pos="0.007270 0.092603 0.003682" quat="0.004852 0.009274 0.970457 0.241046" resolution="960 600" focalpixel="338.1051 361.2907" principalpixel="13.3474 2.6820" sensorsize="0.009600 0.006000" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+<contact><exclude body1="link_1" body2="link_3" /></contact></mujoco>
