@@ -76,7 +76,8 @@ def main():
     from PIL import Image
     from sam3.model_builder import build_sam3_image_model
     from sam3.model.sam3_image_processor import Sam3Processor
-    model = build_sam3_image_model(checkpoint_path=str(a.runtime / 'checkpoints/sam3.pt'), load_from_HF=False, device='cuda', compile=False)
+    runtime = json.loads((a.runtime / 'runtime.json').read_text())
+    model = build_sam3_image_model(checkpoint_path=str(a.runtime / runtime.get('checkpoint', 'checkpoints/sam3.pt')), load_from_HF=False, device='cuda', compile=False)
     processor = Sam3Processor(model, confidence_threshold=a.threshold)
     outputs = {k: [] for k in prompts}
     records = []
@@ -106,7 +107,7 @@ def main():
         records.append({'source_frame': int(fid), 'detections': counts})
         print(json.dumps(records[-1]), flush=True)
     np.savez_compressed(a.out / 'masks.npz', frame_indices=np.array(selected), **{k: np.stack(v) for k, v in outputs.items()})
-    meta = {'schema_version': 2, 'status': 'complete', 'review_status': 'pending_visual_review', 'bundle': str(a.bundle.resolve()), 'prompts': prompts, 'threshold': a.threshold, 'model': 'SAM3', 'runtime': json.loads((a.runtime / 'runtime.json').read_text()), 'frames': records, 'run_id': os.environ.get('INDOOR_RUN_ID'), 'policy': 'Union all detected instances per text class; zero detections are observed model output, not proof of absence. No temporal propagation. Masks do not establish geometric reliability or missing-space occupancy.'}
+    meta = {'schema_version': 2, 'status': 'complete', 'review_status': 'pending_visual_review', 'bundle': str(a.bundle.resolve()), 'prompts': prompts, 'threshold': a.threshold, 'model': 'SAM3', 'runtime': runtime, 'frames': records, 'run_id': os.environ.get('INDOOR_RUN_ID'), 'policy': 'Union all detected instances per text class; zero detections are observed model output, not proof of absence. No temporal propagation. Masks do not establish geometric reliability or missing-space occupancy.'}
     (a.out / 'manifest.json').write_text(json.dumps(meta, indent=2) + '\n')
 
 if __name__ == '__main__':

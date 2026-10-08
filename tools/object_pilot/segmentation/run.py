@@ -40,12 +40,13 @@ def main():
     source = json.loads(args.manifest.read_text())
     prompts = json.loads(args.prompts.read_text()) if args.prompts else {}
     started = time.perf_counter()
-    model = build_sam3_image_model(checkpoint_path=str(args.runtime/'checkpoints/sam3.pt'),
+    runtime = json.loads((args.runtime/'runtime.json').read_text())
+    model = build_sam3_image_model(checkpoint_path=str(args.runtime/runtime.get('checkpoint', 'checkpoints/sam3.pt')),
                                   load_from_HF=False, device='cuda', compile=False)
     processor = Sam3Processor(model, confidence_threshold=.3)
     torch.cuda.synchronize()
     report = {'schema_version': 1, 'model': 'SAM3', 'model_load_seconds': time.perf_counter()-started,
-              'runtime': json.loads((args.runtime/'runtime.json').read_text()),
+              'runtime': runtime,
               'run_id': os.environ.get('INDOOR_RUN_ID'), 'gpu': torch.cuda.get_device_name(),
               'source_manifest': str(args.manifest.resolve()), 'code_sha256': digest(__file__),
               'status': 'pending_visual_review', 'objects': []}
