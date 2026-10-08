@@ -1,0 +1,40 @@
+PASS completeness: no null/NaN outside rail profiles
+PASS section inputs present and non-empty
+PASS section conventions present and non-empty
+PASS section transform_reference_to_metric present and non-empty
+PASS section residuals_final present and non-empty
+PASS section alternatives present and non-empty
+PASS section desk present and non-empty
+PASS section planes present and non-empty
+PASS section arms present and non-empty
+PASS section arm_spacing present and non-empty
+PASS section rail present and non-empty
+PASS section scene_camera present and non-empty
+PASS M = [diag(S) | t]
+PASS residuals_final reproduced from anchors + M  [max |diff| 0.00e+00 m over 15 values]
+PASS camera rotation orthonormal, det +1
+PASS blender = opencv @ diag(1,-1,-1,1)
+PASS OpenCV x axis ~ +X (camera looks at the wall, +Y)  [x_cam=[ 0.999 -0.    -0.037], z_cam=[-0.027  0.679 -0.734]]
+PASS position / optical axis / heights consistent
+PASS pitch_down_deg = asin(-z_cam.z)
+PASS K fields and FOV consistent
+PASS K equals the ZED SDK left-eye K (zed_metric)
+PASS Blender lens in note  [13.7258 mm]
+PASS desk back-left corner reprojects onto the ZED image corner  [0.00 px]
+PASS desk back-right corner reprojects onto the ZED image corner  [0.00 px]
+PASS left_arm world_from_base = [Rz(yaw) | base]
+PASS right_arm world_from_base = [Rz(yaw) | base]
+PASS arm_spacing consistent
+PASS desk corners / size / planes consistent
+PASS back wall vertical, normal -Y
+PASS desk gap = tape_0929_b gap, within its bounds  [35.0 mm]
+PASS camera horizontal distance to the back wall consistent
+PASS ZED 0928: wood/wall hue boundary on the projected desk back edge  [median +0.09 px, 60 columns (1 px ~ 3.5 mm)]
+PASS ZED 0929: wood/wall hue boundary on the projected desk back edge  [median -0.53 px, 60 columns (1 px ~ 3.5 mm)]
+PASS 35 mm gap spans 8-12 px above the edge in the ZED image  [10.0 px, 10.1 px]
+PASS ZED wall-depth check reproduced against planes.back_wall  [median 46.2 mm, 0-10 cm above the desk -1.8 mm]
+PASS ZED depth next to the desk (0-10 cm) on the tape plane within 10 mm  [-1.8 mm]
+PASS rail length = tape_0929_b  [1.0000 m]
+PASS rail ends outside the arm bases as stated (0.1-0.3 m each)  [0.1895, 0.1895]
+PASS rail inside the desk; front within 1.5 cm of the desk front edge  [x -2.7647..-1.7647, y 1.314..1.434]
+RESULT all checks pass

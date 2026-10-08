@@ -1,0 +1,319 @@
+{
+ "objects": {
+  "back_wall": {
+   "plane_y": 2.1189221477508546,
+   "x": [
+    -2.975,
+    2.5
+   ],
+   "z": [
+    0,
+    2.75
+   ],
+   "source": "desk back edge + user tape gap 0.035 m"
+  },
+  "glass_partition": {
+   "plane_y": 2.155,
+   "x": [
+    -4.87,
+    -2.975
+   ],
+   "frosted_z": [
+    0.83,
+    2.05
+   ],
+   "post_x": -3.874
+  },
+  "desk": {
+   "x": [
+    -3.0487500000000027,
+    -1.5287500000000025
+   ],
+   "y": [
+    1.3239221477508545,
+    2.0839221477508545
+   ],
+   "top_z": 0.72,
+   "source": "metric_frame.json desk (tape 1.52 x 0.76 x 0.72)"
+  },
+  "rail": {
+   "x": [
+    -2.7646989777364888,
+    -1.7646989777364888
+   ],
+   "y": [
+    1.314,
+    1.434
+   ],
+   "top_z": 0.7383,
+   "source": "user tape 09-29: rail 1.00 m; provisional placement centred on the arm-base midpoint x -2.2647"
+  },
+  "camera_pole": {
+   "xy": [
+    -2.2759,
+    1.3754
+   ],
+   "size_xy": [
+    0.04,
+    0.08
+   ],
+   "top_z": 1.7
+  },
+  "monitor_desk": {
+   "x": [
+    -1.415,
+    0.093
+   ],
+   "y": [
+    1.325,
+    2.085
+   ],
+   "top_z": 0.71,
+   "gap_to_rig_desk": 0.1138
+  }
+ },
+ "materials": {
+  "desk_top": "Rig desk | pale oak laminate top",
+  "desk_edge": "Rig desk | laminate edge band",
+  "mdesk_top": "Monitor desk | laminate top",
+  "wall": "Back wall | beige matte paint",
+  "carpet": "Floor | dark navy office carpet",
+  "frosted": "Glass partition | frosted blue backlit band",
+  "clear_glass": "Glass partition | clear glass",
+  "frame": "Glass partition | anodised aluminium frame",
+  "bracket": "Brackets | dark grey powder coat",
+  "ceiling": "Ceiling | white acoustic tile",
+  "white_plastic": "Power unit | white plastic",
+  "stub_wall": "Side wall | white paint",
+  "alu": "Rail and pole | aluminium extrusion (RoomKit brushed steel)",
+  "dark_metal": "Desk frame and brackets | dark metal (RoomKit satin blackened iron)",
+  "fabric": "Privacy panel | charcoal fabric (RoomKit charcoal woven upholstery)",
+  "frame_grey": "Desk frame | grey powder coat",
+  "black_plastic": "Camera body | black plastic",
+  "screen": "Monitor | dark screen (RoomKit dark television glass)",
+  "fixture": "Ceiling fixture | LED panel diffuser"
+ },
+ "camera": {
+  "lens": 13.725812911987305,
+  "shift_x": -0.013988654129207134,
+  "shift_y": 0.0014291763072833419
+ },
+ "arms": {
+  "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/yam_arm.blend",
+  "sha256": "4545b72d8aa32d989bb46b78788b51e9c1077583faaa995471b322fd203da6c4",
+  "status": "final",
+  "arms": {
+   "left_arm": {
+    "root": "yam_arm",
+    "world_from_base": [
+     [
+      -0.004339448032680228,
+      -0.9999905845510605,
+      0.0,
+      -2.5751838018935356
+     ],
+     [
+      0.9999905845510605,
+      -0.004339448032680228,
+      0.0,
+      1.3798262154163934
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "joints": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "gripper": 0.0475,
+    "finger_tags": [
+     7,
+     6
+    ]
+   },
+   "right_arm": {
+    "root": "yam_arm.001",
+    "world_from_base": [
+     [
+      -0.046840088234551776,
+      -0.9989024007049835,
+      0.0,
+      -1.9542141535794417
+     ],
+     [
+      0.9989024007049835,
+      -0.046840088234551776,
+      0.0,
+      1.3922159349440433
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "joints": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "gripper": 0.0475,
+    "finger_tags": [
+     1,
+     0
+    ]
+   }
+  },
+  "material_overrides": {
+   "UMI-FT | Orange TPU": {
+    "old": [
+     0.7874,
+     0.047,
+     0.0015
+    ],
+    "new": [
+     0.8012,
+     0.2209,
+     0.0181
+    ]
+   },
+   "UMI-FT | Yellow PLA": {
+    "old": [
+     0.9114,
+     0.6038,
+     0.0
+    ],
+    "new": [
+     0.6644,
+     0.5557,
+     0.043
+    ]
+   },
+   "UMI-FT | Yellow PLA.001": {
+    "old": [
+     0.9114,
+     0.6038,
+     0.0
+    ],
+    "new": [
+     0.6644,
+     0.5557,
+     0.043
+    ]
+   },
+   "UMI-FT | Orange TPU.001": {
+    "old": [
+     0.7874,
+     0.047,
+     0.0015
+    ],
+    "new": [
+     0.8012,
+     0.2209,
+     0.0181
+    ]
+   }
+  }
+ },
+ "instances": [
+  {
+   "id": "back_wall",
+   "cls": "architecture/wall",
+   "name": "Back wall | painted semantic root"
+  },
+  {
+   "id": "camera_pole",
+   "cls": "fixture/camera_pole",
+   "name": "camera_pole"
+  },
+  {
+   "id": "ceiling",
+   "cls": "architecture/ceiling",
+   "name": "ceiling"
+  },
+  {
+   "id": "desk",
+   "cls": "furniture/tables/desk",
+   "name": "desk"
+  },
+  {
+   "id": "floor",
+   "cls": "architecture/floor",
+   "name": "Floor | carpet semantic root"
+  },
+  {
+   "id": "glass_partition",
+   "cls": "architecture/wall/glass_partition",
+   "name": "glass_partition"
+  },
+  {
+   "id": "left_arm",
+   "cls": "fixture/robot_arm/yam",
+   "name": "yam_arm"
+  },
+  {
+   "id": "monitor_desk",
+   "cls": "furniture/tables/desk",
+   "name": "monitor_desk"
+  },
+  {
+   "id": "monitor_desk_items",
+   "cls": "prop/desk_clutter",
+   "name": "monitor_desk_items"
+  },
+  {
+   "id": "monitors",
+   "cls": "furniture/desk_accessories/privacy_panel_and_monitor",
+   "name": "monitors"
+  },
+  {
+   "id": "power_unit",
+   "cls": "prop/power_outlet",
+   "name": "Power unit | desk outlet box semantic root"
+  },
+  {
+   "id": "rail",
+   "cls": "fixture/robot_rail",
+   "name": "rail"
+  },
+  {
+   "id": "right_arm",
+   "cls": "fixture/robot_arm/yam",
+   "name": "yam_arm.001"
+  },
+  {
+   "id": "side_wall_left",
+   "cls": "architecture/wall",
+   "name": "Side wall stub | white semantic root"
+  }
+ ],
+ "out": "../blender/yam_rig_twin_v2.blend",
+ "config": "configs/delivery_v2.json",
+ "metric_frame": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/metric_frame.json",
+ "metric_frame_sha256": "97636e656aabb366f8f37c9525278f7a022168c57f4c078f9bc13b16bb018291",
+ "config_sha256": "6671b7c5222d20bbbeebf5e210dc17e8b1e738c037dc3878072d4cdd4df24a83"
+}

@@ -1,0 +1,272 @@
+{
+ "menagerie_xml": "/home/frank/robot/vla-benchmark/mesa/sim/envs/robots/assets/yam/yam_robot.xml",
+ "menagerie_xml_md5": "d820a7847daf0a99ea0b2e2304568c0f",
+ "links": {
+  "world": {
+   "menagerie_body": "arm",
+   "menagerie_parts": [
+    [
+     "yam_base",
+     "yam_black"
+    ]
+   ],
+   "i2rt_mesh": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/base.stl",
+   "faces": 8000,
+   "shell_faces": 0,
+   "vertex_residual_mm": {
+    "median": 0.08244668214260441,
+    "p95": 1.0316226237670938,
+    "max": 3.8067042789145114
+   },
+   "face_centre_residual_mm_p95": 3.3826304530923603,
+   "faces_over_2mm": 1265,
+   "rotation": [
+    [
+     -1.0,
+     -0.0002,
+     -0.0002
+    ],
+    [
+     0.0002,
+     -1.0,
+     0.0
+    ],
+    [
+     -0.0002,
+     0.0,
+     1.0
+    ]
+   ],
+   "translation_m": [
+    1e-05,
+    -1e-05,
+    -0.01
+   ]
+  },
+  "link1": {
+   "menagerie_body": "link_1",
+   "menagerie_parts": [
+    [
+     "yam_link1",
+     "yam_black"
+    ]
+   ],
+   "i2rt_mesh": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link1.stl",
+   "faces": 8000,
+   "shell_faces": 0,
+   "vertex_residual_mm": {
+    "median": 0.8583653766653825,
+    "p95": 6.360323327650641,
+    "max": 11.14910112892124
+   },
+   "face_centre_residual_mm_p95": 5.84038325665626,
+   "faces_over_2mm": 2262,
+   "rotation": [
+    [
+     -0.9928,
+     -0.0573,
+     -0.1049
+    ],
+    [
+     0.064,
+     -0.996,
+     -0.0623
+    ],
+    [
+     -0.1009,
+     -0.0686,
+     0.9925
+    ]
+   ],
+   "translation_m": [
+    0.00703,
+    -0.00026,
+    0.00231
+   ]
+  },
+  "link2": {
+   "menagerie_body": "link_2",
+   "menagerie_parts": [
+    [
+     "yam_link2_a",
+     "yam_black"
+    ],
+    [
+     "yam_link2_b",
+     "yam_black"
+    ],
+    [
+     "yam_link2_c",
+     "yam_white"
+    ]
+   ],
+   "i2rt_mesh": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link2.stl",
+   "faces": 8000,
+   "shell_faces": 7424,
+   "vertex_residual_mm": {
+    "median": 0.9519606166808082,
+    "p95": 2.555509346434872,
+    "max": 3.5171651357450573
+   },
+   "face_centre_residual_mm_p95": 2.4719790916361983,
+   "faces_over_2mm": 831,
+   "rotation": [
+    [
+     -1.0,
+     0.0003,
+     -0.0047
+    ],
+    [
+     -0.0003,
+     -1.0,
+     0.0054
+    ],
+    [
+     -0.0047,
+     0.0054,
+     1.0
+    ]
+   ],
+   "translation_m": [
+    0.26126,
+    0.00043,
+    0.0318
+   ]
+  },
+  "link3": {
+   "menagerie_body": "link_3",
+   "menagerie_parts": [
+    [
+     "yam_link3_a",
+     "yam_black"
+    ],
+    [
+     "yam_link3_b",
+     "yam_black"
+    ],
+    [
+     "yam_link3_c",
+     "yam_white"
+    ],
+    [
+     "yam_link3_d",
+     "yam_black"
+    ]
+   ],
+   "i2rt_mesh": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link3.stl",
+   "faces": 8000,
+   "shell_faces": 6188,
+   "vertex_residual_mm": {
+    "median": 1.0053464160195726,
+    "p95": 2.321036707319275,
+    "max": 3.610058452654147
+   },
+   "face_centre_residual_mm_p95": 2.548180740300292,
+   "faces_over_2mm": 995,
+   "rotation": [
+    [
+     -0.0007,
+     1.0,
+     -0.0071
+    ],
+    [
+     -1.0,
+     -0.0007,
+     -0.0014
+    ],
+    [
+     -0.0015,
+     0.0071,
+     1.0
+    ]
+   ],
+   "translation_m": [
+    0.00029,
+    0.00055,
+    0.03468
+   ]
+  },
+  "link4": {
+   "menagerie_body": "link_4",
+   "menagerie_parts": [
+    [
+     "yam_link4",
+     "yam_black"
+    ]
+   ],
+   "i2rt_mesh": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link4.stl",
+   "faces": 4640,
+   "shell_faces": 0,
+   "vertex_residual_mm": {
+    "median": 0.8327054870425079,
+    "p95": 55.1828571955074,
+    "max": 67.55839402990311
+   },
+   "face_centre_residual_mm_p95": 50.56835095544993,
+   "faces_over_2mm": 1556,
+   "rotation": [
+    [
+     -0.0499,
+     -0.3462,
+     0.9368
+    ],
+    [
+     0.0445,
+     0.9363,
+     0.3484
+    ],
+    [
+     -0.9978,
+     0.0591,
+     -0.0313
+    ]
+   ],
+   "translation_m": [
+    0.03668,
+    -0.0332,
+    -0.00556
+   ]
+  },
+  "link5": {
+   "menagerie_body": "link_5",
+   "menagerie_parts": [
+    [
+     "yam_link5",
+     "yam_black"
+    ]
+   ],
+   "i2rt_mesh": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link5.stl",
+   "faces": 1408,
+   "shell_faces": 0,
+   "vertex_residual_mm": {
+    "median": 0.26454939216432644,
+    "p95": 0.9504150934665601,
+    "max": 3.70443259485924
+   },
+   "face_centre_residual_mm_p95": 0.9871787499787714,
+   "faces_over_2mm": 48,
+   "rotation": [
+    [
+     -1.0,
+     0.0004,
+     0.0001
+    ],
+    [
+     -0.0004,
+     -1.0,
+     0.0036
+    ],
+    [
+     0.0001,
+     0.0036,
+     1.0
+    ]
+   ],
+   "translation_m": [
+    -4e-05,
+    -0.00649,
+    -0.0009
+   ]
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "real_dir": "/home/frank/robot/bimanual_bringup/pi05",
+ "note": "raiden hand-eye camera and HD1200 K/2 (approximate); correction as recorded per arm",
+ "arms": {
+  "left_arm": {
+   "camera_correction": {
+    "rotvec_deg": [
+     2.552,
+     0.021,
+     -2.058
+    ],
+    "translation_l6_mm": [
+     -3.93,
+     0.26,
+     2.17
+    ],
+    "rotvec_rad": [
+     0.044535667381892005,
+     0.0003714193144730134,
+     -0.03591242470903504
+    ],
+    "translation_l6_m": [
+     -0.003932991170631091,
+     0.00025835455619895395,
+     0.0021710027526741903
+    ]
+   },
+   "pad_iou": 0.6252479666732791,
+   "clamp_iou": 0.7156942559927635,
+   "pad_precision": 0.6379183849014598,
+   "pad_recall": 0.9692112546125461,
+   "real_pad_px": 26016,
+   "model_pad_px": 39527
+  },
+  "right_arm": {
+   "camera_correction": {
+    "rotvec_deg": [
+     2.73,
+     1.003,
+     0.834
+    ],
+    "translation_l6_mm": [
+     -7.93,
+     5.13,
+     1.01
+    ],
+    "rotvec_rad": [
+     0.04764224660260183,
+     0.01750970229204113,
+     0.014559702799259385
+    ],
+    "translation_l6_m": [
+     -0.007931356267101761,
+     0.005127496233121042,
+     0.001012413657641006
+    ]
+   },
+   "pad_iou": 0.5426090878340286,
+   "clamp_iou": 0.7522202486678508,
+   "pad_precision": 0.5540920186063648,
+   "pad_recall": 0.963212041151275,
+   "real_pad_px": 24981,
+   "model_pad_px": 43426
+  }
+ }
+}

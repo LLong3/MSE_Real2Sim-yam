@@ -1,0 +1,20 @@
+{
+ "erode_px": 10,
+ "arm_dilate_px": 6,
+ "surface": "wall",
+ "out": "textures/wall_albedo_v27.exr",
+ "size": [
+  415,
+  430
+ ],
+ "texel_m": 0.005,
+ "observed_fraction": 0.2495096665732698,
+ "median_albedo": [
+  0.45660001039505005,
+  0.4771000146865845,
+  0.44679999351501465
+ ],
+ "lowpass_m": 0.12,
+ "white_render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v27_white_wall",
+ "config": "configs/v27.json"
+}

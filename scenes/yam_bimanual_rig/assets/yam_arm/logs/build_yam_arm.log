@@ -1,0 +1,7 @@
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/build/build_yam_arm.py:58: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+Info: Saved as "stock.blend"
+SAVED /home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t125032z-wrist-claw-fit-efcb76a0/asset_build/final/stock.blend 20 objects
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit

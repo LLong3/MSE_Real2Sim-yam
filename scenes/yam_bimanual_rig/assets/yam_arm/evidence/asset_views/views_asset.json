@@ -1,0 +1,8 @@
+[
+ {"name": "a1_front_left", "width": 800, "height": 560, "gripper": 0.0475, "location": [0.85, -0.62, 0.5], "look_at": [0.0, 0.0, 0.13], "lens_mm": 50},
+ {"name": "a2_side", "width": 800, "height": 560, "gripper": 0.0475, "location": [0.0, -1.1, 0.2], "look_at": [0.0, 0.0, 0.14], "lens_mm": 50},
+ {"name": "a3_rear_right", "width": 800, "height": 560, "gripper": 0.0475, "location": [-0.8, 0.6, 0.5], "look_at": [0.0, 0.0, 0.13], "lens_mm": 50},
+ {"name": "a4_pose_rand1", "width": 800, "height": 560, "q": [1.2718, 1.0504, 1.1713, 0.0475, 0.5378, -1.301], "gripper": 0.0381, "location": [0.9, -0.9, 0.7], "look_at": [0.0, 0.0, 0.2], "lens_mm": 40},
+ {"name": "a5_gripper", "width": 800, "height": 560, "gripper": 0.0475, "location": [0.42, -0.22, 0.32], "look_at": [0.19, 0.0, 0.17], "lens_mm": 55},
+ {"name": "a6_clay_front_left", "width": 800, "height": 560, "mode": "clay", "gripper": 0.0475, "location": [0.85, -0.62, 0.5], "look_at": [0.0, 0.0, 0.13], "lens_mm": 50}
+]

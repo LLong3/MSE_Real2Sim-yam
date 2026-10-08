@@ -1,0 +1,690 @@
+{
+ "source": {
+  "raiden_repo": "/home/frank/robot/raiden",
+  "raiden_head": "a8316968005a1cc37f8901ca92ccc1437ca99422",
+  "raiden_branch": "bimanual",
+  "i2rt_submodule": "/home/frank/robot/raiden/third_party/i2rt",
+  "i2rt_commit": "7b6d5016f05ca63f9ef0185b7143e63f2c7a5708",
+  "i2rt_describe": "7b6d501",
+  "i2rt_origin": "https://github.com/i2rt-robotics/i2rt.git",
+  "arm_xml": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/yam.xml",
+  "arm_xml_md5": "81203a99155223036bc0f6731a6a74f7",
+  "gripper_xml": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/gripper/linear_4310/linear_4310.xml",
+  "gripper_xml_md5": "85fd2aaa6d56f08daca7763d89968ba5",
+  "combine": "i2rt.robots.utils.combine_arm_and_gripper_xml (as raiden/_xml_paths.get_yam_4310_linear_xml_path)",
+  "mujoco_version": "3.3.5"
+ },
+ "nq": 8,
+ "bodies": [
+  {
+   "name": "world",
+   "id": 0,
+   "parent": null,
+   "pos": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "quat": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "xml_pos": null,
+   "xml_quat": null,
+   "joints": [],
+   "geoms": [
+    {
+     "mesh": "base",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/base.stl",
+     "file_md5": "aed3d0cdd6cb335fd02bcb0f6b0991de",
+     "pos": [
+      -0.0374966,
+      -0.0464005,
+      0.187501
+     ],
+     "quat": [
+      0.707105,
+      0.0,
+      0.707108,
+      0.0
+     ],
+     "rgba": [
+      0.317647,
+      0.121569,
+      0.498039,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "link1",
+   "id": 1,
+   "parent": "world",
+   "pos": [
+    0.0,
+    0.0,
+    0.067
+   ],
+   "quat": [
+    0.7071052811843601,
+    0.0,
+    0.0,
+    -0.707108281185553
+   ],
+   "xml_pos": [
+    0.0,
+    0.0,
+    0.067
+   ],
+   "xml_quat": [
+    0.707105,
+    0.0,
+    0.0,
+    -0.707108
+   ],
+   "joints": [
+    {
+     "name": "joint1",
+     "type": "hinge",
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      -2.61799,
+      3.05433
+     ],
+     "qposadr": 0
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "link1",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link1.stl",
+     "file_md5": "c9ade222c806c699ea1255c112403ea3",
+     "pos": [
+      -0.0464,
+      0.0374968,
+      0.119501
+     ],
+     "quat": [
+      0.499998,
+      0.5,
+      0.5,
+      -0.500002
+     ],
+     "rgba": [
+      0.72549,
+      0.45098,
+      0.317647,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "link2",
+   "id": 2,
+   "parent": "link1",
+   "pos": [
+    -0.0329,
+    0.02,
+    0.0455
+   ],
+   "quat": [
+    0.49999799999800004,
+    0.49999999999800004,
+    -0.500001999998,
+    -0.49999999999800004
+   ],
+   "xml_pos": [
+    -0.0329,
+    0.02,
+    0.0455
+   ],
+   "xml_quat": [
+    0.499998,
+    0.5,
+    -0.500002,
+    -0.5
+   ],
+   "joints": [
+    {
+     "name": "joint2",
+     "type": "hinge",
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      0.0,
+      3.65
+     ],
+     "qposadr": 1
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "link2",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link2.stl",
+     "file_md5": "28335a37b6ed1c6a040f26b65c91c575",
+     "pos": [
+      -0.0174977,
+      -0.0740001,
+      -0.07925
+     ],
+     "quat": [
+      0.499998,
+      0.5,
+      0.500002,
+      0.5
+     ],
+     "rgba": [
+      0.0,
+      0.4,
+      0.6,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "link3",
+   "id": 3,
+   "parent": "link2",
+   "pos": [
+    0.264,
+    4.08431e-07,
+    -0.06375
+   ],
+   "quat": [
+    9.381843730734243e-07,
+    -0.7071052811837377,
+    -0.7071082811849306,
+    9.381873730746175e-07
+   ],
+   "xml_pos": [
+    0.264,
+    4.08431e-07,
+    -0.06375
+   ],
+   "xml_quat": [
+    9.38184e-07,
+    -0.707105,
+    -0.707108,
+    9.38187e-07
+   ],
+   "joints": [
+    {
+     "name": "joint3",
+     "type": "hinge",
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      0.0,
+      3.66519
+     ],
+     "qposadr": 2
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "link3",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link3.stl",
+     "file_md5": "039ab661f53898875b40cd9f4d894787",
+     "pos": [
+      0.0740003,
+      -0.281499,
+      -0.0813
+     ],
+     "quat": [
+      9.38184e-07,
+      9.38187e-07,
+      -0.707108,
+      -0.707105
+     ],
+     "rgba": [
+      0.552941,
+      0.580392,
+      0.203922,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "link4",
+   "id": 4,
+   "parent": "link3",
+   "pos": [
+    0.0600003,
+    -0.244999,
+    -0.00205
+   ],
+   "quat": [
+    1.3267899999988322e-06,
+    0.0,
+    0.0,
+    -0.9999999999991198
+   ],
+   "xml_pos": [
+    0.0600003,
+    -0.244999,
+    -0.00205
+   ],
+   "xml_quat": [
+    1.32679e-06,
+    0.0,
+    0.0,
+    -1.0
+   ],
+   "joints": [
+    {
+     "name": "joint4",
+     "type": "hinge",
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      -1.5708,
+      1.5708
+     ],
+     "qposadr": 3
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "link4",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link4.stl",
+     "file_md5": "2a187aa425f4aeaddd94ef9a5dbc30c1",
+     "pos": [
+      -0.0138003,
+      0.0364989,
+      -0.0787882
+     ],
+     "quat": [
+      0.707105,
+      0.707108,
+      0.0,
+      0.0
+     ],
+     "rgba": [
+      0.545098,
+      0.52549,
+      0.419608,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "link5",
+   "id": 5,
+   "parent": "link4",
+   "pos": [
+    -0.0403003,
+    0.0703851,
+    -0.0323887
+   ],
+   "quat": [
+    9.381843730734243e-07,
+    -0.7071052811837377,
+    -9.381873730746175e-07,
+    -0.7071082811849306
+   ],
+   "xml_pos": [
+    -0.0403003,
+    0.0703851,
+    -0.0323887
+   ],
+   "xml_quat": [
+    9.38184e-07,
+    -0.707105,
+    -9.38187e-07,
+    -0.707108
+   ],
+   "joints": [
+    {
+     "name": "joint5",
+     "type": "hinge",
+     "axis": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      -1.5708,
+      1.5708
+     ],
+     "qposadr": 4
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "link5",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/assets/link5.stl",
+     "file_md5": "1c5c878d9a60704f05daf74ccbed9ec7",
+     "pos": [
+      -0.0463995,
+      0.0311519,
+      0.0265
+     ],
+     "quat": [
+      0.499998,
+      -0.5,
+      -0.5,
+      -0.500002
+     ],
+     "rgba": [
+      0.827451,
+      0.623529,
+      0.784314,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "link_6",
+   "id": 6,
+   "parent": "link5",
+   "pos": [
+    2.39858e-07,
+    -0.0419481,
+    0.0404996
+   ],
+   "quat": [
+    0.49999799999800004,
+    -0.49999999999800004,
+    -0.49999999999800004,
+    -0.500001999998
+   ],
+   "xml_pos": [
+    2.39858e-07,
+    -0.0419481,
+    0.0404996
+   ],
+   "xml_quat": [
+    0.499998,
+    -0.5,
+    -0.5,
+    -0.500002
+   ],
+   "joints": [
+    {
+     "name": "joint6",
+     "type": "hinge",
+     "axis": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      -2.0944,
+      2.0944
+     ],
+     "qposadr": 5
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "gripper",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/gripper/linear_4310/assets/gripper.stl",
+     "file_md5": "cf42bf4cb108ad89d041cfda46e6521c",
+     "pos": [
+      -0.014,
+      -0.0463995,
+      0.0731
+     ],
+     "quat": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rgba": [
+      0.109804,
+      0.286275,
+      0.0117647,
+      1.0
+     ]
+    }
+   ],
+   "sites": [
+    {
+     "name": "tcp_site",
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "quat": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "name": "grasp_site",
+     "pos": [
+      0.0,
+      0.0,
+      -0.1347
+     ],
+     "quat": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tip_left",
+   "id": 7,
+   "parent": "link_6",
+   "pos": [
+    -0.0238981,
+    0.0450619,
+    -0.0545599
+   ],
+   "quat": [
+    0.49999799999800004,
+    -0.49999999999800004,
+    -0.49999999999800004,
+    -0.500001999998
+   ],
+   "xml_pos": [
+    -0.0238981,
+    0.0450619,
+    -0.0545599
+   ],
+   "xml_quat": [
+    0.499998,
+    -0.5,
+    -0.5,
+    -0.500002
+   ],
+   "joints": [
+    {
+     "name": "joint7",
+     "type": "slide",
+     "axis": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      0.0,
+      0.0475
+     ],
+     "qposadr": 6
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "tip_left",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/gripper/linear_4310/assets/tip_left.stl",
+     "file_md5": "9fd555669cade492ceee9bb7f12bf97c",
+     "pos": [
+      0.129783,
+      0.00999321,
+      -0.0914614
+     ],
+     "quat": [
+      0.499998,
+      0.5,
+      0.500002,
+      0.5
+     ],
+     "rgba": [
+      0.596078,
+      0.788235,
+      0.921569,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  },
+  {
+   "name": "tip_right",
+   "id": 8,
+   "parent": "link_6",
+   "pos": [
+    0.0238981,
+    -0.0450619,
+    -0.0545599
+   ],
+   "quat": [
+    0.7071052811843601,
+    0.707108281185553,
+    0.0,
+    0.0
+   ],
+   "xml_pos": [
+    0.0238981,
+    -0.0450619,
+    -0.0545599
+   ],
+   "xml_quat": [
+    0.707105,
+    0.707108,
+    0.0,
+    0.0
+   ],
+   "joints": [
+    {
+     "name": "joint8",
+     "type": "slide",
+     "axis": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "range": [
+      0.0,
+      0.0475
+     ],
+     "qposadr": 7
+    }
+   ],
+   "geoms": [
+    {
+     "mesh": "tip_right",
+     "file": "/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/gripper/linear_4310/assets/tip_right.stl",
+     "file_md5": "ebe5dceb0c4a278b1c510e65f2a914b9",
+     "pos": [
+      -0.0379932,
+      0.129783,
+      0.00133753
+     ],
+     "quat": [
+      0.707105,
+      -0.707108,
+      0.0,
+      0.0
+     ],
+     "rgba": [
+      0.596078,
+      0.788235,
+      0.921569,
+      1.0
+     ]
+    }
+   ],
+   "sites": []
+  }
+ ],
+ "equality": [
+  {
+   "joint1": "joint7",
+   "joint2": "joint8",
+   "polycoef": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ ]
+}

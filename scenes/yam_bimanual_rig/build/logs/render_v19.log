@@ -1,0 +1,18 @@
+00:00.235  blend            | Read blend: "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/iter/v19.blend"
+00:00.380  cycles           | WARNING HIPEW initialization failed: Error opening HIP dynamic library
+00:02.676  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v19/scene.exr'
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/build/render_views.py:59: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+00:02.893  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v19/scene_ids.exr'
+00:05.027  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v19/left_wrist.exr'
+00:05.246  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v19/left_wrist_ids.exr'
+00:07.385  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v19/right_wrist.exr'
+00:07.576  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v19/right_wrist_ids.exr'
+FACING_REVIEW [{"object": "yam_arm", "instance_id": "left_arm", "status": "no_target", "reason": "Frame known; no scene facing intent declared"}, {"object": "yam_arm.001", "instance_id": "right_arm", "status": "no_target", "reason": "Frame known; no scene facing intent declared"}]
+VIEW_OK scene projection check px 0.0001
+VIEW_OK left_wrist projection check px 0.0001
+VIEW_OK right_wrist projection check px 0.0001
+RENDER_OK
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit

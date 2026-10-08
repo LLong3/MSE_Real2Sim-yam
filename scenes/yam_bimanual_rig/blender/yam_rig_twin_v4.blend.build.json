@@ -1,0 +1,544 @@
+{
+ "objects": {
+  "back_wall": {
+   "plane_y": 2.1189221477508546,
+   "x": [
+    -2.975,
+    2.5
+   ],
+   "z": [
+    0,
+    2.75
+   ],
+   "source": "desk back edge + user tape gap 0.035 m"
+  },
+  "glass_partition": {
+   "plane_y": 2.155,
+   "x": [
+    -4.87,
+    -2.975
+   ],
+   "frosted_z": [
+    0.83,
+    2.05
+   ],
+   "post_x": -3.874,
+   "frosted_panels": [
+    "A"
+   ]
+  },
+  "side_door": {
+   "hinge_end": [
+    -4.8329,
+    2.098
+   ],
+   "free_end": [
+    -4.725,
+    1.33
+   ],
+   "width": 0.7755,
+   "yaw_deg": -82.0,
+   "ajar_deg": 8.0,
+   "thickness": 0.045,
+   "height": 2.13,
+   "source": "v3_room_corrections.json side_wall_stub: wood door leaf, room face at floor level (-4.836, 2.12) -> (-4.725, 1.33), 7.8 deg off square (ajar, hinge at the glass end; leaf starts 2 mm in front of the jamb); white jamb x -4.87..-4.82, y 2.10..2.20; beige wall left of the door at x -4.98 (reference y 0.9-1.25; modelled y 0.50-1.25). Assumed: leaf height 2.13 m (>= 2.0 observed), thickness 45 mm, header and latch-side jamb x -4.98..-4.87. Not seen by the rig cameras."
+  },
+  "side_wall_left": {
+   "x": [
+    -5.1,
+    -4.98
+   ],
+   "y": [
+    0.5,
+    1.25
+   ],
+   "header_x": [
+    -4.98,
+    -4.87
+   ],
+   "jamb": {
+    "x": [
+     -4.87,
+     -4.82
+    ],
+    "y": [
+     2.1,
+     2.2
+    ]
+   }
+  },
+  "desk": {
+   "x": [
+    -3.0487500000000027,
+    -1.5287500000000025
+   ],
+   "y": [
+    1.3239221477508545,
+    2.0839221477508545
+   ],
+   "top_z": 0.72,
+   "source": "metric_frame.json desk (tape 1.52 x 0.76 x 0.72)"
+  },
+  "rail": {
+   "x": [
+    -2.7646989777364888,
+    -1.7646989777364888
+   ],
+   "y": [
+    1.314,
+    1.434
+   ],
+   "top_z": 0.7383,
+   "source": "user tape 09-29: rail 1.00 m; provisional placement centred on the arm-base midpoint x -2.2647"
+  },
+  "camera_pole": {
+   "xy": [
+    -2.2759,
+    1.3754
+   ],
+   "size_xy": [
+    0.04,
+    0.08
+   ],
+   "top_z": 1.7
+  },
+  "monitor": {
+   "screen_x": [
+    -0.84,
+    -0.32
+   ],
+   "front_y": 1.845,
+   "depth": 0.03,
+   "screen_z": [
+    0.81,
+    1.18
+   ],
+   "yaw_deg": -6,
+   "stand": {
+    "half_width": 0.03,
+    "depth": 0.03,
+    "top_z": 0.9
+   },
+   "foot": {
+    "half_width": 0.11,
+    "y": [
+     -0.07,
+     0.07
+    ],
+    "height": 0.01
+   },
+   "source": "v3_room_corrections.json monitor_screen: x -0.84..-0.32, front face y 1.87 at x -0.80 / 1.82 at x -0.35 (1.845 at the centre, yaw -6 deg), z 0.81..1.18; stand and foot moved with the screen (v2 offsets)"
+  },
+  "monitor_desk": {
+   "x": [
+    -1.406,
+    0.093
+   ],
+   "y": [
+    1.325,
+    2.085
+   ],
+   "top_z": 0.71,
+   "gap_to_rig_desk": 0.1228
+  }
+ },
+ "materials": {
+  "desk_top": "Rig desk | pale oak laminate top",
+  "desk_edge": "Rig desk | laminate edge band",
+  "mdesk_top": "Monitor desk | laminate top",
+  "wall": "Back wall | beige matte paint",
+  "carpet": "Floor | dark navy office carpet",
+  "frosted": "Glass partition | frosted blue backlit band",
+  "clear_glass": "Glass partition | clear glass",
+  "frame": "Glass partition | anodised aluminium frame",
+  "bracket": "Brackets | dark grey powder coat",
+  "ceiling": "Ceiling | white acoustic tile",
+  "white_plastic": "Power unit | white plastic",
+  "stub_wall": "Side wall | white paint",
+  "alu": "Rail and pole | aluminium extrusion (RoomKit brushed steel)",
+  "dark_metal": "Desk frame and brackets | dark metal (RoomKit satin blackened iron)",
+  "fabric": "Privacy panel | charcoal fabric (RoomKit charcoal woven upholstery)",
+  "frame_grey": "Desk frame | grey powder coat",
+  "black_plastic": "Camera body | black plastic",
+  "screen": "Monitor | dark screen (RoomKit dark television glass)",
+  "fixture": "Ceiling fixture | LED panel diffuser"
+ },
+ "camera": {
+  "lens": 13.725812911987305,
+  "shift_x": -0.013988654129207134,
+  "shift_y": 0.0014291763072833419
+ },
+ "arms": {
+  "source": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/yam_arm_v4.blend",
+  "sha256": "6fd57996854135054332783db1e1a5cc2ef90b36518123c2d61fbb3bbd861f33",
+  "status": "final",
+  "arms": {
+   "left_arm": {
+    "root": "yam_arm",
+    "world_from_base": [
+     [
+      0.007187260780483484,
+      -0.9999741911888123,
+      0.0,
+      -2.594712734222412
+     ],
+     [
+      0.9999741911888123,
+      0.007187260780483484,
+      0.0,
+      1.3656039237976074
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636053085327
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "joints": [
+     0.0,
+     0.09186960151570822,
+     0.014673182180382155,
+     0.0,
+     0.0,
+     -0.007148032825810147
+    ],
+    "gripper": 0.0475,
+    "finger_tags": [
+     7,
+     6
+    ],
+    "claw_mount_roll_rad": -0.074526,
+    "status": "proposed correction (09-30 wrist/claw fit, variant c, rail form); NOT the metric frame (metric/metric_frame.json unchanged)",
+    "source": "scenes/yam_bimanual_rig/assets/yam_arm/evidence/wrist_fit/arm_bases_proposed.json arms.left_arm.rail_form",
+    "home_joint_offsets_deg": {
+     "joint2": 5.264,
+     "joint3": 0.841,
+     "joint6": -0.41
+    },
+    "metric_world_from_base": [
+     [
+      -0.004339448032680228,
+      -0.9999905845510605,
+      0.0,
+      -2.5751838018935356
+     ],
+     [
+      0.9999905845510605,
+      -0.004339448032680228,
+      0.0,
+      1.3798262154163934
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "widened_controls": {}
+   },
+   "right_arm": {
+    "root": "yam_arm.001",
+    "world_from_base": [
+     [
+      -0.0013865665532648563,
+      -0.9999990463256836,
+      0.0,
+      -1.9597042798995972
+     ],
+     [
+      0.9999990463256836,
+      -0.0013865665532648563,
+      0.0,
+      1.3689097166061401
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636053085327
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "joints": [
+     0.0,
+     0.0029429715516130577,
+     -0.03908179679218407,
+     0.0,
+     0.0,
+     0.0513156652690118
+    ],
+    "gripper": 0.0475,
+    "finger_tags": [
+     1,
+     0
+    ],
+    "claw_mount_roll_rad": 0.0,
+    "status": "proposed correction (09-30 wrist/claw fit, variant c, rail form); NOT the metric frame (metric/metric_frame.json unchanged)",
+    "source": "scenes/yam_bimanual_rig/assets/yam_arm/evidence/wrist_fit/arm_bases_proposed.json arms.right_arm.rail_form",
+    "home_joint_offsets_deg": {
+     "joint2": 0.169,
+     "joint3": -2.239,
+     "joint6": 2.94
+    },
+    "metric_world_from_base": [
+     [
+      -0.046840088234551776,
+      -0.9989024007049835,
+      0.0,
+      -1.9542141535794417
+     ],
+     [
+      0.9989024007049835,
+      -0.046840088234551776,
+      0.0,
+      1.3922159349440433
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "widened_controls": {
+     "joint3": {
+      "mjcf_range": [
+       0.0,
+       3.66519
+      ],
+      "scene_range": [
+       -0.04,
+       3.66519
+      ],
+      "value": -0.03908179679218407
+     }
+    }
+   }
+  },
+  "material_overrides": {
+   "UMI-FT | Yellow PLA": {
+    "old": [
+     0.9114,
+     0.6038,
+     0.0
+    ],
+    "new": [
+     0.6644,
+     0.5557,
+     0.043
+    ]
+   },
+   "UMI-FT | Orange TPU": {
+    "old": [
+     0.7874,
+     0.047,
+     0.0015
+    ],
+    "new": [
+     0.8012,
+     0.2209,
+     0.0181
+    ]
+   },
+   "UMI-FT | Yellow PLA.001": {
+    "old": [
+     0.9114,
+     0.6038,
+     0.0
+    ],
+    "new": [
+     0.6644,
+     0.5557,
+     0.043
+    ]
+   },
+   "UMI-FT | Orange TPU.001": {
+    "old": [
+     0.7874,
+     0.047,
+     0.0015
+    ],
+    "new": [
+     0.8012,
+     0.2209,
+     0.0181
+    ]
+   }
+  }
+ },
+ "wrist_cameras": {
+  "left_wrist": {
+   "source": "assets/yam_arm/evidence/wrist_fit_v4/wrist_cameras.json cameras.left_wrist.T_grasp_site_cam_opencv",
+   "check_vs_fit_world": {
+    "rot_deg": 0.0,
+    "trans_mm": 0.001
+   },
+   "T_world_cam_opencv": [
+    [
+     0.9990308880805969,
+     -0.041374631226062775,
+     -0.014986563473939896,
+     -2.5924081802368164
+    ],
+    [
+     -0.011166051961481571,
+     -0.567762017250061,
+     0.8231167197227478,
+     1.5570098161697388
+    ],
+    [
+     -0.042565006762742996,
+     -0.8221520185470581,
+     -0.5676740407943726,
+     0.9967625141143799
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "right_wrist": {
+   "source": "assets/yam_arm/evidence/wrist_fit_v4/wrist_cameras.json cameras.right_wrist.T_grasp_site_cam_opencv",
+   "check_vs_fit_world": {
+    "rot_deg": 0.0,
+    "trans_mm": 0.001
+   },
+   "T_world_cam_opencv": [
+    [
+     0.9997478723526001,
+     -0.006721546873450279,
+     0.02142079547047615,
+     -1.9641658067703247
+    ],
+    [
+     -0.021234875544905663,
+     -0.5928244590759277,
+     0.8050515055656433,
+     1.5605237483978271
+    ],
+    [
+     0.007287528365850449,
+     -0.8053035140037537,
+     -0.5928176641464233,
+     0.9901145100593567
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "instances": [
+  {
+   "id": "back_wall",
+   "cls": "architecture/wall",
+   "name": "Back wall | painted semantic root"
+  },
+  {
+   "id": "camera_pole",
+   "cls": "fixture/camera_pole",
+   "name": "camera_pole"
+  },
+  {
+   "id": "ceiling",
+   "cls": "architecture/ceiling",
+   "name": "ceiling"
+  },
+  {
+   "id": "desk",
+   "cls": "furniture/tables/desk",
+   "name": "desk"
+  },
+  {
+   "id": "floor",
+   "cls": "architecture/floor",
+   "name": "Floor | carpet semantic root"
+  },
+  {
+   "id": "glass_partition",
+   "cls": "architecture/wall/glass_partition",
+   "name": "glass_partition"
+  },
+  {
+   "id": "left_arm",
+   "cls": "fixture/robot_arm/yam",
+   "name": "yam_arm"
+  },
+  {
+   "id": "monitor_desk",
+   "cls": "furniture/tables/desk",
+   "name": "monitor_desk"
+  },
+  {
+   "id": "monitor_desk_items",
+   "cls": "prop/desk_clutter",
+   "name": "monitor_desk_items"
+  },
+  {
+   "id": "monitors",
+   "cls": "furniture/desk_accessories/privacy_panel_and_monitor",
+   "name": "monitors"
+  },
+  {
+   "id": "power_unit",
+   "cls": "prop/power_outlet",
+   "name": "Power unit | desk outlet box semantic root"
+  },
+  {
+   "id": "rail",
+   "cls": "fixture/robot_rail",
+   "name": "rail"
+  },
+  {
+   "id": "right_arm",
+   "cls": "fixture/robot_arm/yam",
+   "name": "yam_arm.001"
+  },
+  {
+   "id": "side_door",
+   "cls": "architecture/wall/door",
+   "name": "side_door"
+  },
+  {
+   "id": "side_wall_left",
+   "cls": "architecture/wall",
+   "name": "side_wall_left"
+  }
+ ],
+ "out": "../blender/yam_rig_twin_v4.blend",
+ "config": "configs/delivery_v4.json",
+ "metric_frame": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/metric_frame.json",
+ "metric_frame_sha256": "97636e656aabb366f8f37c9525278f7a022168c57f4c078f9bc13b16bb018291",
+ "config_sha256": "172224ab237e122165a7bda6c95f7ee903144800b6391b49a4f3c6eba3aa245b"
+}

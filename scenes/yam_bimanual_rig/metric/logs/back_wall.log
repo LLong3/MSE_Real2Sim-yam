@@ -1,0 +1,26 @@
+{
+ "answer": "(b) ZED NEURAL_LIGHT depth bias on the textureless wall. The desk is flush with the wall to ~1 cm.",
+ "reference_gap_mm": -2.8,
+ "dips": {
+  "942": 0.5555555555555555,
+  "962": 0.603448275862069,
+  "982": 0.5932203389830508,
+  "1063": 0.6779661016949152,
+  "1083": 0.7071464267866068,
+  "1103": 0.7747252747252746
+ },
+ "zed_dip": {
+  "dip_width_px_median": 5.0,
+  "slot_px_per_cm": 2.902729216056912,
+  "slot_band_px_for_85mm": 23.547079992172826,
+  "dip_width_over_slot_px_per_cm_median": 1.7225168549452352,
+  "dip_depth_rel_median": 0.17225165363498207
+ },
+ "wall_end": {
+  "x_from_desk_left_end_m": 0.057701032368635066,
+  "y_behind_plane_mm_at_desk_height": 41.0548464074082,
+  "y_behind_plane_mm_median_0_0p55m": 48.21298353300906,
+  "lean_deg": 1.2414276169378924,
+  "disparity_row_noise_px": 0.0896952627803013
+ }
+}

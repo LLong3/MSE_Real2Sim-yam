@@ -1,0 +1,6 @@
+[2026-09-29 18:23:58 UTC][ZED][INFO] Logging level INFO
+[2026-09-29 18:23:58 UTC][ZED][INFO] [Init]  Serial Number: S/N 41925345
+[2026-09-29 18:23:58 UTC][ZED][INFO] [Init]  Depth mode selected: NONE. Ensure this mode matches your application's performance and accuracy requirements. See https://www.stereolabs.com/docs/depth-sensing/depth-modes for help.
+[2026-09-29 18:23:58 UTC][ZED][INFO] [Init]  Health check functionality is limited when DEPTH_MODE::NONE is enabled, as it relies on the depth pipeline for image processing.
+serial 41925345 resolution 960 600 frames 251
+frames used 60 K [[366.022, 0.0, 492.929], [0.0, 366.022, 300.872], [0.0, 0.0, 1.0]] K_right [[366.022, 0.0, 492.929], [0.0, 366.022, 300.872], [0.0, 0.0, 1.0]] baseline m 0.12014498561620712

@@ -1,0 +1,743 @@
+{
+ "zed_edge": {
+  "camera_ray_below_horizontal_at_edge_deg": 56.46738583886103,
+  "slot_depth_seen_below_top_mm": 52.81388873547956,
+  "slot_band_px_35mm": [
+   10.045772530524061,
+   10.08826338029877,
+   10.129956128873971
+  ],
+  "images": {
+   "0928": {
+    "hue_boundary_minus_fitted_edge_px": {
+     "median": 0.13344850859527924,
+     "p90_abs": 0.47279090238424715,
+     "columns": 111
+    },
+    "luminance_above_edge": {
+     "profile_dv_minus25_to_plus6": [
+      164.4,
+      164.9,
+      164.0,
+      164.0,
+      164.0,
+      163.4,
+      162.5,
+      161.2,
+      160.6,
+      159.6,
+      158.2,
+      156.7,
+      154.7,
+      151.8,
+      149.4,
+      147.4,
+      146.4,
+      144.6,
+      141.8,
+      135.5,
+      127.4,
+      121.4,
+      116.3,
+      113.2,
+      115.8,
+      129.9,
+      143.9,
+      147.8,
+      147.0,
+      147.0,
+      147.0,
+      147.0
+     ],
+     "wall_far": 164.0,
+     "minimum": 113.21574064623871,
+     "half_depth_band_px": 6.0,
+     "darkening_onset_px_above_edge": 15.0
+    }
+   },
+   "0929": {
+    "hue_boundary_minus_fitted_edge_px": {
+     "median": -0.5503278783084511,
+     "p90_abs": 1.1624806167322959,
+     "columns": 111
+    },
+    "luminance_above_edge": {
+     "profile_dv_minus25_to_plus6": [
+      152.0,
+      151.4,
+      151.0,
+      151.0,
+      150.3,
+      150.0,
+      149.4,
+      149.0,
+      148.0,
+      147.0,
+      145.7,
+      144.3,
+      141.8,
+      139.7,
+      137.7,
+      136.3,
+      134.7,
+      133.2,
+      130.0,
+      124.2,
+      117.7,
+      112.4,
+      108.4,
+      104.7,
+      107.0,
+      120.2,
+      132.0,
+      135.2,
+      134.4,
+      134.0,
+      134.0,
+      134.4
+     ],
+     "wall_far": 150.627921514655,
+     "minimum": 104.68854230040381,
+     "half_depth_band_px": 6.0,
+     "darkening_onset_px_above_edge": 15.0
+    }
+   }
+  },
+  "finding": "the fitted desk back edge is the wood/wall hue boundary (sub-pixel; 1 px ~ 3.5 mm in y), so the camera pose is anchored on the real desk edge. Above it the wall darkens over ~10 px: the wall face seen down the gap (the ray past the edge drops 56 deg and meets the wall 53 mm below the desk top). It is beige wall in shadow, continuous with the wall above; there is no black slot."
+ },
+ "zed_depth_step": {
+  "rows": "[image rows from the fitted edge (negative = above it), median y behind the desk back edge mm, median z above the desk top mm], columns u 300-740",
+  "table": [
+   [
+    -30,
+    37.4,
+    92.4
+   ],
+   [
+    -29,
+    36.8,
+    88.9
+   ],
+   [
+    -28,
+    36.2,
+    85.2
+   ],
+   [
+    -27,
+    35.7,
+    81.3
+   ],
+   [
+    -26,
+    35.1,
+    77.1
+   ],
+   [
+    -25,
+    34.4,
+    73.3
+   ],
+   [
+    -24,
+    33.5,
+    69.0
+   ],
+   [
+    -23,
+    33.1,
+    64.7
+   ],
+   [
+    -22,
+    32.5,
+    61.2
+   ],
+   [
+    -21,
+    32.0,
+    57.2
+   ],
+   [
+    -20,
+    31.4,
+    53.0
+   ],
+   [
+    -19,
+    30.8,
+    49.4
+   ],
+   [
+    -18,
+    30.4,
+    45.5
+   ],
+   [
+    -17,
+    30.1,
+    41.8
+   ],
+   [
+    -16,
+    29.2,
+    37.6
+   ],
+   [
+    -15,
+    28.8,
+    33.7
+   ],
+   [
+    -14,
+    28.5,
+    29.5
+   ],
+   [
+    -13,
+    27.9,
+    25.6
+   ],
+   [
+    -12,
+    27.1,
+    21.3
+   ],
+   [
+    -11,
+    26.6,
+    17.4
+   ],
+   [
+    -10,
+    25.7,
+    13.8
+   ],
+   [
+    -9,
+    24.2,
+    10.7
+   ],
+   [
+    -8,
+    23.2,
+    7.5
+   ],
+   [
+    -7,
+    22.2,
+    3.8
+   ],
+   [
+    -6,
+    21.1,
+    -0.3
+   ],
+   [
+    -5,
+    20.1,
+    -4.3
+   ],
+   [
+    -4,
+    19.1,
+    -6.8
+   ],
+   [
+    -3,
+    16.9,
+    -9.1
+   ],
+   [
+    -2,
+    14.8,
+    -11.1
+   ],
+   [
+    -1,
+    12.5,
+    -13.1
+   ],
+   [
+    0,
+    8.3,
+    -13.2
+   ],
+   [
+    1,
+    3.9,
+    -10.2
+   ],
+   [
+    2,
+    0.2,
+    -9.6
+   ],
+   [
+    3,
+    -3.0,
+    -10.1
+   ],
+   [
+    4,
+    -5.6,
+    -11.1
+   ],
+   [
+    5,
+    -9.4,
+    -10.6
+   ],
+   [
+    6,
+    -12.9,
+    -10.4
+   ],
+   [
+    7,
+    -16.5,
+    -9.8
+   ],
+   [
+    8,
+    -20.3,
+    -9.2
+   ]
+  ],
+  "y_mm_where_z_crosses_0": 21.18048780487805,
+  "y_mm_at_z_40_95mm": [
+   30.1,
+   37.4
+  ],
+  "neural_bands_0_10cm_mm": [
+   19.9,
+   42.5
+  ],
+  "finding": "the depth leaves the desk plane at the fitted edge and recedes at desk-top level to y 8-21 mm within 6 rows, then the wall rises at y 22-37 mm up to 9 cm above the desk: a wall ~35 mm behind the edge, blurred by the neural depth over the ~10 px the gap spans. Higher up (0.2-0.9 m) the textureless wall reads 60-180 mm (bias)."
+ },
+ "ref_desk_back": {
+  "bins": "[y - p99 back boundary (mm, 5 mm bins), points, wood fraction, wall-paint fraction]; desk-top height (|z - local top| < 8 mm), x -2.95..-1.75",
+  "table": [
+   [
+    -57.5,
+    12515.0,
+    0.996,
+    0.0
+   ],
+   [
+    -52.5,
+    11038.0,
+    0.997,
+    0.0
+   ],
+   [
+    -47.5,
+    9514.0,
+    0.997,
+    0.0
+   ],
+   [
+    -42.5,
+    7644.0,
+    0.994,
+    0.002
+   ],
+   [
+    -37.5,
+    5896.0,
+    0.992,
+    0.003
+   ],
+   [
+    -32.5,
+    4130.0,
+    0.984,
+    0.002
+   ],
+   [
+    -27.5,
+    3020.0,
+    0.831,
+    0.128
+   ],
+   [
+    -22.5,
+    2673.0,
+    0.541,
+    0.351
+   ],
+   [
+    -17.5,
+    4572.0,
+    0.257,
+    0.641
+   ],
+   [
+    -12.5,
+    6603.0,
+    0.176,
+    0.652
+   ],
+   [
+    -7.5,
+    15170.0,
+    0.111,
+    0.635
+   ],
+   [
+    -2.5,
+    23342.0,
+    0.084,
+    0.675
+   ],
+   [
+    2.5,
+    6269.0,
+    0.217,
+    0.636
+   ],
+   [
+    7.5,
+    418.0,
+    0.713,
+    0.048
+   ],
+   [
+    12.5,
+    43.0,
+    1.0,
+    0.0
+   ]
+  ],
+  "p99_boundary_y": 2.07085,
+  "wood_edge_minus_p99_mm": -21.78433982107846,
+  "wood_edge_y": 2.0490656601789214,
+  "wood_edge_minus_desk_back_edge_mm": -34.856487571933044,
+  "slot_points_below_top_per_band": [
+   0,
+   102,
+   257,
+   262,
+   192,
+   156,
+   248,
+   255,
+   244,
+   221,
+   222,
+   340
+  ],
+  "wall_points_per_band": [
+   33276,
+   33885,
+   42879,
+   44917,
+   43986,
+   42690,
+   41894,
+   42198,
+   42614,
+   43373,
+   45144,
+   46656
+  ],
+  "finding": "the wood ends 22 mm before the reference back boundary; the last ~2 cm of \"desk top\" are wall-paint pixels flattened to desk height. Pi3X merged the wall seen down the gap into a desk-height strip and pulled the lower wall onto it; the slot interior has almost no points (100-430 per 10 cm band vs ~40k wall points)."
+ },
+ "ref_wall": {
+  "rows": "[height above the desk top m, wall y - desk back edge mm (metric), wall y - reference p99 boundary mm, points]",
+  "table": [
+   [
+    0.05,
+    -18.7,
+    -5.7,
+    518690
+   ],
+   [
+    0.15,
+    -13.5,
+    -0.5,
+    457880
+   ],
+   [
+    0.25,
+    -10.2,
+    2.8,
+    497458
+   ],
+   [
+    0.35,
+    -7.6,
+    5.5,
+    522256
+   ],
+   [
+    0.45,
+    -5.1,
+    8.0,
+    526943
+   ],
+   [
+    0.55,
+    -3.9,
+    9.1,
+    462819
+   ],
+   [
+    0.65,
+    -5.2,
+    7.8,
+    294469
+   ],
+   [
+    0.75,
+    -0.8,
+    12.3,
+    193553
+   ],
+   [
+    0.85,
+    6.0,
+    19.0,
+    150812
+   ],
+   [
+    0.95,
+    13.3,
+    26.3,
+    102618
+   ],
+   [
+    1.05,
+    17.6,
+    30.7,
+    74727
+   ],
+   [
+    1.15,
+    17.2,
+    30.2,
+    14762
+   ]
+  ],
+  "finding": "the reference wall leans back from the desk-height strip: 0-9 mm behind its boundary up to 0.55 m above the desk, 30 mm at 1.0-1.2 m. The lean is the merge, not a tilted wall."
+ },
+ "video_band": {
+  "per_frame": {
+   "942": {
+    "dark_band_px": 35.0,
+    "slot_px_35mm": 18.9,
+    "dark_band_cm_if_slot": 6.48,
+    "thin_line_cm_if_slot": 0.56
+   },
+   "962": {
+    "dark_band_px": 38.0,
+    "slot_px_35mm": 19.9,
+    "dark_band_cm_if_slot": 6.91,
+    "thin_line_cm_if_slot": 0.6
+   },
+   "982": {
+    "dark_band_px": 37.0,
+    "slot_px_35mm": 20.3,
+    "dark_band_cm_if_slot": 6.44,
+    "thin_line_cm_if_slot": 0.59
+   },
+   "1063": {
+    "dark_band_px": 32.0,
+    "slot_px_35mm": 22.1,
+    "dark_band_cm_if_slot": 5.42,
+    "thin_line_cm_if_slot": 0.68
+   },
+   "1083": {
+    "dark_band_px": 24.5,
+    "slot_px_35mm": 23.6,
+    "dark_band_cm_if_slot": 3.67,
+    "thin_line_cm_if_slot": 0.71
+   },
+   "1103": {
+    "dark_band_px": 38.0,
+    "slot_px_35mm": 24.0,
+    "dark_band_cm_if_slot": 5.79,
+    "thin_line_cm_if_slot": 0.77
+   }
+  },
+  "finding": "in all 6 close views the darker band above the junction (24-38 px) is at least as wide as a 35 mm slot (19-24 px). The old check called it lighting and read only the thin line inside it (0.6-0.8 cm), which is the deepest shadow at the occluding edge, not the slot width."
+ },
+ "sy": {
+  "reference_front_edge_y": 1.3125392593715612,
+  "reference_wood_edge_y": 2.0490656601789214,
+  "reference_merged_boundary_y": 2.0689614071224183,
+  "reference_upper_wall_y_1p0_1p2m": 2.1011221477508544,
+  "depths_at_sy_1": {
+   "front_to_wood": 0.7365264008073602,
+   "front_to_merged_boundary": 0.756422147750857,
+   "front_to_p99": 0.7583107406284388,
+   "front_to_upper_wall": 0.7885828883792931
+  },
+  "implied_sy": {
+   "desk_wood_0p76": 1.031870682662439,
+   "upper_wall_0p795": 1.008137523290539,
+   "merged_as_wall_0p795": 1.0510004266319413,
+   "merged_as_edge_0p76": 1.0047299675978305,
+   "arm_length_icp": [
+    1.0027585518150912,
+    1.0431199252452545
+   ]
+  },
+  "finding": "the reference desk-height measure (0.757) was neither desk (0.76) nor desk + gap (0.795): it ends at the merged strip. The wood depth (0.737) gives sy 1.03, the upper wall 1.01, the MJCF arm length 1.00-1.04. Desk + gap would need sy 1.05, at or past every other bound. Keep sy 1.00: with the desk anchored on the merged boundary, the box, arms and rail move by <= 3 mm between (sy 1.00, merged anchor) and (sy 1.03, wood anchor)."
+ },
+ "rail": {
+  "picks": [
+   {
+    "frame": 341,
+    "side": "left",
+    "px": [
+     438,
+     805
+    ],
+    "x": -2.755574532331886,
+    "y": 1.3738222374294249,
+    "z": 0.7446899200391942,
+    "x_per_5px": 0.007436394691467396
+   },
+   {
+    "frame": 341,
+    "side": "right",
+    "px": [
+     1234,
+     782
+    ],
+    "x": -1.772006517233314,
+    "y": 1.3753419174526182,
+    "z": 0.7237069267940694,
+    "x_per_5px": 0.007916609197854974
+   },
+   {
+    "frame": 381,
+    "side": "left",
+    "px": [
+     553,
+     800
+    ],
+    "x": -2.7419309909958263,
+    "y": 1.37061252730827,
+    "z": 0.7387639618826085,
+    "x_per_5px": 0.005368246138095917
+   },
+   {
+    "frame": 381,
+    "side": "right",
+    "px": [
+     1300,
+     742
+    ],
+    "x": -1.802372659029426,
+    "y": 1.3489698423717467,
+    "z": 0.7285358173561269,
+    "x_per_5px": 0.007665820419788388
+   },
+   {
+    "frame": 401,
+    "side": "left",
+    "px": [
+     573,
+     805
+    ],
+    "x": -2.747095652403297,
+    "y": 1.381016398844525,
+    "z": 0.7372249097538167,
+    "x_per_5px": 0.004685260355472565
+   },
+   {
+    "frame": 401,
+    "side": "right",
+    "px": [
+     1338,
+     733
+    ],
+    "x": -1.7888537104744333,
+    "y": 1.3422042383525816,
+    "z": 0.7233713615846807,
+    "x_per_5px": 0.00906373783946042
+   },
+   {
+    "frame": 421,
+    "side": "left",
+    "px": [
+     596,
+     840
+    ],
+    "x": -2.742221370520057,
+    "y": 1.3837591661785094,
+    "z": 0.7360743726205999,
+    "x_per_5px": 0.004003222286701191
+   },
+   {
+    "frame": 421,
+    "side": "right",
+    "px": [
+     1328,
+     745
+    ],
+    "x": -1.8017618258613963,
+    "y": 1.3334098114345518,
+    "z": 0.7225802333069021,
+    "x_per_5px": 0.010496760159730903
+   },
+   {
+    "frame": 942,
+    "side": "left",
+    "px": [
+     203,
+     1050
+    ],
+    "x": -2.773077669920387,
+    "y": 1.333648587641522,
+    "z": 0.7428295309257681,
+    "x_per_5px": 0.002964922785758939
+   }
+  ],
+  "per_frame": {
+   "341": {
+    "left": -2.755574532331886,
+    "right": -1.772006517233314,
+    "length": 0.983568015098572,
+    "centre": -2.2637905247826,
+    "overhang_left": 0.1803907304383503,
+    "overhang_right": 0.1822076363461278
+   },
+   "381": {
+    "left": -2.7419309909958263,
+    "right": -1.802372659029426,
+    "length": 0.9395583319664003,
+    "centre": -2.2721518250126262,
+    "overhang_left": 0.1667471891022907,
+    "overhang_right": 0.15184149455001572
+   },
+   "401": {
+    "left": -2.747095652403297,
+    "right": -1.7888537104744333,
+    "length": 0.9582419419288637,
+    "centre": -2.267974681438865,
+    "overhang_left": 0.17191185050976143,
+    "overhang_right": 0.16536044310500841
+   },
+   "421": {
+    "left": -2.742221370520057,
+    "right": -1.8017618258613963,
+    "length": 0.9404595446586608,
+    "centre": -2.2719915981907266,
+    "overhang_left": 0.16703756862652153,
+    "overhang_right": 0.1524523277180454
+   }
+  },
+  "point_map_centre": -2.2689771573562045,
+  "point_map_centre_sd": 0.0034304330518167693,
+  "arm_base_midpoint_x": -2.2646989777364888,
+  "pole_x": -2.2759095104355236,
+  "x_extent": [
+   -2.7646989777364888,
+   -1.7646989777364888
+  ],
+  "finding": "the source-frame point maps put the rail ends at -2.747 / -1.791 (length 0.955, 2-3 cm short of the tape at each end) with the centre at -2.269, 0.4 cm from the arm-base midpoint. The tape rail is centred on the arm bases."
+ }
+}

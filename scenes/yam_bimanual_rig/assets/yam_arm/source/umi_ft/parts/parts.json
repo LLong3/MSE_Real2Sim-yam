@@ -1,0 +1,1101 @@
+{
+ "inputs": {
+  "finger": {
+   "file": "source/umi_ft/umift_finger_no_contact_mic.stl",
+   "md5": "217d8bef2cde83e082376b1232337bc2"
+  },
+  "assembled": {
+   "file": "source/umi_ft/umift_assembled.stl",
+   "md5": "d90b9fbe02e4bf08089f5d51b2548f09"
+  },
+  "wsg50": {
+   "file": "source/umi_ft/umift_wsg50_gripper.stl",
+   "md5": "bf4f92bfe415dcd80f1c5ff7b9ff5534"
+  }
+ },
+ "units": "metres (finger extents 25.0 x 17.2 x 96.7 mm = published finger_width, finger_thickness; finger_length 84 mm is the fin-ray body without the lug ends)",
+ "inventory_assembled": {
+  "faces": 143564,
+  "extents_mm": [
+   204.0,
+   219.1,
+   237.5
+  ],
+  "components": 2349,
+  "components_ge_500_faces": [
+   {
+    "faces": 13508,
+    "extents_mm": [
+     71.6,
+     93.9,
+     102.0
+    ],
+    "centre_mm": [
+     -11.9,
+     -36.6,
+     19.2
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 10628,
+    "extents_mm": [
+     172.0,
+     91.4,
+     26.3
+    ],
+    "centre_mm": [
+     -11.9,
+     -34.8,
+     83.4
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 9683,
+    "extents_mm": [
+     143.5,
+     19.1,
+     65.9
+    ],
+    "centre_mm": [
+     27.8,
+     -52.1,
+     170.4
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 6466,
+    "extents_mm": [
+     45.1,
+     118.9,
+     29.0
+    ],
+    "centre_mm": [
+     -74.4,
+     47.0,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 6458,
+    "extents_mm": [
+     45.1,
+     118.9,
+     29.0
+    ],
+    "centre_mm": [
+     50.7,
+     47.0,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 5402,
+    "extents_mm": [
+     172.0,
+     91.4,
+     35.7
+    ],
+    "centre_mm": [
+     -11.9,
+     -34.8,
+     112.0
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 4730,
+    "extents_mm": [
+     14.2,
+     31.0,
+     29.0
+    ],
+    "centre_mm": [
+     50.2,
+     91.0,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 4716,
+    "extents_mm": [
+     14.2,
+     31.0,
+     29.0
+    ],
+    "centre_mm": [
+     -73.9,
+     91.0,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 4537,
+    "extents_mm": [
+     14.1,
+     21.4,
+     56.0
+    ],
+    "centre_mm": [
+     93.3,
+     -54.3,
+     177.7
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 3541,
+    "extents_mm": [
+     143.4,
+     18.0,
+     65.8
+    ],
+    "centre_mm": [
+     27.8,
+     -59.3,
+     172.1
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 3338,
+    "extents_mm": [
+     156.7,
+     34.1,
+     87.0
+    ],
+    "centre_mm": [
+     27.8,
+     -57.8,
+     154.2
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 3080,
+    "extents_mm": [
+     130.2,
+     21.1,
+     55.1
+    ],
+    "centre_mm": [
+     20.3,
+     -57.7,
+     164.3
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 2366,
+    "extents_mm": [
+     54.4,
+     80.0,
+     121.9
+    ],
+    "centre_mm": [
+     -11.9,
+     -30.1,
+     32.6
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 2168,
+    "extents_mm": [
+     55.1,
+     38.0,
+     16.8
+    ],
+    "centre_mm": [
+     -54.2,
+     -27.5,
+     85.1
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 2168,
+    "extents_mm": [
+     55.1,
+     38.0,
+     16.8
+    ],
+    "centre_mm": [
+     30.5,
+     -27.5,
+     85.1
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 2016,
+    "extents_mm": [
+     14.7,
+     5.3,
+     14.6
+    ],
+    "centre_mm": [
+     -14.5,
+     -44.0,
+     190.9
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1920,
+    "extents_mm": [
+     14.7,
+     6.2,
+     14.5
+    ],
+    "centre_mm": [
+     -14.5,
+     -46.9,
+     191.8
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1920,
+    "extents_mm": [
+     14.7,
+     5.6,
+     14.5
+    ],
+    "centre_mm": [
+     -14.5,
+     -45.0,
+     191.2
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1920,
+    "extents_mm": [
+     14.7,
+     5.6,
+     14.5
+    ],
+    "centre_mm": [
+     -23.2,
+     -49.2,
+     175.4
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1920,
+    "extents_mm": [
+     14.7,
+     5.9,
+     14.5
+    ],
+    "centre_mm": [
+     -23.2,
+     -51.2,
+     176.0
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1920,
+    "extents_mm": [
+     14.7,
+     6.2,
+     14.5
+    ],
+    "centre_mm": [
+     -32.0,
+     -46.8,
+     191.8
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1872,
+    "extents_mm": [
+     14.7,
+     5.3,
+     14.6
+    ],
+    "centre_mm": [
+     -23.2,
+     -48.3,
+     175.0
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1872,
+    "extents_mm": [
+     14.7,
+     5.3,
+     14.6
+    ],
+    "centre_mm": [
+     -32.0,
+     -44.0,
+     190.9
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1840,
+    "extents_mm": [
+     1.3,
+     4.5,
+     17.0
+    ],
+    "centre_mm": [
+     -43.2,
+     -58.1,
+     171.8
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1732,
+    "extents_mm": [
+     25.0,
+     96.7,
+     17.2
+    ],
+    "centre_mm": [
+     -64.3,
+     81.6,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1620,
+    "extents_mm": [
+     70.0,
+     19.8,
+     43.4
+    ],
+    "centre_mm": [
+     -11.8,
+     -79.2,
+     92.1
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1616,
+    "extents_mm": [
+     25.0,
+     96.7,
+     17.2
+    ],
+    "centre_mm": [
+     40.7,
+     81.5,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1450,
+    "extents_mm": [
+     15.0,
+     10.3,
+     14.8
+    ],
+    "centre_mm": [
+     92.9,
+     -63.1,
+     144.2
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1450,
+    "extents_mm": [
+     14.1,
+     10.6,
+     15.7
+    ],
+    "centre_mm": [
+     -37.8,
+     -48.9,
+     197.8
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1440,
+    "extents_mm": [
+     14.7,
+     5.6,
+     14.5
+    ],
+    "centre_mm": [
+     -32.0,
+     -45.0,
+     191.2
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1316,
+    "extents_mm": [
+     4.0,
+     4.1,
+     8.3
+    ],
+    "centre_mm": [
+     96.3,
+     -55.9,
+     171.2
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 1176,
+    "extents_mm": [
+     12.0,
+     34.0,
+     16.9
+    ],
+    "centre_mm": [
+     -32.9,
+     -25.5,
+     85.2
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1176,
+    "extents_mm": [
+     12.0,
+     34.0,
+     16.9
+    ],
+    "centre_mm": [
+     9.1,
+     -25.5,
+     85.2
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1152,
+    "extents_mm": [
+     12.6,
+     4.5,
+     12.5
+    ],
+    "centre_mm": [
+     -32.0,
+     -43.7,
+     190.8
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 981,
+    "extents_mm": [
+     3.1,
+     2.1,
+     6.0
+    ],
+    "centre_mm": [
+     97.0,
+     -55.9,
+     171.2
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 936,
+    "extents_mm": [
+     12.6,
+     4.2,
+     12.4
+    ],
+    "centre_mm": [
+     -23.2,
+     -47.8,
+     174.9
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 912,
+    "extents_mm": [
+     3.4,
+     5.2,
+     10.2
+    ],
+    "centre_mm": [
+     61.3,
+     72.4,
+     78.9
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 912,
+    "extents_mm": [
+     3.4,
+     5.2,
+     10.2
+    ],
+    "centre_mm": [
+     -85.1,
+     72.4,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 864,
+    "extents_mm": [
+     12.6,
+     4.2,
+     12.4
+    ],
+    "centre_mm": [
+     -14.5,
+     -43.5,
+     190.7
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 860,
+    "extents_mm": [
+     0.8,
+     36.1,
+     29.0
+    ],
+    "centre_mm": [
+     59.2,
+     87.6,
+     78.9
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 860,
+    "extents_mm": [
+     0.8,
+     36.1,
+     29.0
+    ],
+    "centre_mm": [
+     -83.0,
+     87.7,
+     78.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 824,
+    "extents_mm": [
+     1.3,
+     25.0,
+     26.6
+    ],
+    "centre_mm": [
+     -81.8,
+     91.6,
+     78.2
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 824,
+    "extents_mm": [
+     1.3,
+     25.0,
+     26.6
+    ],
+    "centre_mm": [
+     58.0,
+     91.6,
+     79.5
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 800,
+    "extents_mm": [
+     5.9,
+     1.9,
+     5.8
+    ],
+    "centre_mm": [
+     -35.5,
+     -49.4,
+     175.3
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 800,
+    "extents_mm": [
+     5.5,
+     1.6,
+     5.3
+    ],
+    "centre_mm": [
+     -35.5,
+     -49.5,
+     175.4
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 669,
+    "extents_mm": [
+     117.1,
+     7.0,
+     2.5
+    ],
+    "centre_mm": [
+     27.8,
+     -47.1,
+     204.4
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 664,
+    "extents_mm": [
+     53.9,
+     16.2,
+     56.6
+    ],
+    "centre_mm": [
+     -16.9,
+     -51.8,
+     175.0
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 640,
+    "extents_mm": [
+     10.2,
+     2.6,
+     1.8
+    ],
+    "centre_mm": [
+     -3.8,
+     -64.9,
+     137.7
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 640,
+    "extents_mm": [
+     5.5,
+     2.6,
+     1.8
+    ],
+    "centre_mm": [
+     -16.1,
+     -64.9,
+     137.7
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 640,
+    "extents_mm": [
+     10.2,
+     2.6,
+     1.8
+    ],
+    "centre_mm": [
+     9.1,
+     -64.9,
+     137.7
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 630,
+    "extents_mm": [
+     16.1,
+     2.6,
+     1.6
+    ],
+    "centre_mm": [
+     6.2,
+     -46.9,
+     204.8
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 514,
+    "extents_mm": [
+     1.0,
+     5.0,
+     5.0
+    ],
+    "centre_mm": [
+     58.3,
+     75.7,
+     79.9
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 514,
+    "extents_mm": [
+     1.0,
+     5.0,
+     5.0
+    ],
+    "centre_mm": [
+     -82.1,
+     75.7,
+     77.8
+    ],
+    "watertight": true
+   }
+  ]
+ },
+ "inventory_wsg50": {
+  "faces": 49406,
+  "extents_mm": [
+   166.0,
+   196.2,
+   83.7
+  ],
+  "components": 15,
+  "components_ge_500_faces": [
+   {
+    "faces": 9334,
+    "extents_mm": [
+     146.0,
+     72.5,
+     50.0
+    ],
+    "centre_mm": [
+     0.0,
+     -36.2,
+     0.0
+    ],
+    "watertight": false
+   },
+   {
+    "faces": 6328,
+    "extents_mm": [
+     42.6,
+     109.4,
+     38.0
+    ],
+    "centre_mm": [
+     46.3,
+     -131.4,
+     0.0
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 6264,
+    "extents_mm": [
+     42.6,
+     109.4,
+     38.0
+    ],
+    "centre_mm": [
+     -46.3,
+     -131.4,
+     0.0
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 5978,
+    "extents_mm": [
+     14.1,
+     31.0,
+     29.0
+    ],
+    "centre_mm": [
+     -45.5,
+     -170.6,
+     4.5
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 5964,
+    "extents_mm": [
+     14.2,
+     31.0,
+     29.0
+    ],
+    "centre_mm": [
+     46.4,
+     -170.7,
+     4.5
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 5326,
+    "extents_mm": [
+     122.0,
+     35.3,
+     83.7
+    ],
+    "centre_mm": [
+     -7.0,
+     -7.7,
+     14.8
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 2844,
+    "extents_mm": [
+     20.0,
+     16.0,
+     18.5
+    ],
+    "centre_mm": [
+     -83.0,
+     -9.0,
+     -12.5
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1712,
+    "extents_mm": [
+     18.0,
+     37.1,
+     30.0
+    ],
+    "centre_mm": [
+     34.0,
+     -78.0,
+     0.0
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1712,
+    "extents_mm": [
+     18.0,
+     37.1,
+     30.0
+    ],
+    "centre_mm": [
+     -34.0,
+     -78.0,
+     0.0
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1624,
+    "extents_mm": [
+     8.5,
+     10.0,
+     11.0
+    ],
+    "centre_mm": [
+     -77.3,
+     -8.0,
+     2.5
+    ],
+    "watertight": true
+   },
+   {
+    "faces": 1624,
+    "extents_mm": [
+     8.5,
+     10.0,
+     11.0
+    ],
+    "centre_mm": [
+     -77.3,
+     -8.0,
+     14.5
+    ],
+    "watertight": true
+   }
+  ]
+ },
+ "inventory_finger": {
+  "faces": 1732,
+  "watertight": true,
+  "extents_mm": [
+   25.0,
+   17.2,
+   96.7
+  ],
+  "volume_cm3": 12.751767189709934
+ },
+ "finger_to_assembly": {
+  "T_assembly_from_finger": [
+   [
+    1.0,
+    0.0,
+    0.0,
+    -0.0518375663086772
+   ],
+   [
+    0.0,
+    0.0,
+    1.0,
+    0.07524390891194344
+   ],
+   [
+    0.0,
+    -1.0,
+    0.0,
+    0.0702139288187027
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "max_vertex_residual_m": 8.278594674107239e-09,
+  "other_finger_instance_residual_m": [
+   0.004130451008677563
+  ],
+  "note": "the second assembled finger is the with-contact-mic variant (4.1 mm off)"
+ },
+ "parts_in_finger_frame": {
+  "pad": {
+   "file": "source/umi_ft/parts/pad.stl",
+   "faces": 1732,
+   "watertight": true,
+   "volume_cm3": 12.751767189709934,
+   "bounds_mm": [
+    [
+     -25.0,
+     -17.2,
+     -42.0
+    ],
+    [
+     0.0,
+     0.0,
+     54.7
+    ]
+   ]
+  },
+  "clamp": {
+   "file": "source/umi_ft/parts/clamp.stl",
+   "faces": 4716,
+   "watertight": true,
+   "volume_cm3": 6.481277907431629,
+   "bounds_mm": [
+    [
+     -29.17,
+     -23.1,
+     0.24
+    ],
+    [
+     -15.02,
+     5.9,
+     31.24
+    ]
+   ]
+  },
+  "holder_white": {
+   "file": "source/umi_ft/parts/holder_white.stl",
+   "faces": 3106,
+   "watertight": true,
+   "volume_cm3": 20.474346553253646,
+   "bounds_mm": [
+    [
+     -42.61,
+     -23.1,
+     -60.5
+    ],
+    [
+     -0.02,
+     5.9,
+     31.24
+    ]
+   ]
+  },
+  "holder_black": {
+   "file": "source/umi_ft/parts/holder_black.stl",
+   "faces": 1242,
+   "watertight": true,
+   "volume_cm3": 14.749368274954797,
+   "bounds_mm": [
+    [
+     -42.61,
+     -23.1,
+     -61.5
+    ],
+    [
+     -0.02,
+     -6.0,
+     -17.8
+    ]
+   ]
+  }
+ },
+ "holder_full_before_clip": {
+  "faces": 6466,
+  "volume_cm3": 44.66045466826782,
+  "bounds_mm": [
+   [
+    -45.11,
+    -23.1,
+    -87.7
+   ],
+   [
+    -0.02,
+    5.9,
+    31.24
+   ]
+  ]
+ },
+ "modifications": {
+  "holder_clip_z_m": -0.0615,
+  "tag_block": {
+   "z_below_m": -0.0178,
+   "y_below_m": -0.006
+  }
+ },
+ "tags": {
+  "outer_mm": 24.6,
+  "white_line_mm": 0.8,
+  "black_gap_mm": 0.9,
+  "px_per_mm": 20,
+  "dictionary": "DICT_4X4_50",
+  "size_px": 492,
+  "aruco_mm": 21.2,
+  "files": {
+   "0": "source/umi_ft/tags/aruco_4x4_50_id0.png",
+   "1": "source/umi_ft/tags/aruco_4x4_50_id1.png",
+   "6": "source/umi_ft/tags/aruco_4x4_50_id6.png",
+   "7": "source/umi_ft/tags/aruco_4x4_50_id7.png"
+  },
+  "image_up": "toward the fingertip",
+  "assignment": {
+   "left_arm": {
+    "tip_left": 7,
+    "tip_right": 6
+   },
+   "right_arm": {
+    "tip_left": 1,
+    "tip_right": 0
+   }
+  }
+ }
+}

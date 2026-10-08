@@ -1,0 +1,79 @@
+{
+ "fingers": {
+  "tip_left": {
+   "new_mass_kg": 0.10161281821178093,
+   "mass_range_kg": [
+    0.09898179502699406,
+    0.11152975175443913
+   ],
+   "stock_claw_removed_cm3": 28.667369784890187,
+   "umi_volumes_cm3": {
+    "pad": 12.751767189709927,
+    "clamp": 7.380277613939907,
+    "white": 23.060346436112702,
+    "black": 18.465385617813475
+   }
+  },
+  "tip_right": {
+   "new_mass_kg": 0.10161280287298695,
+   "mass_range_kg": [
+    0.09898178234692438,
+    0.11152972639429976
+   ],
+   "stock_claw_removed_cm3": 28.667390236615514,
+   "umi_volumes_cm3": {
+    "pad": 12.751767189709936,
+    "clamp": 7.38027761393992,
+    "white": 23.060346436112702,
+    "black": 18.465385617813475
+   }
+  }
+ },
+ "mujoco": {
+  "version": "3.3.5",
+  "compiled": true,
+  "test_model": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/source/umi_ft/mjcf_v4/yam_linear_4310_umi_ft.xml",
+  "contact_surfaces": {
+   "q=0.0": {
+    "contact_y6_m": {
+     "tip_left": -0.004099999634405185,
+     "tip_right": 0.004099998187665365
+    },
+    "gap_m": 0.00819999782207055
+   },
+   "q=0.01": {
+    "contact_y6_m": {
+     "tip_left": -0.014099999634325198,
+     "tip_right": 0.014099998187575378
+    },
+    "gap_m": 0.028199997821900576
+   },
+   "q=0.0475": {
+    "contact_y6_m": {
+     "tip_left": -0.051599999634025236,
+     "tip_right": 0.05159999818723792
+    },
+    "gap_m": 0.10319999782126316
+   },
+   "left_arm_mount": {
+    "test_model": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/source/umi_ft/mjcf_v4/yam_linear_4310_umi_ft_left_arm.xml",
+    "compiled": true,
+    "roll_rad": -0.074526,
+    "body_mass_kg": {
+     "tip_left": 0.1016,
+     "tip_right": 0.1016
+    }
+   }
+  },
+  "body_mass_kg": {
+   "tip_left": 0.1016,
+   "tip_right": 0.1016
+  },
+  "stock_body_mass_kg": {
+   "tip_left": 0.0710042,
+   "tip_right": 0.0710042
+  },
+  "ngeom": 25,
+  "stock_ngeom": 9
+ }
+}

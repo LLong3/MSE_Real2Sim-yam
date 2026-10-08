@@ -1,0 +1,77 @@
+{
+ "units": "metres (finger extents 25.0 x 17.2 x 96.7 mm = published finger_width, finger_thickness; finger_length 84 mm is the fin-ray body without the lug ends)",
+ "parts_in_finger_frame": {
+  "pad": {
+   "file": "source/umi_ft/parts/pad.stl",
+   "faces": 1732,
+   "watertight": true,
+   "volume_cm3": 12.751767189709934,
+   "bounds_mm": [
+    [
+     -25.0,
+     -17.2,
+     -42.0
+    ],
+    [
+     0.0,
+     0.0,
+     54.7
+    ]
+   ]
+  },
+  "clamp": {
+   "file": "source/umi_ft/parts/clamp.stl",
+   "faces": 4716,
+   "watertight": true,
+   "volume_cm3": 6.481277907431629,
+   "bounds_mm": [
+    [
+     -29.17,
+     -23.1,
+     0.24
+    ],
+    [
+     -15.02,
+     5.9,
+     31.24
+    ]
+   ]
+  },
+  "holder_white": {
+   "file": "source/umi_ft/parts/holder_white.stl",
+   "faces": 3106,
+   "watertight": true,
+   "volume_cm3": 20.474346553253646,
+   "bounds_mm": [
+    [
+     -42.61,
+     -23.1,
+     -60.5
+    ],
+    [
+     -0.02,
+     5.9,
+     31.24
+    ]
+   ]
+  },
+  "holder_black": {
+   "file": "source/umi_ft/parts/holder_black.stl",
+   "faces": 1242,
+   "watertight": true,
+   "volume_cm3": 14.749368274954797,
+   "bounds_mm": [
+    [
+     -42.61,
+     -23.1,
+     -61.5
+    ],
+    [
+     -0.02,
+     -6.0,
+     -17.8
+    ]
+   ]
+  }
+ }
+}

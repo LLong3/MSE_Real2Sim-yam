@@ -1,0 +1,4 @@
+{'iter': 0, 'candidates': 805, 'pnp_inliers': 93, 'frames_with_inliers': 24, 'reproj_median_px': 1.8387987895025202, 'reproj_rms_px': 1.9341682538872405, 'centre': [-2.3125, 1.5498, 1.6049]}
+{'iter': 1, 'candidates': 770, 'pnp_inliers': 90, 'frames_with_inliers': 29, 'reproj_median_px': 1.9395090948348548, 'reproj_rms_px': 2.012134461869329, 'centre': [-2.2811, 1.5538, 1.6371]}
+{'iter': 2, 'candidates': 797, 'pnp_inliers': 92, 'frames_with_inliers': 29, 'reproj_median_px': 1.7370585362401263, 'reproj_rms_px': 1.8359265331779617, 'centre': [-2.281, 1.5546, 1.6349]}
+{'iter': 3, 'candidates': 830, 'pnp_inliers': 86, 'frames_with_inliers': 29, 'reproj_median_px': 1.9501048121445903, 'reproj_rms_px': 2.018399765797615, 'centre': [-2.2797, 1.5459, 1.6366]}

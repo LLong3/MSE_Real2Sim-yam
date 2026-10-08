@@ -1,0 +1,29 @@
+{
+ "render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/delivery_v1",
+ "from": "configs/delivery_v1.json",
+ "steps": [
+  "wrist_vignette",
+  "wrist"
+ ],
+ "regions": {},
+ "left_wrist": {
+  "pixels": 353899,
+  "gain": [
+   1.6108,
+   1.6952,
+   1.9941
+  ],
+  "k1": -0.3507755430343058,
+  "k2": 0.04363238295993653
+ },
+ "right_wrist": {
+  "pixels": 355651,
+  "gain": [
+   1.7102,
+   1.9292,
+   2.6693
+  ],
+  "k1": -0.3730221474870517,
+  "k2": 0.0634155950428174
+ }
+}

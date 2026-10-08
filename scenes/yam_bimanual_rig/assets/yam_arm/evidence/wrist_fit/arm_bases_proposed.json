@@ -1,0 +1,635 @@
+{
+ "schema": 1,
+ "created": "2026-09-30",
+ "task": "yam-wrist-claw-fit-20260930",
+ "status": "proposal (metric/ not edited)",
+ "source": {
+  "fit": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t125032z-wrist-claw-fit-efcb76a0/stage2/final_c/fit.json",
+  "variant": "c",
+  "stage1": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t125032z-wrist-claw-fit-efcb76a0/stage1/stage1_background_fit.json",
+  "captures": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t125032z-wrist-claw-fit-efcb76a0/captures_sq0.03556/captures.json",
+  "check_render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t125032z-wrist-claw-fit-efcb76a0/check_final",
+  "note": "final: variant c with the asset claw placement fixed (51.6 / -135.6 / 0 mm)"
+ },
+ "meaning": "world_from_base = equivalent arm base at raiden home: base x FK(q = 0) puts link_6 where the home images put it (it may tilt and lift the base). rail_form = the same link_6 pose with the base on the rail (metric height, no roll / pitch; yaw and x, y fitted) plus home joint offsets (joint 2, 3, 6): the recommended form (no base tilt). At one pose a base yaw equals a joint-1 zero offset exactly, and a base pitch equals a joint 2 / 3 / 4 offset up to a few mm of link_6 position, which the free base x, y absorb: these images do not tell them apart (see the stage-2 summary).",
+ "identifiable": {
+  "yes": [
+   "link_6 pose at home in the world (rotation about 0.5 deg, position about 1-2 cm along the scene-camera rays); in rail form: base yaw (= joint-1 offset), the pitch sum joint2 - joint3 (base pitch), joint-6 roll, base x / y"
+  ],
+  "no": [
+   "base tilt vs joint 2 / 3 / 4 zero offsets or sag (only link_6 is visible: links 1-5 are outside the three views)",
+   "the split of the pitch between joints 2, 3 and 4",
+   "base height vs that split",
+   "a static offset vs a pose-dependent one (one pose only: the arms at home)"
+  ],
+  "needs": "several arm poses seen by the scene camera with the claws or wrist board in view (e.g. the calibration captures with the arm links visible), or a direct measurement of the base on the rail"
+ },
+ "arms": {
+  "left_arm": {
+   "world_from_base": [
+    [
+     0.007166305602495252,
+     -0.9999525882518276,
+     -0.00659282280074638,
+     -2.593541034551386
+    ],
+    [
+     0.9969960799637437,
+     0.006636343613017311,
+     0.07716719173572242,
+     1.357308251714731
+    ],
+    [
+     -0.07711978086677522,
+     -0.007126022166704266,
+     0.996996368703086,
+     0.7483308784975014
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "base_position_m": [
+    -2.59354,
+    1.35731,
+    0.74833
+   ],
+   "yaw_deg": 89.588,
+   "tilt_deg": 4.442,
+   "vs_metric": {
+    "yaw_pitch_roll_deg_base_axes": [
+     -0.66,
+     4.423,
+     -0.41
+    ],
+    "t_world_mm": [
+     -18.4,
+     -22.5,
+     5.8
+    ]
+   },
+   "metric_world_from_base": [
+    [
+     -0.004339448032680228,
+     -0.9999905845510605,
+     0.0,
+     -2.5751838018935356
+    ],
+    [
+     0.9999905845510605,
+     -0.004339448032680228,
+     0.0,
+     1.3798262154163934
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636312145671
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "vs_capture_base_35p56mm": {
+    "yaw_pitch_roll_deg_base_axes": [
+     -1.436,
+     3.463,
+     -0.701
+    ],
+    "t_world_mm": [
+     -2.6,
+     -6.7,
+     1.2
+    ]
+   },
+   "capture_base_35p56mm": {
+    "world_from_base": [
+     [
+      -0.017563026642010704,
+      -0.9998322880393608,
+      0.005189979686756662,
+      -2.5908929934635045
+     ],
+     [
+      0.9997074890196186,
+      -0.017474037821484045,
+      0.016721076529423028,
+      1.3640428366125796
+     ],
+     [
+      -0.01662758230355516,
+      0.005482134273279685,
+      0.9998467231083714,
+      0.7471498494113229
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      0.758,
+      0.953,
+      0.314
+     ],
+     "t_world_mm": [
+      -15.7,
+      -15.8,
+      4.6
+     ]
+    },
+    "residual_px": 3.31
+   },
+   "capture_base_36mm": {
+    "vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      0.822,
+      0.741,
+      0.367
+     ],
+     "t_world_mm": [
+      -16.3,
+      -12.7,
+      -6.2
+     ]
+    },
+    "residual_px": 3.07
+   },
+   "link6_world_at_home": [
+    [
+     0.006597072866471192,
+     0.9999525488830504,
+     -0.007167887546953399,
+     -2.597453257727602
+    ],
+    [
+     -0.07716615859457399,
+     -0.00663760048961777,
+     -0.9969961515610266,
+     1.4836199334476705
+    ],
+    [
+     -0.9969964205539317,
+     0.007130374606675727,
+     0.07711870824006942,
+     0.9113480306015398
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "rail_form": {
+    "world_from_base": [
+     [
+      0.007187419063629297,
+      -0.999974170170012,
+      0.0,
+      -2.5947128508000903
+     ],
+     [
+      0.999974170170012,
+      0.007187419063629297,
+      0.0,
+      1.3656039237589221
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "yaw_deg": 89.588,
+    "base_position_m": [
+     -2.59471,
+     1.3656,
+     0.74256
+    ],
+    "base_vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      -0.66,
+      0.0,
+      0.0
+     ],
+     "t_world_mm": [
+      -19.5,
+      -14.2,
+      0.0
+     ]
+    },
+    "home_joint_offsets_deg": {
+     "joint2": 5.264,
+     "joint3": 0.841,
+     "joint6": -0.41
+    },
+    "home_q_rad": [
+     0.0,
+     0.09186960151570822,
+     0.014673182180382155,
+     0.0,
+     0.0,
+     -0.007148032825810147
+    ],
+    "in_mjcf_range": {
+     "joint2": true,
+     "joint3": true,
+     "joint6": true
+    },
+    "residual": {
+     "rot_deg": 0.0,
+     "pos_mm": 0.0
+    }
+   },
+   "rail_form_alt_j2_j4_j6_ill_conditioned": {
+    "world_from_base": [
+     [
+      0.00718735168268303,
+      -0.9999741706543172,
+      0.0,
+      -2.5948135678928663
+     ],
+     [
+      0.9999741706543172,
+      0.00718735168268303,
+      0.0,
+      1.3516080524440979
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "yaw_deg": 89.588,
+    "base_position_m": [
+     -2.59481,
+     1.35161,
+     0.74256
+    ],
+    "base_vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      -0.66,
+      0.0,
+      0.0
+     ],
+     "t_world_mm": [
+      -19.6,
+      -28.2,
+      0.0
+     ]
+    },
+    "home_joint_offsets_deg": {
+     "joint2": 17.572,
+     "joint4": 13.19,
+     "joint6": -0.41
+    },
+    "home_q_rad": [
+     0.0,
+     0.30668757575290323,
+     0.0,
+     0.23021725846525365,
+     0.0,
+     -0.007148589427642069
+    ],
+    "in_mjcf_range": {
+     "joint2": true,
+     "joint4": true,
+     "joint6": true
+    },
+    "residual": {
+     "rot_deg": 0.0416,
+     "pos_mm": 2.128
+    }
+   }
+  },
+  "right_arm": {
+   "world_from_base": [
+    [
+     -0.0013852889573940787,
+     -0.9986856556909104,
+     0.05123516460128258,
+     -1.9685399593354262
+    ],
+    [
+     0.9991161324973711,
+     0.0007702640335513368,
+     0.04202809152000515,
+     1.3639585122119633
+    ],
+    [
+     -0.04201231674163938,
+     0.051248100555382675,
+     0.9978018828562437,
+     0.7332315603442109
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "base_position_m": [
+    -1.96854,
+    1.36396,
+    0.73323
+   ],
+   "yaw_deg": 90.079,
+   "tilt_deg": 3.8,
+   "vs_metric": {
+    "yaw_pitch_roll_deg_base_axes": [
+     -2.605,
+     2.408,
+     2.94
+    ],
+    "t_world_mm": [
+     -14.3,
+     -28.3,
+     -9.3
+    ]
+   },
+   "metric_world_from_base": [
+    [
+     -0.046840088234551776,
+     -0.9989024007049835,
+     0.0,
+     -1.9542141535794417
+    ],
+    [
+     0.9989024007049835,
+     -0.046840088234551776,
+     0.0,
+     1.3922159349440433
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636312145671
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "vs_capture_base_35p56mm": {
+    "yaw_pitch_roll_deg_base_axes": [
+     3.183,
+     -0.346,
+     3.735
+    ],
+    "t_world_mm": [
+     1.8,
+     5.4,
+     -34.1
+    ]
+   },
+   "capture_base_35p56mm": {
+    "world_from_base": [
+     [
+      0.05422164880071023,
+      -0.9984316170230219,
+      -0.013939832499934975,
+      -1.970342924994602
+     ],
+     [
+      0.9974130273349664,
+      0.053495960719576297,
+      0.04801494651863215,
+      1.3586011583505477
+     ],
+     [
+      -0.047193915962017816,
+      -0.016507220101620652,
+      0.9987493409162715,
+      0.767359861696447
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      -5.796,
+      2.705,
+      -0.947
+     ],
+     "t_world_mm": [
+      -16.1,
+      -33.6,
+      24.8
+     ]
+    },
+    "residual_px": 2.12
+   },
+   "capture_base_36mm": {
+    "vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      -5.547,
+      2.761,
+      -0.931
+     ],
+     "t_world_mm": [
+      -14.6,
+      -28.9,
+      16.7
+     ]
+    },
+    "residual_px": 2.17
+   },
+   "link6_world_at_home": [
+    [
+     -0.051230929013259666,
+     0.9986858752541375,
+     0.0013836474682076762,
+     -1.9634530219727284
+    ],
+    [
+     -0.04202703123475556,
+     -0.000771673361503637,
+     -0.9991161760104862,
+     1.4844349316878511
+    ],
+    [
+     -0.997802144995706,
+     -0.051243800484556894,
+     0.042011336016219425,
+     0.9005757975650754
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "rail_form": {
+    "world_from_base": [
+     [
+      -0.001386623505241269,
+      -0.9999990386371651,
+      0.0,
+      -1.9597042765342656
+     ],
+     [
+      0.9999990386371651,
+      -0.001386623505241269,
+      0.0,
+      1.368909661654529
+     ],
+     [
+      0.0,
+      0.0,
+      0.9999999999999998,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "yaw_deg": 90.079,
+    "base_position_m": [
+     -1.9597,
+     1.36891,
+     0.74256
+    ],
+    "base_vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      -2.605,
+      0.0,
+      0.0
+     ],
+     "t_world_mm": [
+      -5.5,
+      -23.3,
+      0.0
+     ]
+    },
+    "home_joint_offsets_deg": {
+     "joint2": 0.169,
+     "joint3": -2.239,
+     "joint6": 2.94
+    },
+    "home_q_rad": [
+     0.0,
+     0.0029429715516130577,
+     -0.03908179679218407,
+     0.0,
+     0.0,
+     0.0513156652690118
+    ],
+    "in_mjcf_range": {
+     "joint2": true,
+     "joint3": false,
+     "joint6": true
+    },
+    "residual": {
+     "rot_deg": 0.0,
+     "pos_mm": 0.0
+    }
+   },
+   "rail_form_alt_j2_j4_j6_ill_conditioned": {
+    "world_from_base": [
+     [
+      -0.001386807671872825,
+      -0.9999990383817782,
+      0.0,
+      -1.9597331732990597
+     ],
+     [
+      0.9999990383817782,
+      -0.001386807671872825,
+      0.0,
+      1.3898672843621278
+     ],
+     [
+      0.0,
+      0.0,
+      1.0,
+      0.7425636312145671
+     ],
+     [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+     ]
+    ],
+    "yaw_deg": 90.079,
+    "base_position_m": [
+     -1.95973,
+     1.38987,
+     0.74256
+    ],
+    "base_vs_metric": {
+     "yaw_pitch_roll_deg_base_axes": [
+      -2.605,
+      0.0,
+      0.0
+     ],
+     "t_world_mm": [
+      -5.5,
+      -2.3,
+      0.0
+     ]
+    },
+    "home_joint_offsets_deg": {
+     "joint2": -19.174,
+     "joint4": -21.582,
+     "joint6": 2.94
+    },
+    "home_q_rad": [
+     0.0,
+     -0.33464910199433745,
+     0.0,
+     -0.3766738703342638,
+     0.0,
+     0.05131654539529442
+    ],
+    "in_mjcf_range": {
+     "joint2": false,
+     "joint4": true,
+     "joint6": true
+    },
+    "residual": {
+     "rot_deg": 0.0,
+     "pos_mm": 0.0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{"status": "starting", "run": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t235933z-placement-check-ea6b0950", "report": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t235933z-placement-check-ea6b0950/placement/report.html", "log": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t235933z-placement-check-ea6b0950/logs/placement.log"}
+{"status": "completed", "summary": {"status": "needs_attention", "counts": {"error": 0, "warning": 1, "unverified": 8}, "objects": 14, "source_fidelity": "Not assessed; retain Pi3X and native source-view review", "accepted": false}, "report": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t235933z-placement-check-ea6b0950/placement/report.html"}
+{
+  "status": "completed",
+  "run": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t235933z-placement-check-ea6b0950",
+  "summary": {
+    "status": "needs_attention",
+    "counts": {
+      "error": 0,
+      "warning": 1,
+      "unverified": 8
+    },
+    "objects": 14,
+    "source_fidelity": "Not assessed; retain Pi3X and native source-view review",
+    "accepted": false
+  },
+  "report": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t235933z-placement-check-ea6b0950/placement/report.html",
+  "source_unchanged": true
+}

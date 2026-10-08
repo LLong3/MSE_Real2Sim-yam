@@ -1,0 +1,2115 @@
+{
+"collections": [
+"Collection",
+"YAM arm (i2rt yam + linear_4310)"
+],
+"materials": {
+"UMI-FT | ArUco 4x4_50 id 0": {
+"base": [
+0.8,
+0.8,
+0.8,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexImage"
+],
+"props": {
+"aruco_dictionary": "DICT_4X4_50",
+"aruco_id": 0
+}
+},
+"UMI-FT | ArUco 4x4_50 id 1": {
+"base": [
+0.8,
+0.8,
+0.8,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexImage"
+],
+"props": {
+"aruco_dictionary": "DICT_4X4_50",
+"aruco_id": 1
+}
+},
+"UMI-FT | ArUco 4x4_50 id 6": {
+"base": [
+0.8,
+0.8,
+0.8,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexImage"
+],
+"props": {
+"aruco_dictionary": "DICT_4X4_50",
+"aruco_id": 6
+}
+},
+"UMI-FT | ArUco 4x4_50 id 7": {
+"base": [
+0.8,
+0.8,
+0.8,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexImage"
+],
+"props": {
+"aruco_dictionary": "DICT_4X4_50",
+"aruco_id": 7
+}
+},
+"UMI-FT | Black PLA": {
+"base": [
+0.003096,
+0.003096,
+0.003501,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.04,
+0.04,
+0.045
+],
+"yam_material_note": "tag block and adapter"
+}
+},
+"UMI-FT | Black contact face": {
+"base": [
+0.001935,
+0.001935,
+0.002167,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.025,
+0.025,
+0.028
+],
+"yam_material_note": "thin friction sheet on the pad contact face: appearance only, no thickness (user 09-30)"
+}
+},
+"UMI-FT | Orange TPU": {
+"base": [
+0.787412,
+0.046964,
+0.001548,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.9,
+0.24,
+0.02
+],
+"yam_material_note": "fin-ray pad, TPU 95A (UMI-FT guide): satin, slightly translucent"
+}
+},
+"UMI-FT | White PLA": {
+"base": [
+0.787412,
+0.787412,
+0.748414,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.9,
+0.9,
+0.88
+],
+"yam_material_note": "finger holder, adapter"
+}
+},
+"UMI-FT | Yellow PLA": {
+"base": [
+0.911407,
+0.603827,
+0.0,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.96,
+0.8,
+0.0
+],
+"yam_material_note": "two-screw finger clamp"
+}
+},
+"YAM | Black base": {
+"base": [
+0.004896,
+0.005103,
+0.005423,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.06,
+0.062,
+0.065
+],
+"yam_material_note": "arm foot (MJCF base mesh)"
+}
+},
+"YAM | Black gripper housing": {
+"base": [
+0.005981,
+0.006213,
+0.006571,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.07,
+0.072,
+0.075
+],
+"yam_material_note": "linear_4310 housing"
+}
+},
+"YAM | Black motor housing": {
+"base": [
+0.004896,
+0.005103,
+0.005532,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.06,
+0.062,
+0.066
+],
+"yam_material_note": "joint motors, elbow/wrist housings, link1, link4, link5"
+}
+},
+"YAM | Light grey shell": {
+"base": [
+0.447988,
+0.462361,
+0.462361,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.7,
+0.71,
+0.71
+],
+"yam_material_note": "link2/link3 twin-tube covers: light grey, matte to slightly satin"
+}
+},
+"YAM | White printed finger": {
+"base": [
+0.787412,
+0.787412,
+0.748414,
+1.0
+],
+"nodes": [
+"ShaderNodeBsdfPrincipled",
+"ShaderNodeBump",
+"ShaderNodeMapRange",
+"ShaderNodeOutputMaterial",
+"ShaderNodeTexCoord",
+"ShaderNodeTexNoise"
+],
+"props": {
+"yam_base_color_srgb": [
+0.9,
+0.9,
+0.88
+],
+"yam_material_note": "finger bodies (the real fingers are custom; see README)"
+}
+}
+},
+"objects": {
+"yam_arm": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mw": [
+1.0,
+0.0,
+0.0,
+0.0,
+0.0,
+1.0,
+0.0,
+0.0,
+0.0,
+0.0,
+1.0,
+0.0,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": null,
+"props": {
+"asset_front_axis": "X",
+"asset_orientation_json": "{\"evidence\": \"MJCF world frame of raiden i2rt yam.xml; at q=0 the gripper points +X (grasp_site x=+0.248 m), base foot bottom at z=0\", \"front_axis\": \"X\", \"origin\": \"source_root\", \"schema_version\": 1, \"semantic_front\": \"generic\", \"status\": \"authored\", \"symmetry\": \"none\", \"up_axis\": \"Z\"}",
+"asset_origin": "source_root",
+"asset_up_axis": "Z",
+"claw_placement": "{\"schema\": 2, \"open_half_m\": 0.0516, \"pad_z6_m\": -0.1356, \"pad_x6_m\": 0.0, \"holder_shift_F_m\": 0.00153, \"home_gripper_m\": 0.0475, \"gap_at_q0_m\": 0.0082, \"arm_tag_ids\": {\"left_arm\": [7, 6], \"right_arm\": [1, 0]}}",
+"description": "i2rt YAM arm + linear_4310 gripper from raiden MJCF; frame = MJCF world/base frame (origin at the bottom of the arm foot, +Z up, +X toward the gripper at q=0)",
+"finger_claw": "UMI-FT claw (rig, 09-29; user claw answers 09-30): source/umi_ft; stock tip geoms hidden from render; tags DICT_4X4_50, set per arm with yam_rig.set_finger_tags",
+"gripper": 0.0475,
+"joint1": 0.0,
+"joint2": 0.0,
+"joint3": 0.0,
+"joint4": 0.0,
+"joint5": 0.0,
+"joint6": 0.0,
+"mjcf_body": "world",
+"mjcf_source_json": "{\"arm_xml\": \"/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/arm/yam/yam.xml\", \"arm_xml_md5\": \"81203a99155223036bc0f6731a6a74f7\", \"combine\": \"i2rt.robots.utils.combine_arm_and_gripper_xml (as raiden/_xml_paths.get_yam_4310_linear_xml_path)\", \"gripper_xml\": \"/home/frank/robot/raiden/.venv/lib/python3.11/site-packages/i2rt/robot_models/gripper/linear_4310/linear_4310.xml\", \"gripper_xml_md5\": \"85fd2aaa6d56f08daca7763d89968ba5\", \"i2rt_commit\": \"7b6d5016f05ca63f9ef0185b7143e63f2c7a5708\", \"i2rt_describe\": \"7b6d501\", \"i2rt_origin\": \"https://github.com/i2rt-robotics/i2rt.git\", \"i2rt_submodule\": \"/home/frank/robot/raiden/third_party/i2rt\", \"mujoco_version\": \"3.3.5\", \"raiden_branch\": \"bimanual\", \"raiden_head\": \"a8316968005a1cc37f8901ca92ccc1437ca99422\", \"raiden_repo\": \"/home/frank/robot/raiden\"}",
+"yam_arm_root": 1,
+"yam_asset_version": 3
+},
+"type": "EMPTY"
+},
+"yam_base_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "22054b0f4ee3aba7e05490fd09d5799d",
+"mats": [
+"YAM | Black base"
+],
+"mw": [
+4.486e-06,
+0.0,
+1.000000238,
+-0.0374966,
+0.0,
+1.0,
+0.0,
+-0.046400499,
+-1.000000238,
+0.0,
+4.486e-06,
+0.187500998,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_arm",
+"props": {
+"mjcf_geom_mesh": "base",
+"mjcf_geom_pos": [
+-0.0374966,
+-0.0464005,
+0.187501
+],
+"mjcf_geom_quat_wxyz": [
+0.707105,
+0.0,
+0.707108,
+0.0
+],
+"stl_md5": "aed3d0cdd6cb335fd02bcb0f6b0991de"
+},
+"type": "MESH",
+"verts": "631993ab6a45fffc34e12e04093357a0"
+},
+"yam_grasp_site": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mw": [
+-2.943e-06,
+2.971e-06,
+0.999999821,
+0.248032361,
+-4.159e-06,
+0.999999821,
+-2.971e-06,
+0.003587347,
+-0.999999881,
+-4.091e-06,
+-3.012e-06,
+0.172299638,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link_6",
+"props": {
+"mjcf_site": "grasp_site"
+},
+"type": "EMPTY"
+},
+"yam_gripper_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "22054b0f4ee3aba7e05490fd09d5799d",
+"mats": [
+"YAM | Black gripper housing"
+],
+"mw": [
+-2.943e-06,
+-2.883e-06,
+-0.999999821,
+0.04023258,
+-4.159e-06,
+-0.999999821,
+2.883e-06,
+0.049987499,
+-0.999999881,
+4.091e-06,
+3.012e-06,
+0.186300069,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_link_6",
+"props": {
+"mjcf_geom_mesh": "gripper",
+"mjcf_geom_pos": [
+-0.014,
+-0.0463995,
+0.0731
+],
+"mjcf_geom_quat_wxyz": [
+1.0,
+0.0,
+0.0,
+0.0
+],
+"stl_md5": "cf42bf4cb108ad89d041cfda46e6521c"
+},
+"type": "MESH",
+"verts": "b2261a432ef4f03ce0471432e2eb7594"
+},
+"yam_link1": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"rotation_quaternion",
+0,
+"(0.707105281184)*cos(q*0.5)+(0.707108281186)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+1,
+"(0)*cos(q*0.5)+(0)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+2,
+"(0)*cos(q*0.5)+(0)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+3,
+"(-0.707108281186)*cos(q*0.5)+(0.707105281184)*sin(q*0.5)"
+]
+],
+"mw": [
+-4.18e-06,
+1.0,
+0.0,
+0.0,
+-1.0,
+-4.18e-06,
+0.0,
+0.0,
+0.0,
+0.0,
+1.0,
+0.067000002,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_arm",
+"props": {
+"body_pos": [
+0.0,
+0.0,
+0.067
+],
+"body_quat_wxyz": [
+0.7071052811843601,
+0.0,
+0.0,
+-0.707108281185553
+],
+"joint_axis": [
+0.0,
+0.0,
+1.0
+],
+"joint_control": "joint1",
+"joint_name": "joint1",
+"joint_range": [
+-2.61799,
+3.05433
+],
+"joint_type": "hinge",
+"mjcf_body": "link1",
+"mjcf_parent": "world"
+},
+"type": "EMPTY"
+},
+"yam_link1_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "22054b0f4ee3aba7e05490fd09d5799d",
+"mats": [
+"YAM | Black motor housing"
+],
+"mw": [
+-0.0,
+-8.158e-06,
+-1.0,
+0.037496995,
+-4.009e-06,
+-1.0,
+8.158e-06,
+0.046399843,
+-1.0,
+4.009e-06,
+-0.0,
+0.186500996,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_link1",
+"props": {
+"mjcf_geom_mesh": "link1",
+"mjcf_geom_pos": [
+-0.0464,
+0.0374968,
+0.119501
+],
+"mjcf_geom_quat_wxyz": [
+0.499998,
+0.5,
+0.5,
+-0.500002
+],
+"stl_md5": "c9ade222c806c699ea1255c112403ea3"
+},
+"type": "MESH",
+"verts": "503f8d6d199aab47d653e2d8bb4063a8"
+},
+"yam_link2": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"rotation_quaternion",
+0,
+"(0.499997999998)*cos(q*0.5)+(0.499999999998)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+1,
+"(0.499999999998)*cos(q*0.5)+(-0.500001999998)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+2,
+"(-0.500001999998)*cos(q*0.5)+(-0.499999999998)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+3,
+"(-0.499999999998)*cos(q*0.5)+(0.499997999998)*sin(q*0.5)"
+]
+],
+"mw": [
+-0.99999994,
+1.19e-07,
+8.263e-06,
+0.020000137,
+8.234e-06,
+3.964e-06,
+0.99999994,
+0.03289992,
+8.9e-08,
+1.0,
+-3.934e-06,
+0.112499997,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link1",
+"props": {
+"body_pos": [
+-0.0329,
+0.02,
+0.0455
+],
+"body_quat_wxyz": [
+0.49999799999800004,
+0.49999999999800004,
+-0.500001999998,
+-0.49999999999800004
+],
+"joint_axis": [
+0.0,
+0.0,
+1.0
+],
+"joint_control": "joint2",
+"joint_name": "joint2",
+"joint_range": [
+0.0,
+3.65
+],
+"joint_type": "hinge",
+"mjcf_body": "link2",
+"mjcf_parent": "link1"
+},
+"type": "EMPTY"
+},
+"yam_link2_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "fc39a37cda72386ff0599b2131a76ca4",
+"mats": [
+"YAM | Black motor housing",
+"YAM | Light grey shell"
+],
+"mw": [
+4.097e-06,
+4.286e-06,
+-0.99999994,
+0.03749717,
+3.964e-06,
+0.99999994,
+4.256e-06,
+-0.046350509,
+1.0,
+-3.934e-06,
+4.067e-06,
+0.038500212,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_link2",
+"props": {
+"mjcf_geom_mesh": "link2",
+"mjcf_geom_pos": [
+-0.0174977,
+-0.0740001,
+-0.07925
+],
+"mjcf_geom_quat_wxyz": [
+0.499998,
+0.5,
+0.500002,
+0.5
+],
+"stl_md5": "28335a37b6ed1c6a040f26b65c91c575"
+},
+"type": "MESH",
+"verts": "63ec6948f236d716cfcd61380347b659"
+},
+"yam_link3": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"rotation_quaternion",
+0,
+"(9.38184373073e-07)*cos(q*0.5)+(-9.38187373075e-07)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+1,
+"(-0.707105281184)*cos(q*0.5)+(-0.707108281185)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+2,
+"(-0.707108281185)*cos(q*0.5)+(0.707105281184)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+3,
+"(9.38187373075e-07)*cos(q*0.5)+(9.38184373073e-07)*sin(q*0.5)"
+]
+],
+"mw": [
+4.3e-06,
+-0.999999881,
+-8.263e-06,
+-0.24400036,
+3.964e-06,
+8.234e-06,
+-0.999999881,
+-0.030847898,
+0.99999994,
+4.338e-06,
+3.934e-06,
+0.112500682,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link2",
+"props": {
+"body_pos": [
+0.264,
+4.08431e-07,
+-0.06375
+],
+"body_quat_wxyz": [
+9.381843730734243e-07,
+-0.7071052811837377,
+-0.7071082811849306,
+9.381873730746175e-07
+],
+"joint_axis": [
+0.0,
+0.0,
+1.0
+],
+"joint_control": "joint3",
+"joint_name": "joint3",
+"joint_range": [
+0.0,
+3.66519
+],
+"joint_type": "hinge",
+"mjcf_body": "link3",
+"mjcf_parent": "link2"
+},
+"type": "EMPTY"
+},
+"yam_link3_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "5728d5db75f37271af1dcb199d3e62b7",
+"mats": [
+"YAM | Black motor housing",
+"YAM | Light grey shell"
+],
+"mw": [
+-1.646e-06,
+-1.263e-05,
+-1.000000119,
+0.037499607,
+-3.876e-06,
+-1.000000119,
+1.2601e-05,
+0.050450068,
+-1.000000358,
+3.846e-06,
+1.685e-06,
+0.186499432,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_link3",
+"props": {
+"mjcf_geom_mesh": "link3",
+"mjcf_geom_pos": [
+0.0740003,
+-0.281499,
+-0.0813
+],
+"mjcf_geom_quat_wxyz": [
+9.38184e-07,
+9.38187e-07,
+-0.707108,
+-0.707105
+],
+"stl_md5": "039ab661f53898875b40cd9f4d894787"
+},
+"type": "MESH",
+"verts": "4b5c7273689a6add89a70b6d386c9d49"
+},
+"yam_link4": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"rotation_quaternion",
+0,
+"(1.32679e-06)*cos(q*0.5)+(0.999999999999)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+1,
+"(0)*cos(q*0.5)+(0)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+2,
+"(0)*cos(q*0.5)+(0)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+3,
+"(-0.999999999999)*cos(q*0.5)+(1.32679e-06)*sin(q*0.5)"
+]
+],
+"mw": [
+-4.3e-06,
+0.999999881,
+-8.263e-06,
+0.000998884,
+-3.964e-06,
+-8.234e-06,
+-0.999999881,
+-0.028799677,
+-0.99999994,
+-4.338e-06,
+3.934e-06,
+0.17249991,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link3",
+"props": {
+"body_pos": [
+0.0600003,
+-0.244999,
+-0.00205
+],
+"body_quat_wxyz": [
+1.3267899999988322e-06,
+0.0,
+0.0,
+-0.9999999999991198
+],
+"joint_axis": [
+0.0,
+0.0,
+1.0
+],
+"joint_control": "joint4",
+"joint_name": "joint4",
+"joint_range": [
+-1.5708,
+1.5708
+],
+"joint_type": "hinge",
+"mjcf_body": "link4",
+"mjcf_parent": "link3"
+},
+"type": "EMPTY"
+},
+"yam_link4_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "9cb16490a5a8c55bb6db6ad0b93da334",
+"mats": [
+"YAM | Black motor housing"
+],
+"mw": [
+-4.3e-06,
+-1.2718e-05,
+-1.000000119,
+0.037498493,
+-3.964e-06,
+-1.000000119,
+1.2688e-05,
+0.04998827,
+-0.99999994,
+3.934e-06,
+4.338e-06,
+0.186299741,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 4640,
+"parent": "yam_link4",
+"props": {
+"mjcf_geom_mesh": "link4",
+"mjcf_geom_pos": [
+-0.0138003,
+0.0364989,
+-0.0787882
+],
+"mjcf_geom_quat_wxyz": [
+0.707105,
+0.707108,
+0.0,
+0.0
+],
+"stl_md5": "2a187aa425f4aeaddd94ef9a5dbc30c1"
+},
+"type": "MESH",
+"verts": "ff844ed05faf509fb29abb7c63cd833f"
+},
+"yam_link5": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"rotation_quaternion",
+0,
+"(9.38184373073e-07)*cos(q*0.5)+(0.707108281185)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+1,
+"(-0.707105281184)*cos(q*0.5)+(-9.38187373075e-07)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+2,
+"(-9.38187373075e-07)*cos(q*0.5)+(0.707105281184)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+3,
+"(-0.707108281185)*cos(q*0.5)+(9.38184373073e-07)*sin(q*0.5)"
+]
+],
+"mw": [
+-6.937e-06,
+-0.999999821,
+-2.973e-06,
+0.071384415,
+-0.999999821,
+6.907e-06,
+-8.213e-06,
+0.003588598,
+8.114e-06,
+3.012e-06,
+-0.999999881,
+0.212799758,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link4",
+"props": {
+"body_pos": [
+-0.0403003,
+0.0703851,
+-0.0323887
+],
+"body_quat_wxyz": [
+9.381843730734243e-07,
+-0.7071052811837377,
+-9.381873730746175e-07,
+-0.7071082811849306
+],
+"joint_axis": [
+0.0,
+0.0,
+1.0
+],
+"joint_control": "joint5",
+"joint_name": "joint5",
+"joint_range": [
+-1.5708,
+1.5708
+],
+"joint_type": "hinge",
+"mjcf_body": "link5",
+"mjcf_parent": "link4"
+},
+"type": "EMPTY"
+},
+"yam_link5_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "bdbd47f50acb588f18109210cc948292",
+"mats": [
+"YAM | Black motor housing"
+],
+"mw": [
+-2.973e-06,
+-2.959e-06,
+-0.999999821,
+0.040232763,
+-1.2222e-05,
+-0.999999821,
+2.929e-06,
+0.049988087,
+-0.999999881,
+1.2124e-05,
+3.012e-06,
+0.186299473,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1408,
+"parent": "yam_link5",
+"props": {
+"mjcf_geom_mesh": "link5",
+"mjcf_geom_pos": [
+-0.0463995,
+0.0311519,
+0.0265
+],
+"mjcf_geom_quat_wxyz": [
+0.499998,
+-0.5,
+-0.5,
+-0.500002
+],
+"stl_md5": "1c5c878d9a60704f05daf74ccbed9ec7"
+},
+"type": "MESH",
+"verts": "faf28a8aea4cbe23ba8c3933a9545e89"
+},
+"yam_link_6": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"rotation_quaternion",
+0,
+"(0.499997999998)*cos(q*0.5)+(-0.500001999998)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+1,
+"(-0.499999999998)*cos(q*0.5)+(0.499999999998)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+2,
+"(-0.499999999998)*cos(q*0.5)+(-0.499999999998)*sin(q*0.5)"
+],
+[
+"rotation_quaternion",
+3,
+"(-0.500001999998)*cos(q*0.5)+(-0.499997999998)*sin(q*0.5)"
+]
+],
+"mw": [
+-2.943e-06,
+-2.883e-06,
+-0.999999821,
+0.113332391,
+-4.159e-06,
+-0.999999821,
+2.883e-06,
+0.003587735,
+-0.999999881,
+4.091e-06,
+3.012e-06,
+0.172300041,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link5",
+"props": {
+"body_pos": [
+2.39858e-07,
+-0.0419481,
+0.0404996
+],
+"body_quat_wxyz": [
+0.49999799999800004,
+-0.49999999999800004,
+-0.49999999999800004,
+-0.500001999998
+],
+"joint_axis": [
+0.0,
+0.0,
+-1.0
+],
+"joint_control": "joint6",
+"joint_name": "joint6",
+"joint_range": [
+-2.0944,
+2.0944
+],
+"joint_type": "hinge",
+"mjcf_body": "link_6",
+"mjcf_parent": "link5"
+},
+"type": "EMPTY"
+},
+"yam_tcp_site": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mw": [
+-2.943e-06,
+2.971e-06,
+0.999999821,
+0.113332391,
+-4.159e-06,
+0.999999821,
+-2.971e-06,
+0.003587735,
+-0.999999881,
+-4.091e-06,
+-3.012e-06,
+0.172300041,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link_6",
+"props": {
+"mjcf_site": "tcp_site"
+},
+"type": "EMPTY"
+},
+"yam_tip_left": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"location",
+0,
+"(-0.0238981)+(-4.02331352234e-06)*q"
+],
+[
+"location",
+1,
+"(0.0450619)+(-1)*q"
+],
+[
+"location",
+2,
+"(-0.0545599)+(2.22044604925e-16)*q"
+]
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link_6",
+"props": {
+"body_pos": [
+-0.0238981,
+0.0450619,
+-0.0545599
+],
+"body_quat_wxyz": [
+0.49999799999800004,
+-0.49999999999800004,
+-0.49999999999800004,
+-0.500001999998
+],
+"joint_axis": [
+0.0,
+0.0,
+-1.0
+],
+"joint_control": "gripper",
+"joint_name": "joint7",
+"joint_range": [
+0.0,
+0.0475
+],
+"joint_type": "slide",
+"mjcf_body": "tip_left",
+"mjcf_parent": "link_6"
+},
+"type": "EMPTY"
+},
+"yam_tip_left_carriage": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "7b0f0b3bc17609d8ecd71610f30b39b0",
+"mats": [
+"YAM | Black gripper housing"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1872,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "carriage_tip_left",
+"claw_finger": "tip_left",
+"claw_part": "carriage",
+"note": "stock tip_left faces above z6 = -0.07 m (linear_4310 rack slider)"
+},
+"type": "MESH",
+"verts": "7188ccd922eda639130a3e019ba4b92d"
+},
+"yam_tip_left_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "22054b0f4ee3aba7e05490fd09d5799d",
+"mats": [
+"YAM | White printed finger"
+],
+"mw": [
+-2.989e-06,
+-6.861e-06,
+-0.999999821,
+0.038109571,
+-1.06e-07,
+-0.999999821,
+6.891e-06,
+0.097487539,
+-0.999999881,
+6.8e-08,
+3.087e-06,
+0.186205864,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_tip_left",
+"props": {
+"mjcf_geom_mesh": "tip_left",
+"mjcf_geom_pos": [
+0.129783,
+0.00999321,
+-0.0914614
+],
+"mjcf_geom_quat_wxyz": [
+0.499998,
+0.5,
+0.500002,
+0.5
+],
+"stl_md5": "9fd555669cade492ceee9bb7f12bf97c",
+"stock_claw_hidden": "replaced by the UMI-FT claw in render; kept for fk_check and the MJCF"
+},
+"type": "MESH",
+"verts": "90ff58d56ffc5c3e8dfa2b6d768b735f"
+},
+"yam_tip_left_umi_adapter_black": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "1681ffc6e046c7af98c9e6c232a3fe0a",
+"mats": [
+"UMI-FT | Black PLA"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 6,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_adapter_black",
+"claw_finger": "tip_left",
+"claw_part": "adapter_black"
+},
+"type": "MESH",
+"verts": "2b65d3d25ae48a0b0852b3bb21f4025d"
+},
+"yam_tip_left_umi_adapter_white": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "1681ffc6e046c7af98c9e6c232a3fe0a",
+"mats": [
+"UMI-FT | White PLA"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 6,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_adapter_white",
+"claw_finger": "tip_left",
+"claw_part": "adapter_white"
+},
+"type": "MESH",
+"verts": "78dec26b591083882c7eade9bbe0ca0f"
+},
+"yam_tip_left_umi_clamp": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "ed7a94507f3809902169b0c307e8257b",
+"mats": [
+"UMI-FT | Yellow PLA"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 4716,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_clamp",
+"claw_finger": "tip_left",
+"claw_part": "clamp"
+},
+"type": "MESH",
+"verts": "80083d416a61041558f8a7e688e56ea0"
+},
+"yam_tip_left_umi_holder_black": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "731d63d8424f82fba22582c60275f1fd",
+"mats": [
+"UMI-FT | Black PLA"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1242,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_holder_black",
+"claw_finger": "tip_left",
+"claw_part": "holder_black"
+},
+"type": "MESH",
+"verts": "56c5db2d828e5ebeea37c73ab1b340b1"
+},
+"yam_tip_left_umi_holder_white": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "d164a21491c209104564194e0373e705",
+"mats": [
+"UMI-FT | White PLA"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 3106,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_holder_white",
+"claw_finger": "tip_left",
+"claw_part": "holder_white"
+},
+"type": "MESH",
+"verts": "1cede9409d8ca14a1a0b5319f7ea2129"
+},
+"yam_tip_left_umi_pad": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "8bf507cca5426dff8380621613e0f191",
+"mats": [
+"UMI-FT | Orange TPU",
+"UMI-FT | Black contact face"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1732,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_pad",
+"claw_finger": "tip_left",
+"claw_part": "pad",
+"contact_face_material_slot": 1
+},
+"type": "MESH",
+"verts": "2e25379c111033fe6481478004fa64cc"
+},
+"yam_tip_left_umi_placeholder": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "1681ffc6e046c7af98c9e6c232a3fe0a",
+"mats": [
+"UMI-FT | Yellow PLA"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 6,
+"parent": "yam_tip_left",
+"props": {
+"asset_part_key": "claw_tip_left_placeholder",
+"claw_finger": "tip_left",
+"claw_part": "placeholder"
+},
+"type": "MESH",
+"verts": "e961a0f4ac688a459580b59fef625484"
+},
+"yam_tip_left_umi_tag": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "edcfae989540fd42e4b8556d5b723bb6",
+"mats": [
+"UMI-FT | ArUco 4x4_50 id 0",
+"UMI-FT | ArUco 4x4_50 id 1",
+"UMI-FT | ArUco 4x4_50 id 6",
+"UMI-FT | ArUco 4x4_50 id 7"
+],
+"mw": [
+-0.999999821,
+-6.966e-06,
+-2.883e-06,
+0.167892352,
+2.913e-06,
+-1.06e-07,
+-0.999999821,
+0.006025776,
+7.065e-06,
+-0.999999881,
+6.8e-08,
+0.196198151,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1,
+"parent": "yam_tip_left",
+"props": {
+"aruco_id": 7,
+"asset_part_key": "claw_tip_left_tag",
+"claw_finger": "tip_left",
+"claw_part": "tag"
+},
+"type": "MESH",
+"verts": "060562b66f341e05e4e3a0c770ab0bbb"
+},
+"yam_tip_right": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [
+[
+"location",
+0,
+"(0.0238981)+(0)*q"
+],
+[
+"location",
+1,
+"(-0.0450619)+(0.999999940395)*q"
+],
+[
+"location",
+2,
+"(-0.0545599)+(4.18046056438e-06)*q"
+]
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"parent": "yam_link_6",
+"props": {
+"body_pos": [
+0.0238981,
+-0.0450619,
+-0.0545599
+],
+"body_quat_wxyz": [
+0.7071052811843601,
+0.707108281185553,
+0.0,
+0.0
+],
+"joint_axis": [
+0.0,
+0.0,
+-1.0
+],
+"joint_control": "gripper",
+"joint_name": "joint8",
+"joint_range": [
+0.0,
+0.0475
+],
+"joint_type": "slide",
+"mjcf_body": "tip_right",
+"mjcf_parent": "link_6"
+},
+"type": "EMPTY"
+},
+"yam_tip_right_carriage": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "56bf0e725f6dd67d4baea350f6493c68",
+"mats": [
+"YAM | Black gripper housing"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1888,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "carriage_tip_right",
+"claw_finger": "tip_right",
+"claw_part": "carriage",
+"note": "stock tip_right faces above z6 = -0.07 m (linear_4310 rack slider)"
+},
+"type": "MESH",
+"verts": "1485509bafcf1dbe6b2f70149150206c"
+},
+"yam_tip_right_geom": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "22054b0f4ee3aba7e05490fd09d5799d",
+"mats": [
+"YAM | White printed finger"
+],
+"mw": [
+-2.943e-06,
+-2.609e-06,
+-1.0,
+0.038109168,
+-4.159e-06,
+-1.0,
+2.609e-06,
+0.002487987,
+-0.999999881,
+4.091e-06,
+3.012e-06,
+0.186395377,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 8000,
+"parent": "yam_tip_right",
+"props": {
+"mjcf_geom_mesh": "tip_right",
+"mjcf_geom_pos": [
+-0.0379932,
+0.129783,
+0.00133753
+],
+"mjcf_geom_quat_wxyz": [
+0.707105,
+-0.707108,
+0.0,
+0.0
+],
+"stl_md5": "ebe5dceb0c4a278b1c510e65f2a914b9",
+"stock_claw_hidden": "replaced by the UMI-FT claw in render; kept for fk_check and the MJCF"
+},
+"type": "MESH",
+"verts": "2a0b39528aea4b28619c287c2e2175ca"
+},
+"yam_tip_right_umi_adapter_black": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "1681ffc6e046c7af98c9e6c232a3fe0a",
+"mats": [
+"UMI-FT | Black PLA"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 6,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_adapter_black",
+"claw_finger": "tip_right",
+"claw_part": "adapter_black"
+},
+"type": "MESH",
+"verts": "eed22e07aac4c00e386fc9a33a5f423d"
+},
+"yam_tip_right_umi_adapter_white": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "1681ffc6e046c7af98c9e6c232a3fe0a",
+"mats": [
+"UMI-FT | White PLA"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 6,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_adapter_white",
+"claw_finger": "tip_right",
+"claw_part": "adapter_white"
+},
+"type": "MESH",
+"verts": "a16d6029dbc88a97b1c4e002ed9e6192"
+},
+"yam_tip_right_umi_clamp": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "ed7a94507f3809902169b0c307e8257b",
+"mats": [
+"UMI-FT | Yellow PLA"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 4716,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_clamp",
+"claw_finger": "tip_right",
+"claw_part": "clamp"
+},
+"type": "MESH",
+"verts": "40ee19e4ff99e33c44fcfc7ca85c1af1"
+},
+"yam_tip_right_umi_holder_black": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "731d63d8424f82fba22582c60275f1fd",
+"mats": [
+"UMI-FT | Black PLA"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1242,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_holder_black",
+"claw_finger": "tip_right",
+"claw_part": "holder_black"
+},
+"type": "MESH",
+"verts": "1b174bf420e9781ee5a84dfdbb6f3be1"
+},
+"yam_tip_right_umi_holder_white": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "d164a21491c209104564194e0373e705",
+"mats": [
+"UMI-FT | White PLA"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 3106,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_holder_white",
+"claw_finger": "tip_right",
+"claw_part": "holder_white"
+},
+"type": "MESH",
+"verts": "74b400c5b68c88c6dad5814dd88d6ee4"
+},
+"yam_tip_right_umi_pad": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "8bf507cca5426dff8380621613e0f191",
+"mats": [
+"UMI-FT | Orange TPU",
+"UMI-FT | Black contact face"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1732,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_pad",
+"claw_finger": "tip_right",
+"claw_part": "pad",
+"contact_face_material_slot": 1
+},
+"type": "MESH",
+"verts": "003100da8b808cc9b07d87b34e86b774"
+},
+"yam_tip_right_umi_placeholder": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "1681ffc6e046c7af98c9e6c232a3fe0a",
+"mats": [
+"UMI-FT | Yellow PLA"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 6,
+"parent": "yam_tip_right",
+"props": {
+"asset_part_key": "claw_tip_right_placeholder",
+"claw_finger": "tip_right",
+"claw_part": "placeholder"
+},
+"type": "MESH",
+"verts": "7c86bc51f6cf25c2815881315ceef229"
+},
+"yam_tip_right_umi_tag": {
+"collections": [
+"YAM arm (i2rt yam + linear_4310)"
+],
+"drivers": [],
+"mat_index": "f2dd0dedb2c260419ece4a9e03b2e828",
+"mats": [
+"UMI-FT | ArUco 4x4_50 id 0",
+"UMI-FT | ArUco 4x4_50 id 1",
+"UMI-FT | ArUco 4x4_50 id 6",
+"UMI-FT | ArUco 4x4_50 id 7"
+],
+"mw": [
+-2.943e-06,
+-0.999999762,
+7.064e-06,
+0.167892009,
+-4.159e-06,
+7.064e-06,
+0.999999762,
+0.001149382,
+-0.999999881,
+3.012e-06,
+-4.091e-06,
+0.148401797,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"nf": 1,
+"parent": "yam_tip_right",
+"props": {
+"aruco_id": 6,
+"asset_part_key": "claw_tip_right_tag",
+"claw_finger": "tip_right",
+"claw_part": "tag"
+},
+"type": "MESH",
+"verts": "88baca1496f225edfa160fff8a28c3e7"
+}
+},
+"scene_objects": 38,
+"texts": [
+"yam_rig.py"
+]
+}

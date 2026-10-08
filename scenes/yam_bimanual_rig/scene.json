@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "id": "yam_bimanual_rig",
+  "reference": "scenes/yam_bimanual_rig/references/IMG_5411.MOV",
+  "description": "Bimanual YAM robot rig (two YAM arms on an office desk on an aluminium rail, camera pole, tripod camera, monitors, frosted glass partition, beige walls, dark carpet). Static-level sim twin; source is one continuous iPhone 14 video."
+}

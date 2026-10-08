@@ -1,0 +1,16 @@
+00:00.256  blend            | Read blend: "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/yam_arm_v4.blend"
+placed_at_identity   q0     link pos 1.41e-03 mm  ang 2.46e-04 deg  mesh 1.76e-03 mm
+placed_at_identity   home   link pos 1.41e-03 mm  ang 2.46e-04 deg  mesh 1.76e-03 mm
+placed_at_identity   rand0  link pos 5.97e-04 mm  ang 1.64e-04 deg  mesh 1.76e-03 mm
+placed_at_identity   rand1  link pos 3.79e-04 mm  ang 1.52e-04 deg  mesh 1.76e-03 mm
+placed_at_identity   rand2  link pos 5.94e-04 mm  ang 1.03e-04 deg  mesh 1.76e-03 mm
+placed_in_scene      q0     link pos 1.44e-03 mm  ang 2.46e-04 deg  mesh 1.74e-03 mm
+placed_in_scene      home   link pos 1.44e-03 mm  ang 2.46e-04 deg  mesh 1.74e-03 mm
+placed_in_scene      rand0  link pos 8.81e-04 mm  ang 1.64e-04 deg  mesh 1.74e-03 mm
+placed_in_scene      rand1  link pos 7.83e-04 mm  ang 1.54e-04 deg  mesh 1.74e-03 mm
+placed_in_scene      rand2  link pos 6.70e-04 mm  ang 1.04e-04 deg  mesh 1.74e-03 mm
+independence {'copy0_tip_moved_m': 0.23598938400686284, 'copy1_tip_moved_m': 0.0, 'copy1_driver_targets': ['yam_arm.001'], 'copy1_root': 'yam_arm.001', 'ok': True}
+FK_CHECK PASS {'pos_mm': 0.0014427047933063253, 'ang_deg': 0.0002456731598620673, 'mesh_mm': 0.0017601868194105919}
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit

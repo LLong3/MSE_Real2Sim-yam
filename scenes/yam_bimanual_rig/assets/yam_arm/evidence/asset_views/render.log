@@ -1,0 +1,24 @@
+00:00.238  blend            | Read blend: "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/yam_arm.blend"
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/build/render_views.py:45: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+00:02.237  render           | Saved: 'evidence/asset_views/a1_front_left.png'
+00:04.097  render           | Saved: 'evidence/asset_views/a2_side.png'
+00:06.098  render           | Saved: 'evidence/asset_views/a3_rear_right.png'
+00:07.775  render           | Saved: 'evidence/asset_views/a4_pose_rand1.png'
+00:13.029  render           | Saved: 'evidence/asset_views/a5_gripper.png'
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/build/render_views.py:68: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+00:14.779  render           | Saved: 'evidence/asset_views/a6_clay_front_left.png'
+RENDERED evidence/asset_views/a1_front_left.png
+RENDERED evidence/asset_views/a2_side.png
+RENDERED evidence/asset_views/a3_rear_right.png
+RENDERED evidence/asset_views/a4_pose_rand1.png
+RENDERED evidence/asset_views/a5_gripper.png
+RENDERED evidence/asset_views/a6_clay_front_left.png
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit
+
+real	0m14.889s
+user	3m37.586s
+sys	0m3.824s

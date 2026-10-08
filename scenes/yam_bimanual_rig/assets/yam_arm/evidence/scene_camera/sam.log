@@ -1,0 +1,43 @@
+/home/frank/robot/aha-3d/.runtime/sam3-segmentation/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+loaded /home/frank/robot/aha-3d/.runtime/sam3-segmentation/checkpoints/sam3.1/sam3.1_multiplex.pt and found missing and/or unexpected keys:
+missing_keys=['backbone.vision_backbone.convs.3.conv_1x1.weight', 'backbone.vision_backbone.convs.3.conv_1x1.bias', 'backbone.vision_backbone.convs.3.conv_3x3.weight', 'backbone.vision_backbone.convs.3.conv_3x3.bias']
+[
+ {
+  "i": 0,
+  "phrase": "robot arm",
+  "score": 0.539,
+  "pixels": 6530,
+  "bbox": [
+   650,
+   503,
+   789,
+   599
+  ]
+ },
+ {
+  "i": 1,
+  "phrase": "robot arm",
+  "score": 0.555,
+  "pixels": 6018,
+  "bbox": [
+   244,
+   504,
+   378,
+   599
+  ]
+ },
+ {
+  "i": 2,
+  "phrase": "robot arm",
+  "score": 0.344,
+  "pixels": 2395,
+  "bbox": [
+   244,
+   504,
+   304,
+   588
+  ]
+ }
+]
+peak GiB 3.7869715690612793

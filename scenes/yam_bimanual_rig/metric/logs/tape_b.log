@@ -1,0 +1,203 @@
+{
+ "plane_y": 2.1189221477508546,
+ "zed_edge": {
+  "0928": {
+   "median": 0.13344850859527924,
+   "p90_abs": 0.47279090238424715,
+   "columns": 111
+  },
+  "0929": {
+   "median": -0.5503278783084511,
+   "p90_abs": 1.1624806167322959,
+   "columns": 111
+  }
+ },
+ "band_px": [
+  10.045772530524061,
+  10.08826338029877,
+  10.129956128873971
+ ],
+ "dark_band": {
+  "0928": 6.0,
+  "0929": 6.0
+ },
+ "onset": {
+  "0928": 15.0,
+  "0929": 15.0
+ },
+ "depth_step": {
+  "y0": 21.18048780487805,
+  "y40_95": [
+   30.1,
+   37.4
+  ]
+ },
+ "wood_edge_off": -21.78433982107846,
+ "wood_minus_edge_mm": -34.856487571933044,
+ "sy": {
+  "reference_front_edge_y": 1.3125392593715612,
+  "reference_wood_edge_y": 2.0490656601789214,
+  "reference_merged_boundary_y": 2.0689614071224183,
+  "reference_upper_wall_y_1p0_1p2m": 2.1011221477508544,
+  "depths_at_sy_1": {
+   "front_to_wood": 0.7365264008073602,
+   "front_to_merged_boundary": 0.756422147750857,
+   "front_to_p99": 0.7583107406284388,
+   "front_to_upper_wall": 0.7885828883792931
+  },
+  "implied_sy": {
+   "desk_wood_0p76": 1.031870682662439,
+   "upper_wall_0p795": 1.008137523290539,
+   "merged_as_wall_0p795": 1.0510004266319413,
+   "merged_as_edge_0p76": 1.0047299675978305,
+   "arm_length_icp": [
+    1.0027585518150912,
+    1.0431199252452545
+   ]
+  },
+  "finding": "the reference desk-height measure (0.757) was neither desk (0.76) nor desk + gap (0.795): it ends at the merged strip. The wood depth (0.737) gives sy 1.03, the upper wall 1.01, the MJCF arm length 1.00-1.04. Desk + gap would need sy 1.05, at or past every other bound. Keep sy 1.00: with the desk anchored on the merged boundary, the box, arms and rail move by <= 3 mm between (sy 1.00, merged anchor) and (sy 1.03, wood anchor)."
+ },
+ "rail": {
+  "x": [
+   -2.7646989777364888,
+   -1.7646989777364888
+  ],
+  "per_frame": {
+   "341": {
+    "left": -2.755574532331886,
+    "right": -1.772006517233314,
+    "length": 0.983568015098572,
+    "centre": -2.2637905247826,
+    "overhang_left": 0.1803907304383503,
+    "overhang_right": 0.1822076363461278
+   },
+   "381": {
+    "left": -2.7419309909958263,
+    "right": -1.802372659029426,
+    "length": 0.9395583319664003,
+    "centre": -2.2721518250126262,
+    "overhang_left": 0.1667471891022907,
+    "overhang_right": 0.15184149455001572
+   },
+   "401": {
+    "left": -2.747095652403297,
+    "right": -1.7888537104744333,
+    "length": 0.9582419419288637,
+    "centre": -2.267974681438865,
+    "overhang_left": 0.17191185050976143,
+    "overhang_right": 0.16536044310500841
+   },
+   "421": {
+    "left": -2.742221370520057,
+    "right": -1.8017618258613963,
+    "length": 0.9404595446586608,
+    "centre": -2.2719915981907266,
+    "overhang_left": 0.16703756862652153,
+    "overhang_right": 0.1524523277180454
+   }
+  },
+  "centre": -2.2689771573562045,
+  "mid": -2.2646989777364888,
+  "e942": -2.773077669920387
+ },
+ "wall_chk": {
+  "pixels": 248575,
+  "median_mm": 46.2384236316693,
+  "p5_p95_mm": [
+   19.74356515151714,
+   197.55033454090503
+  ],
+  "above_0p3m_median_mm": 50.79850353801716,
+  "near_edge_0_10cm": {
+   "pixels": 9932,
+   "median_mm": -1.8443023630748678,
+   "p10_p90_mm": [
+    -18.919768756743792,
+    9.037050074586706
+   ]
+  },
+  "plane_y_m": 2.1189221477508546,
+  "note": "against the tape plane (desk back edge + 0.035). Next to the desk (0-10 cm) the ZED depth agrees with the plane; higher up the textureless wall reads a median 5 cm (p95 20 cm) behind it (NEURAL_LIGHT bias). Not used for the pose.",
+  "verdict": "tape_gap_35mm; zed near-edge depth agrees, upper-wall depth biased",
+  "before_tape_b": {
+   "plane_y_m": 2.0839221477508545,
+   "median_mm": 85.00368943516051,
+   "above_0p3m_median_mm": 89.44024246348609,
+   "verdict": "b_zed_depth_bias"
+  }
+ },
+ "ref_wall": [
+  [
+   0.05,
+   -18.7,
+   -5.7,
+   518690
+  ],
+  [
+   0.15,
+   -13.5,
+   -0.5,
+   457880
+  ],
+  [
+   0.25,
+   -10.2,
+   2.8,
+   497458
+  ],
+  [
+   0.35,
+   -7.6,
+   5.5,
+   522256
+  ],
+  [
+   0.45,
+   -5.1,
+   8.0,
+   526943
+  ],
+  [
+   0.55,
+   -3.9,
+   9.1,
+   462819
+  ],
+  [
+   0.65,
+   -5.2,
+   7.8,
+   294469
+  ],
+  [
+   0.75,
+   -0.8,
+   12.3,
+   193553
+  ],
+  [
+   0.85,
+   6.0,
+   19.0,
+   150812
+  ],
+  [
+   0.95,
+   13.3,
+   26.3,
+   102618
+  ],
+  [
+   1.05,
+   17.6,
+   30.7,
+   74727
+  ],
+  [
+   1.15,
+   17.2,
+   30.2,
+   14762
+  ]
+ ]
+}

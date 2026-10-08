@@ -1,0 +1,7 @@
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/assets/yam_arm/build/render_scene_camera.py:56: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world.use_nodes = True
+00:02.577  render           | Saved: 'evidence/scene_camera/render_rgba.png'
+RENDERED evidence/scene_camera/render_rgba.png lens 13.7258 shift -0.01399 0.00143
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit

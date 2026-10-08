@@ -1,0 +1,77 @@
+{
+ "942": {
+  "n": 13,
+  "dark_band_px_median": 35.0,
+  "slot_px_per_cm_median": 5.4,
+  "implied_gap_if_band_is_slot_cm": 6.481481481481481,
+  "band_for_85mm_px": 44.0
+ },
+ "962": {
+  "n": 13,
+  "dark_band_px_median": 38.0,
+  "slot_px_per_cm_median": 5.7,
+  "implied_gap_if_band_is_slot_cm": 6.909090909090909,
+  "band_for_85mm_px": 46.8
+ },
+ "982": {
+  "n": 13,
+  "dark_band_px_median": 37.0,
+  "slot_px_per_cm_median": 5.8,
+  "implied_gap_if_band_is_slot_cm": 6.440677966101695,
+  "band_for_85mm_px": 47.4
+ },
+ "1063": {
+  "n": 13,
+  "dark_band_px_median": 32.0,
+  "slot_px_per_cm_median": 6.3,
+  "implied_gap_if_band_is_slot_cm": 5.423728813559322,
+  "band_for_85mm_px": 51.9
+ },
+ "1083": {
+  "n": 12,
+  "dark_band_px_median": 24.5,
+  "slot_px_per_cm_median": 6.75,
+  "implied_gap_if_band_is_slot_cm": 3.6661255411255413,
+  "band_for_85mm_px": 56.0
+ },
+ "1103": {
+  "n": 12,
+  "dark_band_px_median": 38.0,
+  "slot_px_per_cm_median": 6.85,
+  "implied_gap_if_band_is_slot_cm": 5.793293804947863,
+  "band_for_85mm_px": 57.150000000000006
+ }
+}
+{
+ "942": {
+  "dip_width_over_slot_px_per_cm_median": 0.5555555555555555,
+  "dip_depth_rel_median": 0.06577530291472583
+ },
+ "962": {
+  "dip_width_over_slot_px_per_cm_median": 0.603448275862069,
+  "dip_depth_rel_median": 0.06290049391958663
+ },
+ "982": {
+  "dip_width_over_slot_px_per_cm_median": 0.5932203389830508,
+  "dip_depth_rel_median": 0.07869654797295467
+ },
+ "1063": {
+  "dip_width_over_slot_px_per_cm_median": 0.6779661016949152,
+  "dip_depth_rel_median": 0.09551873067614554
+ },
+ "1083": {
+  "dip_width_over_slot_px_per_cm_median": 0.7071464267866068,
+  "dip_depth_rel_median": 0.1014032897928498
+ },
+ "1103": {
+  "dip_width_over_slot_px_per_cm_median": 0.7747252747252746,
+  "dip_depth_rel_median": 0.07162060974303801
+ },
+ "zed_scene_camera": {
+  "dip_width_px_median": 5.0,
+  "slot_px_per_cm": 2.902729216056912,
+  "slot_band_px_for_85mm": 23.547079992172826,
+  "dip_width_over_slot_px_per_cm_median": 1.7225168549452352,
+  "dip_depth_rel_median": 0.17225165363498207
+ }
+}

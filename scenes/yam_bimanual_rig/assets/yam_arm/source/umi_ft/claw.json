@@ -1,0 +1,80 @@
+{
+ "schema": 2,
+ "note": "UMI-FT claw placement and authored boxes; read by build/add_umi_ft_claws.py, build/umi_ft_mjcf.py and build/claw_model.py. Units m. Finger frame F = umift_finger_no_contact_mic.stl frame (x toward the contact face, y extrusion, z length); link_6 at raiden home (gripper 0.0475). Schema 2 (09-30) applies the user's claw answers: no strip thickness (the black contact face is appearance only), a 1.0 mm yellow placeholder instead of the CoinFT slot filler, holder group shifted +x_F to close the slot. Placement evidence: README 'Fingers', evidence/wrist_fit/.",
+ "user_answers_0930": {
+  "pads_closed": "the pads do not touch when fully closed: the gap at q = 0 is kept (2 * (open_half_m - home_gripper_m))",
+  "friction_strip": "thin, negligible: no thickness; black appearance on the pad contact face only",
+  "coinft": "no CoinFT sensor; a thin yellow placeholder, negligible thickness (modelled 1.0 mm)",
+  "holder_adapter": "custom mount; only needs to look right from the scene and wrist cameras; changed only where a camera shows a mismatch"
+ },
+ "placement_0930": "stage 2 (09-30, runs/yam_bimanual_rig/20260930t125032z-wrist-claw-fit-efcb76a0/stage2): open_half and pad_z6 from variant c_mount (camera translation free, background term, 51.59 / -135.59 mm), rounded to 0.1 mm; the mount rotation (0.8 deg) is not significant and not applied. pad_x6 is not identifiable (trades with the hand-eye translation): 0. Spread over the physically plausible variants (c, c_mount): 51.6-52.0 / -135.6 to -137.0 / 0-0.1 mm.",
+ "open_half_m": 0.0516,
+ "pad_z6_m": -0.1356,
+ "pad_x6_m": 0.0,
+ "pad_thickness_m": 0.0172,
+ "home_gripper_m": 0.0475,
+ "carriage_cut_z6_m": -0.07,
+ "pad_face": {
+  "material": "face",
+  "select": "pad STL faces with normal +x_F (> 0.99) on x_F = 0 (26 triangles)",
+  "note": "black contact face, appearance only (second material slot of the pad)"
+ },
+ "holder_shift_F_m": 0.00153,
+ "holder_group": [
+  "holder_white",
+  "holder_black",
+  "tag",
+  "adapter_black",
+  "adapter_white"
+ ],
+ "boxes_F": {
+  "placeholder": {
+   "x": [
+    -0.03017,
+    -0.02917
+   ],
+   "y": [
+    -0.0231,
+    0.0059
+   ],
+   "z": [
+    0.00024,
+    0.03124
+   ],
+   "material": "clamp",
+   "note": "thin yellow placeholder in the CoinFT slot between holder and clamp (no CoinFT on the rig; 1.0 mm)"
+  },
+  "adapter_black": {
+   "x": [
+    -0.04261,
+    0.0
+   ],
+   "y": [
+    -0.0231,
+    -0.006
+   ],
+   "z": [
+    -0.0666,
+    -0.0615
+   ],
+   "material": "black",
+   "note": "holder to linear_4310 carriage block (before holder_shift_F_m)"
+  },
+  "adapter_white": {
+   "x": [
+    -0.04261,
+    0.0
+   ],
+   "y": [
+    -0.006,
+    0.0059
+   ],
+   "z": [
+    -0.0666,
+    -0.0615
+   ],
+   "material": "white",
+   "note": "holder to linear_4310 carriage block (before holder_shift_F_m)"
+  }
+ }
+}

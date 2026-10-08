@@ -1,0 +1,53 @@
+{
+ "real_image": "/home/frank/robot/bimanual_bringup/pi05/scene_camera.jpg",
+ "camera": "evidence/scene_camera/camera.json",
+ "sam_masks": "evidence/scene_camera/sam/masks.npz",
+ "sam_instances": {
+  "left_arm": 1,
+  "right_arm": 0
+ },
+ "arms": {
+  "left_arm": {
+   "sam_score": 0.5546875,
+   "whole_asset": {
+    "iou": 0.4206245461147422,
+    "precision": 0.7695987244220037,
+    "recall": 0.48122299767364574,
+    "model_px": 3763,
+    "real_px": 6018
+   },
+   "without_stock_fingers": {
+    "iou": 0.1401284373456282,
+    "precision": 0.9392935982339956,
+    "recall": 0.14140910601528747,
+    "model_px": 906,
+    "real_px": 6018
+   }
+  },
+  "right_arm": {
+   "sam_score": 0.5390625,
+   "whole_asset": {
+    "iou": 0.4570684039087948,
+    "precision": 0.7539222007307114,
+    "recall": 0.5372128637059724,
+    "model_px": 4653,
+    "real_px": 6530
+   },
+   "without_stock_fingers": {
+    "iou": 0.19929505066823322,
+    "precision": 0.8294621026894865,
+    "recall": 0.20781010719754978,
+    "model_px": 1636,
+    "real_px": 6530
+   }
+  }
+ },
+ "both_arms": {
+  "iou": 0.4398351648351648,
+  "precision": 0.7609315589353612,
+  "recall": 0.5103602167676123,
+  "model_px": 8416,
+  "real_px": 12548
+ },
+ "projection_vs_cycles_alpha_iou": 0.9786121673003803
+}

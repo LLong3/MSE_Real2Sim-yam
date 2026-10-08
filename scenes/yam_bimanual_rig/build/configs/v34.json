@@ -1,0 +1,754 @@
+{
+ "schema": "yam_bimanual_rig build config v1",
+ "note": "All colours are linear RGB in the ZED scene-camera colour space (the ZED auto white balance renders the beige wall near neutral); see build/README.md. Geometry values in metres, metric frame.",
+ "measurements": {
+  "wall_gap_m": 0.035,
+  "wall_gap_source": "user tape 09-29 (orchestrator message): desk back edge to wall 3.5 cm",
+  "rail_length_m": 1.0,
+  "rail_x_m": [
+   -2.7647,
+   -1.7647
+  ],
+  "rail_source": "user tape 09-29: rail 1.00 m; provisional placement centred on the arm-base midpoint x -2.2647"
+ },
+ "room": {
+  "ceiling_z": 2.75,
+  "floor_x": [
+   -7.0,
+   2.5
+  ],
+  "floor_y": [
+   -2.5,
+   5.0
+  ],
+  "wall_x_right": 2.5,
+  "wall_thickness": 0.12
+ },
+ "glass": {
+  "plane_y": 2.155,
+  "thickness": 0.01,
+  "x_left": -4.87,
+  "post_x": -3.874,
+  "post_size": [
+   0.06,
+   0.09
+  ],
+  "frosted_z": [
+   0.83,
+   2.05
+  ],
+  "channel_h": 0.02,
+  "frosted_panels": [
+   "A"
+  ]
+ },
+ "monitor_desk": {
+  "x": [
+   -1.406,
+   0.093
+  ],
+  "y": [
+   1.325,
+   2.085
+  ],
+  "top_z": 0.71,
+  "panel_x": [
+   -1.5,
+   0.06
+  ],
+  "panel_y": [
+   2.065,
+   2.085
+  ],
+  "panel_z": [
+   0.804,
+   1.233
+  ],
+  "panel_corner_r": 0.06,
+  "power_unit": {
+   "x": [
+    -1.24,
+    -0.98
+   ],
+   "y": [
+    2.02,
+    2.075
+   ],
+   "z": [
+    0.735,
+    0.78
+   ],
+   "support": "monitors",
+   "mounted": true
+  },
+  "arm_segments": [
+   [
+    [
+     -1.5,
+     2.0,
+     0.64
+    ],
+    [
+     -1.4,
+     2.0,
+     0.975
+    ]
+   ]
+  ],
+  "arm_width": 0.05,
+  "monitor": {
+   "screen_x": [
+    -0.84,
+    -0.32
+   ],
+   "front_y": 1.845,
+   "depth": 0.03,
+   "screen_z": [
+    0.81,
+    1.18
+   ],
+   "yaw_deg": -6,
+   "stand": {
+    "half_width": 0.03,
+    "depth": 0.03,
+    "top_z": 0.9
+   },
+   "foot": {
+    "half_width": 0.11,
+    "y": [
+     -0.07,
+     0.07
+    ],
+    "height": 0.01
+   },
+   "source": "v3_room_corrections.json monitor_screen: x -0.84..-0.32, front face y 1.87 at x -0.80 / 1.82 at x -0.35 (1.845 at the centre, yaw -6 deg), z 0.81..1.18; stand and foot moved with the screen (v2 offsets)"
+  }
+ },
+ "rig_desk_brackets_xy": [
+  [
+   -3.066,
+   1.93
+  ],
+  [
+   -3.066,
+   1.55
+  ]
+ ],
+ "pole": {
+  "xy": [
+   -2.2759,
+   1.3754
+  ],
+  "size_xy": [
+   0.04,
+   0.08
+  ],
+  "top_z": 1.7
+ },
+ "zed_body": {
+  "size": [
+   0.18,
+   0.045,
+   0.04
+  ],
+  "left_eye_offset_cam": [
+   0.06,
+   0.0,
+   -0.015
+  ]
+ },
+ "materials": {
+  "desk_top": {
+   "albedo": [
+    0.43948,
+    0.33814,
+    0.18194
+   ],
+   "roughness": 0.55,
+   "specular": 0.35,
+   "texture": "textures/desk_albedo_v30.exr",
+   "grain_strength": 0.03,
+   "texture_lowpass_m": 0.0
+  },
+  "desk_edge": {
+   "albedo": [
+    0.42,
+    0.31,
+    0.16
+   ],
+   "roughness": 0.5
+  },
+  "monitor_desk_top": {
+   "albedo": [
+    0.35321,
+    0.30057,
+    0.16267
+   ],
+   "roughness": 0.55
+  },
+  "wall": {
+   "albedo": [
+    0.47722,
+    0.49153,
+    0.4898
+   ],
+   "roughness": 0.92,
+   "texture": "textures/wall_albedo_v27.exr",
+   "texture_rect": [
+    -2.975,
+    -0.9,
+    0.6,
+    2.75
+   ],
+   "texture_lowpass_m": 0.12
+  },
+  "carpet": {
+   "albedo": [
+    0.03745,
+    0.06754,
+    0.12043
+   ],
+   "speckle": 0.2,
+   "roughness": 1.0
+  },
+  "frosted": {
+   "emission": [
+    0.01291,
+    0.18232,
+    0.50523
+   ],
+   "strength": 1.0,
+   "diffuse": [
+    0.02,
+    0.05,
+    0.1
+   ],
+   "light_fraction": 0.35
+  },
+  "clear_glass": {
+   "tint": [
+    0.9,
+    0.95,
+    1.0
+   ],
+   "roughness": 0.02,
+   "shadow_transparent": false
+  },
+  "frame_alu": {
+   "albedo": [
+    0.59163,
+    0.95,
+    0.95
+   ],
+   "roughness": 0.35,
+   "metallic": 0.5,
+   "glow": [
+    0.0,
+    0.01,
+    0.11
+   ]
+  },
+  "ceiling": {
+   "albedo": [
+    0.8,
+    0.8,
+    0.8
+   ]
+  },
+  "white_plastic": {
+   "albedo": [
+    0.55,
+    0.57,
+    0.55
+   ],
+   "roughness": 0.45
+  },
+  "stub_wall": {
+   "albedo": [
+    0.6,
+    0.62,
+    0.62
+   ]
+  },
+  "panel": {
+   "tint": [
+    0.25983,
+    0.27453,
+    0.19732
+   ],
+   "specular": 0.1
+  },
+  "frame_grey": {
+   "albedo": [
+    0.2,
+    0.2,
+    0.2
+   ]
+  },
+  "bracket": {
+   "albedo": [
+    0.02181,
+    0.03286,
+    0.04251
+   ]
+  }
+ },
+ "lighting": {
+  "world": {
+   "color": [
+    0.55,
+    0.6,
+    0.62
+   ],
+   "strength": 0.42500000000000004
+  },
+  "ceiling_panels": [
+   {
+    "center": [
+     -1.2999999999999998,
+     0.3,
+     2.74
+    ],
+    "size": [
+     0.6,
+     1.2
+    ],
+    "strength": 8.5,
+    "color": [
+     1.0,
+     0.96,
+     0.92
+    ]
+   },
+   {
+    "center": [
+     0.4,
+     0.3,
+     2.74
+    ],
+    "size": [
+     0.6,
+     1.2
+    ],
+    "strength": 8.5,
+    "color": [
+     1.0,
+     0.96,
+     0.92
+    ]
+   },
+   {
+    "center": [
+     -3.0,
+     0.3,
+     2.74
+    ],
+    "size": [
+     0.6,
+     1.2
+    ],
+    "strength": 8.5,
+    "color": [
+     1.0,
+     0.96,
+     0.92
+    ]
+   }
+  ],
+  "daylight": {
+   "center": [
+    -4.0,
+    3.4,
+    2.7
+   ],
+   "aim": [
+    -4.0,
+    3.4,
+    0.0
+   ],
+   "size": [
+    3.0,
+    2.2
+   ],
+   "power": 66.12,
+   "color": [
+    0.1415,
+    0.6639,
+    1.0
+   ],
+   "note": "daylit/blue-lit area behind the glass partition, modelled as a downward area light over that area (lights the carpet seen through the clear lower glass, little light passes horizontally into the rig room)"
+  },
+  "exposure": 0.0
+ },
+ "rig_desk_bracket_top_z": 0.96,
+ "note_geometry": "v02: privacy panel/bracket from ZED edge back-projection with the reference y bias near the wall (~4 cm) removed; left-end brackets from the ZED bar back-projection.",
+ "camera_model": {
+  "scene": {
+   "K": [
+    [
+     366.02166748046875,
+     0.0,
+     492.9291076660156
+    ],
+    [
+     0.0,
+     366.02166748046875,
+     300.87200927734375
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "k1": -0.5003965184954003,
+   "k2": 0.10057066826979273,
+   "gain": [
+    1.5944,
+    1.5944,
+    1.5944
+   ]
+  },
+  "left_wrist": {
+   "K": [
+    [
+     338.1051025390625,
+     0.0,
+     466.15264892578125
+    ],
+    [
+     0.0,
+     361.2906799316406,
+     302.1819763183594
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "k1": -0.37673278278334693,
+   "k2": 0.05389310166281488,
+   "gain": [
+    1.6413,
+    1.6775,
+    1.8857
+   ]
+  },
+  "right_wrist": {
+   "K": [
+    [
+     335.13720703125,
+     0.0,
+     466.4317932128906
+    ],
+    [
+     0.0,
+     359.5279846191406,
+     289.0816955566406
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "k1": -0.5264222718295835,
+   "k2": 0.12982956378049917,
+   "gain": [
+    1.8406,
+    2.0026,
+    2.6057
+   ]
+  }
+ },
+ "note_v03": "v03: manual rescale after v02 (lights x0.47, frosted emission light_fraction 0.35, albedos from v02 ratios)",
+ "note_v04": "v04: daylight moved above the area behind the glass (downward), frosted light_fraction 0.15",
+ "note_v05": "v05: post 60x90 mm, floor channel only right of the post, monitor arm segment from ZED back-projection, power unit mounted, monitor-desk side rails, daylight 150 W, carpet speckle 0.2",
+ "wall_end_x_override": {
+  "x": -2.975,
+  "source": "ZED scene image: blue/beige edge back-projected onto the tape wall plane y 2.1189 (x -2.982 at 0.8 m to -2.967 at 1.5 m, median -2.975); metric_frame wall_end_x_m -3.004 is the stereo value at desk height before the gap update"
+ },
+ "note_v08": "v08: edges fitted to the ZED image (wall end, mullion post, monitor desk and panel left edges), rail from the updated metric frame, C-clamps",
+ "note_v10": "v10: ceiling panel row from light_search_v09b (dx +1.0 -> x -1.3/0.4/-3.0, y 0.3), ambient x2.5",
+ "note_v13": "v13: partition glass blocks direct light (rooms lit separately), no caustics, carpet navy start, frosted light_fraction 0.2",
+ "note_v15b": "v15b: panel matte (specular 0.1, no sheen), frame light anodised, frosted light_fraction 0.35",
+ "note_v19": "v19: image-derived desk albedo (1 mm, ZED rectified / modelled irradiance) and low-pass wall albedo (5 mm texels, 0.12 m low-pass)",
+ "note_v21": "v21: frame glow, jamb hidden behind the glass (wall end return face), dark grey brackets material; wrist gains from v19",
+ "monitor_desk_items": [
+  {
+   "name": "black device",
+   "xy": [
+    -1.337,
+    1.69
+   ],
+   "size": [
+    0.14,
+    0.035,
+    0.03
+   ],
+   "yaw_deg": -44,
+   "material": "black_plastic"
+  },
+  {
+   "name": "black cable bundle",
+   "xy": [
+    -1.14,
+    1.99
+   ],
+   "size": [
+    0.05,
+    0.08,
+    0.02
+   ],
+   "yaw_deg": -10,
+   "material": "black_plastic"
+  },
+  {
+   "name": "grey small item",
+   "xy": [
+    -1.25,
+    1.865
+   ],
+   "size": [
+    0.02,
+    0.06,
+    0.012
+   ],
+   "yaw_deg": 15,
+   "material": "bracket"
+  },
+  {
+   "name": "white small item",
+   "xy": [
+    -1.19,
+    1.92
+   ],
+   "size": [
+    0.04,
+    0.03,
+    0.015
+   ],
+   "yaw_deg": 0,
+   "material": "white_plastic"
+  }
+ ],
+ "note_v24": "v24: monitor arm 50 mm wide, four simple items on the monitor desk (ZED back-projection), wrist gains from v22",
+ "note_v26": "v26: black device oriented along its image diagonal",
+ "note_v28": "v28 = delivery config v1: v27 calibration with textures re-baked under the final lighting (v27 white renders)",
+ "wrist_camera_source": "wrist_fit_0930",
+ "note_v2": "delivery v2: final arm asset (UMI-FT claws, finger tags per arm), wrist cameras = hand-eye + the asset claw-fit corrections (fit_claw_wrist.py); line-based wrist refinement of v1 dropped",
+ "note_v31": "v31: desk texture re-baked under the final arms (v30 white-desk render; 13 % of texels changed by > 2 %, near the grippers)",
+ "calibration_log": [
+  {
+   "render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v31",
+   "from": "configs/v31.json",
+   "steps": [
+    "wrist_vignette",
+    "wrist",
+    "albedo"
+   ],
+   "left_wrist": {
+    "pixels": 339706,
+    "gain": [
+     1.6413,
+     1.6775,
+     1.8857
+    ],
+    "k1": -0.37673278278334693,
+    "k2": 0.05389310166281488
+   },
+   "right_wrist": {
+    "pixels": 347825,
+    "gain": [
+     1.8406,
+     2.0026,
+     2.6057
+    ],
+    "k1": -0.5264222718295835,
+    "k2": 0.12982956378049917
+   }
+  }
+ ],
+ "note_delivery_v2": "delivery v2 = v31 (final arms, claw-fit wrist cameras, desk texture re-baked) + wrist camera models refitted on the v31 render (calib_v32); materials and lights as delivery v1",
+ "arm_material_overrides": {
+  "UMI-FT | Orange TPU": {
+   "base_color_linear": [
+    0.8012,
+    0.2209,
+    0.0181
+   ],
+   "source": "ZED camera-space calibration in the scene: median real/render linear ratio inside the claw part (render IDs x real HSV mask), log-mean over left wrist, right wrist and scene camera (delivery_v2 render); zero channels floored before scaling. The asset file keeps its own colours."
+  },
+  "UMI-FT | Yellow PLA": {
+   "base_color_linear": [
+    0.6644,
+    0.5557,
+    0.043
+   ],
+   "source": "ZED camera-space calibration in the scene: median real/render linear ratio inside the claw part (render IDs x real HSV mask), log-mean over left wrist, right wrist and scene camera (delivery_v2 render); zero channels floored before scaling. The asset file keeps its own colours.",
+   "note_v3": "also on the 1 mm CoinFT-slot placeholder (same asset material as the clamp)"
+  }
+ },
+ "note_v33": "v33: scene-level ZED camera-space colours for the claw pad and clamp",
+ "arm_poses": {
+  "left_arm": {
+   "world_from_base": [
+    [
+     0.007187419063629297,
+     -0.999974170170012,
+     0.0,
+     -2.5947128508000903
+    ],
+    [
+     0.999974170170012,
+     0.007187419063629297,
+     0.0,
+     1.3656039237589221
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636312145671
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "joints_rad": [
+    0.0,
+    0.09186960151570822,
+    0.014673182180382155,
+    0.0,
+    0.0,
+    -0.007148032825810147
+   ],
+   "home_joint_offsets_deg": {
+    "joint2": 5.264,
+    "joint3": 0.841,
+    "joint6": -0.41
+   },
+   "base_vs_metric": {
+    "yaw_pitch_roll_deg_base_axes": [
+     -0.66,
+     0.0,
+     0.0
+    ],
+    "t_world_mm": [
+     -19.5,
+     -14.2,
+     0.0
+    ]
+   },
+   "status": "proposed correction (09-30 wrist/claw fit, variant c, rail form); NOT the metric frame (metric/metric_frame.json unchanged)",
+   "source": "scenes/yam_bimanual_rig/assets/yam_arm/evidence/wrist_fit/arm_bases_proposed.json arms.left_arm.rail_form"
+  },
+  "right_arm": {
+   "world_from_base": [
+    [
+     -0.001386623505241269,
+     -0.9999990386371651,
+     0.0,
+     -1.9597042765342656
+    ],
+    [
+     0.9999990386371651,
+     -0.001386623505241269,
+     0.0,
+     1.368909661654529
+    ],
+    [
+     0.0,
+     0.0,
+     0.9999999999999998,
+     0.7425636312145671
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "joints_rad": [
+    0.0,
+    0.0029429715516130577,
+    -0.03908179679218407,
+    0.0,
+    0.0,
+    0.0513156652690118
+   ],
+   "home_joint_offsets_deg": {
+    "joint2": 0.169,
+    "joint3": -2.239,
+    "joint6": 2.94
+   },
+   "base_vs_metric": {
+    "yaw_pitch_roll_deg_base_axes": [
+     -2.605,
+     0.0,
+     0.0
+    ],
+    "t_world_mm": [
+     -5.5,
+     -23.3,
+     0.0
+    ]
+   },
+   "status": "proposed correction (09-30 wrist/claw fit, variant c, rail form); NOT the metric frame (metric/metric_frame.json unchanged)",
+   "source": "scenes/yam_bimanual_rig/assets/yam_arm/evidence/wrist_fit/arm_bases_proposed.json arms.right_arm.rail_form"
+  }
+ },
+ "arm_asset_note": "final asset v3 (UMI-FT claws schema 2, 09-30: black contact face, no friction strip, 1 mm yellow placeholder in the CoinFT slot, holder +1.53 mm, open_half 51.6 mm, pad_z6 -135.6 mm; task yam-wrist-claw-fit-20260930)",
+ "wrist_fit_cameras": "assets/yam_arm/evidence/wrist_fit/wrist_cameras.json",
+ "side_door": {
+  "face_floor_line": [
+   [
+    -4.836,
+    2.12
+   ],
+   [
+    -4.725,
+    1.33
+   ]
+  ],
+  "hinge_end_y": 2.098,
+  "thickness": 0.045,
+  "height": 2.13,
+  "bottom_gap": 0.01,
+  "leaf_material": "RK | Pale cut firewood",
+  "leaf_tint": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "handle_z": 1.0,
+  "handle_from_free_edge": 0.07,
+  "jamb_x": [
+   -4.87,
+   -4.82
+  ],
+  "jamb_y": [
+   2.1,
+   2.2
+  ],
+  "wall_x": [
+   -5.1,
+   -4.98
+  ],
+  "wall_y": [
+   0.5,
+   1.25
+  ],
+  "header_x": [
+   -4.98,
+   -4.87
+  ],
+  "source": "v3_room_corrections.json side_wall_stub: wood door leaf, room face at floor level (-4.836, 2.12) -> (-4.725, 1.33), 7.8 deg off square (ajar, hinge at the glass end; leaf starts 2 mm in front of the jamb); white jamb x -4.87..-4.82, y 2.10..2.20; beige wall left of the door at x -4.98 (reference y 0.9-1.25; modelled y 0.50-1.25). Assumed: leaf height 2.13 m (>= 2.0 observed), thickness 45 mm, header and latch-side jamb x -4.98..-4.87. Not seen by the rig cameras."
+ },
+ "note_v34": "v34 = v3 pre-bake: delivery_v2 + arm asset v3 (09-30 schema 2 claws) at the proposed rail-form bases with the home joint offsets as the displayed pose + 09-30 wrist cameras (wrist_cameras.json) + v3 room corrections (runs/yam_bimanual_rig/20260930t125155z-layout-metric-f9dc6ff9/v3_room_corrections.json); desk texture and camera models as delivery v2"
+}

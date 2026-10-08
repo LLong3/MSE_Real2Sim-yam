@@ -1,0 +1,12 @@
+{
+  "note": "Real wrist-image line segments (960x600 px, read off gridded 2x crops, analysis/wgrid_*.jpg) matched to model edges; used by wrist_refine.py --lines.",
+  "left_wrist": [
+    {"model": "desk_back_edge", "real": [[300, 262], [900, 247]]},
+    {"model": "wall_end_vertical", "real": [[212, 160], [250, 265]]},
+    {"model": "desk_left_edge", "real": [[245, 268], [120, 340]]}
+  ],
+  "right_wrist": [
+    {"model": "desk_back_edge", "real": [[20, 238], [700, 235]]},
+    {"model": "privacy_panel_left_edge", "real": [[757, 215], [858, 0]]}
+  ]
+}

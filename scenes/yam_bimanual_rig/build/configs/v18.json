@@ -1,0 +1,905 @@
+{
+ "schema": "yam_bimanual_rig build config v1",
+ "note": "All colours are linear RGB in the ZED scene-camera colour space (the ZED auto white balance renders the beige wall near neutral); see build/README.md. Geometry values in metres, metric frame.",
+ "measurements": {
+  "wall_gap_m": 0.035,
+  "wall_gap_source": "user tape 09-29 (orchestrator message): desk back edge to wall 3.5 cm",
+  "rail_length_m": 1.0,
+  "rail_x_m": [
+   -2.7647,
+   -1.7647
+  ],
+  "rail_source": "user tape 09-29: rail 1.00 m; provisional placement centred on the arm-base midpoint x -2.2647"
+ },
+ "room": {
+  "ceiling_z": 2.75,
+  "floor_x": [
+   -7.0,
+   2.5
+  ],
+  "floor_y": [
+   -2.5,
+   5.0
+  ],
+  "wall_x_right": 2.5,
+  "wall_thickness": 0.12
+ },
+ "glass": {
+  "plane_y": 2.155,
+  "thickness": 0.01,
+  "x_left": -4.87,
+  "post_x": -3.874,
+  "post_size": [
+   0.06,
+   0.09
+  ],
+  "frosted_z": [
+   0.83,
+   2.05
+  ],
+  "channel_h": 0.02,
+  "stub_wall_x": [
+   -4.95,
+   -4.87
+  ],
+  "stub_wall_y": [
+   1.25,
+   2.2
+  ]
+ },
+ "monitor_desk": {
+  "x": [
+   -1.415,
+   0.093
+  ],
+  "y": [
+   1.325,
+   2.085
+  ],
+  "top_z": 0.71,
+  "panel_x": [
+   -1.5,
+   0.06
+  ],
+  "panel_y": [
+   2.065,
+   2.085
+  ],
+  "panel_z": [
+   0.804,
+   1.233
+  ],
+  "panel_corner_r": 0.06,
+  "power_unit": {
+   "x": [
+    -1.24,
+    -0.98
+   ],
+   "y": [
+    2.02,
+    2.075
+   ],
+   "z": [
+    0.735,
+    0.78
+   ],
+   "support": "monitors",
+   "mounted": true
+  },
+  "arm_segments": [
+   [
+    [
+     -1.5,
+     2.0,
+     0.64
+    ],
+    [
+     -1.4,
+     2.0,
+     0.975
+    ]
+   ]
+  ]
+ },
+ "rig_desk_brackets_xy": [
+  [
+   -3.066,
+   1.93
+  ],
+  [
+   -3.066,
+   1.55
+  ]
+ ],
+ "pole": {
+  "xy": [
+   -2.2759,
+   1.3754
+  ],
+  "size_xy": [
+   0.04,
+   0.08
+  ],
+  "top_z": 1.7
+ },
+ "zed_body": {
+  "size": [
+   0.18,
+   0.045,
+   0.04
+  ],
+  "left_eye_offset_cam": [
+   0.06,
+   0.0,
+   -0.015
+  ]
+ },
+ "materials": {
+  "desk_top": {
+   "albedo": [
+    0.42369,
+    0.33324,
+    0.19548
+   ],
+   "roughness": 0.55,
+   "specular": 0.35,
+   "texture": null,
+   "grain_strength": 0.05,
+   "texture_lowpass_m": 0.0
+  },
+  "desk_edge": {
+   "albedo": [
+    0.42,
+    0.31,
+    0.16
+   ],
+   "roughness": 0.5
+  },
+  "monitor_desk_top": {
+   "albedo": [
+    0.33747,
+    0.29291,
+    0.15621
+   ],
+   "roughness": 0.55
+  },
+  "wall": {
+   "albedo": [
+    0.45402,
+    0.47853,
+    0.46135
+   ],
+   "roughness": 0.92,
+   "texture": null,
+   "texture_rect": [
+    -2.975,
+    -0.9,
+    0.6,
+    2.75
+   ],
+   "texture_lowpass_m": 0.12
+  },
+  "carpet": {
+   "albedo": [
+    0.0377,
+    0.06721,
+    0.12133
+   ],
+   "speckle": 0.2,
+   "roughness": 1.0
+  },
+  "frosted": {
+   "emission": [
+    0.013,
+    0.18306,
+    0.4999
+   ],
+   "strength": 1.0,
+   "diffuse": [
+    0.02,
+    0.05,
+    0.1
+   ],
+   "light_fraction": 0.35
+  },
+  "clear_glass": {
+   "tint": [
+    0.9,
+    0.95,
+    1.0
+   ],
+   "roughness": 0.02,
+   "shadow_transparent": false
+  },
+  "frame_alu": {
+   "albedo": [
+    0.55198,
+    0.95,
+    0.95
+   ],
+   "roughness": 0.35,
+   "metallic": 0.5
+  },
+  "ceiling": {
+   "albedo": [
+    0.8,
+    0.8,
+    0.8
+   ]
+  },
+  "white_plastic": {
+   "albedo": [
+    0.55,
+    0.57,
+    0.55
+   ],
+   "roughness": 0.45
+  },
+  "stub_wall": {
+   "albedo": [
+    0.6,
+    0.62,
+    0.62
+   ]
+  },
+  "panel": {
+   "tint": [
+    0.24581,
+    0.26156,
+    0.19066
+   ],
+   "specular": 0.1
+  },
+  "frame_grey": {
+   "albedo": [
+    0.2,
+    0.2,
+    0.2
+   ]
+  }
+ },
+ "lighting": {
+  "world": {
+   "color": [
+    0.55,
+    0.6,
+    0.62
+   ],
+   "strength": 0.42500000000000004
+  },
+  "ceiling_panels": [
+   {
+    "center": [
+     -1.2999999999999998,
+     0.3,
+     2.74
+    ],
+    "size": [
+     0.6,
+     1.2
+    ],
+    "strength": 8.5,
+    "color": [
+     1.0,
+     0.96,
+     0.92
+    ]
+   },
+   {
+    "center": [
+     0.4,
+     0.3,
+     2.74
+    ],
+    "size": [
+     0.6,
+     1.2
+    ],
+    "strength": 8.5,
+    "color": [
+     1.0,
+     0.96,
+     0.92
+    ]
+   },
+   {
+    "center": [
+     -3.0,
+     0.3,
+     2.74
+    ],
+    "size": [
+     0.6,
+     1.2
+    ],
+    "strength": 8.5,
+    "color": [
+     1.0,
+     0.96,
+     0.92
+    ]
+   }
+  ],
+  "daylight": {
+   "center": [
+    -4.0,
+    3.4,
+    2.7
+   ],
+   "aim": [
+    -4.0,
+    3.4,
+    0.0
+   ],
+   "size": [
+    3.0,
+    2.2
+   ],
+   "power": 88.66,
+   "color": [
+    0.0999,
+    0.6755,
+    1.0
+   ],
+   "note": "daylit/blue-lit area behind the glass partition, modelled as a downward area light over that area (lights the carpet seen through the clear lower glass, little light passes horizontally into the rig room)"
+  },
+  "exposure": 0.0
+ },
+ "rig_desk_bracket_top_z": 0.96,
+ "note_geometry": "v02: privacy panel/bracket from ZED edge back-projection with the reference y bias near the wall (~4 cm) removed; left-end brackets from the ZED bar back-projection.",
+ "camera_model": {
+  "scene": {
+   "K": [
+    [
+     366.02166748046875,
+     0.0,
+     492.9291076660156
+    ],
+    [
+     0.0,
+     366.02166748046875,
+     300.87200927734375
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "k1": -0.5003965184954003,
+   "k2": 0.10057066826979273,
+   "gain": [
+    1.5944,
+    1.5944,
+    1.5944
+   ]
+  },
+  "left_wrist": {
+   "K": [
+    [
+     338.1051025390625,
+     0.0,
+     466.15264892578125
+    ],
+    [
+     0.0,
+     361.2906799316406,
+     302.1819763183594
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "k1": 0.0,
+   "k2": 0.0,
+   "gain": [
+    1,
+    1,
+    1
+   ]
+  },
+  "right_wrist": {
+   "K": [
+    [
+     335.13720703125,
+     0.0,
+     466.4317932128906
+    ],
+    [
+     0.0,
+     359.5279846191406,
+     289.0816955566406
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "k1": 0.0,
+   "k2": 0.0,
+   "gain": [
+    1,
+    1,
+    1
+   ]
+  }
+ },
+ "note_v03": "v03: manual rescale after v02 (lights x0.47, frosted emission light_fraction 0.35, albedos from v02 ratios)",
+ "note_v04": "v04: daylight moved above the area behind the glass (downward), frosted light_fraction 0.15",
+ "note_v05": "v05: post 60x90 mm, floor channel only right of the post, monitor arm segment from ZED back-projection, power unit mounted, monitor-desk side rails, daylight 150 W, carpet speckle 0.2",
+ "wall_end_x_override": {
+  "x": -2.975,
+  "source": "ZED scene image: blue/beige edge back-projected onto the tape wall plane y 2.1189 (x -2.982 at 0.8 m to -2.967 at 1.5 m, median -2.975); metric_frame wall_end_x_m -3.004 is the stereo value at desk height before the gap update"
+ },
+ "note_v08": "v08: edges fitted to the ZED image (wall end, mullion post, monitor desk and panel left edges), rail from the updated metric frame, C-clamps",
+ "note_v10": "v10: ceiling panel row from light_search_v09b (dx +1.0 -> x -1.3/0.4/-3.0, y 0.3), ambient x2.5",
+ "note_v13": "v13: partition glass blocks direct light (rooms lit separately), no caustics, carpet navy start, frosted light_fraction 0.2",
+ "note_v15b": "v15b: panel matte (specular 0.1, no sheen), frame light anodised, frosted light_fraction 0.35",
+ "calibration_log": [
+  {
+   "render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v16",
+   "from": "configs/v16.json",
+   "steps": [
+    "albedo"
+   ],
+   "regions": {
+    "desk": {
+     "pixels": 128473,
+     "real_lin": [
+      0.2462,
+      0.19462,
+      0.11444
+     ],
+     "render_lin": [
+      0.24609,
+      0.19444,
+      0.11456
+     ],
+     "ratio": [
+      1.0004,
+      1.0009,
+      0.9989
+     ],
+     "param": "desk_top.albedo",
+     "old": [
+      0.42365,
+      0.33313,
+      0.19541
+     ],
+     "new": [
+      0.42384,
+      0.33344,
+      0.1952
+     ]
+    },
+    "wall": {
+     "pixels": 280556,
+     "real_lin": [
+      0.25415,
+      0.26225,
+      0.24228
+     ],
+     "render_lin": [
+      0.25431,
+      0.26254,
+      0.24334
+     ],
+     "ratio": [
+      0.9994,
+      0.9989,
+      0.9956
+     ],
+     "param": "wall.albedo",
+     "old": [
+      0.45463,
+      0.47928,
+      0.46326
+     ],
+     "new": [
+      0.45435,
+      0.47875,
+      0.46124
+     ]
+    },
+    "carpet": {
+     "pixels": 22866,
+     "real_lin": [
+      0.0075,
+      0.01298,
+      0.02315
+     ],
+     "render_lin": [
+      0.00734,
+      0.0129,
+      0.02323
+     ],
+     "ratio": [
+      1.022,
+      1.0061,
+      0.9965
+     ],
+     "param": "carpet.albedo",
+     "old": [
+      0.0366,
+      0.06669,
+      0.12127
+     ],
+     "new": [
+      0.03741,
+      0.0671,
+      0.12085
+     ]
+    },
+    "glass_frosted": {
+     "pixels": 31605,
+     "real_lin": [
+      0.016,
+      0.15896,
+      0.42327
+     ],
+     "render_lin": [
+      0.01602,
+      0.15902,
+      0.4235
+     ],
+     "ratio": [
+      0.9983,
+      0.9996,
+      0.9995
+     ],
+     "param": "frosted.emission",
+     "old": [
+      0.01303,
+      0.18305,
+      0.50027
+     ],
+     "new": [
+      0.01301,
+      0.18298,
+      0.5
+     ]
+    },
+    "glass_frame": {
+     "pixels": 2304,
+     "real_lin": [
+      0.03955,
+      0.10946,
+      0.26225
+     ],
+     "render_lin": [
+      0.05376,
+      0.06925,
+      0.09244
+     ],
+     "ratio": [
+      0.7356,
+      1.5807,
+      2.837
+     ],
+     "param": "frame_alu.albedo",
+     "old": [
+      0.75,
+      0.8,
+      0.85
+     ],
+     "new": [
+      0.55167,
+      0.95,
+      0.95
+     ]
+    },
+    "panel": {
+     "pixels": 11231,
+     "real_lin": [
+      0.01096,
+      0.01229,
+      0.00913
+     ],
+     "render_lin": [
+      0.00745,
+      0.00785,
+      0.00753
+     ],
+     "ratio": [
+      1.471,
+      1.5653,
+      1.2135
+     ],
+     "param": "panel.tint",
+     "old": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "new": [
+      0.22065,
+      0.23479,
+      0.18203
+     ]
+    },
+    "monitor_desk": {
+     "pixels": 14519,
+     "real_lin": [
+      0.13287,
+      0.11444,
+      0.06125
+     ],
+     "render_lin": [
+      0.1324,
+      0.11404,
+      0.06102
+     ],
+     "ratio": [
+      1.0035,
+      1.0035,
+      1.0037
+     ],
+     "param": "monitor_desk_top.albedo",
+     "old": [
+      0.33671,
+      0.29225,
+      0.15559
+     ],
+     "new": [
+      0.33789,
+      0.29327,
+      0.15616
+     ]
+    },
+    "glass_lower": {
+     "pixels": 18949,
+     "real_lin": [
+      0.007,
+      0.02843,
+      0.07227
+     ],
+     "render_lin": [
+      0.00592,
+      0.04442,
+      0.12272
+     ],
+     "ratio": [
+      1.1571,
+      0.6361,
+      0.591
+     ],
+     "param": "lighting.daylight power/color"
+    }
+   }
+  },
+  {
+   "render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/v17",
+   "from": "configs/v17.json",
+   "steps": [
+    "albedo"
+   ],
+   "regions": {
+    "desk": {
+     "pixels": 128473,
+     "real_lin": [
+      0.2462,
+      0.19462,
+      0.11444
+     ],
+     "render_lin": [
+      0.24629,
+      0.19474,
+      0.11427
+     ],
+     "ratio": [
+      0.9996,
+      0.9994,
+      1.0014
+     ],
+     "param": "desk_top.albedo",
+     "old": [
+      0.42384,
+      0.33344,
+      0.1952
+     ],
+     "new": [
+      0.42369,
+      0.33324,
+      0.19548
+     ]
+    },
+    "wall": {
+     "pixels": 280556,
+     "real_lin": [
+      0.25415,
+      0.26225,
+      0.24228
+     ],
+     "render_lin": [
+      0.25434,
+      0.26237,
+      0.24222
+     ],
+     "ratio": [
+      0.9993,
+      0.9995,
+      1.0002
+     ],
+     "param": "wall.albedo",
+     "old": [
+      0.45435,
+      0.47875,
+      0.46124
+     ],
+     "new": [
+      0.45402,
+      0.47853,
+      0.46135
+     ]
+    },
+    "carpet": {
+     "pixels": 22866,
+     "real_lin": [
+      0.0075,
+      0.01298,
+      0.02315
+     ],
+     "render_lin": [
+      0.00744,
+      0.01296,
+      0.02306
+     ],
+     "ratio": [
+      1.0076,
+      1.0016,
+      1.0039
+     ],
+     "param": "carpet.albedo",
+     "old": [
+      0.03741,
+      0.0671,
+      0.12085
+     ],
+     "new": [
+      0.0377,
+      0.06721,
+      0.12133
+     ]
+    },
+    "glass_frosted": {
+     "pixels": 31605,
+     "real_lin": [
+      0.016,
+      0.15896,
+      0.42327
+     ],
+     "render_lin": [
+      0.016,
+      0.15889,
+      0.42335
+     ],
+     "ratio": [
+      0.9995,
+      1.0004,
+      0.9998
+     ],
+     "param": "frosted.emission",
+     "old": [
+      0.01301,
+      0.18298,
+      0.5
+     ],
+     "new": [
+      0.013,
+      0.18306,
+      0.4999
+     ]
+    },
+    "glass_frame": {
+     "pixels": 2304,
+     "real_lin": [
+      0.03955,
+      0.10946,
+      0.26225
+     ],
+     "render_lin": [
+      0.03952,
+      0.08188,
+      0.09834
+     ],
+     "ratio": [
+      1.0006,
+      1.3369,
+      2.6667
+     ],
+     "param": "frame_alu.albedo",
+     "old": [
+      0.55167,
+      0.95,
+      0.95
+     ],
+     "new": [
+      0.55198,
+      0.95,
+      0.95
+     ]
+    },
+    "panel": {
+     "pixels": 11231,
+     "real_lin": [
+      0.01096,
+      0.01229,
+      0.00913
+     ],
+     "render_lin": [
+      0.00984,
+      0.01103,
+      0.00872
+     ],
+     "ratio": [
+      1.114,
+      1.114,
+      1.0474
+     ],
+     "param": "panel.tint",
+     "old": [
+      0.22065,
+      0.23479,
+      0.18203
+     ],
+     "new": [
+      0.24581,
+      0.26156,
+      0.19066
+     ]
+    },
+    "monitor_desk": {
+     "pixels": 14519,
+     "real_lin": [
+      0.13287,
+      0.11444,
+      0.06125
+     ],
+     "render_lin": [
+      0.13303,
+      0.11457,
+      0.06123
+     ],
+     "ratio": [
+      0.9988,
+      0.9988,
+      1.0003
+     ],
+     "param": "monitor_desk_top.albedo",
+     "old": [
+      0.33789,
+      0.29327,
+      0.15616
+     ],
+     "new": [
+      0.33747,
+      0.29291,
+      0.15621
+     ]
+    },
+    "glass_lower": {
+     "pixels": 18949,
+     "real_lin": [
+      0.007,
+      0.02843,
+      0.07227
+     ],
+     "render_lin": [
+      0.00654,
+      0.03975,
+      0.103
+     ],
+     "ratio": [
+      1.061,
+      0.7141,
+      0.699
+     ],
+     "param": "lighting.daylight power/color"
+    }
+   }
+  }
+ ]
+}

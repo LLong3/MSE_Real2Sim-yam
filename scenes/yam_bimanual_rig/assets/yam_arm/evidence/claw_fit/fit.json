@@ -1,0 +1,236 @@
+{
+ "inputs": {
+  "calibration": "/home/frank/.config/raiden/calibration_results.json",
+  "wrist_images": [
+   "/home/frank/robot/bimanual_bringup/pi05/left_wrist_camera.jpg",
+   "/home/frank/robot/bimanual_bringup/pi05/right_wrist_camera.jpg"
+  ],
+  "metric_frame_sections": [
+   "arms",
+   "scene_camera"
+  ]
+ },
+ "xmid_fixed_m": 0.0,
+ "strip_m": 0.0015,
+ "free_fit": {
+  "start_c_d_m": [
+   0.0577,
+   -0.1388
+  ],
+  "open_half_m": 0.04792849868306634,
+  "pad_z6_m": -0.13332024007245985,
+  "loss": 0.4567616517321613,
+  "camera_corrections": {
+   "left": {
+    "rotvec_deg": [
+     1.399,
+     0.403,
+     -1.003
+    ],
+    "translation_l6_mm": [
+     -1.99,
+     0.46,
+     0.47
+    ],
+    "rotvec_rad": [
+     0.024411376129882534,
+     0.007038262208090536,
+     -0.017500005461048775
+    ],
+    "translation_l6_m": [
+     -0.0019946133477700963,
+     0.00046168837662297155,
+     0.0004651112009645927
+    ]
+   },
+   "right": {
+    "rotvec_deg": [
+     1.704,
+     0.973,
+     0.58
+    ],
+    "translation_l6_mm": [
+     -6.51,
+     5.18,
+     0.05
+    ],
+    "rotvec_rad": [
+     0.02974173919872574,
+     0.016986282640010578,
+     0.010118531469064617
+    ],
+    "translation_l6_m": [
+     -0.006514372982436855,
+     0.005182523602815773,
+     5.2340280610806676e-05
+    ]
+   }
+  },
+  "iou_pad_clamp_strip": {
+   "corrected": {
+    "left": [
+     0.609,
+     0.729,
+     0.397
+    ],
+    "right": [
+     0.546,
+     0.795,
+     0.213
+    ]
+   },
+   "raw_hand_eye": {
+    "left": [
+     0.529,
+     0.485,
+     0.4
+    ],
+    "right": [
+     0.36,
+     0.184,
+     0.122
+    ]
+   }
+  },
+  "scene_gap_check": {
+   "left_arm": {
+    "rows": [
+     510,
+     515,
+     520,
+     525,
+     530,
+     540,
+     545,
+     550
+    ],
+    "real_px": 64.75,
+    "model_px": 60.0
+   },
+   "right_arm": {
+    "rows": [
+     510,
+     515,
+     520,
+     525,
+     530,
+     535,
+     540,
+     545,
+     550
+    ],
+    "real_px": 66.0,
+    "model_px": 61.888888888888886
+   }
+  }
+ },
+ "asset_placement": {
+  "source": "source/umi_ft/claw.json",
+  "open_half_m": 0.051,
+  "pad_z6_m": -0.137,
+  "pad_x6_m": 0.0,
+  "loss": 0.4378661680933659,
+  "camera_corrections": {
+   "left": {
+    "rotvec_deg": [
+     2.552,
+     0.021,
+     -2.058
+    ],
+    "translation_l6_mm": [
+     -3.93,
+     0.26,
+     2.17
+    ],
+    "rotvec_rad": [
+     0.044535667381892005,
+     0.0003714193144730134,
+     -0.03591242470903504
+    ],
+    "translation_l6_m": [
+     -0.003932991170631091,
+     0.00025835455619895395,
+     0.0021710027526741903
+    ]
+   },
+   "right": {
+    "rotvec_deg": [
+     2.73,
+     1.003,
+     0.834
+    ],
+    "translation_l6_mm": [
+     -7.93,
+     5.13,
+     1.01
+    ],
+    "rotvec_rad": [
+     0.04764224660260183,
+     0.01750970229204113,
+     0.014559702799259385
+    ],
+    "translation_l6_m": [
+     -0.007931356267101761,
+     0.005127496233121042,
+     0.001012413657641006
+    ]
+   }
+  },
+  "iou_pad_clamp_strip": {
+   "corrected": {
+    "left": [
+     0.645,
+     0.769,
+     0.43
+    ],
+    "right": [
+     0.564,
+     0.805,
+     0.232
+    ]
+   },
+   "raw_hand_eye": {
+    "left": [
+     0.468,
+     0.333,
+     0.293
+    ],
+    "right": [
+     0.324,
+     0.103,
+     0.146
+    ]
+   }
+  },
+  "scene_gap_check": {
+   "left_arm": {
+    "rows": [
+     510,
+     515,
+     520,
+     525,
+     530,
+     540,
+     545,
+     550
+    ],
+    "real_px": 64.75,
+    "model_px": 63.25
+   },
+   "right_arm": {
+    "rows": [
+     510,
+     515,
+     520,
+     525,
+     530,
+     535,
+     540,
+     545
+    ],
+    "real_px": 65.375,
+    "model_px": 65.25
+   }
+  }
+ }
+}

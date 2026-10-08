@@ -1,0 +1,15 @@
+00:00.234  blend            | Read blend: "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/blender/yam_rig_twin_v2.blend"
+00:00.315  cycles           | WARNING HIPEW initialization failed: Error opening HIP dynamic library
+00:04.383  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/delivery_v2_overview/overview_front.exr'
+00:07.934  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/delivery_v2_overview/overview_left.exr'
+00:11.590  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/delivery_v2_overview/overview_right.exr'
+00:15.132  render           | Saved: '/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/renders/delivery_v2_overview/plan.exr'
+FACING_REVIEW [{"object": "yam_arm", "instance_id": "left_arm", "status": "no_target", "reason": "Frame known; no scene facing intent declared"}, {"object": "yam_arm.001", "instance_id": "right_arm", "status": "no_target", "reason": "Frame known; no scene facing intent declared"}]
+VIEW_OK overview_front projection check px None
+VIEW_OK overview_left projection check px None
+VIEW_OK overview_right projection check px None
+VIEW_OK plan projection check px None
+RENDER_OK
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit

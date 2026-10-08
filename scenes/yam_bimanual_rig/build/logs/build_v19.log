@@ -1,0 +1,9 @@
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/build/build_scene.py:182: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat.use_nodes = True
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/build/build_scene.py:572: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  w = bpy.data.worlds.new('Office ambient'); scene.world = w; w.use_nodes = True
+Info: Saved as "v19.blend"
+BUILD_OK /home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t225835z-build-1de8ab34/iter/v19.blend
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:12:34)
+
+Blender quit

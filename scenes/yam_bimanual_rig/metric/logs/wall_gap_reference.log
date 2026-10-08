@@ -1,0 +1,40 @@
+{'x': -3.0, 'desk_top_z': 0.7273, 'desk_back_y_p99': 2.149, 'desk_back_y_p995': 2.1744, 'wall_y_3_15cm': 2.079, 'wall_y_15_35cm': 2.0861, 'gap_wall_minus_desk_back_mm': -70.0, 'slot_points_below_top': 0, 'desk_points': 27030, 'wall_points': 17638, 'views_seeing_wall': 48}
+{'x': -2.9, 'desk_top_z': 0.7268, 'desk_back_y_p99': 2.074, 'desk_back_y_p995': 2.0762, 'wall_y_3_15cm': 2.0685, 'wall_y_15_35cm': 2.0733, 'gap_wall_minus_desk_back_mm': -5.5, 'slot_points_below_top': 0, 'desk_points': 39715, 'wall_points': 33276, 'views_seeing_wall': 51}
+{'x': -2.8, 'desk_top_z': 0.7252, 'desk_back_y_p99': 2.0731, 'desk_back_y_p995': 2.0758, 'wall_y_3_15cm': 2.0697, 'wall_y_15_35cm': 2.0729, 'gap_wall_minus_desk_back_mm': -3.4, 'slot_points_below_top': 102, 'desk_points': 51272, 'wall_points': 33885, 'views_seeing_wall': 58}
+{'x': -2.7, 'desk_top_z': 0.7239, 'desk_back_y_p99': 2.0738, 'desk_back_y_p995': 2.0758, 'wall_y_3_15cm': 2.0701, 'wall_y_15_35cm': 2.0742, 'gap_wall_minus_desk_back_mm': -3.7, 'slot_points_below_top': 257, 'desk_points': 55546, 'wall_points': 42879, 'views_seeing_wall': 63}
+{'x': -2.6, 'desk_top_z': 0.7224, 'desk_back_y_p99': 2.0711, 'desk_back_y_p995': 2.0724, 'wall_y_3_15cm': 2.0701, 'wall_y_15_35cm': 2.0744, 'gap_wall_minus_desk_back_mm': -1.1, 'slot_points_below_top': 262, 'desk_points': 64454, 'wall_points': 44917, 'views_seeing_wall': 64}
+{'x': -2.5, 'desk_top_z': 0.721, 'desk_back_y_p99': 2.0706, 'desk_back_y_p995': 2.0715, 'wall_y_3_15cm': 2.0697, 'wall_y_15_35cm': 2.0746, 'gap_wall_minus_desk_back_mm': -0.9, 'slot_points_below_top': 192, 'desk_points': 63008, 'wall_points': 43986, 'views_seeing_wall': 64}
+{'x': -2.4, 'desk_top_z': 0.7195, 'desk_back_y_p99': 2.069, 'desk_back_y_p995': 2.0698, 'wall_y_3_15cm': 2.0689, 'wall_y_15_35cm': 2.0741, 'gap_wall_minus_desk_back_mm': -0.0, 'slot_points_below_top': 156, 'desk_points': 59948, 'wall_points': 42690, 'views_seeing_wall': 64}
+{'x': -2.3, 'desk_top_z': 0.7183, 'desk_back_y_p99': 2.0683, 'desk_back_y_p995': 2.0695, 'wall_y_3_15cm': 2.0683, 'wall_y_15_35cm': 2.0731, 'gap_wall_minus_desk_back_mm': 0.0, 'slot_points_below_top': 248, 'desk_points': 56260, 'wall_points': 41894, 'views_seeing_wall': 64}
+{'x': -2.2, 'desk_top_z': 0.7176, 'desk_back_y_p99': 2.0682, 'desk_back_y_p995': 2.0701, 'wall_y_3_15cm': 2.0673, 'wall_y_15_35cm': 2.0719, 'gap_wall_minus_desk_back_mm': -0.8, 'slot_points_below_top': 255, 'desk_points': 55607, 'wall_points': 42198, 'views_seeing_wall': 64}
+{'x': -2.1, 'desk_top_z': 0.7174, 'desk_back_y_p99': 2.0689, 'desk_back_y_p995': 2.0711, 'wall_y_3_15cm': 2.0667, 'wall_y_15_35cm': 2.0715, 'gap_wall_minus_desk_back_mm': -2.2, 'slot_points_below_top': 244, 'desk_points': 55629, 'wall_points': 42614, 'views_seeing_wall': 63}
+{'x': -2.0, 'desk_top_z': 0.7174, 'desk_back_y_p99': 2.0698, 'desk_back_y_p995': 2.0718, 'wall_y_3_15cm': 2.0663, 'wall_y_15_35cm': 2.0712, 'gap_wall_minus_desk_back_mm': -3.5, 'slot_points_below_top': 221, 'desk_points': 56107, 'wall_points': 43373, 'views_seeing_wall': 64}
+{'x': -1.9, 'desk_top_z': 0.7174, 'desk_back_y_p99': 2.0721, 'desk_back_y_p995': 2.073, 'wall_y_3_15cm': 2.0668, 'wall_y_15_35cm': 2.0732, 'gap_wall_minus_desk_back_mm': -5.3, 'slot_points_below_top': 222, 'desk_points': 59202, 'wall_points': 45144, 'views_seeing_wall': 63}
+{'x': -1.8, 'desk_top_z': 0.7169, 'desk_back_y_p99': 2.0753, 'desk_back_y_p995': 2.0767, 'wall_y_3_15cm': 2.0675, 'wall_y_15_35cm': 2.0723, 'gap_wall_minus_desk_back_mm': -7.8, 'slot_points_below_top': 340, 'desk_points': 64263, 'wall_points': 46656, 'views_seeing_wall': 62}
+{'x': -1.7, 'desk_top_z': 0.7157, 'desk_back_y_p99': 2.0779, 'desk_back_y_p995': 2.079, 'wall_y_3_15cm': 2.0656, 'wall_y_15_35cm': 2.0682, 'gap_wall_minus_desk_back_mm': -12.3, 'slot_points_below_top': 431, 'desk_points': 56682, 'wall_points': 43719, 'views_seeing_wall': 61}
+{'x': -1.6, 'desk_top_z': 0.7126, 'desk_back_y_p99': 2.0733, 'desk_back_y_p995': 2.0748, 'wall_y_3_15cm': 2.0612, 'wall_y_15_35cm': 2.0667, 'gap_wall_minus_desk_back_mm': -12.1, 'slot_points_below_top': 3, 'desk_points': 30863, 'wall_points': 30847, 'views_seeing_wall': 59}
+{'x': -1.5, 'desk_top_z': 0.6984, 'desk_back_y_p99': 2.0668, 'desk_back_y_p995': 2.0675, 'wall_y_3_15cm': 2.0539, 'wall_y_15_35cm': 2.0598, 'gap_wall_minus_desk_back_mm': -12.9, 'slot_points_below_top': 821, 'desk_points': 4126, 'wall_points': 22568, 'views_seeing_wall': 49}
+{'note': 'metric frame of metric_frame.json (sy = 1.00); gap = median wall Y (3-15 cm above the desk) minus the p99 Y of desk-top points', 'gap_mm_median': -3.6, 'gap_mm_range': [-70.0, -0.0], 'desk_back_minus_plane_mm_median': -12.322147750854583, 'wall_minus_plane_mm_median': -16.022147750854856}
+[-0.09, 1275, 71.8, 68.9, 74.0]
+[-0.07, 1489, 71.5, 68.4, 74.5]
+[-0.05, 1533, 71.3, 66.8, 74.9]
+[-0.03, 1472, 70.9, 65.7, 75.6]
+[-0.01, 1524, 70.8, 64.3, 76.0]
+[0.01, 1758, 71.7, 65.8, 76.5]
+[0.03, 1887, 71.6, 63.5, 77.3]
+[0.05, 3936, -3.0, -16.9, 75.7]
+[0.07, 8056, -7.0, -16.9, 19.8]
+[0.09, 16694, -3.0, -15.6, 39.2]
+[0.11, 21738, -10.9, -30.4, 2.5]
+[0.13, 19440, -14.2, -32.4, -2.6]
+[0.15, 20261, -13.9, -37.4, -3.4]
+[0.17, 20133, -13.6, -38.1, -3.8]
+[0.19, 20100, -13.1, -37.8, -3.8]
+[0.21, 20719, -13.1, -37.7, -4.1]
+[0.23, 21151, -13.1, -37.3, -4.6]
+[0.25, 21363, -12.8, -36.6, -4.5]
+[0.27, 22172, -12.5, -36.0, -4.3]
+[0.29, 23143, -12.2, -35.0, -4.3]
+[0.31, 24538, -11.7, -33.8, -4.3]
+[0.33, 25917, -11.3, -32.3, -4.1]
+[0.35, 26970, -11.0, -31.2, -3.7]

@@ -3,6 +3,7 @@
 !/runs/README.md
 /scenes/*
 !/scenes/README.md
+!/scenes/yam_bimanual_rig/
 /references/*
 !/references/README.md
 /tasks/*

@@ -1,0 +1,38 @@
+<!-- UMI-FT claws for raiden yam_linear_4310 (proposal; placement source/umi_ft/claw.json). -->
+<!-- asset: add to <asset> (paths relative to this folder) -->
+    <mesh name="umi_tip_left_pad" file="tip_left_pad.stl" />
+    <mesh name="umi_tip_left_face" file="tip_left_face.stl" />
+    <mesh name="umi_tip_left_clamp" file="tip_left_clamp.stl" />
+    <mesh name="umi_tip_left_white" file="tip_left_white.stl" />
+    <mesh name="umi_tip_left_black" file="tip_left_black.stl" />
+    <mesh name="umi_tip_left_carriage" file="tip_left_carriage.stl" />
+    <mesh name="umi_tip_left_pad_collision" file="tip_left_pad_collision.stl" />
+    <mesh name="umi_tip_right_pad" file="tip_right_pad.stl" />
+    <mesh name="umi_tip_right_face" file="tip_right_face.stl" />
+    <mesh name="umi_tip_right_clamp" file="tip_right_clamp.stl" />
+    <mesh name="umi_tip_right_white" file="tip_right_white.stl" />
+    <mesh name="umi_tip_right_black" file="tip_right_black.stl" />
+    <mesh name="umi_tip_right_carriage" file="tip_right_carriage.stl" />
+    <mesh name="umi_tip_right_pad_collision" file="tip_right_pad_collision.stl" />
+<!-- body tip_left: replace <geom ... mesh="tip_left" /> and its <inertial> with -->
+    <inertial pos="-0.03652 0.01392 -0.05058" mass="0.1016" fullinertia="9.0189e-05 2.1182e-04 1.5839e-04 2.9657e-05 -6.0407e-05 2.4805e-05" />
+    <geom type="mesh" mesh="umi_tip_left_pad" rgba="0.9 0.24 0.02 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_left_face" rgba="0.03 0.03 0.03 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_left_clamp" rgba="0.96 0.8 0 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_left_white" rgba="0.9 0.9 0.88 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_left_black" rgba="0.04 0.04 0.045 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_left_carriage" rgba="0.07 0.072 0.075 1" contype="0" conaffinity="0" group="2" />
+    <geom name="umi_tip_left_pad" type="mesh" mesh="umi_tip_left_pad_collision" group="3" friction="1.2 0.02 0.002" condim="4" solref="0.01 1" solimp="0.9 0.95 0.002" />
+    <geom name="umi_tip_left_body_outer" type="box" pos="-0.06336 0.02390 -0.07721" size="0.04892 0.01450 0.01303" group="3" />
+    <geom name="umi_tip_left_body_inner" type="box" pos="-0.02674 0.02390 -0.05591" size="0.01230 0.01450 0.00828" group="3" />
+<!-- body tip_right: replace <geom ... mesh="tip_right" /> and its <inertial> with -->
+    <inertial pos="-0.01410 -0.03652 -0.05058" mass="0.1016" fullinertia="2.1181e-04 9.0550e-05 1.5875e-04 -2.9544e-05 -2.5184e-05 -6.0406e-05" />
+    <geom type="mesh" mesh="umi_tip_right_pad" rgba="0.9 0.24 0.02 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_right_face" rgba="0.03 0.03 0.03 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_right_clamp" rgba="0.96 0.8 0 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_right_white" rgba="0.9 0.9 0.88 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_right_black" rgba="0.04 0.04 0.045 1" contype="0" conaffinity="0" group="2" />
+    <geom type="mesh" mesh="umi_tip_right_carriage" rgba="0.07 0.072 0.075 1" contype="0" conaffinity="0" group="2" />
+    <geom name="umi_tip_right_pad" type="mesh" mesh="umi_tip_right_pad_collision" group="3" friction="1.2 0.02 0.002" condim="4" solref="0.01 1" solimp="0.9 0.95 0.002" />
+    <geom name="umi_tip_right_body_outer" type="box" pos="-0.02390 -0.06336 -0.07721" size="0.01450 0.04892 0.01303" group="3" />
+    <geom name="umi_tip_right_body_inner" type="box" pos="-0.02390 -0.02674 -0.05591" size="0.01450 0.01230 0.00828" group="3" />

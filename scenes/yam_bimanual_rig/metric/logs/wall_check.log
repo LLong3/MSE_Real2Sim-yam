@@ -1,0 +1,297 @@
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/wall_check.py:23: RuntimeWarning: All-NaN slice encountered
+  med = np.nanmedian(D, 0)
+/home/frank/robot/aha-3d/.runtime/pi3x-inference/venv/lib/python3.11/site-packages/numpy/lib/nanfunctions.py:1879: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric/wall_check.py:118: RuntimeWarning: invalid value encountered in cast
+  cm = cv2.applyColorMap((yy / 150 * 255).astype(np.uint8), cv2.COLORMAP_VIRIDIS)[..., ::-1]
+{
+ "wall_y_mm_by_column_and_height": {
+  "cells": "[median y behind the crease plane mm, median temporal SD mm, pixels]",
+  "table": {
+   "u250-350": {
+    "z0.00-0.05": [
+     38.7,
+     5.2,
+     800
+    ],
+    "z0.05-0.10": [
+     37.4,
+     4.8,
+     1021
+    ],
+    "z0.10-0.20": [
+     44.2,
+     3.6,
+     2719
+    ],
+    "z0.20-0.40": [
+     59.7,
+     3.8,
+     6615
+    ],
+    "z0.40-0.60": [
+     67.5,
+     7.0,
+     8860
+    ],
+    "z0.60-0.90": [
+     69.1,
+     11.6,
+     15155
+    ]
+   },
+   "u350-450": {
+    "z0.00-0.05": [
+     29.8,
+     7.5,
+     1192
+    ],
+    "z0.05-0.10": [
+     35.6,
+     6.6,
+     1247
+    ],
+    "z0.10-0.20": [
+     47.0,
+     5.7,
+     2888
+    ],
+    "z0.20-0.40": [
+     70.8,
+     6.8,
+     6843
+    ],
+    "z0.40-0.60": [
+     80.4,
+     11.7,
+     8922
+    ],
+    "z0.60-0.90": [
+     79.0,
+     12.2,
+     14470
+    ]
+   },
+   "u450-550": {
+    "z0.00-0.05": [
+     20.4,
+     9.7,
+     1368
+    ],
+    "z0.05-0.10": [
+     30.3,
+     8.5,
+     1378
+    ],
+    "z0.10-0.20": [
+     52.1,
+     7.9,
+     3271
+    ],
+    "z0.20-0.40": [
+     87.9,
+     9.9,
+     7103
+    ],
+    "z0.40-0.60": [
+     96.3,
+     16.1,
+     8764
+    ],
+    "z0.60-0.90": [
+     85.2,
+     13.3,
+     13816
+    ]
+   },
+   "u550-650": {
+    "z0.00-0.05": [
+     19.9,
+     9.2,
+     1372
+    ],
+    "z0.05-0.10": [
+     32.8,
+     8.2,
+     1513
+    ],
+    "z0.10-0.20": [
+     57.6,
+     8.6,
+     3378
+    ],
+    "z0.20-0.40": [
+     96.8,
+     12.3,
+     7294
+    ],
+    "z0.40-0.60": [
+     112.2,
+     22.1,
+     8796
+    ],
+    "z0.60-0.90": [
+     93.2,
+     18.0,
+     13090
+    ]
+   },
+   "u650-750": {
+    "z0.00-0.05": [
+     36.5,
+     6.8,
+     1240
+    ],
+    "z0.05-0.10": [
+     42.5,
+     6.1,
+     1353
+    ],
+    "z0.10-0.20": [
+     59.2,
+     7.2,
+     3147
+    ],
+    "z0.20-0.40": [
+     96.0,
+     12.1,
+     7563
+    ],
+    "z0.40-0.60": [
+     132.9,
+     25.3,
+     9686
+    ],
+    "z0.60-0.90": [
+     183.7,
+     60.3,
+     11730
+    ]
+   }
+  }
+ },
+ "temporal_sd_mm": {
+  "desk_top": 3.115678669192821,
+  "wall": 11.880180806106852,
+  "wall_p90": 36.47086107953425,
+  "desk_top_p90": 3.990650042557441
+ },
+ "per_column_linear_fit_y_vs_height": {
+  "u250-350": {
+   "y_at_crease_mm": 45.9,
+   "lean_deg": 2.04,
+   "x_mid_m": 0.382
+  },
+  "u350-450": {
+   "y_at_crease_mm": 50.7,
+   "lean_deg": 2.57,
+   "x_mid_m": 0.576
+  },
+  "u450-550": {
+   "y_at_crease_mm": 62.2,
+   "lean_deg": 2.37,
+   "x_mid_m": 0.771
+  },
+  "u550-650": {
+   "y_at_crease_mm": 67.9,
+   "lean_deg": 2.95,
+   "x_mid_m": 0.97
+  },
+  "u650-750": {
+   "y_at_crease_mm": 12.2,
+   "lean_deg": 15.32,
+   "x_mid_m": 1.208
+  }
+ },
+ "wall_plane_fit": {
+  "yaw_vs_crease_deg": 5.026655921046899,
+  "lean_deg": 6.027664797593464,
+  "y_at_x0_z0_mm": -27.69207436697058,
+  "rms_mm": 39.66092446316412
+ },
+ "crease_band": {
+  "wall_z0_3cm_y_mm_median": 26.952274405063108,
+  "wall_z0_3cm_pixels": 3990,
+  "desk_rows_below_crease_y_mm_median": -16.493809640350502,
+  "desk_rows_below_crease_z_mm_median": -9.60015599635644
+ }
+}
+{
+ "note": "vertical beige/glass edge (left end of the painted wall), found per row by the horizontal image gradient; y sampled 4-8 px on the wall side, 3-8 px on the glass side, and 30-60 px into the plain wall",
+ "rows": 68,
+ "x_m_median": 0.0684173183081225,
+ "z_range_m": [
+  0.037059161508211466,
+  0.7285233670557141
+ ],
+ "y_wall_side_mm_median": 54.210522453025604,
+ "y_wall_side_mm_p10_p90": [
+  38.36048251124556,
+  68.44011093077205
+ ],
+ "y_glass_side_mm_median": 943.4188764563618,
+ "y_plain_wall_30_60px_right_mm_median": 62.05424691022546,
+ "temporal_sd_mm_median": 1.104839037864907,
+ "by_height": [
+  [
+   0.73,
+   71.2,
+   77.9
+  ],
+  [
+   0.69,
+   75.5,
+   73.3
+  ],
+  [
+   0.66,
+   64.5,
+   69.6
+  ],
+  [
+   0.62,
+   58.2,
+   67.0
+  ],
+  [
+   0.57,
+   55.0,
+   64.3
+  ],
+  [
+   0.52,
+   55.0,
+   62.9
+  ],
+  [
+   0.46,
+   53.0,
+   60.4
+  ],
+  [
+   0.4,
+   51.8,
+   55.7
+  ],
+  [
+   0.33,
+   49.2,
+   56.2
+  ],
+  [
+   0.25,
+   48.3,
+   53.1
+  ],
+  [
+   0.16,
+   37.9,
+   44.2
+  ],
+  [
+   0.06,
+   36.2,
+   37.9
+  ]
+ ]
+}

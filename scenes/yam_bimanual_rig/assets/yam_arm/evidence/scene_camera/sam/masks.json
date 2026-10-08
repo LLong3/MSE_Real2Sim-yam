@@ -1,0 +1,46 @@
+{
+ "image": "/home/frank/robot/bimanual_bringup/pi05/scene_camera.jpg",
+ "checkpoint": "/home/frank/robot/aha-3d/.runtime/sam3-segmentation/checkpoints/sam3.1/sam3.1_multiplex.pt",
+ "grid": [
+  1008,
+  630
+ ],
+ "instances": [
+  {
+   "i": 0,
+   "phrase": "robot arm",
+   "score": 0.539,
+   "pixels": 6530,
+   "bbox": [
+    650,
+    503,
+    789,
+    599
+   ]
+  },
+  {
+   "i": 1,
+   "phrase": "robot arm",
+   "score": 0.555,
+   "pixels": 6018,
+   "bbox": [
+    244,
+    504,
+    378,
+    599
+   ]
+  },
+  {
+   "i": 2,
+   "phrase": "robot arm",
+   "score": 0.344,
+   "pixels": 2395,
+   "bbox": [
+    244,
+    504,
+    304,
+    588
+   ]
+  }
+ ]
+}

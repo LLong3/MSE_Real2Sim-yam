@@ -1,0 +1,1393 @@
+{
+ "schema": "aha3d yam_bimanual_rig metric frame v1",
+ "created_utc": "2026-09-29T21:55Z",
+ "producer": {
+  "owner": "claude-yam-metric",
+  "task": "yam-metric-20260929",
+  "dir": "/home/frank/robot/aha-3d/scenes/yam_bimanual_rig/metric",
+  "scripts": [
+   "common.py",
+   "clean_cloud.py",
+   "floor_check.py",
+   "zed_metric.py",
+   "yam_mesh.py (raiden venv)",
+   "arm_icp.py",
+   "metric_frame.py",
+   "fit_metric.py",
+   "arm_zed_fit2.py",
+   "render.py",
+   "pnp_warp.py",
+   "match_zed.py (plain SIFT, failed)",
+   "build_metric.py",
+   "review_images.py"
+  ]
+ },
+ "inputs": {
+  "reference_run": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t202049z-reference64-a264573a",
+  "basis": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260929t202049z-reference64-a264573a/reference/alignment/cameras.json",
+  "zed_episode": "/home/frank/robot/bimanual_bringup/cameras/e2e_sdk55_converted/0000",
+  "zed_image_0929": "/home/frank/robot/bimanual_bringup/pi05/scene_camera.jpg",
+  "zed_image_0928": "/home/frank/robot/bimanual_bringup/cameras/raiden_scene_camera.png",
+  "tape_0929": {
+   "desk_length_m": 1.52,
+   "desk_depth_m": 0.76,
+   "desk_top_above_floor_m": 0.72
+  },
+  "mjcf": "/home/frank/robot/raiden/third_party/i2rt/i2rt/robot_models/arm/yam/yam.xml + gripper/linear_4310/linear_4310.xml (i2rt combine_arm_and_gripper_xml), q=0, fingers open 0.0475"
+ },
+ "conventions": {
+  "world": "metric, metres, right-handed, Z up; floor z=0; desk top z=0.72; X along the back wall / desk length (-X = frosted-glass end, +X = monitor-desk end); +Y toward the back wall. Origin and axes follow the aligned reference (cameras.json) so reference coordinates change by the transform below only.",
+  "arm_base_frame": "MJCF yam.xml world frame: origin at the base mounting face, Z up, arm folded along +x at q=0 (grippers at +x); world_from_base = [Rz(yaw) | position]; yaw 90 deg means grippers point to +Y (the wall).",
+  "camera": "see scene_camera.pose"
+ },
+ "transform_reference_to_metric": {
+  "M": [
+   [
+    1.06,
+    0.0,
+    0.0,
+    0.12025910776668614
+   ],
+   [
+    0.0,
+    1.0,
+    0.0,
+    -0.01496074062843634
+   ],
+   [
+    0.0,
+    0.0,
+    1.09,
+    0.007665473909395362
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "S": [
+   1.06,
+   1.0,
+   1.09
+  ],
+  "t": [
+   0.12025910776668614,
+   -0.01496074062843634,
+   0.007665473909395362
+  ],
+  "form": "p_metric = diag(sx, sy, sz) p_ref + t (no rotation; the reference is already floor/wall aligned)",
+  "applies_to": "aligned reference coordinates (cameras.json world, layers.npz vertices, point maps); camera poses: c2w_metric = M c2w_ref, then re-orthonormalise the rotation (non-uniform scale shears camera axes slightly)",
+  "derivation": {
+   "sx": "desk length 1.52 / 1.42-1.44 predicted; arm spacing ZED 0.621-0.635 / ref 0.587 = 1.06-1.08",
+   "sy": "desk depth 0.76 vs 0.756-0.77 predicted; MJCF arm length fits at 1.00 along Y",
+   "sz": "desk top minus local floor 0.661 predicted (58 views) -> 0.72",
+   "t": "z: local floor near the desk (-7 mm predicted) -> 0; x, y: weighted LSQ over desk edges (1.5 cm) and ZED-measured arm bases (1 cm)"
+  },
+  "uncertainty": {
+   "sx": 0.01,
+   "sy": 0.015,
+   "sz_below_desk": 0.005,
+   "sz_above_desk": "1.05-1.12 depending on the anchor (camera height 1.05-1.06, arm tops ~1.12)",
+   "local_position_error_m": "2-3 cm near the desk after the transform"
+  }
+ },
+ "residuals_final": {
+  "desk_ends_x_m": {
+   "left": -0.010990892233313954,
+   "right": -0.02314089223331428,
+   "note": "reference desk-end (half point density) minus the tape box, after the transform"
+  },
+  "desk_length_m": 1.5078500000000001,
+  "desk_length_residual_m": -0.012149999999999883,
+  "desk_front_back_y_m": {
+   "front": -0.011382888379293243,
+   "back_wall": -0.01496074062843622
+  },
+  "desk_depth_front_to_wall_m": 0.7564221477508568,
+  "desk_top_z_m": {
+   "plane_at_centre": 0.7171015716497834,
+   "per_view_median": 0.7200077833340037,
+   "residual_plane_m": -0.0028984283502165864
+  },
+  "desk_top_flatness_ref": {
+   "tilt_deg": 0.3784591257572174,
+   "note": "reference desk top rises ~1.5 cm toward the glass end (X < -2.9): reconstruction warp"
+  },
+  "floor_near_desk_z_m": 0.0,
+  "floor_away_from_desk_mm": {
+   "median": 7.71040452644229,
+   "p10": -7.806649442296476,
+   "p90": 30.718464577570565
+  },
+  "back_wall": {
+   "y_by_height_m": {
+    "0.70-0.80": 2.0689614071224183,
+    "0.80-1.00": 2.0738210930202454,
+    "1.00-1.30": 2.079137112078473,
+    "1.30-1.60": 2.090850855288312,
+    "1.60-1.90": 2.101910377917096
+   },
+   "lean_deg": 1.84,
+   "note": "reference wall leans back ~1.8-2.2 deg (Pi3X shape error; the pole in the same data is vertical to 0.1 deg in Y); author vertical at the desk back edge"
+  },
+  "arms_xy_vs_zed_m": {
+   "left_arm": {
+    "dx": 0.010254839372114688,
+    "dy": 0.00017398399515422547
+   },
+   "right_arm": {
+    "dx": 0.004914842613053416,
+    "dy": 0.01153429556383645
+   }
+  },
+  "arm_top_vs_mjcf_m": {
+   "left_arm": -0.010099268299889441,
+   "right_arm": -0.008418155468254807
+  },
+  "camera_height_above_desk_m": {
+   "zed_depth": 0.8857327707594302,
+   "pnp_reference": 0.9166077530210284,
+   "reference_camera_body_centre": 0.915979117841738,
+   "note": "reference camera-body centre should sit ~1 cm above the left-eye optical centre; residual ~+2.3 cm"
+  },
+  "camera_position_pnp_minus_zed_m": [
+   -0.01195967537642506,
+   0.03399279390249599,
+   0.030874982261598127
+  ]
+ },
+ "alternatives": {
+  "A_per_axis": {
+   "S": [
+    1.06,
+    1.0,
+    1.09
+   ],
+   "M": [
+    [
+     1.06,
+     0.0,
+     0.0,
+     0.13732500000000014
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.09,
+     0.007665473909395362
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "note": "sx 1.06 from the desk length (1.42-1.44 predicted), sy 1.00 (desk depth 0.756-0.77 predicted incl. ~1 cm wall gap; arm length), sz 1.09 from desk-top-minus-floor 0.661 (58 views); floor -> 0",
+   "desk_length_m": 1.5078500000000001,
+   "desk_length_residual_m": -0.012149999999999883,
+   "desk_depth_front_to_wall_m": 0.7564221477508568,
+   "desk_depth_residual_m": -0.0035778522491431985,
+   "desk_top_residual_m": -0.0028984283502165864,
+   "floor_residual_m": 0.0,
+   "desk_height_above_floor_m": 0.7171015716497834,
+   "rail_top_above_desk_m": 0.01881200254037374,
+   "camera_body_height_above_desk_m": 0.9188775461919546,
+   "zed_camera_height_above_desk_m": 0.8857327707594301,
+   "arms_icp": [
+    {
+     "arm": "left_arm",
+     "model": "no_fingers",
+     "base": [
+      -2.558984726057162,
+      1.3953300463139677,
+      0.7480028327065401
+     ],
+     "yaw_deg": 90.16366897311654,
+     "median_m": 0.006622525356679657,
+     "rms_inliers_m": 0.009904573562378505,
+     "inlier_frac": 0.9430273300630694,
+     "arm_top_above_base_m": 0.2604007317001106,
+     "arm_top_residual_vs_mjcf_m": -0.010099268299889441
+    },
+    {
+     "arm": "left_arm",
+     "model": "with_fingers",
+     "base": [
+      -2.5587804413243718,
+      1.3887280248539602,
+      0.7478395506183746
+     ],
+     "yaw_deg": 89.87741021696544,
+     "median_m": 0.00604374709940119,
+     "rms_inliers_m": 0.00958730370674693,
+     "inlier_frac": 0.9634197617379117
+    },
+    {
+     "arm": "right_arm",
+     "model": "no_fingers",
+     "base": [
+      -1.9366569859910592,
+      1.4059852174471923,
+      0.7371244297225942
+     ],
+     "yaw_deg": 92.8288850346584,
+     "median_m": 0.0067099119622667,
+     "rms_inliers_m": 0.00980178405202177,
+     "inlier_frac": 0.9456473379801276,
+     "arm_top_above_base_m": 0.2620818445317452,
+     "arm_top_residual_vs_mjcf_m": -0.008418155468254807
+    },
+    {
+     "arm": "right_arm",
+     "model": "with_fingers",
+     "base": [
+      -1.9360913015647094,
+      1.3984023337339038,
+      0.7365908708444913
+     ],
+     "yaw_deg": 92.55299025520037,
+     "median_m": 0.00620938789764019,
+     "rms_inliers_m": 0.009498255847078292,
+     "inlier_frac": 0.9706362153344209
+    }
+   ]
+  },
+  "B_uniform_1.06": {
+   "S": [
+    1.06,
+    1.06,
+    1.06
+   ],
+   "M": [
+    [
+     1.06,
+     0.0,
+     0.0,
+     0.13732500000000014
+    ],
+    [
+     0.0,
+     1.06,
+     0.0,
+     -0.1023426644325256
+    ],
+    [
+     0.0,
+     0.0,
+     1.06,
+     0.030089666417604244
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "note": "uniform 1.06 (desk length), desk top pinned at 0.72",
+   "desk_length_m": 1.5078500000000001,
+   "desk_length_residual_m": -0.012149999999999883,
+   "desk_depth_front_to_wall_m": 0.8018074766159082,
+   "desk_depth_residual_m": 0.04180747661590822,
+   "desk_top_residual_m": 0.0,
+   "floor_residual_m": 0.02263516885433903,
+   "desk_height_above_floor_m": 0.697364831145661,
+   "rail_top_above_desk_m": 0.01829424100256527,
+   "camera_body_height_above_desk_m": 0.893587338498598,
+   "zed_camera_height_above_desk_m": 0.8857327707594301,
+   "arms_icp": [
+    {
+     "arm": "left_arm",
+     "model": "no_fingers",
+     "base": [
+      -2.5592182874585654,
+      1.3752984563766457,
+      0.7509617767077365
+     ],
+     "yaw_deg": 90.31135381502763,
+     "median_m": 0.006797460455206107,
+     "rms_inliers_m": 0.009855251843109763,
+     "inlier_frac": 0.9322354590049053,
+     "arm_top_above_base_m": 0.25177741482774196,
+     "arm_top_residual_vs_mjcf_m": -0.018722585172258055
+    },
+    {
+     "arm": "right_arm",
+     "model": "no_fingers",
+     "base": [
+      -1.9375407137689054,
+      1.3834195565913563,
+      0.7461777648841247
+     ],
+     "yaw_deg": 92.52443155961062,
+     "median_m": 0.006705253912320744,
+     "rms_inliers_m": 0.00984731378098244,
+     "inlier_frac": 0.9354886549013792,
+     "arm_top_above_base_m": 0.24839164549099912,
+     "arm_top_residual_vs_mjcf_m": -0.022108354509000894
+    }
+   ]
+  },
+  "C_scale_1": {
+   "S": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "M": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.06914119473358893
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "note": "scale 1, desk top pinned at 0.72 (vertical offset 6.9 cm)",
+   "desk_length_m": 1.4225,
+   "desk_length_residual_m": -0.09749999999999992,
+   "desk_depth_front_to_wall_m": 0.7564221477508568,
+   "desk_depth_residual_m": -0.0035778522491431985,
+   "desk_top_residual_m": 0.0,
+   "floor_residual_m": 0.06210864986258401,
+   "desk_height_above_floor_m": 0.657891350137416,
+   "rail_top_above_desk_m": 0.01725871792694833,
+   "camera_body_height_above_desk_m": 0.8430069231118849,
+   "zed_camera_height_above_desk_m": 0.8857327707594301,
+   "arms_icp": [
+    {
+     "arm": "left_arm",
+     "model": "no_fingers",
+     "base": [
+      -2.5431162529930993,
+      1.3956339179247428,
+      0.7476335399602875
+     ],
+     "yaw_deg": 90.85736166975418,
+     "median_m": 0.006557804058361146,
+     "rms_inliers_m": 0.009965008256422351,
+     "inlier_frac": 0.9484232655921514,
+     "arm_top_above_base_m": 0.23960502980858744,
+     "arm_top_residual_vs_mjcf_m": -0.030894970191412574
+    },
+    {
+     "arm": "right_arm",
+     "model": "no_fingers",
+     "base": [
+      -1.9550844060604164,
+      1.408289858005272,
+      0.736277924649583
+     ],
+     "yaw_deg": 92.81573032953777,
+     "median_m": 0.006890589347783631,
+     "rms_inliers_m": 0.010093735084422186,
+     "inlier_frac": 0.9492065846062584,
+     "arm_top_above_base_m": 0.24321658853684103,
+     "arm_top_residual_vs_mjcf_m": -0.02728341146315899
+    }
+   ]
+  },
+  "D_uniform_1.09": {
+   "S": [
+    1.09,
+    1.09,
+    1.09
+   ],
+   "M": [
+    [
+     1.09,
+     0.0,
+     0.0,
+     0.20598750000000043
+    ],
+    [
+     0.0,
+     1.09,
+     0.0,
+     -0.1535139966487884
+    ],
+    [
+     0.0,
+     0.0,
+     1.09,
+     0.007665473909395362
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "note": "blind uniform 1.09 (desk height)",
+   "desk_length_m": 1.5505250000000002,
+   "desk_length_residual_m": 0.030525000000000135,
+   "desk_depth_front_to_wall_m": 0.8245001410484339,
+   "desk_depth_residual_m": 0.06450014104843393,
+   "desk_top_residual_m": -0.0028984283502165864,
+   "floor_residual_m": 0.0,
+   "desk_height_above_floor_m": 0.7171015716497834,
+   "rail_top_above_desk_m": 0.01881200254037374,
+   "camera_body_height_above_desk_m": 0.9188775461919546,
+   "zed_camera_height_above_desk_m": 0.8857327707594301,
+   "arms_icp": [
+    {
+     "arm": "left_arm",
+     "model": "no_fingers",
+     "base": [
+      -2.567202723874846,
+      1.3637928080994521,
+      0.7499415297580976
+     ],
+     "yaw_deg": 89.81289759534158,
+     "median_m": 0.006919275187709004,
+     "rms_inliers_m": 0.009900942677855396,
+     "inlier_frac": 0.9206026629292221,
+     "arm_top_above_base_m": 0.25748060938705564,
+     "arm_top_residual_vs_mjcf_m": -0.013019390612944381
+    },
+    {
+     "arm": "right_arm",
+     "model": "no_fingers",
+     "base": [
+      -1.92786637101061,
+      1.370431954792128,
+      0.7461846868128751
+     ],
+     "yaw_deg": 92.49626302275155,
+     "median_m": 0.006797708019796629,
+     "rms_inliers_m": 0.009720544130274964,
+     "inlier_frac": 0.9242918582233427,
+     "arm_top_above_base_m": 0.2528925199012956,
+     "arm_top_residual_vs_mjcf_m": -0.017607480098704442
+    }
+   ]
+  }
+ },
+ "desk": {
+  "box_x_m": [
+   -3.0487500000000027,
+   -1.5287500000000025
+  ],
+  "box_y_m": [
+   1.3239221477508545,
+   2.0839221477508545
+  ],
+  "top_z_m": 0.72,
+  "size_m": [
+   1.52,
+   0.76,
+   0.72
+  ],
+  "top_corners_m": [
+   [
+    -3.0487500000000027,
+    1.3239221477508545,
+    0.72
+   ],
+   [
+    -1.5287500000000025,
+    1.3239221477508545,
+    0.72
+   ],
+   [
+    -1.5287500000000025,
+    2.0839221477508545,
+    0.72
+   ],
+   [
+    -3.0487500000000027,
+    2.0839221477508545,
+    0.72
+   ]
+  ],
+  "back_edge_to_wall_gap_m": 0.0,
+  "note": "Rig desk (rail + arms). Right end abuts the separate monitor desk (gap ~5-13 cm seen in reference/ZED). Height-adjustable desk frame; legs near both ends."
+ },
+ "planes": {
+  "convention": "n . p + d = 0, n unit",
+  "floor": {
+   "n": [
+    0,
+    0,
+    1
+   ],
+   "d": 0.0
+  },
+  "desk_top": {
+   "n": [
+    0,
+    0,
+    1
+   ],
+   "d": -0.72
+  },
+  "back_wall": {
+   "n": [
+    0,
+    -1,
+    0
+   ],
+   "d": 2.0839221477508545,
+   "note": "vertical, through the desk back edge (desk flush with the wall within ~1 cm)"
+  }
+ },
+ "arms": {
+  "left_arm": {
+   "base_position_m": [
+    -2.5751838018935356,
+    1.3798262154163934,
+    0.7425636312145671
+   ],
+   "yaw_deg": 90.24863283801935,
+   "world_from_base": [
+    [
+     -0.004339448032680228,
+     -0.9999905845510605,
+     0.0,
+     -2.5751838018935356
+    ],
+    [
+     0.9999905845510605,
+     -0.004339448032680228,
+     0.0,
+     1.3798262154163934
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636312145671
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "base_height_above_desk_top_m": 0.02256363121456717,
+   "icp": {
+    "model": "yam.xml + linear_4310 at q=0, fingers excluded (add-on pads/tags on the rig)",
+    "points_voxel6mm": 14270,
+    "median_m": 0.006692228571945532,
+    "rms_inliers_m": 0.009981434045584405,
+    "inlier_frac_2p5cm": 0.9423966362999299
+   },
+   "free_z_fit": {
+    "base_position_m": [
+     -2.576050618290476,
+     1.3803693056855313,
+     0.7480028327065401
+    ],
+    "yaw_deg": 90.16366897311654,
+    "median_m": 0.006622525356679657,
+    "rms_inliers_m": 0.009904573562378505,
+    "base_above_desk_top_m": 0.028002832706540137,
+    "arm_top_above_base_m": 0.2604007317001106,
+    "mjcf_top_above_base_m": 0.2705
+   },
+   "with_fingers_fit": {
+    "base_position_m": [
+     -2.5758463335576858,
+     1.3737672842255237,
+     0.7478395506183746
+    ],
+    "yaw_deg": 89.87741021696544,
+    "median_m": 0.00604374709940119
+   },
+   "zed_silhouette_check": {
+    "base_position_m_mean_0928_0929": [
+     -2.586305457662591,
+     1.380195321690377,
+     0.7480028327065401
+    ],
+    "yaw_deg_mean": 89.62610060812486,
+    "per_image": {
+     "0928": {
+      "base": [
+       -2.579551061850283,
+       1.3786875488931796,
+       0.7480028327065401
+      ],
+      "yaw_deg": 90.57278043372457,
+      "iou": 0.6378450282673761,
+      "finger_opening_m": 0.055
+     },
+     "0929": {
+      "base": [
+       -2.593059853474899,
+       1.3817030944875746,
+       0.7480028327065401
+      ],
+      "yaw_deg": 88.67942078252516,
+      "iou": 0.6620232172470979,
+      "finger_opening_m": 0.06
+     }
+    },
+    "delta_final_minus_zed_m": [
+     0.011121655769055216,
+     -0.000369106273983677,
+     -0.005439201491972967
+    ]
+   },
+   "zed_image_check_final_pose": {
+    "0928": {
+     "mjcf_open_0p06_silhouette_iou": 0.5881021661817006,
+     "reference_gripper_points_iou": 0.5323350337337502,
+     "reference_gripper_centroid_du_dv_px": [
+      8.063459757736496,
+      12.589114375784774
+     ]
+    },
+    "0929": {
+     "mjcf_open_0p06_silhouette_iou": 0.5311216429699842,
+     "reference_gripper_points_iou": 0.4737518060683898,
+     "reference_gripper_centroid_du_dv_px": [
+      11.949696624257285,
+      13.985814499369866
+     ]
+    }
+   }
+  },
+  "right_arm": {
+   "base_position_m": [
+    -1.9542141535794417,
+    1.3922159349440433,
+    0.7425636312145671
+   ],
+   "yaw_deg": 92.68472168929792,
+   "world_from_base": [
+    [
+     -0.046840088234551776,
+     -0.9989024007049835,
+     0.0,
+     -1.9542141535794417
+    ],
+    [
+     0.9989024007049835,
+     -0.046840088234551776,
+     0.0,
+     1.3922159349440433
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.7425636312145671
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "base_height_above_desk_top_m": 0.02256363121456717,
+   "icp": {
+    "model": "yam.xml + linear_4310 at q=0, fingers excluded (add-on pads/tags on the rig)",
+    "points_voxel6mm": 13486,
+    "median_m": 0.0066768966593704765,
+    "rms_inliers_m": 0.009883707229253283,
+    "inlier_frac_2p5cm": 0.9469079044935489
+   },
+   "free_z_fit": {
+    "base_position_m": [
+     -1.9537228782243732,
+     1.3910244768187559,
+     0.7371244297225942
+    ],
+    "yaw_deg": 92.8288850346584,
+    "median_m": 0.0067099119622667,
+    "rms_inliers_m": 0.00980178405202177,
+    "base_above_desk_top_m": 0.017124429722594203,
+    "arm_top_above_base_m": 0.2620818445317452,
+    "mjcf_top_above_base_m": 0.2705
+   },
+   "with_fingers_fit": {
+    "base_position_m": [
+     -1.9531571937980234,
+     1.3834415931054673,
+     0.7365908708444913
+    ],
+    "yaw_deg": 92.55299025520037,
+    "median_m": 0.00620938789764019
+   },
+   "zed_silhouette_check": {
+    "base_position_m_mean_0928_0929": [
+     -1.9586377208374266,
+     1.3794901812549194,
+     0.7371244297225942
+    ],
+    "yaw_deg_mean": 91.09589926962929,
+    "per_image": {
+     "0928": {
+      "base": [
+       -1.9587954041390965,
+       1.379460155889518,
+       0.7371244297225942
+      ],
+      "yaw_deg": 91.20975441793314,
+      "iou": 0.6072167997633836,
+      "finger_opening_m": 0.06
+     },
+     "0929": {
+      "base": [
+       -1.9584800375357565,
+       1.3795202066203207,
+       0.7371244297225942
+      ],
+      "yaw_deg": 90.98204412132542,
+      "iou": 0.5547769842339307,
+      "finger_opening_m": 0.06
+     }
+    },
+    "delta_final_minus_zed_m": [
+     0.004423567257984873,
+     0.012725753689123875,
+     0.005439201491972967
+    ]
+   },
+   "zed_image_check_final_pose": {
+    "0928": {
+     "mjcf_open_0p06_silhouette_iou": 0.5276205874427378,
+     "reference_gripper_points_iou": 0.5365373805508713,
+     "reference_gripper_centroid_du_dv_px": [
+      1.2990435051439846,
+      11.708521732144703
+     ]
+    },
+    "0929": {
+     "mjcf_open_0p06_silhouette_iou": 0.4878472222222222,
+     "reference_gripper_points_iou": 0.4773190621814475,
+     "reference_gripper_centroid_du_dv_px": [
+      7.715317359964843,
+      21.30257103416453
+     ]
+    }
+   }
+  }
+ },
+ "arm_spacing": {
+  "xy_distance_m": 0.6210932371852903,
+  "dx_m": 0.6209696483140938,
+  "dy_m": 0.01238971952764989,
+  "zed_silhouette_xy_distance_m": 0.6276681329128134,
+  "midpoint_xy": [
+   -2.2646989777364888,
+   1.3860210751802184
+  ]
+ },
+ "rail": {
+  "x_extent_reference_m": [
+   -2.7887500000000025,
+   -1.8287500000000017
+  ],
+  "length_reference_m": 0.9600000000000009,
+  "x_extent_recommended_m": [
+   -2.7887500000000025,
+   -1.7406479554729748
+  ],
+  "length_recommended_m": 1.0481020445270277,
+  "recommended_note": "Front photo (source frame 401) shows the rail ends at equal distances outside the two arm bases (85 px vs 90 px for a 240 px arm spacing, ~0.22 m). The left end is clear in the reference; the right end is lost near the right arm cables, so it is mirrored from the left overhang. Tape-check the rail length.",
+  "y_extent_m": [
+   1.314,
+   1.434
+  ],
+  "top_above_desk_m": 0.0183,
+  "top_z_m": 0.7383,
+  "profile_y_vs_height_above_local_desk": [
+   [
+    1.319,
+    0.0113
+   ],
+   [
+    1.329,
+    0.0112
+   ],
+   [
+    1.339,
+    0.016
+   ],
+   [
+    1.349,
+    0.0169
+   ],
+   [
+    1.359,
+    0.019
+   ],
+   [
+    1.369,
+    0.0202
+   ],
+   [
+    1.379,
+    0.0204
+   ],
+   [
+    1.389,
+    0.0199
+   ],
+   [
+    1.399,
+    0.0196
+   ],
+   [
+    1.409,
+    0.0192
+   ],
+   [
+    1.419,
+    0.0176
+   ],
+   [
+    1.429,
+    0.0125
+   ],
+   [
+    1.439,
+    0.0077
+   ],
+   [
+    1.449,
+    0.0061
+   ],
+   [
+    1.459,
+    null
+   ]
+  ],
+  "height_above_local_desk_by_x": [
+   [
+    -3.049,
+    0.001
+   ],
+   [
+    -3.029,
+    0.0029
+   ],
+   [
+    -3.009,
+    0.0061
+   ],
+   [
+    -2.989,
+    0.0064
+   ],
+   [
+    -2.969,
+    0.0065
+   ],
+   [
+    -2.949,
+    0.0067
+   ],
+   [
+    -2.929,
+    0.006
+   ],
+   [
+    -2.909,
+    0.0063
+   ],
+   [
+    -2.889,
+    0.0057
+   ],
+   [
+    -2.869,
+    0.0042
+   ],
+   [
+    -2.849,
+    0.0035
+   ],
+   [
+    -2.829,
+    0.0042
+   ],
+   [
+    -2.809,
+    0.0076
+   ],
+   [
+    -2.789,
+    0.0118
+   ],
+   [
+    -2.769,
+    0.0135
+   ],
+   [
+    -2.749,
+    0.0146
+   ],
+   [
+    -2.729,
+    0.0153
+   ],
+   [
+    -2.709,
+    0.0179
+   ],
+   [
+    -2.689,
+    0.0176
+   ],
+   [
+    -2.669,
+    0.0198
+   ],
+   [
+    -2.649,
+    0.0237
+   ],
+   [
+    -2.629,
+    0.0295
+   ],
+   [
+    -2.609,
+    0.0402
+   ],
+   [
+    -2.589,
+    0.0358
+   ],
+   [
+    -2.569,
+    0.0286
+   ],
+   [
+    -2.549,
+    0.0263
+   ],
+   [
+    -2.529,
+    0.0234
+   ],
+   [
+    -2.509,
+    0.0214
+   ],
+   [
+    -2.489,
+    0.0201
+   ],
+   [
+    -2.469,
+    0.0213
+   ],
+   [
+    -2.449,
+    0.0216
+   ],
+   [
+    -2.429,
+    0.0213
+   ],
+   [
+    -2.409,
+    0.022
+   ],
+   [
+    -2.389,
+    0.0218
+   ],
+   [
+    -2.369,
+    0.0217
+   ],
+   [
+    -2.349,
+    0.0215
+   ],
+   [
+    -2.329,
+    0.0204
+   ],
+   [
+    -2.309,
+    0.0466
+   ],
+   [
+    -2.289,
+    0.0347
+   ],
+   [
+    -2.269,
+    0.0419
+   ],
+   [
+    -2.249,
+    0.0241
+   ],
+   [
+    -2.229,
+    0.0217
+   ],
+   [
+    -2.209,
+    0.0211
+   ],
+   [
+    -2.189,
+    0.0208
+   ],
+   [
+    -2.169,
+    0.0194
+   ],
+   [
+    -2.149,
+    0.0181
+   ],
+   [
+    -2.129,
+    0.0167
+   ],
+   [
+    -2.109,
+    0.0161
+   ],
+   [
+    -2.089,
+    0.0165
+   ],
+   [
+    -2.069,
+    0.0187
+   ],
+   [
+    -2.049,
+    0.0215
+   ],
+   [
+    -2.029,
+    0.0233
+   ],
+   [
+    -2.009,
+    0.0264
+   ],
+   [
+    -1.989,
+    0.0446
+   ],
+   [
+    -1.969,
+    0.043
+   ],
+   [
+    -1.949,
+    0.0288
+   ],
+   [
+    -1.929,
+    0.0272
+   ],
+   [
+    -1.909,
+    0.0243
+   ],
+   [
+    -1.889,
+    0.0178
+   ],
+   [
+    -1.869,
+    0.0159
+   ],
+   [
+    -1.849,
+    0.014
+   ],
+   [
+    -1.829,
+    0.0071
+   ],
+   [
+    -1.809,
+    0.0021
+   ],
+   [
+    -1.789,
+    0.0014
+   ],
+   [
+    -1.769,
+    0.0015
+   ],
+   [
+    -1.749,
+    0.001
+   ],
+   [
+    -1.729,
+    0.0017
+   ],
+   [
+    -1.709,
+    0.0019
+   ],
+   [
+    -1.689,
+    0.0024
+   ],
+   [
+    -1.669,
+    0.004
+   ],
+   [
+    -1.649,
+    0.007
+   ],
+   [
+    -1.629,
+    0.0103
+   ],
+   [
+    -1.609,
+    0.0117
+   ],
+   [
+    -1.589,
+    0.012
+   ],
+   [
+    -1.569,
+    0.0124
+   ],
+   [
+    -1.549,
+    0.0139
+   ],
+   [
+    -1.529,
+    null
+   ]
+  ],
+  "pole_xy_m": [
+   -2.2759095104355236,
+   1.3753780378673521
+  ],
+  "note": "Reference points (Pi3X, ~1 cm noise). Aluminium plate on the desk top, front face flush with the desk front edge; arms and the camera pole mount on it. Photo check (frames 401, 942): ends ~0.20 m outside each arm base. Ends uncertain by about 3 cm."
+ },
+ "scene_camera": {
+  "device": "ZED X (stereo), serial 41925345, left eye, rectified, 960x600",
+  "intrinsics_source": "/home/frank/robot/bimanual_bringup/cameras/e2e_sdk55_converted/0000/lowdim/0000000000.pkl ['intrinsics']['scene_camera'] (raiden converter, ZED SDK left_cam calibration, no flip)",
+  "image_size_wh": [
+   960,
+   600
+  ],
+  "K": [
+   [
+    366.02166748046875,
+    0.0,
+    492.9291076660156
+   ],
+   [
+    0.0,
+    366.02166748046875,
+    300.87200927734375
+   ],
+   [
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "fx": 366.02166748046875,
+  "fy": 366.02166748046875,
+  "cx": 492.9291076660156,
+  "cy": 300.87200927734375,
+  "distortion": {
+   "model": "none",
+   "coeffs": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "rectified left image; raiden stores K only"
+  },
+  "hfov_deg": 105.34568813654262,
+  "vfov_deg": 78.67771045774306,
+  "pose": {
+   "convention": "world_from_camera; OpenCV camera axes (x right, y down, z forward)",
+   "world_from_camera_opencv": [
+    [
+     0.9993121510843075,
+     -0.02540475694272353,
+     -0.027015236810648748,
+     -2.2848373144526835
+    ],
+    [
+     -0.0003028613660829224,
+     -0.7340539030844764,
+     0.6790911394219771,
+     1.4969430837427482
+    ],
+    [
+     -0.03708278536258064,
+     -0.6786158454465437,
+     -0.7335566790225725,
+     1.6057327707594302
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "world_from_camera_blender": [
+    [
+     0.9993121510843075,
+     0.02540475694272353,
+     0.027015236810648748,
+     -2.2848373144526835
+    ],
+    [
+     -0.0003028613660829224,
+     0.7340539030844764,
+     -0.6790911394219771,
+     1.4969430837427482
+    ],
+    [
+     -0.03708278536258064,
+     0.6786158454465437,
+     0.7335566790225725,
+     1.6057327707594302
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "blender_note": "Blender camera axes (x right, y up, looks along -z) = OpenCV axes with y and z negated; matrix_world = world_from_camera_blender. Lens for sensor_width 36 mm, sensor_fit HORIZONTAL: focal 13.7258 mm; shift_x -0.01399, shift_y 0.00143 (OpenCV pixel centres at integers; image centre (W-1)/2, (H-1)/2).",
+   "position_m": [
+    -2.2848373144526835,
+    1.4969430837427482,
+    1.6057327707594302
+   ],
+   "optical_axis_world": [
+    -0.027015236810648748,
+    0.6790911394219771,
+    -0.7335566790225725
+   ],
+   "pitch_down_deg": 47.185397661521904,
+   "yaw_deg_optical_axis_from_plus_y": -2.278108500452129,
+   "roll_deg": -3.1278021041019928,
+   "height_above_floor_m": 1.6057327707594302,
+   "height_above_desk_top_m": 0.8857327707594302,
+   "horizontal_distance_to_back_edge_m": 0.5869790640081063,
+   "x_from_desk_left_end_m": 0.7639126855473193,
+   "method": "Direct metric pose from the ZED itself: desk-top plane from the temporal-median depth (RANSAC, rms 2.9 mm), desk left/right edges and back crease from sub-pixel image-gradient line fits; x axis = back edge, z = desk normal; translation from ray-plane intersections; ZED depth scaled by 0.9912 so the ZED desk length (1.5335 m) equals the tape 1.52 m."
+  },
+  "checks": {
+   "vanishing_point_orientation": {
+    "note": "desk side edges VP + back edge with K only (no depth): camera up-vector agrees with the depth plane normal to 0.3 deg; pitch 46.9 (image) vs 47.2 (depth) deg",
+    "angle_deg": 0.3
+   },
+   "desk_edge_reprojection_px": {
+    "0928": {
+     "back_edge_rms_px": 1.0980741245637691e-13,
+     "left_edge_rms_px": 0.5779853729122092,
+     "right_edge_rms_px": 0.4437694669930406
+    },
+    "0929": {
+     "back_edge_rms_px": 0.07984348105097891,
+     "left_edge_rms_px": 0.6824223776114284,
+     "right_edge_rms_px": 0.4113320670799438
+    }
+   },
+   "rig_static_0928_vs_0929": {
+    "note": "desk edge lines in the 09-28 converted frame and the 09-29 16:00 image agree to <=0.2 px; gripper silhouette fits agree to ~1 cm",
+    "left_edge_u_at_v482": [
+     178.41481185471272,
+     178.27983211475672
+    ],
+    "right_edge_u_at_v482": [
+     854.3978238482896,
+     854.3584067755554
+    ]
+   },
+   "zed_depth_vs_metric_desk_plane": {
+    "pixels": 104083,
+    "median_mm": 0.01567483544184789,
+    "rms_mm": 6.459672638360509,
+    "p5_p95_mm": [
+     -12.627003411306747,
+     6.82713220939136
+    ]
+   },
+   "zed_depth_vs_metric_back_wall": {
+    "pixels": 265136,
+    "median_mm": 85.00368943516051,
+    "p5_p95_mm": [
+     55.462297755194875,
+     230.0934526145547
+    ],
+    "above_0p3m_median_mm": 89.44024246348609,
+    "note": "ZED NEURAL_LIGHT depth on the textureless wall is unreliable: plane fits to it vary 7-14 cm across columns and yaw 4 deg vs the back edge; not used for the pose"
+   },
+   "pnp_reference": {
+    "method": "2D-3D: each Pi3X source frame forward-warped (own point map) into the ZED view at the current pose, SIFT (ratio 0.8) + fundamental RANSAC, 3D from the warped pixel; pooled over frames; PnP RANSAC (3 px) + LM; 4 iterations. Plain SIFT against the raw source frames gave no consistent PnP (16-40 inliers, 22-117 px), see logs/match_zed.log.",
+    "image": "/home/frank/robot/bimanual_bringup/pi05/scene_camera.jpg",
+    "inliers": 86,
+    "frames_with_inliers": 29,
+    "reproj_median_px": 1.9501048121445903,
+    "reproj_rms_px": 2.018399765797615,
+    "position_m": [
+     -2.2967969898291085,
+     1.5309358776452442,
+     1.6366077530210283
+    ],
+    "delta_position_vs_final_m": [
+     -0.01195967537642506,
+     0.03399279390249599,
+     0.030874982261598127
+    ],
+    "rotation_delta_deg": 4.110429185189692,
+    "final_pose_reprojection_of_pnp_inliers": {
+     "median_px": 18.229440686053735,
+     "rms_px": 19.041935083487115,
+     "desk_anchored_transform_median_px": 9.047446424434426,
+     "note": "reference 3D points (mostly desk-top texture) under the final camera pose: the residual is the reference shape error (1 px ~ 2.7 mm at 1 m). With the transform anchored on the desk alone (candidate A) it is about half; anchoring x/y on the ZED-measured arms moves the reference ~2 cm relative to its own desk texture."
+    },
+    "note": "The PnP inliers are mostly desk-top texture (planar); the PnP pose inherits the reference shape error (4.1 deg, 3-5 cm). The direct ZED pose is kept: it is metric, fits the desk edges to sub-pixel and its orientation is confirmed by vanishing points."
+   }
+  }
+ }
+}

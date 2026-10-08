@@ -1,0 +1,30 @@
+{
+ "T_cam_arm": [
+  [
+   0.8859850311974382,
+   -0.23121472204724705,
+   0.4019580535362969,
+   -0.2837624203044389
+  ],
+  [
+   -0.4597052402468352,
+   -0.5516769890029801,
+   0.6959336117002864,
+   -0.711479270107024
+  ],
+  [
+   0.06084091208778442,
+   -0.8013689862436781,
+   -0.5950681736600492,
+   0.9814908064004968
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "fx_full_res": 1752.4996512276787,
+ "note": "Pi3X c2w of source frame 1143 (reference run 20260929t202049z-reference64-a264573a), mapped to the metric frame (metric_frame.json transform_reference_to_metric, rotation re-orthonormalised) and into the right_arm base frame (arms.right_arm.world_from_base). Init for fit_review_camera.py on frame 1140 (0.1 s earlier)."
+}

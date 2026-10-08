@@ -1,0 +1,7 @@
+49b65ecce7c8af7d245fba87a9c2b7e9  source/face_labels.json
+ca5f603ec527cb7910a061135ca8d95c  source/face_labels.npz
+48f95797211082797abfc37a027a9bdb  source/mjcf_model.json
+18778c330404b63d00a857b4ca3c45dd  source/yam_linear_4310.xml
+1473cd00c07cbc6bee76c344b9fef9e9  fk/mujoco_geom_verts.npz
+6c8ab768cc1f1cee95c73c5c675ac647  fk/mujoco_poses.json
+fcc191908959f3a3a9d005e2f7744527  work/cand_v2.blend

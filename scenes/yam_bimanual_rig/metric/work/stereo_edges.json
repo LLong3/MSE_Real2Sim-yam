@@ -1,0 +1,213 @@
+{
+ "fB_px_m": 43.975667974661064,
+ "baseline_m": 0.12014498561620712,
+ "frames_averaged": 60,
+ "rectification_dy_px": {
+  "matches": 178,
+  "median": -0.14239501953125,
+  "mad": 0.2210693359375
+ },
+ "sgbm_desk_plane": {
+  "pixels": 36007,
+  "inlier_frac": 0.22976087982892215,
+  "camera_height_m": 0.8964310160516965,
+  "neural_camera_height_m": 0.8935776855851072,
+  "normal_angle_vs_neural_deg": 1.3028966813204717,
+  "rms_mm": 3.3896878418291774
+ },
+ "sgbm_desk_length_back_edge_m": 1.56230684546771,
+ "edges": {
+  "glass_wall_junction": {
+   "rows": 77,
+   "disparity_px_median": 49.87161777371796,
+   "depth_m_range": [
+    0.7336936789114846,
+    1.1071856511639808
+   ],
+   "neural_plane": {
+    "x_m_median": 0.057701032368635066,
+    "y_mm_median": 48.21298353300906,
+    "z_mm_median": 309.69380315297167,
+    "y_mm_low_part": 44.35292827074886,
+    "lean_deg": 1.2414276169378924,
+    "by_height": [
+     [
+      0.519,
+      54.7
+     ],
+     [
+      0.476,
+      54.0
+     ],
+     [
+      0.438,
+      50.6
+     ],
+     [
+      0.394,
+      49.9
+     ],
+     [
+      0.346,
+      50.3
+     ],
+     [
+      0.294,
+      50.2
+     ],
+     [
+      0.239,
+      47.9
+     ],
+     [
+      0.179,
+      45.7
+     ],
+     [
+      0.108,
+      47.5
+     ],
+     [
+      0.04,
+      41.0
+     ]
+    ]
+   },
+   "sgbm_plane": {
+    "x_m_median": 0.0726277049330807,
+    "y_mm_median": 29.817159398342152,
+    "z_mm_median": 327.54482836587414,
+    "y_mm_low_part": 30.6893294222303,
+    "lean_deg": -0.06111757773548554,
+    "by_height": [
+     [
+      0.537,
+      31.2
+     ],
+     [
+      0.494,
+      31.4
+     ],
+     [
+      0.456,
+      28.9
+     ],
+     [
+      0.412,
+      29.2
+     ],
+     [
+      0.364,
+      30.7
+     ],
+     [
+      0.311,
+      31.8
+     ],
+     [
+      0.257,
+      30.7
+     ],
+     [
+      0.197,
+      29.9
+     ],
+     [
+      0.126,
+      33.3
+     ],
+     [
+      0.058,
+      28.3
+     ]
+    ]
+   },
+   "disparity_fit_rms_px": 0.0896952627803013
+  },
+  "desk_left_edge": {
+   "rows": 51,
+   "disparity_px_median": 45.1635792876242,
+   "depth_m_range": [
+    0.881779238897077,
+    1.0729778287608822
+   ],
+   "neural_plane": {
+    "x_m_median": -0.0028471588461169203,
+    "y_mm_median": -161.57333220042477,
+    "z_mm_median": -2.1458870409943955,
+    "y_mm_low_part": -161.57333220042477,
+    "lean_deg": null,
+    "by_height": null
+   },
+   "sgbm_plane": {
+    "x_m_median": 0.011992060836716608,
+    "y_mm_median": -173.27482725704908,
+    "z_mm_median": 11.777701953101143,
+    "y_mm_low_part": -173.27482725704908,
+    "lean_deg": null,
+    "by_height": null
+   },
+   "disparity_fit_rms_px": 0.13423699039341092
+  },
+  "desk_right_edge": {
+   "rows": 56,
+   "disparity_px_median": 48.066938665667465,
+   "depth_m_range": [
+    0.8240594998411128,
+    1.9678630862695095
+   ],
+   "neural_plane": {
+    "x_m_median": 1.5322264807860035,
+    "y_mm_median": -176.86235414842918,
+    "z_mm_median": 2.6740815939504574,
+    "y_mm_low_part": -176.86235414842918,
+    "lean_deg": null,
+    "by_height": null
+   },
+   "sgbm_plane": {
+    "x_m_median": 1.547042243520071,
+    "y_mm_median": -188.1660323116261,
+    "z_mm_median": 14.359769295559746,
+    "y_mm_low_part": -188.1660323116261,
+    "lean_deg": null,
+    "by_height": null
+   },
+   "disparity_fit_rms_px": 2.538100607688954
+  }
+ },
+ "junction_disparity_vs_plane_hypotheses": {
+  "y0mm": {
+   "median_expected_minus_measured_px": 4.127064519432743
+  },
+  "y40mm": {
+   "median_expected_minus_measured_px": 0.6756077821536692
+  },
+  "y85mm": {
+   "median_expected_minus_measured_px": -2.681517821944624
+  }
+ },
+ "classical_only_crease_test": {
+  "note": "desk-top disparity plane (affine in u,v) from classical matches only; compared with the junction edge disparity extrapolated to the crease pixel under it. y offset = distance along the ray between the two, projected on the desk-frame y.",
+  "plane_points": {
+   "sift_desk": 4,
+   "left_edge": 51,
+   "right_edge": 56,
+   "inliers": 106,
+   "inliers_by_source": [
+    1,
+    51,
+    54
+   ],
+   "rms_px": 0.14860428002776194
+  },
+  "crease_pixel_under_junction": [
+   277.25035206229296,
+   365.1549726755203
+  ],
+  "d_desk_plane_px": 40.78375329799497,
+  "d_junction_px": 38.144780687414574,
+  "d_diff_px": 2.638972610580396,
+  "junction_behind_desk_back_edge_mm": 41.0548464074082,
+  "junction_rows_340_356_d_plane_minus_d_junction_px": -1.60745461814453
+ }
+}

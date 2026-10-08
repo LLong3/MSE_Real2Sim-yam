@@ -1,0 +1,1614 @@
+{
+ "per_frame": {
+  "942": [
+   {
+    "x": -2.9,
+    "junction_px": [
+     341.1,
+     470.6
+    ],
+    "junction_offset_from_projection_px": -17.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.3,
+     "85mm": 44.3
+    },
+    "dark_band_width_px": 29.0,
+    "dark_band_min_rel": 0.77,
+    "dark_band_from_to_px": [
+     -7.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.8,
+    "junction_px": [
+     436.6,
+     486.4
+    ],
+    "junction_offset_from_projection_px": -26.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.3,
+     "85mm": 44.3
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.78,
+    "dark_band_from_to_px": [
+     -7.0,
+     33.0
+    ]
+   },
+   {
+    "x": -2.7,
+    "junction_px": [
+     532.9,
+     483.7
+    ],
+    "junction_offset_from_projection_px": -18.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.2,
+     "85mm": 44.1
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.77,
+    "dark_band_from_to_px": [
+     -14.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.6,
+    "junction_px": [
+     627.6,
+     490.3
+    ],
+    "junction_offset_from_projection_px": -17.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.2,
+     "85mm": 44.2
+    },
+    "dark_band_width_px": 32.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -8.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.5,
+    "junction_px": [
+     722.1,
+     496.7
+    ],
+    "junction_offset_from_projection_px": -17.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.2,
+     "85mm": 44.1
+    },
+    "dark_band_width_px": 35.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     -12.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.4,
+    "junction_px": [
+     816.0,
+     503.2
+    ],
+    "junction_offset_from_projection_px": -16.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.2,
+     "85mm": 44.1
+    },
+    "dark_band_width_px": 23.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     0.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.3,
+    "junction_px": [
+     909.5,
+     508.5
+    ],
+    "junction_offset_from_projection_px": -15.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.1,
+     "85mm": 44.0
+    },
+    "dark_band_width_px": 35.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -14.0,
+     20.0
+    ]
+   },
+   {
+    "x": -2.2,
+    "junction_px": [
+     1005.1,
+     466.6
+    ],
+    "junction_offset_from_projection_px": 32.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.3,
+     "20mm": 10.6,
+     "40mm": 21.1,
+     "85mm": 43.9
+    },
+    "dark_band_width_px": 36.0,
+    "dark_band_min_rel": 0.65,
+    "dark_band_from_to_px": [
+     -20.0,
+     15.0
+    ]
+   },
+   {
+    "x": -2.1,
+    "junction_px": [
+     1094.9,
+     520.7
+    ],
+    "junction_offset_from_projection_px": -17.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.3,
+     "20mm": 10.6,
+     "40mm": 21.0,
+     "85mm": 43.8
+    },
+    "dark_band_width_px": 33.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -12.0,
+     20.0
+    ]
+   },
+   {
+    "x": -2.0,
+    "junction_px": [
+     1186.8,
+     525.6
+    ],
+    "junction_offset_from_projection_px": -18.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.3,
+     "20mm": 10.6,
+     "40mm": 21.0,
+     "85mm": 43.6
+    },
+    "dark_band_width_px": 34.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -15.0,
+     18.0
+    ]
+   },
+   {
+    "x": -1.9,
+    "junction_px": [
+     1277.8,
+     531.7
+    ],
+    "junction_offset_from_projection_px": -20.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.3,
+     "20mm": 10.5,
+     "40mm": 20.9,
+     "85mm": 43.4
+    },
+    "dark_band_width_px": 38.0,
+    "dark_band_min_rel": 0.77,
+    "dark_band_from_to_px": [
+     -18.0,
+     19.0
+    ]
+   },
+   {
+    "x": -1.8,
+    "junction_px": [
+     1367.8,
+     537.7
+    ],
+    "junction_offset_from_projection_px": -23.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.3,
+     "20mm": 10.5,
+     "40mm": 20.7,
+     "85mm": 43.2
+    },
+    "dark_band_width_px": 40.0,
+    "dark_band_min_rel": 0.77,
+    "dark_band_from_to_px": [
+     -20.0,
+     19.0
+    ]
+   },
+   {
+    "x": -1.7,
+    "junction_px": [
+     1457.2,
+     542.5
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.2,
+     "20mm": 10.4,
+     "40mm": 20.6,
+     "85mm": 43.0
+    },
+    "dark_band_width_px": 40.0,
+    "dark_band_min_rel": 0.79,
+    "dark_band_from_to_px": [
+     -20.0,
+     19.0
+    ]
+   }
+  ],
+  "962": [
+   {
+    "x": -2.9,
+    "junction_px": [
+     429.5,
+     485.6
+    ],
+    "junction_offset_from_projection_px": -17.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.5,
+     "20mm": 11.0,
+     "40mm": 21.8,
+     "85mm": 45.3
+    },
+    "dark_band_width_px": 38.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -13.0,
+     24.0
+    ]
+   },
+   {
+    "x": -2.8,
+    "junction_px": [
+     520.6,
+     498.6
+    ],
+    "junction_offset_from_projection_px": -17.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.1,
+     "40mm": 21.9,
+     "85mm": 45.6
+    },
+    "dark_band_width_px": 44.0,
+    "dark_band_min_rel": 0.78,
+    "dark_band_from_to_px": [
+     -20.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.7,
+    "junction_px": [
+     612.8,
+     511.5
+    ],
+    "junction_offset_from_projection_px": -18.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.1,
+     "40mm": 22.0,
+     "85mm": 45.7
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -13.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.6,
+    "junction_px": [
+     705.1,
+     523.6
+    ],
+    "junction_offset_from_projection_px": -16.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.2,
+     "40mm": 22.1,
+     "85mm": 46.1
+    },
+    "dark_band_width_px": 34.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -9.0,
+     24.0
+    ]
+   },
+   {
+    "x": -2.5,
+    "junction_px": [
+     798.4,
+     537.4
+    ],
+    "junction_offset_from_projection_px": -17.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.2,
+     "40mm": 22.2,
+     "85mm": 46.3
+    },
+    "dark_band_width_px": 38.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     -12.0,
+     25.0
+    ]
+   },
+   {
+    "x": -2.4,
+    "junction_px": [
+     892.5,
+     550.1
+    ],
+    "junction_offset_from_projection_px": -16.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.3,
+     "40mm": 22.4,
+     "85mm": 46.6
+    },
+    "dark_band_width_px": 43.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -19.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.3,
+    "junction_px": [
+     985.7,
+     576.5
+    ],
+    "junction_offset_from_projection_px": -30.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.4,
+     "40mm": 22.5,
+     "85mm": 46.8
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.8,
+    "dark_band_from_to_px": [
+     -1.0,
+     35.0
+    ]
+   },
+   {
+    "x": -2.2,
+    "junction_px": [
+     1082.9,
+     576.5
+    ],
+    "junction_offset_from_projection_px": -17.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.4,
+     "40mm": 22.6,
+     "85mm": 47.0
+    },
+    "dark_band_width_px": 40.0,
+    "dark_band_min_rel": 0.77,
+    "dark_band_from_to_px": [
+     -16.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.1,
+    "junction_px": [
+     1179.4,
+     588.7
+    ],
+    "junction_offset_from_projection_px": -18.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.4,
+     "40mm": 22.7,
+     "85mm": 47.1
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -14.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.0,
+    "junction_px": [
+     1276.4,
+     602.7
+    ],
+    "junction_offset_from_projection_px": -20.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.5,
+     "40mm": 22.7,
+     "85mm": 47.3
+    },
+    "dark_band_width_px": 38.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -16.0,
+     21.0
+    ]
+   },
+   {
+    "x": -1.9,
+    "junction_px": [
+     1374.0,
+     615.4
+    ],
+    "junction_offset_from_projection_px": -22.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.5,
+     "40mm": 22.8,
+     "85mm": 47.4
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     -20.0,
+     20.0
+    ]
+   },
+   {
+    "x": -1.8,
+    "junction_px": [
+     1471.7,
+     629.5
+    ],
+    "junction_offset_from_projection_px": -26.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.5,
+     "40mm": 22.8,
+     "85mm": 47.4
+    },
+    "dark_band_width_px": 42.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -20.0,
+     21.0
+    ]
+   },
+   {
+    "x": -1.7,
+    "junction_px": [
+     1570.2,
+     642.5
+    ],
+    "junction_offset_from_projection_px": -27.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.5,
+     "40mm": 22.8,
+     "85mm": 47.5
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.78,
+    "dark_band_from_to_px": [
+     -20.0,
+     20.0
+    ]
+   }
+  ],
+  "982": [
+   {
+    "x": -2.9,
+    "junction_px": [
+     496.6,
+     453.6
+    ],
+    "junction_offset_from_projection_px": -22.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.7,
+     "40mm": 21.3,
+     "85mm": 44.3
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     -16.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.8,
+    "junction_px": [
+     579.8,
+     471.6
+    ],
+    "junction_offset_from_projection_px": -21.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.8,
+     "40mm": 21.5,
+     "85mm": 44.8
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -17.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.7,
+    "junction_px": [
+     665.1,
+     489.9
+    ],
+    "junction_offset_from_projection_px": -22.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.5,
+     "20mm": 11.0,
+     "40mm": 21.7,
+     "85mm": 45.2
+    },
+    "dark_band_width_px": 36.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -13.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.6,
+    "junction_px": [
+     751.2,
+     508.5
+    ],
+    "junction_offset_from_projection_px": -20.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.1,
+     "40mm": 22.0,
+     "85mm": 45.8
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -15.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.5,
+    "junction_px": [
+     845.7,
+     498.4
+    ],
+    "junction_offset_from_projection_px": 9.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.2,
+     "40mm": 22.2,
+     "85mm": 46.3
+    },
+    "dark_band_width_px": 19.0,
+    "dark_band_min_rel": 1.04,
+    "dark_band_from_to_px": [
+     -20.0,
+     -2.0
+    ]
+   },
+   {
+    "x": -2.4,
+    "junction_px": [
+     929.9,
+     547.1
+    ],
+    "junction_offset_from_projection_px": -19.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.4,
+     "40mm": 22.5,
+     "85mm": 46.9
+    },
+    "dark_band_width_px": 21.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     0.0,
+     20.0
+    ]
+   },
+   {
+    "x": -2.3,
+    "junction_px": [
+     1022.2,
+     567.2
+    ],
+    "junction_offset_from_projection_px": -19.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.5,
+     "40mm": 22.8,
+     "85mm": 47.4
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -14.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.2,
+    "junction_px": [
+     1116.5,
+     587.5
+    ],
+    "junction_offset_from_projection_px": -20.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.6,
+     "40mm": 23.0,
+     "85mm": 47.9
+    },
+    "dark_band_width_px": 22.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     0.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.1,
+    "junction_px": [
+     1212.9,
+     607.8
+    ],
+    "junction_offset_from_projection_px": -21.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.9,
+     "20mm": 11.7,
+     "40mm": 23.3,
+     "85mm": 48.4
+    },
+    "dark_band_width_px": 38.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -14.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.0,
+    "junction_px": [
+     1311.5,
+     628.3
+    ],
+    "junction_offset_from_projection_px": -22.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.0,
+     "20mm": 11.9,
+     "40mm": 23.5,
+     "85mm": 48.9
+    },
+    "dark_band_width_px": 38.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -15.0,
+     22.0
+    ]
+   },
+   {
+    "x": -1.9,
+    "junction_px": [
+     1411.8,
+     650.3
+    ],
+    "junction_offset_from_projection_px": -25.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.0,
+     "20mm": 12.0,
+     "40mm": 23.7,
+     "85mm": 49.3
+    },
+    "dark_band_width_px": 6.0,
+    "dark_band_min_rel": 0.85,
+    "dark_band_from_to_px": [
+     1.0,
+     6.0
+    ]
+   },
+   {
+    "x": -1.8,
+    "junction_px": [
+     1514.4,
+     671.6
+    ],
+    "junction_offset_from_projection_px": -27.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.1,
+     "20mm": 12.1,
+     "40mm": 23.9,
+     "85mm": 49.7
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -18.0,
+     22.0
+    ]
+   },
+   {
+    "x": -1.7,
+    "junction_px": [
+     1618.7,
+     694.2
+    ],
+    "junction_offset_from_projection_px": -29.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.1,
+     "20mm": 12.2,
+     "40mm": 24.1,
+     "85mm": 50.1
+    },
+    "dark_band_width_px": 43.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -20.0,
+     22.0
+    ]
+   }
+  ],
+  "1063": [
+   {
+    "x": -2.9,
+    "junction_px": [
+     844.1,
+     303.4
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.3,
+     "20mm": 10.5,
+     "40mm": 20.8,
+     "85mm": 43.7
+    },
+    "dark_band_width_px": 27.0,
+    "dark_band_min_rel": 0.76,
+    "dark_band_from_to_px": [
+     -5.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.8,
+    "junction_px": [
+     901.1,
+     335.4
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.4,
+     "20mm": 10.8,
+     "40mm": 21.4,
+     "85mm": 44.9
+    },
+    "dark_band_width_px": 23.0,
+    "dark_band_min_rel": 0.77,
+    "dark_band_from_to_px": [
+     -3.0,
+     19.0
+    ]
+   },
+   {
+    "x": -2.7,
+    "junction_px": [
+     961.5,
+     369.8
+    ],
+    "junction_offset_from_projection_px": -25.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.1,
+     "40mm": 22.0,
+     "85mm": 46.1
+    },
+    "dark_band_width_px": 31.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -13.0,
+     17.0
+    ]
+   },
+   {
+    "x": -2.6,
+    "junction_px": [
+     1024.1,
+     405.4
+    ],
+    "junction_offset_from_projection_px": -24.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.4,
+     "40mm": 22.7,
+     "85mm": 47.5
+    },
+    "dark_band_width_px": 21.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     0.0,
+     20.0
+    ]
+   },
+   {
+    "x": -2.5,
+    "junction_px": [
+     1091.5,
+     442.8
+    ],
+    "junction_offset_from_projection_px": -24.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.9,
+     "20mm": 11.8,
+     "40mm": 23.3,
+     "85mm": 48.9
+    },
+    "dark_band_width_px": 32.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     -12.0,
+     19.0
+    ]
+   },
+   {
+    "x": -2.4,
+    "junction_px": [
+     1162.7,
+     482.0
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 6.1,
+     "20mm": 12.1,
+     "40mm": 24.1,
+     "85mm": 50.4
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -16.0,
+     20.0
+    ]
+   },
+   {
+    "x": -2.3,
+    "junction_px": [
+     1238.7,
+     523.6
+    ],
+    "junction_offset_from_projection_px": -23.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.3,
+     "20mm": 12.5,
+     "40mm": 24.8,
+     "85mm": 51.9
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -17.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.2,
+    "junction_px": [
+     1319.2,
+     568.5
+    ],
+    "junction_offset_from_projection_px": -24.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.5,
+     "20mm": 12.9,
+     "40mm": 25.6,
+     "85mm": 53.6
+    },
+    "dark_band_width_px": 40.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -17.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.1,
+    "junction_px": [
+     1405.6,
+     615.5
+    ],
+    "junction_offset_from_projection_px": -25.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.7,
+     "20mm": 13.3,
+     "40mm": 26.4,
+     "85mm": 55.2
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -16.0,
+     24.0
+    ]
+   },
+   {
+    "x": -2.0,
+    "junction_px": [
+     1498.0,
+     665.4
+    ],
+    "junction_offset_from_projection_px": -26.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.9,
+     "20mm": 13.8,
+     "40mm": 27.3,
+     "85mm": 57.0
+    },
+    "dark_band_width_px": 43.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -18.0,
+     24.0
+    ]
+   },
+   {
+    "x": -1.9,
+    "junction_px": [
+     1596.6,
+     720.3
+    ],
+    "junction_offset_from_projection_px": -29.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.1,
+     "20mm": 14.2,
+     "40mm": 28.2,
+     "85mm": 58.8
+    },
+    "dark_band_width_px": 27.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -1.0,
+     25.0
+    ]
+   },
+   {
+    "x": -1.8,
+    "junction_px": [
+     1702.8,
+     778.2
+    ],
+    "junction_offset_from_projection_px": -32.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.4,
+     "20mm": 14.7,
+     "40mm": 29.1,
+     "85mm": 60.7
+    },
+    "dark_band_width_px": 26.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -1.0,
+     24.0
+    ]
+   },
+   {
+    "x": -1.7,
+    "junction_px": [
+     1816.6,
+     840.3
+    ],
+    "junction_offset_from_projection_px": -34.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.6,
+     "20mm": 15.2,
+     "40mm": 30.1,
+     "85mm": 62.8
+    },
+    "dark_band_width_px": 34.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -13.0,
+     20.0
+    ]
+   }
+  ],
+  "1083": [
+   {
+    "x": -2.9,
+    "junction_px": [
+     973.1,
+     326.5
+    ],
+    "junction_offset_from_projection_px": -24.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.6,
+     "20mm": 11.2,
+     "40mm": 22.2,
+     "85mm": 46.7
+    },
+    "dark_band_width_px": 19.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -1.0,
+     17.0
+    ]
+   },
+   {
+    "x": -2.8,
+    "junction_px": [
+     1027.2,
+     362.0
+    ],
+    "junction_offset_from_projection_px": -24.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.5,
+     "40mm": 22.9,
+     "85mm": 48.2
+    },
+    "dark_band_width_px": 23.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -4.0,
+     18.0
+    ]
+   },
+   {
+    "x": -2.7,
+    "junction_px": [
+     1085.0,
+     400.4
+    ],
+    "junction_offset_from_projection_px": -26.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.0,
+     "20mm": 11.9,
+     "40mm": 23.7,
+     "85mm": 49.6
+    },
+    "dark_band_width_px": 19.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -1.0,
+     17.0
+    ]
+   },
+   {
+    "x": -2.6,
+    "junction_px": [
+     1145.6,
+     440.1
+    ],
+    "junction_offset_from_projection_px": -25.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.2,
+     "20mm": 12.3,
+     "40mm": 24.5,
+     "85mm": 51.4
+    },
+    "dark_band_width_px": 19.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     0.0,
+     18.0
+    ]
+   },
+   {
+    "x": -2.5,
+    "junction_px": [
+     1211.2,
+     482.7
+    ],
+    "junction_offset_from_projection_px": -25.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.4,
+     "20mm": 12.7,
+     "40mm": 25.3,
+     "85mm": 53.1
+    },
+    "dark_band_width_px": 20.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     0.0,
+     19.0
+    ]
+   },
+   {
+    "x": -2.4,
+    "junction_px": [
+     1281.4,
+     527.4
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 6.6,
+     "20mm": 13.2,
+     "40mm": 26.2,
+     "85mm": 55.0
+    },
+    "dark_band_width_px": 26.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -6.0,
+     19.0
+    ]
+   },
+   {
+    "x": -2.3,
+    "junction_px": [
+     1356.5,
+     576.1
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 6.9,
+     "20mm": 13.7,
+     "40mm": 27.2,
+     "85mm": 57.0
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -19.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.2,
+    "junction_px": [
+     1437.6,
+     628.3
+    ],
+    "junction_offset_from_projection_px": -24.0,
+    "slot_band_px_for_gap": {
+     "10mm": 7.1,
+     "20mm": 14.2,
+     "40mm": 28.2,
+     "85mm": 59.0
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -17.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.1,
+    "junction_px": [
+     1525.0,
+     684.5
+    ],
+    "junction_offset_from_projection_px": -25.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.4,
+     "20mm": 14.7,
+     "40mm": 29.3,
+     "85mm": 61.2
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -18.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.0,
+    "junction_px": [
+     1619.5,
+     745.3
+    ],
+    "junction_offset_from_projection_px": -27.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.7,
+     "20mm": 15.3,
+     "40mm": 30.4,
+     "85mm": 63.6
+    },
+    "dark_band_width_px": 26.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -1.0,
+     24.0
+    ]
+   },
+   {
+    "x": -1.9,
+    "junction_px": [
+     1721.7,
+     812.5
+    ],
+    "junction_offset_from_projection_px": -32.0,
+    "slot_band_px_for_gap": {
+     "10mm": 8.0,
+     "20mm": 15.9,
+     "40mm": 31.6,
+     "85mm": 66.1
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -12.0,
+     26.0
+    ]
+   },
+   {
+    "x": -1.8,
+    "junction_px": [
+     1834.3,
+     883.4
+    ],
+    "junction_offset_from_projection_px": -34.5,
+    "slot_band_px_for_gap": {
+     "10mm": 8.3,
+     "20mm": 16.6,
+     "40mm": 32.9,
+     "85mm": 68.7
+    },
+    "dark_band_width_px": 21.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -1.0,
+     19.0
+    ]
+   }
+  ],
+  "1103": [
+   {
+    "x": -2.9,
+    "junction_px": [
+     1008.1,
+     289.6
+    ],
+    "junction_offset_from_projection_px": -24.5,
+    "slot_band_px_for_gap": {
+     "10mm": 5.7,
+     "20mm": 11.3,
+     "40mm": 22.5,
+     "85mm": 47.3
+    },
+    "dark_band_width_px": 37.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -14.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.8,
+    "junction_px": [
+     1056.4,
+     326.3
+    ],
+    "junction_offset_from_projection_px": -25.0,
+    "slot_band_px_for_gap": {
+     "10mm": 5.8,
+     "20mm": 11.7,
+     "40mm": 23.2,
+     "85mm": 48.8
+    },
+    "dark_band_width_px": 36.0,
+    "dark_band_min_rel": 0.75,
+    "dark_band_from_to_px": [
+     -14.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.7,
+    "junction_px": [
+     1108.8,
+     365.2
+    ],
+    "junction_offset_from_projection_px": -26.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.0,
+     "20mm": 12.1,
+     "40mm": 24.0,
+     "85mm": 50.4
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.73,
+    "dark_band_from_to_px": [
+     -14.0,
+     24.0
+    ]
+   },
+   {
+    "x": -2.6,
+    "junction_px": [
+     1163.9,
+     405.2
+    ],
+    "junction_offset_from_projection_px": -24.0,
+    "slot_band_px_for_gap": {
+     "10mm": 6.3,
+     "20mm": 12.5,
+     "40mm": 24.9,
+     "85mm": 52.2
+    },
+    "dark_band_width_px": 27.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -4.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.5,
+    "junction_px": [
+     1223.8,
+     448.7
+    ],
+    "junction_offset_from_projection_px": -23.5,
+    "slot_band_px_for_gap": {
+     "10mm": 6.5,
+     "20mm": 12.9,
+     "40mm": 25.8,
+     "85mm": 54.1
+    },
+    "dark_band_width_px": 40.0,
+    "dark_band_min_rel": 0.74,
+    "dark_band_from_to_px": [
+     -16.0,
+     23.0
+    ]
+   },
+   {
+    "x": -2.4,
+    "junction_px": [
+     1287.4,
+     495.4
+    ],
+    "junction_offset_from_projection_px": -22.5,
+    "slot_band_px_for_gap": {
+     "10mm": 6.7,
+     "20mm": 13.4,
+     "40mm": 26.7,
+     "85mm": 56.1
+    },
+    "dark_band_width_px": 40.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -18.0,
+     21.0
+    ]
+   },
+   {
+    "x": -2.3,
+    "junction_px": [
+     1356.3,
+     545.7
+    ],
+    "junction_offset_from_projection_px": -22.0,
+    "slot_band_px_for_gap": {
+     "10mm": 7.0,
+     "20mm": 14.0,
+     "40mm": 27.8,
+     "85mm": 58.2
+    },
+    "dark_band_width_px": 45.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -20.0,
+     24.0
+    ]
+   },
+   {
+    "x": -2.2,
+    "junction_px": [
+     1430.7,
+     600.2
+    ],
+    "junction_offset_from_projection_px": -22.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.3,
+     "20mm": 14.5,
+     "40mm": 28.9,
+     "85mm": 60.5
+    },
+    "dark_band_width_px": 41.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -18.0,
+     22.0
+    ]
+   },
+   {
+    "x": -2.1,
+    "junction_px": [
+     1511.9,
+     658.4
+    ],
+    "junction_offset_from_projection_px": -23.0,
+    "slot_band_px_for_gap": {
+     "10mm": 7.6,
+     "20mm": 15.1,
+     "40mm": 30.0,
+     "85mm": 62.9
+    },
+    "dark_band_width_px": 39.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -19.0,
+     19.0
+    ]
+   },
+   {
+    "x": -2.0,
+    "junction_px": [
+     1599.3,
+     723.0
+    ],
+    "junction_offset_from_projection_px": -25.5,
+    "slot_band_px_for_gap": {
+     "10mm": 7.9,
+     "20mm": 15.7,
+     "40mm": 31.3,
+     "85mm": 65.5
+    },
+    "dark_band_width_px": 28.0,
+    "dark_band_min_rel": 0.72,
+    "dark_band_from_to_px": [
+     -1.0,
+     26.0
+    ]
+   },
+   {
+    "x": -1.9,
+    "junction_px": [
+     1694.8,
+     793.7
+    ],
+    "junction_offset_from_projection_px": -29.5,
+    "slot_band_px_for_gap": {
+     "10mm": 8.2,
+     "20mm": 16.4,
+     "40mm": 32.6,
+     "85mm": 68.3
+    },
+    "dark_band_width_px": 24.0,
+    "dark_band_min_rel": 0.71,
+    "dark_band_from_to_px": [
+     -1.0,
+     22.0
+    ]
+   },
+   {
+    "x": -1.8,
+    "junction_px": [
+     1800.8,
+     869.5
+    ],
+    "junction_offset_from_projection_px": -32.0,
+    "slot_band_px_for_gap": {
+     "10mm": 8.6,
+     "20mm": 17.1,
+     "40mm": 34.0,
+     "85mm": 71.2
+    },
+    "dark_band_width_px": 19.0,
+    "dark_band_min_rel": 0.7,
+    "dark_band_from_to_px": [
+     -1.0,
+     17.0
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "942": {
+   "n": 13,
+   "dark_band_px_median": 35.0,
+   "slot_px_per_cm_median": 5.4,
+   "implied_gap_if_band_is_slot_cm": 6.481481481481481,
+   "band_for_85mm_px": 44.0
+  },
+  "962": {
+   "n": 13,
+   "dark_band_px_median": 38.0,
+   "slot_px_per_cm_median": 5.7,
+   "implied_gap_if_band_is_slot_cm": 6.909090909090909,
+   "band_for_85mm_px": 46.8
+  },
+  "982": {
+   "n": 13,
+   "dark_band_px_median": 37.0,
+   "slot_px_per_cm_median": 5.8,
+   "implied_gap_if_band_is_slot_cm": 6.440677966101695,
+   "band_for_85mm_px": 47.4
+  },
+  "1063": {
+   "n": 13,
+   "dark_band_px_median": 32.0,
+   "slot_px_per_cm_median": 6.3,
+   "implied_gap_if_band_is_slot_cm": 5.423728813559322,
+   "band_for_85mm_px": 51.9
+  },
+  "1083": {
+   "n": 12,
+   "dark_band_px_median": 24.5,
+   "slot_px_per_cm_median": 6.75,
+   "implied_gap_if_band_is_slot_cm": 3.6661255411255413,
+   "band_for_85mm_px": 56.0
+  },
+  "1103": {
+   "n": 12,
+   "dark_band_px_median": 38.0,
+   "slot_px_per_cm_median": 6.85,
+   "implied_gap_if_band_is_slot_cm": 5.793293804947863,
+   "band_for_85mm_px": 57.150000000000006
+  }
+ },
+ "narrow_dip": {
+  "942": {
+   "dip_width_over_slot_px_per_cm_median": 0.5555555555555555,
+   "dip_depth_rel_median": 0.06577530291472583
+  },
+  "962": {
+   "dip_width_over_slot_px_per_cm_median": 0.603448275862069,
+   "dip_depth_rel_median": 0.06290049391958663
+  },
+  "982": {
+   "dip_width_over_slot_px_per_cm_median": 0.5932203389830508,
+   "dip_depth_rel_median": 0.07869654797295467
+  },
+  "1063": {
+   "dip_width_over_slot_px_per_cm_median": 0.6779661016949152,
+   "dip_depth_rel_median": 0.09551873067614554
+  },
+  "1083": {
+   "dip_width_over_slot_px_per_cm_median": 0.7071464267866068,
+   "dip_depth_rel_median": 0.1014032897928498
+  },
+  "1103": {
+   "dip_width_over_slot_px_per_cm_median": 0.7747252747252746,
+   "dip_depth_rel_median": 0.07162060974303801
+  },
+  "zed_scene_camera": {
+   "dip_width_px_median": 5.0,
+   "slot_px_per_cm": 2.902729216056912,
+   "slot_band_px_for_85mm": 23.547079992172826,
+   "dip_width_over_slot_px_per_cm_median": 1.7225168549452352,
+   "dip_depth_rel_median": 0.17225165363498207
+  }
+ },
+ "note": "dip_width_over_slot_px_per_cm = the gap in cm IF the narrow dark line were the slot interior; a contact line gives a camera-blur-limited width in px, independent of the px/cm scale"
+}

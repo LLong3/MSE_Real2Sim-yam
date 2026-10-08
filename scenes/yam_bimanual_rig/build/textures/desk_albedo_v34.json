@@ -1,0 +1,20 @@
+{
+ "erode_px": 2,
+ "arm_dilate_px": 22,
+ "surface": "desk",
+ "out": "textures/desk_albedo_v34.exr",
+ "size": [
+  1520,
+  760
+ ],
+ "texel_m": 0.001,
+ "observed_fraction": 0.5290157548476454,
+ "median_albedo": [
+  0.41600000858306885,
+  0.3271999955177307,
+  0.18850000202655792
+ ],
+ "lowpass_m": 0.0,
+ "white_render": "/home/frank/robot/aha-3d/runs/yam_bimanual_rig/20260930t142059z-build-v3-45764863/renders/v34_white_desk",
+ "config": "configs/v34.json"
+}
